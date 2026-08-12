@@ -95,40 +95,68 @@ def split_choices(text: str) -> list[tuple[int, bool, str]]:
     return out
 
 
-def parse_questions(lines: list[str]) -> list[dict]:
-    questions, cur = [], None
+def find_joins(lines: list[str]) -> list[tuple[str, str]]:
+    """이어붙일 경계 목록. 순수 연속 줄(문항 시작도, 보기도 아닌 줄)이 앞줄에 붙는다."""
+    out = []
+    for a, b in zip(lines, lines[1:]):
+        if QSTART_RE.match(b) or CHOICE_RE.search(b):
+            continue
+        out.append((a, b))
+    return out
+
+
+def load_joins(path: Path, expected: int) -> list[bool]:
+    """S=공백 / -=붙임. 사람이 정한 값이다. 파일이 없으면 전부 공백으로 두고 경고한다."""
+    if not path.exists():
+        print(f"경고: {path.name} 이 없다. 전부 공백으로 이어붙인다"
+              f" -- 한글 단어가 갈라진다. --dump-joins 로 경계를 뽑아 판정할 것", file=sys.stderr)
+        return [True] * expected
+    flags = "".join(
+        c for line in path.read_text().splitlines()
+        if not line.lstrip().startswith("#")
+        for c in line if c in "S-"
+    )
+    if len(flags) != expected:
+        raise SystemExit(
+            f"{path.name}: 판정값 {len(flags)}개인데 경계는 {expected}곳이다. 파일이 낡았다.")
+    return [c == "S" for c in flags]
+
+
+def parse_questions(lines: list[str], joins: list[bool]) -> list[dict]:
+    questions, cur, ji = [], None, 0
+
+    def glue(prev: str, nxt: str) -> str:
+        nonlocal ji
+        sep = " " if joins[ji] else ""
+        ji += 1
+        return prev + sep + nxt
+
     for line in lines:
         m = QSTART_RE.match(line)
         if m:
             if cur:
                 questions.append(cur)
-            cur = {"no": int(m.group(1)), "body": [line[m.end():]], "choices": [], "answer": None}
-            line = ""
-        if cur is None or not line:
-            if cur and line:
-                pass
-            elif not line:
-                continue
+            cur = {"no": int(m.group(1)), "body": line[m.end():], "choices": [], "answer": None}
+            continue
         hits = list(CHOICE_RE.finditer(line))
-        if hits:
-            # 첫 보기 앞의 글자는 아직 본문(또는 직전 보기)의 연속이다.
-            head = line[:hits[0].start()].strip()
-            if head:
-                (cur["choices"][-1].__setitem__(0, cur["choices"][-1][0] + " " + head)
-                 if cur["choices"] else cur["body"].append(head))
-            for idx, is_answer, text in split_choices(line):
-                while len(cur["choices"]) <= idx:
-                    cur["choices"].append([""])
-                cur["choices"][idx][0] = (cur["choices"][idx][0] + " " + text).strip()
-                if is_answer:
-                    cur["answer"] = idx
-        elif cur["choices"]:
-            last = cur["choices"][-1]
-            last[0] = (last[0] + " " + line).strip()
-        else:
-            cur["body"].append(line)
+        if not hits:  # 순수 연속 줄
+            if cur["choices"]:
+                cur["choices"][-1] = glue(cur["choices"][-1], line)
+            else:
+                cur["body"] = glue(cur["body"], line)
+            continue
+        # 이 PDF에서는 보기 앞에 글자가 남는 줄이 0개다. 판본이 다르면 조용히 버리지 말고 멈춘다.
+        if line[:hits[0].start()].strip():
+            raise SystemExit(f"보기 앞에 글자가 남았다 -- 판본이 다르다: {line!r}")
+        for idx, is_answer, text in split_choices(line):
+            while len(cur["choices"]) <= idx:
+                cur["choices"].append("")
+            cur["choices"][idx] = (cur["choices"][idx] + " " + text).strip()
+            if is_answer:
+                cur["answer"] = idx
     if cur:
         questions.append(cur)
+    assert ji == len(joins), f"이어붙임 {ji}회 != 판정값 {len(joins)}개"
     return questions
 
 
@@ -145,8 +173,16 @@ def main() -> None:
         stimulus = {k: v for k, v in json.loads(stim_path.read_text()).items() if not k.startswith("_")}
 
     body_lines, tail = split_body_and_tail(pdf_to_lines(pdf))
+    lines = clean(body_lines)
+    boundaries = find_joins(lines)
+
+    if "--dump-joins" in sys.argv:
+        for i, (a, b) in enumerate(boundaries):
+            print(f"{i:3d} {a[-14:]:>14} ¦ {b[:14]}")
+        return
+
     key = parse_answer_key(tail)
-    parsed = parse_questions(clean(body_lines))
+    parsed = parse_questions(lines, load_joins(repo / f"scripts/joins/{source}.txt", len(boundaries)))
 
     total = len(SUBJECTS) * PER_SUBJECT
     assert len(parsed) == total, f"문항 수 {len(parsed)} != {total}"
@@ -159,15 +195,18 @@ def main() -> None:
         assert len(q["choices"]) == 4, f"{no}번: 보기가 {len(q['choices'])}개"
         if key[no] != q["answer"]:
             mismatch.append((no, key[no] + 1, q["answer"] + 1))
-        body = normalize(" ".join(q["body"]))
+        body = normalize(q["body"])
         errata = ERRATA_RE.search(body)
         out.append({
+            # attempts가 이 문제를 가리키는 키. DB에 questions 테이블이 없으므로
+            # 회차+번호로 만든 이 문자열이 유일한 식별자다.
+            "key": f"{source}#{no}",
             "no": no,
             "subject": SUBJECTS[(no - 1) // PER_SUBJECT],
             "type": "mc",
             "body": normalize(ERRATA_RE.sub("", body)),
             "stimulus": stimulus.get(str(no)),
-            "choices": [normalize(c[0]) for c in q["choices"]],
+            "choices": [normalize(c) for c in q["choices"]],
             "answer": str(q["answer"]),
             "explanation": None,
             "note": normalize(errata.group()[1:-1]) if errata else None,
