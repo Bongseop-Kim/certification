@@ -208,7 +208,6 @@ def main() -> None:
             "stimulus": stimulus.get(str(no)),
             "choices": [normalize(c) for c in q["choices"]],
             "answer": str(q["answer"]),
-            "explanation": None,
             "note": normalize(errata.group()[1:-1]) if errata else None,
             "source": source,
         })

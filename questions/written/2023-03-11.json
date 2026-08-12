@@ -13,7 +13,6 @@
       "레지스트리 HKEY_LOCAL_MACHINE\\SAM에 구체화된 자료들을 실제로 저장한다."
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -31,7 +30,6 @@
       "FCFS"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -49,7 +47,6 @@
       "텍스트 파일 형태의 복구키를 제공한다."
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -67,7 +64,6 @@
       "보안사고 치료 영역"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -85,7 +81,6 @@
       "“SAM 계정과 공유의 익명 열거 허용 안함” 정책을 설정하였다."
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -103,7 +98,6 @@
       "사용자 PC에 저장"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -121,7 +115,6 @@
       "㉠ : Evil Twin, ㉡ : Wardriving"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -139,7 +132,6 @@
       "네트워크 방화벽 : PC 메신저나 웹 메일 등 내부정보유출 수단으로 쓰이는 프로그램을 네트워크 방화벽에서 도메인 기준으로 차단"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -157,7 +149,6 @@
       "wtmp 로그 : 사용자의 루트 접속 기록 저장"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -175,7 +166,6 @@
       "EFS(Encrypted File Service)는 컴퓨터 단일 또는 복수 사용자에게 대한 파일 및 폴더 단위 암호화를 지원한다."
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -193,7 +183,6 @@
       "Model inversion 공격"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -211,7 +200,6 @@
       "㉠ : %c, ㉡ : %x, ㉢ : %hn"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -229,7 +217,6 @@
       "데이터 패킷"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -247,7 +234,6 @@
       "파이썬, 펄 등의 스크립트 언어도 실행이 가능하다."
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -265,7 +251,6 @@
       "러브버그라고 불리는 이메일에 첨부되어 전파된 바이러스가 Visual Basic 스크립트로 개발되었다."
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -283,7 +268,6 @@
       "uid=(13)guest4, gid(13)guest4, groups=(13)guest4,5(adm)"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -301,7 +285,6 @@
       "윈도우 복원 시점을 제거한다."
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -319,7 +302,6 @@
       "그린박스 분석"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -337,7 +319,6 @@
       "netstat"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -355,7 +336,6 @@
       "파일의 symbolic link의 수 점검"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -373,7 +353,6 @@
       "IDS"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -391,7 +370,6 @@
       "바이러스 프로그램의 제작"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -409,7 +387,6 @@
       "메일 데이터 전송을 한 것을 필터링"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -427,7 +404,6 @@
       "㉠-ⓒ, ㉡-ⓐ, ㉢-ⓑ"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -445,7 +421,6 @@
       "ICMP Redirect"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -463,7 +438,6 @@
       "SQL슬래머(Slammer)"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -481,7 +455,6 @@
       "nslookup [mac 주소] 명령을 사용해 통신경로를 절대경로로 설정한다."
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -499,7 +472,6 @@
       "㉠ : 포트 스캐닝, ㉡ : 무차별 모드"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -517,7 +489,6 @@
       "RelevantOnly"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -535,7 +506,6 @@
       "포트 리다이렉션(Port redirection)"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -553,7 +523,6 @@
       "IPsec(IP Security)의 AH(Authentication Header)가 적용되어 IPv4 헤더에 무결성, 인증을 위한 데이터가 추가된 데이터그램이다."
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -571,7 +540,6 @@
       "모든 포트에 동적 트렁킹 프로토콜(DTP)을 꺼 놓는다."
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -589,7 +557,6 @@
       "ARP 스푸핑"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -607,7 +574,6 @@
       "스푸핑 공격"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -625,7 +591,6 @@
       "설치 위치와 목적에 따라 HIDS와 NIDS로 나뉠 수 있다."
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -643,7 +608,6 @@
       "143-IMAP-UDP"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -661,7 +625,6 @@
       "가 : Exploit, 나 : Imapd"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -679,7 +642,6 @@
       "SSH"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -697,7 +659,6 @@
       "출발지를 기준으로 매 1초동안 10번째 이벤트마다 action을 수행한다."
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -715,7 +676,6 @@
       "WPA3"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -733,7 +693,6 @@
       "디렉터리 인덱싱"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -751,7 +710,6 @@
       "WTP(Wireless Transaction Protocol) - IEEE 802.11i 표준에 정의된 보안규격으로 RC4 알고리즘을 기반으로 한다."
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -769,7 +727,6 @@
       "AES"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -787,7 +744,6 @@
       "/bin/etc/pub"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -805,7 +761,6 @@
       "취약한 DBMS 버전"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -823,7 +778,6 @@
       "서비스 거부"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -841,7 +795,6 @@
       "sscanf( )"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -859,7 +812,6 @@
       "이중암호화"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -877,7 +829,6 @@
       "DNS 싱크홀"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -895,7 +846,6 @@
       "build.gradle"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -913,7 +863,6 @@
       "AUTH>EHLO>RCTP>MAIL>DATA>QUIT"
     ],
     "answer": "1",
-    "explanation": null,
     "note": "문제 오류로 가답안 발표시 2번으로 발표되었지만 확정답안 발표시 모두 정답처리 되었습니다. 여기서는 가답안인 2번을 누르면 정답 처리 됩니다.",
     "source": "2023-03-11"
   },
@@ -931,7 +880,6 @@
       "CHANGE_COMPONENT_ENABLED_STATE : 환경 설정 변경 권한"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -949,7 +897,6 @@
       "Reflected XSS는 웹 애플리케이션상에 스크립트를 저장해 놓은 것이다."
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -967,7 +914,6 @@
       "robots.txt"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -985,7 +931,6 @@
       "루팅"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1003,7 +948,6 @@
       "대응 방안으로 DNS 서버 설정을 통해 내부 사용자의 주소만 반복쿼리(Interactive Query)를 허용한다."
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1021,7 +965,6 @@
       "DCL(Data Control Language)"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1039,7 +982,6 @@
       "tcpdump"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1057,7 +999,6 @@
       "ebXML(Electronic Business Extensible Markup Language)"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1075,7 +1016,6 @@
       "proftp"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1093,7 +1033,6 @@
       "만료일 내에 만료된 디지털 인증서 일련 번호"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1111,7 +1050,6 @@
       "전자화폐"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1129,7 +1067,6 @@
       "SSL/TLS에서는 통신 전의 데이터, 통신 중의 데이터, 통신 후의 데이터를 보호해준다."
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1147,7 +1084,6 @@
       "메시지 크기와 상관없이 MAC 생성과정, 즉 해시값 생성, 암호화 등이 속도는 균일하여 다른 암호화 알고리즘에 비해 속도가 빠르다."
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1165,7 +1101,6 @@
       "HSM은 공개키를 사용한다."
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1183,7 +1118,6 @@
       "등급 권한"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1201,7 +1135,6 @@
       "재배열"
     ],
     "answer": "2",
-    "explanation": null,
     "note": "문제 오류로 가답안 발표시 3번으로 발표되었지만 확정답안 발표시 모두 정답처리 되었습니다. 여기서는 가답안인 3번을 누르면 정답 처리 됩니다.",
     "source": "2023-03-11"
   },
@@ -1219,7 +1152,6 @@
       "이 방식은 공격자가 Ticketb와 Kab{N2}를 스니핑하여 복제한 후 복제된 메시지와 Alice로 위장한 자신의 신분 정보를 보내는 재전송공격에 취약한 단점이 있다."
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1237,7 +1169,6 @@
       "I-PIN(Internet Personal Identification Number)는 지식 기반 인증방식으로 'ID/PW'와 주민번호를 대체하기 위하여 만들어졌다."
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1255,7 +1186,6 @@
       "bad"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1273,7 +1203,6 @@
       "키 로밍 방식"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1291,7 +1220,6 @@
       "㉠ : 개인키, ㉡ : 공개키"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1309,7 +1237,6 @@
       "OSI 보안구조"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1327,7 +1254,6 @@
       "이 프로토콜의 도입 이유 중 하나는 고가의 증권 정보나 고액의 현금 거래 등 데이터 트랜잭션의 중요성이 매우 높은 경우 실시간으로 인증서 유효성 검증이 필요하기 때문이다."
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1345,7 +1271,6 @@
       "MicroSD OTP란 사용자 휴대폰의 MicroSD내에 OTP모듈 및 주요정보를 저장하여 복제가 되지 않는 안전한 IC 칩 기반의 OTP이다."
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1363,7 +1288,6 @@
       "부인방지"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1381,7 +1305,6 @@
       "중간자 공격"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1399,7 +1322,6 @@
       "7"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1417,7 +1339,6 @@
       "인증기관(CA)의 개인키를 스마트카드 단말에 배포한다."
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1435,7 +1356,6 @@
       "ACL"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1453,7 +1373,6 @@
       "셀 은폐(cell suppression)"
     ],
     "answer": "1",
-    "explanation": null,
     "note": "문제 오류로 가답안 발표시 2번으로 발표되었지만 확정답안 발표시 2, 4번이 정답처리 되었습니다. 여기서는 가답안인 2번을 누르시면 정답 처리 됩니다.",
     "source": "2023-03-11"
   },
@@ -1471,7 +1390,6 @@
       "ISO27701"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1489,7 +1407,6 @@
       "B 배송업체가 재위탁을 하지 못하도록 제재한다."
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1507,7 +1424,6 @@
       "교통단속을 위하여 필요한 경우"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1525,7 +1441,6 @@
       "시나리오법"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1543,7 +1458,6 @@
       "보고서 작성"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1561,7 +1475,6 @@
       "원격에서 사내 시스템 접근시 VPN을 사용하지 않고 VNC 등 원격 연결 프로그램 사용"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1579,7 +1492,6 @@
       "연계 보관성의 원칙"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1597,7 +1509,6 @@
       "한국전자통신연구원"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1615,7 +1526,6 @@
       "정보통신기반 보호법"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1633,7 +1543,6 @@
       "고객 개인정보, 임직원 개인정보를 기밀성을 가장 높게 평가"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1651,7 +1560,6 @@
       "㉢, ㉣"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1669,7 +1577,6 @@
       "기타 정보보호관리자가 정보보안업무 수행에필요하다고 정한 사항"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1687,7 +1594,6 @@
       "관리자 PC, 개발자 PC"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1705,7 +1611,6 @@
       "공익적 기록보존"
     ],
     "answer": "0",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1723,7 +1628,6 @@
       "사이버 상의 일탈상황에 따른 구체적인 행동 요령을 알아보는 실증적인 내용으로 연구되고 있다."
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1741,7 +1645,6 @@
       "민·관 합동조사단이 발생한 침해사고의 원인 분석이 끝났을 때"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1759,7 +1662,6 @@
       "책임추적성"
     ],
     "answer": "3",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1777,7 +1679,6 @@
       "시나리오법"
     ],
     "answer": "1",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   },
@@ -1795,7 +1696,6 @@
       "개인정보파일에 기록되는 개인정보의 항목"
     ],
     "answer": "2",
-    "explanation": null,
     "note": null,
     "source": "2023-03-11"
   }

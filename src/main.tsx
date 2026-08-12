@@ -1,4 +1,5 @@
 import '@seed-design/css/base.css'
+import './app.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
