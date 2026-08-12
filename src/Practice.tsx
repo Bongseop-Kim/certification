@@ -47,19 +47,28 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
   const done = !q
   const ok = graded && String(chosen) === q?.answer
 
-  const confirm = () => {
-    if (chosen === null || graded || !q) return
+  // 포기는 chosen을 비운 오답으로 남긴다. 찍어서 맞힌 기록이 실력으로 보이는 걸 막는 게 목적.
+  const grade = (pick: number | null) => {
+    if (graded || !q) return
+    setChosen(pick)
     setGraded(true)
     void record([
       {
         question_key: q.key,
-        correct: String(chosen) === q.answer,
-        chosen: String(chosen),
+        correct: pick !== null && String(pick) === q.answer,
+        chosen: pick === null ? null : String(pick),
         mode,
         session_id: null,
         note: null,
       },
     ]).then(([id]) => setAttemptId(id ?? null))
+  }
+
+  const confirm = () => chosen !== null && grade(chosen)
+
+  // ponytail: 네이티브 confirm. 커스텀 모달은 되돌릴 수 없는 동작이 늘어나면.
+  const giveUp = () => {
+    if (window.confirm('정말 포기하시겠습니까? 오답으로 기록됩니다.')) grade(null)
   }
 
   const next = () => {
@@ -88,6 +97,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
         if (graded) next()
         else confirm()
       }
+      else if ((e.key === 'g' || e.key === 'G') && !graded) giveUp()
       else if (e.key === 's' || e.key === 'S') toggle(q.key, 'mark')
       else if (e.key === 'h' || e.key === 'H') hide()
     }
@@ -121,10 +131,10 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
       <div className="screen">
         {graded ? (
           <div className={ok ? 'verdict ok' : 'verdict'}>
-            <span className="vt">{ok ? '정답' : '오답'}</span>
+            <span className="vt">{ok ? '정답' : chosen === null ? '포기' : '오답'}</span>
             <span className="vd">
               정답 {CIRCLED[Number(q.answer)]}
-              {!ok && ` · 내 답 ${CIRCLED[chosen!]}`}
+              {!ok && chosen !== null && ` · 내 답 ${CIRCLED[chosen]}`}
             </span>
           </div>
         ) : (
@@ -204,9 +214,14 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
               </button>
             </div>
           ) : (
-            <button className="btn" onClick={confirm} disabled={chosen === null}>
-              확인
-            </button>
+            <div className="row">
+              <button className="btn weak" title="모르는 문제는 찍지 말고 포기 — 오답으로 기록됩니다" onClick={giveUp}>
+                포기
+              </button>
+              <button className="btn" onClick={confirm} disabled={chosen === null}>
+                확인
+              </button>
+            </div>
           )}
 
           <div className="keys">
@@ -221,7 +236,8 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
               <span className="kb">2</span>
               <span className="kb">3</span>
               <span className="kb">4</span> 선택 <span className="kb">Enter</span> 확인{' '}
-              <span className="kb">S</span> 북마크 <span className="kb">H</span> 관심 없음
+              <span className="kb">G</span> 포기 <span className="kb">S</span> 북마크{' '}
+              <span className="kb">H</span> 관심 없음
             </>
           )}
           </div>
