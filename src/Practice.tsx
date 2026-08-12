@@ -149,7 +149,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
           })}
         </div>
 
-        {q.note && (
+        {graded && q.note && (
           <div className="callout">
             <span className="cot">원본 정오표</span>
             <p>{q.note}</p>
@@ -166,22 +166,23 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
           />
         )}
 
-        {graded ? (
-          <div className="row">
-            <button className="btn weak" onClick={() => toggleMark(q.key)}>
-              {marks.has(q.key) ? '★ 북마크' : '☆ 북마크'}
+        <div className="dock">
+          {graded ? (
+            <div className="row">
+              <button className="btn weak" onClick={() => toggleMark(q.key)}>
+                {marks.has(q.key) ? '★ 북마크' : '☆ 북마크'}
+              </button>
+              <button className="btn" onClick={next}>
+                다음 문제
+              </button>
+            </div>
+          ) : (
+            <button className="btn" onClick={confirm} disabled={chosen === null}>
+              확인
             </button>
-            <button className="btn" onClick={next}>
-              다음 문제
-            </button>
-          </div>
-        ) : (
-          <button className="btn" onClick={confirm} disabled={chosen === null}>
-            확인
-          </button>
-        )}
+          )}
 
-        <div className="keys">
+          <div className="keys">
           {graded ? (
             <>
               <span className="kb">Enter</span> 다음 문제 <span className="kb">S</span> 북마크
@@ -195,6 +196,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
               <span className="kb">S</span> 북마크
             </>
           )}
+          </div>
         </div>
       </div>
     </>
