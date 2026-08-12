@@ -21,7 +21,8 @@ import {
   stampLabel,
   subjectRates,
   useAttempts,
-  useBookmarks,
+  useFlags,
+  visible,
   wrongKeys,
   type Mode,
   type Saved,
@@ -37,9 +38,11 @@ type View =
   | { s: 'history' }
 
 /** 과목별 20문항, 과목 순서대로 배치한 100문항 */
-function newMock100(): Saved {
+// ponytail: 관심 없음이 많으면 과목별 20문항을 못 채워 100문항 미만이 된다.
+// 합격 판정은 비율 기준이라 계산은 그대로 성립한다. 실제로 걸리면 그때 경고를 띄운다.
+function newMock100(hidden: Set<string>): Saved {
   const keys = SUBJECTS.flatMap((s) =>
-    shuffle(MC.filter((q) => q.subject === s.id))
+    shuffle(visible(MC, hidden).filter((q) => q.subject === s.id))
       .slice(0, PER_SUBJECT)
       .map((q) => q.key),
   )
@@ -48,7 +51,8 @@ function newMock100(): Saved {
 
 export default function App() {
   const { attempts, record, addNote, error, loading } = useAttempts()
-  const { marks, toggle } = useBookmarks()
+  const { marks, hidden, toggle, error: flagError } = useFlags()
+  const toggleMark = (key: string) => void toggle(key, 'mark')
   const [view, setView] = useState<View>({ s: 'home' })
   const [histTab, setHistTab] = useState<HistTab>('weak')
   const home = () => setView({ s: 'home' })
@@ -65,7 +69,8 @@ export default function App() {
             record={record}
             addNote={addNote}
             marks={marks}
-            toggleMark={toggle}
+            hidden={hidden}
+            toggle={toggle}
             onExit={view.fromHistory ? () => setView({ s: 'history' }) : home}
           />
         )
@@ -74,6 +79,7 @@ export default function App() {
           <Setup
             mode={view.mode}
             stats={stats}
+            hidden={hidden}
             onExit={home}
             onStart={(keys) =>
               view.mode === 'ox'
@@ -93,7 +99,7 @@ export default function App() {
             saved={view.saved}
             record={record}
             marks={marks}
-            toggleMark={toggle}
+            toggleMark={toggleMark}
             onExit={home}
             onSubmit={(elapsedMs) =>
               setView({ s: 'result', mode: view.mode, sessionId: view.saved.sessionId, elapsedMs })
@@ -127,13 +133,23 @@ export default function App() {
             tab={histTab}
             setTab={setHistTab}
             marks={marks}
-            toggleMark={toggle}
+            hidden={hidden}
+            toggle={toggle}
             onExit={home}
             onSolve={(keys) => setView({ s: 'practice', mode: 'review', keys, fromHistory: true })}
           />
         )
       default:
-        return <Home stats={stats} marks={marks} loading={loading} error={error} setView={setView} />
+        return (
+          <Home
+            stats={stats}
+            marks={marks}
+            hidden={hidden}
+            loading={loading}
+            error={error ?? flagError}
+            setView={setView}
+          />
+        )
     }
   }
 
@@ -143,31 +159,34 @@ export default function App() {
 function Home({
   stats,
   marks,
+  hidden,
   loading,
   error,
   setView,
 }: {
   stats: ReturnType<typeof statsByKey>
   marks: Set<string>
+  hidden: Set<string>
   loading: boolean
   error?: string
   setView: (v: View) => void
 }) {
   const rates = subjectRates(stats)
-  const wrong = wrongKeys(stats)
-  const marked = [...marks].filter((k) => byKey.has(k))
+  const wrong = wrongKeys(stats, hidden)
+  const marked = [...marks].filter((k) => byKey.has(k) && !hidden.has(k))
+  const pool = visible(MC, hidden)
   const resume = loadMock()
 
   const startMock100 = () => {
     if (resume && !confirm('진행 중인 모의고사가 있습니다. 새로 시작하면 사라집니다.')) return
-    const saved = newMock100()
+    const saved = newMock100(hidden)
     saveMock(saved)
     setView({ s: 'exam', mode: 'mock100', saved })
   }
 
   return (
     <>
-      <Nav title="보안기사 문제집" meta={`문제 ${QUESTIONS.length}개`} />
+      <Nav title="보안기사 문제집" meta={`문제 ${visible(QUESTIONS, hidden).length}개`} />
       <div className="screen">
         {error && <div className="verdict">기록 서버 오류 — {error}</div>}
 
@@ -198,10 +217,14 @@ function Home({
           <div className="cd">과목을 골라 짧게. 출퇴근길 한 세트</div>
           <div className="cm">10 / 20 / 30문항</div>
         </button>
-        <button className="card" onClick={() => setView({ s: 'setup', mode: 'ox' })} disabled={!OX.length}>
+        <button
+          className="card"
+          onClick={() => setView({ s: 'setup', mode: 'ox' })}
+          disabled={!visible(OX, hidden).length}
+        >
           <div className="ct">OX 특강</div>
           <div className="cd">과목별 O/X를 빠르게 넘기며 개념 점검</div>
-          <div className="cm">OX 문제 {OX.length}개</div>
+          <div className="cm">OX 문제 {visible(OX, hidden).length}개</div>
         </button>
 
         <button
@@ -247,7 +270,7 @@ function Home({
                     setView({
                       s: 'practice',
                       mode: 'practice',
-                      keys: MC.filter((q) => q.subject === s.id).map((q) => q.key),
+                      keys: pool.filter((q) => q.subject === s.id).map((q) => q.key),
                     })
                   }
                 >

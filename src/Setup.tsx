@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { MC, OX, SUBJECTS, shuffle, weakFirst, type Stat, type Subject } from './lib.tsx'
+import { MC, OX, SUBJECTS, shuffle, visible, weakFirst, type Stat, type Subject } from './lib.tsx'
 
 type Props = {
   mode: 'mock_short' | 'ox'
   stats: Map<string, Stat>
+  hidden: Set<string>
   onStart: (keys: string[]) => void
   onExit: () => void
 }
 
-export function Setup({ mode, stats, onStart, onExit }: Props) {
-  const pool = mode === 'ox' ? OX : MC
+export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
+  // 관심 없음은 여기서 한 번 걷어낸다. 과목별 개수 표시까지 자동으로 따라온다.
+  const pool = visible(mode === 'ox' ? OX : MC, hidden)
   const counts = mode === 'ox' ? [10, 20, 30, 50] : [10, 20, 30]
   const [picked, setPicked] = useState<Set<Subject>>(new Set())
   const [count, setCount] = useState(counts[0])

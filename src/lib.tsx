@@ -133,9 +133,9 @@ export function subjectRates(stats: Map<string, Stat>) {
 }
 
 /** 마지막 시도가 오답인 문제. 최근 오답이 먼저 온다 */
-export function wrongKeys(stats: Map<string, Stat>) {
+export function wrongKeys(stats: Map<string, Stat>, hidden: Set<string>) {
   return [...stats]
-    .filter(([key, s]) => !s.lastCorrect && byKey.has(key))
+    .filter(([key, s]) => !s.lastCorrect && byKey.has(key) && !hidden.has(key))
     .sort((a, b) => b[1].last.localeCompare(a[1].last))
     .map(([key]) => key)
 }
@@ -158,28 +158,68 @@ export function weakFirst(qs: readonly Question[], stats: Map<string, Stat>) {
   return shuffle(qs).sort((a, b) => rate(a) - rate(b))
 }
 
-/* ---------- 북마크 ---------- */
+/* ---------- 문제당 플래그: 북마크(mark) · 관심 없음(hide) ---------- */
 
-// ponytail: 북마크는 이 기기에만 남는다. 기기 간 공유가 필요해지면 bookmarks 테이블 한 개.
+// ponytail: 둘은 모양이 같은 "문제당 표시"라 테이블 하나에 kind로 구분한다. 토글은 insert/delete.
+export type FlagKind = 'mark' | 'hide'
+
+// 북마크가 localStorage에만 있던 시절의 키. 첫 로드에 flags로 옮기고 지운다.
 const BM_KEY = 'bookmarks'
 
-export function useBookmarks() {
-  const [marks, setMarks] = useState<Set<string>>(() => {
-    try {
-      return new Set(JSON.parse(localStorage.getItem(BM_KEY) ?? '[]') as string[])
-    } catch {
-      return new Set()
-    }
-  })
-  const toggle = useCallback((key: string) => {
-    setMarks((prev) => {
-      const next = new Set(prev)
-      if (!next.delete(key)) next.add(key)
-      localStorage.setItem(BM_KEY, JSON.stringify([...next]))
-      return next
-    })
+/** 출제 후보에서 '관심 없음'을 걷어낸다 */
+export const visible = (qs: readonly Question[], hidden: Set<string>) =>
+  qs.filter((q) => !hidden.has(q.key))
+
+export function useFlags() {
+  const [marks, setMarks] = useState<Set<string>>(new Set())
+  const [hidden, setHidden] = useState<Set<string>>(new Set())
+  const [error, setError] = useState<string>()
+
+  useEffect(() => {
+    void (async () => {
+      const old = JSON.parse(localStorage.getItem(BM_KEY) ?? 'null') as string[] | null
+      if (old) {
+        const { error } = old.length
+          ? await sb
+              .from('flags')
+              .upsert(
+                old.map((question_key) => ({ question_key, kind: 'mark' })),
+                { ignoreDuplicates: true },
+              )
+          : { error: null }
+        // 옮기기가 실패하면 키를 남겨 다음 로드에 다시 시도한다
+        if (error) setError(error.message)
+        else localStorage.removeItem(BM_KEY)
+      }
+      const { data, error } = await sb.from('flags').select('question_key, kind')
+      if (error) return setError(error.message)
+      const of = (kind: FlagKind) =>
+        new Set(data.filter((r) => r.kind === kind).map((r) => r.question_key as string))
+      setMarks(of('mark'))
+      setHidden(of('hide'))
+    })()
   }, [])
-  return { marks, toggle }
+
+  /** 낙관적으로 화면에 먼저 반영하고 서버에 쓴다 */
+  const toggle = useCallback(
+    async (key: string, kind: FlagKind) => {
+      const on = !(kind === 'mark' ? marks : hidden).has(key)
+      const setter = kind === 'mark' ? setMarks : setHidden
+      setter((prev) => {
+        const next = new Set(prev)
+        if (on) next.add(key)
+        else next.delete(key)
+        return next
+      })
+      const { error } = on
+        ? await sb.from('flags').upsert({ question_key: key, kind }, { ignoreDuplicates: true })
+        : await sb.from('flags').delete().eq('question_key', key).eq('kind', kind)
+      if (error) setError(error.message)
+    },
+    [marks, hidden],
+  )
+
+  return { marks, hidden, toggle, error }
 }
 
 /* ---------- 모의고사 중간 저장 (localStorage) ---------- */

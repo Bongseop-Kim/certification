@@ -13,7 +13,8 @@ npm run build   # tsc + vite build
 | 무엇 | 어디 |
 |---|---|
 | 문제 원본 | `questions/written/*.json` — 빌드에 번들된다. DB에 없다 |
-| 풀이 기록 | Supabase `attempts` 한 테이블 (`schema.sql`) |
+| 풀이 기록 | Supabase `attempts` (`schema.sql`) |
+| 문제당 표시 | Supabase `flags` — 북마크(`mark`), 관심 없음(`hide`) |
 | 기출 파서 | `scripts/parse_exam.py` (PDF → JSON), `scripts/stimulus/*.json` (이미지 지문 필사) |
 | 화면 | `src/App.tsx`(홈) `Practice` `Setup` `Exam` `Result` `Ox` `History` |
 
@@ -25,7 +26,8 @@ npm run build   # tsc + vite build
 - `key` — `'2023-03-11#82'` (회차#번호). `attempts.question_key`가 이걸 가리킨다
 - 해설(`explanation`)은 쓰지 않는다. 오답일 때 남기는 한 줄 메모(`attempts.note`)가 그 역할을 한다
 - 합격 판정: 과목당 40% 이상 **그리고** 평균 60% 이상 · 100문항 150분
+- 관심 없음은 출제 후보에서만 빼고 기록은 그대로 둔다. 출제/목록 지점은 `visible(qs, hidden)`을 거친다
 
 ## 아직 없는 것
 
-실기 모드, 주관식, 이미지 문제, 기기 간 모의고사 이어풀기(지금은 `localStorage`), 북마크 서버 저장(지금은 `localStorage`), 로그인(anon 전권).
+실기 모드, 주관식, 이미지 문제, 기기 간 모의고사 이어풀기(지금은 `localStorage`), 로그인(anon 전권).

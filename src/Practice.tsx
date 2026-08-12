@@ -8,8 +8,10 @@ import {
   byKey,
   pct,
   renderBody,
+  visible,
   weakFirst,
   type Attempt,
+  type FlagKind,
   type Question,
   type Stat,
 } from './lib.tsx'
@@ -21,15 +23,18 @@ type Props = {
   record: (rows: Omit<Attempt, 'answered_at'>[]) => Promise<number[]>
   addNote: (id: number, note: string) => Promise<void>
   marks: Set<string>
-  toggleMark: (key: string) => void
+  hidden: Set<string>
+  toggle: (key: string, kind: FlagKind) => void
   onExit: () => void
 }
 
-export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark, onExit }: Props) {
+export function Practice({ mode, keys, stats, record, addNote, marks, hidden, toggle, onExit }: Props) {
   // 출제 순서는 들어올 때 한 번만 정한다. 답을 맞힐 때마다 순서가 흔들리면 못 푼다.
   // 연습형은 4지선다만. OX는 별도 모드라 목록에서 넘어와도 걸러낸다.
   const [queue] = useState<Question[]>(() =>
-    keys ? keys.flatMap((k) => byKey.get(k) ?? []).filter((q) => q.type === 'mc') : weakFirst(MC, stats),
+    keys
+      ? keys.flatMap((k) => byKey.get(k) ?? []).filter((q) => q.type === 'mc')
+      : weakFirst(visible(MC, hidden), stats),
   )
   const [idx, setIdx] = useState(0)
   const [chosen, setChosen] = useState<number | null>(null)
@@ -66,6 +71,13 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
     setIdx((i) => i + 1)
   }
 
+  // 되살리기는 '내 기록 · 관심 없음' 탭에서 한다. 여기선 한 방향으로만 — 숨기고 바로 넘어간다.
+  const hide = () => {
+    if (!q) return
+    toggle(q.key, 'hide')
+    next()
+  }
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement) return
@@ -76,7 +88,8 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
         if (graded) next()
         else confirm()
       }
-      else if (e.key === 's' || e.key === 'S') toggleMark(q.key)
+      else if (e.key === 's' || e.key === 'S') toggle(q.key, 'mark')
+      else if (e.key === 'h' || e.key === 'H') hide()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -180,8 +193,11 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
         <div className="dock">
           {graded ? (
             <div className="row">
-              <button className="btn weak" onClick={() => toggleMark(q.key)}>
+              <button className="btn weak" onClick={() => toggle(q.key, 'mark')}>
                 {marks.has(q.key) ? '★ 북마크' : '☆ 북마크'}
+              </button>
+              <button className="btn weak" title="이 문제를 다시 출제하지 않습니다" onClick={hide}>
+                관심 없음
               </button>
               <button className="btn" onClick={next}>
                 다음 문제
@@ -196,7 +212,8 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
           <div className="keys">
           {graded ? (
             <>
-              <span className="kb">Enter</span> 다음 문제 <span className="kb">S</span> 북마크
+              <span className="kb">Enter</span> 다음 문제 <span className="kb">S</span> 북마크{' '}
+              <span className="kb">H</span> 관심 없음
             </>
           ) : (
             <>
@@ -204,7 +221,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
               <span className="kb">2</span>
               <span className="kb">3</span>
               <span className="kb">4</span> 선택 <span className="kb">Enter</span> 확인{' '}
-              <span className="kb">S</span> 북마크
+              <span className="kb">S</span> 북마크 <span className="kb">H</span> 관심 없음
             </>
           )}
           </div>
