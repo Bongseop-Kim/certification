@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Nav } from './Nav.tsx'
 import {
   CIRCLED,
+  CopyBtn,
   MC,
   subjectTag,
   byKey,
@@ -147,6 +148,8 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
             )
           })}
         </div>
+
+        <CopyBtn q={q} />
 
         {graded && !!s?.notes.length && (
           <div className="callout">

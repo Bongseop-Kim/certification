@@ -116,6 +116,11 @@ code, .k {
 .banner .go { margin-left: auto; font-size: 13px; font-weight: 650; color: var(--accent); white-space: nowrap; }
 .banner.plain .go { color: var(--ink-muted); }
 
+.copy {
+  align-self: flex-end; background: none; border: 0; padding: 2px 0;
+  font-size: 12px; color: var(--ink-faint);
+}
+
 .label {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--ink-faint); font-weight: 600;

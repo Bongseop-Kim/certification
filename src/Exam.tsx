@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Nav } from './Nav.tsx'
 import {
   CIRCLED,
+  CopyBtn,
   subjectTag,
   TIME_LIMIT_MIN,
   byKey,
@@ -111,6 +112,8 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
             </button>
           ))}
         </div>
+
+        <CopyBtn q={q} />
 
         <div className="row">
           <button className="btn weak" onClick={() => toggleMark(q.key)}>

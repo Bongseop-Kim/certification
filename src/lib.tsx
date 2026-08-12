@@ -219,6 +219,27 @@ export function renderBody(text: string): ReactNode[] {
   )
 }
 
+/** 문제 원문 그대로. 백틱은 남겨둔다 — 붙여넣는 쪽(에디터·AI)이 코드로 읽는다 */
+export function qText(q: Question) {
+  return [q.body, q.stimulus, ...(q.choices ?? []).map((c, i) => `${CIRCLED[i]} ${c}`)].filter(Boolean).join('\n')
+}
+
+export function CopyBtn({ q }: { q: Question }) {
+  const [done, setDone] = useState(false)
+  return (
+    <button
+      className="copy"
+      onClick={() => {
+        void navigator.clipboard.writeText(qText(q))
+        setDone(true)
+        setTimeout(() => setDone(false), 1500)
+      }}
+    >
+      {done ? '복사됨' : '문제 복사'}
+    </button>
+  )
+}
+
 /** SUBJECTS 순서가 곧 시험 과목 번호다 */
 export const subjectTag = (id: Subject) => {
   const i = SUBJECTS.findIndex((s) => s.id === id)
