@@ -1,14 +1,6 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { byKey, dayLabel, pct, renderBody, wrongKeys, type Stat } from './lib.tsx'
-
-type Props = {
-  stats: Map<string, Stat>
-  marks: Set<string>
-  toggleMark: (key: string) => void
-  onSolve: (keys: string[]) => void
-  onExit: () => void
-}
+import { SUBJECTS, byKey, dayLabel, pct, renderBody, wrongKeys, type Stat } from './lib.tsx'
 
 const TABS = [
   { id: 'weak', label: '약한 문제', hint: '정답률 낮은 순' },
@@ -16,9 +8,21 @@ const TABS = [
   { id: 'mark', label: '북마크', hint: '이 기기에 저장' },
 ] as const
 
+export type HistTab = (typeof TABS)[number]['id']
+
+type Props = {
+  stats: Map<string, Stat>
+  marks: Set<string>
+  toggleMark: (key: string) => void
+  onSolve: (keys: string[]) => void
+  onExit: () => void
+  // 문제 상세에 다녀와도 보던 탭 그대로 돌아오도록 App이 들고 있는다
+  tab: HistTab
+  setTab: (t: HistTab) => void
+}
+
 // 세 탭 모두 같은 목록에 필터만 다르다. 오답노트·복습·즐겨찾기를 화면 하나로 덮는다.
-export function History({ stats, marks, toggleMark, onSolve, onExit }: Props) {
-  const [tab, setTab] = useState<(typeof TABS)[number]['id']>('weak')
+export function History({ stats, marks, toggleMark, onSolve, onExit, tab, setTab }: Props) {
   const [open, setOpen] = useState<string>()
 
   const keys =
@@ -57,11 +61,16 @@ export function History({ stats, marks, toggleMark, onSolve, onExit }: Props) {
               const cls = p === null ? 'rate' : p < 40 ? 'rate bad' : p < 80 ? 'rate mid' : 'rate good'
               return (
                 <div key={k}>
-                  <button className="hitem" onClick={() => setOpen(open === k ? undefined : k)}>
+                  {/* ponytail: OX는 연습형 상세 화면이 없어서 그 행만 기존 펼치기 유지 */}
+                  <button
+                    className="hitem"
+                    onClick={() => (q.type === 'mc' ? onSolve([k]) : setOpen(open === k ? undefined : k))}
+                  >
                     <span className={cls}>{p === null ? '—' : `${p}%`}</span>
                     <span className="hb">
                       <span className="hq">{renderBody(q.body)}</span>
                       <span className="hm">
+                        {SUBJECTS.find((x) => x.id === q.subject)?.short} ·{' '}
                         {s
                           ? `${s.tries}회 시도 · 마지막 ${dayLabel(s.last)}${s.notes.length ? ` · 메모 ${s.notes.length}개` : ''}`
                           : '아직 안 푼 문제'}

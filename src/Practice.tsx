@@ -149,6 +149,15 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
           })}
         </div>
 
+        {graded && !!s?.notes.length && (
+          <div className="callout">
+            <span className="cot">지난 메모</span>
+            {s.notes.map((n, i) => (
+              <p key={i}>“{n}”</p>
+            ))}
+          </div>
+        )}
+
         {graded && q.note && (
           <div className="callout">
             <span className="cot">원본 정오표</span>

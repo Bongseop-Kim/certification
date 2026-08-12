@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Exam } from './Exam.tsx'
-import { History } from './History.tsx'
+import { History, type HistTab } from './History.tsx'
 import { Nav } from './Nav.tsx'
 import { Ox } from './Ox.tsx'
 import { Practice } from './Practice.tsx'
@@ -29,7 +29,7 @@ import {
 
 type View =
   | { s: 'home' }
-  | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[] }
+  | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[]; fromHistory?: boolean }
   | { s: 'setup'; mode: 'mock_short' | 'ox' }
   | { s: 'exam'; mode: 'mock100' | 'mock_short'; saved: Saved }
   | { s: 'ox'; keys: string[] }
@@ -50,6 +50,7 @@ export default function App() {
   const { attempts, record, addNote, error, loading } = useAttempts()
   const { marks, toggle } = useBookmarks()
   const [view, setView] = useState<View>({ s: 'home' })
+  const [histTab, setHistTab] = useState<HistTab>('weak')
   const home = () => setView({ s: 'home' })
   const stats = statsByKey(attempts)
 
@@ -65,7 +66,7 @@ export default function App() {
             addNote={addNote}
             marks={marks}
             toggleMark={toggle}
-            onExit={home}
+            onExit={view.fromHistory ? () => setView({ s: 'history' }) : home}
           />
         )
       case 'setup':
@@ -123,10 +124,12 @@ export default function App() {
         return (
           <History
             stats={stats}
+            tab={histTab}
+            setTab={setHistTab}
             marks={marks}
             toggleMark={toggle}
             onExit={home}
-            onSolve={(keys) => setView({ s: 'practice', mode: 'review', keys })}
+            onSolve={(keys) => setView({ s: 'practice', mode: 'review', keys, fromHistory: true })}
           />
         )
       default:
