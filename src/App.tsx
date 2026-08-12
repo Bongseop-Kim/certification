@@ -9,6 +9,7 @@ import { Setup } from './Setup.tsx'
 import {
   MC,
   OX,
+  byKey,
   PER_SUBJECT,
   QUESTIONS,
   SUBJECTS,
@@ -129,7 +130,7 @@ export default function App() {
           />
         )
       default:
-        return <Home stats={stats} loading={loading} error={error} setView={setView} />
+        return <Home stats={stats} marks={marks} loading={loading} error={error} setView={setView} />
     }
   }
 
@@ -138,17 +139,20 @@ export default function App() {
 
 function Home({
   stats,
+  marks,
   loading,
   error,
   setView,
 }: {
   stats: ReturnType<typeof statsByKey>
+  marks: Set<string>
   loading: boolean
   error?: string
   setView: (v: View) => void
 }) {
   const rates = subjectRates(stats)
   const wrong = wrongKeys(stats)
+  const marked = [...marks].filter((k) => byKey.has(k))
   const resume = loadMock()
 
   const startMock100 = () => {
@@ -214,6 +218,18 @@ function Home({
           <div>
             <div className="bt">틀린 문제 {wrong.length}개</div>
             <div className="bd">최근 오답부터 모아 풀기</div>
+          </div>
+          <span className="go">모아 풀기 →</span>
+        </button>
+
+        <button
+          className="banner plain"
+          disabled={!marked.length}
+          onClick={() => setView({ s: 'practice', mode: 'review', keys: marked })}
+        >
+          <div>
+            <div className="bt">★ 즐겨찾기 {marked.length}개</div>
+            <div className="bd">별표한 문제만 모아 풀기</div>
           </div>
           <span className="go">모아 풀기 →</span>
         </button>
