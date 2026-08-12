@@ -3,7 +3,7 @@ import { Nav } from './Nav.tsx'
 import {
   CIRCLED,
   MC,
-  SUBJECTS,
+  subjectTag,
   byKey,
   pct,
   renderBody,
@@ -96,13 +96,12 @@ export function Practice({ mode, keys, stats, record, addNote, marks, toggleMark
   }
 
   const s = stat.get(q.key)
-  const subject = SUBJECTS.find((x) => x.id === q.subject)
 
   return (
     <>
       <Nav
         title={mode === 'review' ? '오답 모아 풀기' : '연습형'}
-        meta={`${subject?.short} · ${idx + 1}${mode === 'review' ? `/${queue.length}` : ''}`}
+        meta={`${subjectTag(q.subject)} · ${idx + 1}${mode === 'review' ? `/${queue.length}` : ''}`}
         onBack={onExit}
       />
       <div className="screen">

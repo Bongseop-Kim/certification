@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { SUBJECTS, byKey, dayLabel, pct, renderBody, wrongKeys, type Stat } from './lib.tsx'
+import { byKey, dayLabel, pct, renderBody, subjectTag, wrongKeys, type Stat } from './lib.tsx'
 
 const TABS = [
   { id: 'weak', label: '약한 문제', hint: '정답률 낮은 순' },
@@ -70,7 +70,7 @@ export function History({ stats, marks, toggleMark, onSolve, onExit, tab, setTab
                     <span className="hb">
                       <span className="hq">{renderBody(q.body)}</span>
                       <span className="hm">
-                        {SUBJECTS.find((x) => x.id === q.subject)?.short} ·{' '}
+                        {subjectTag(q.subject)} ·{' '}
                         {s
                           ? `${s.tries}회 시도 · 마지막 ${dayLabel(s.last)}${s.notes.length ? ` · 메모 ${s.notes.length}개` : ''}`
                           : '아직 안 푼 문제'}

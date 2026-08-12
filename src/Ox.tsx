@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { SUBJECTS, byKey, renderBody, type Attempt } from './lib.tsx'
+import { byKey, renderBody, subjectTag, type Attempt } from './lib.tsx'
 
 type Props = {
   keys: string[]
@@ -52,11 +52,10 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
 
   if (!q) return null
   const streak = history.length - 1 - history.lastIndexOf(false)
-  const subject = SUBJECTS.find((s) => s.id === q.subject)
 
   return (
     <>
-      <Nav title="OX 특강" meta={`${subject?.short} · ${idx + 1}/${questions.length}`} onBack={onExit} />
+      <Nav title="OX 특강" meta={`${subjectTag(q.subject)} · ${idx + 1}/${questions.length}`} onBack={onExit} />
       <div className="screen">
         <div className="streak">
           <span>연속 {streak}개</span>

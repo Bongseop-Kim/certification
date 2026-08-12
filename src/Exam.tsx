@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Nav } from './Nav.tsx'
 import {
   CIRCLED,
-  SUBJECTS,
+  subjectTag,
   TIME_LIMIT_MIN,
   byKey,
   hms,
@@ -67,13 +67,12 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
   }
 
   if (!q) return null
-  const subject = SUBJECTS.find((s) => s.id === q.subject)
 
   return (
     <>
       <Nav
         title={mode === 'mock100' ? '모의고사' : '간단 모의'}
-        meta={`${subject?.short} · ${idx + 1}`}
+        meta={`${subjectTag(q.subject)} · ${idx + 1}`}
         onBack={exit}
       />
       <div className="screen">

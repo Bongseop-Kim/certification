@@ -219,6 +219,12 @@ export function renderBody(text: string): ReactNode[] {
   )
 }
 
+/** SUBJECTS 순서가 곧 시험 과목 번호다 */
+export const subjectTag = (id: Subject) => {
+  const i = SUBJECTS.findIndex((s) => s.id === id)
+  return `${i + 1}과목 ${SUBJECTS[i].short}`
+}
+
 export const pct = (correct: number, tries: number) => (tries ? Math.round((correct / tries) * 100) : 0)
 
 export function hms(ms: number) {
