@@ -166,15 +166,6 @@ function Home({
     <>
       <Nav title="보안기사 문제집" meta={`문제 ${QUESTIONS.length}개`} />
       <div className="screen">
-        <div className="seg" role="tablist">
-          <button role="tab" aria-selected="true">
-            필기
-          </button>
-          <button role="tab" aria-selected="false" disabled>
-            실기 · 준비중
-          </button>
-        </div>
-
         {error && <div className="verdict">기록 서버 오류 — {error}</div>}
 
         {resume && (
@@ -217,9 +208,9 @@ function Home({
         >
           <div>
             <div className="bt">틀린 문제 {wrong.length}개</div>
-            <div className="bd">최근 오답부터 모아 풀기</div>
+            <div className="bd">{wrong.length ? '최근 오답부터 모아 풀기' : '틀린 문제는 여기 모입니다'}</div>
           </div>
-          <span className="go">모아 풀기 →</span>
+          {wrong.length > 0 && <span className="go">모아 풀기 →</span>}
         </button>
 
         <button
@@ -229,10 +220,11 @@ function Home({
         >
           <div>
             <div className="bt">★ 즐겨찾기 {marked.length}개</div>
-            <div className="bd">별표한 문제만 모아 풀기</div>
+            <div className="bd">{marked.length ? '별표한 문제만 모아 풀기' : '문제를 풀다 ★를 누르면 여기 모입니다'}</div>
           </div>
-          <span className="go">모아 풀기 →</span>
+          {marked.length > 0 && <span className="go">모아 풀기 →</span>}
         </button>
+
 
         <div>
           <div className="label" style={{ marginBottom: 10 }}>
@@ -244,13 +236,24 @@ function Home({
               const p = pct(r.correct, r.tries)
               const low = r.tries > 0 && p < 40
               return (
-                <div className="bar" key={s.id}>
+                <button
+                  className="bar"
+                  key={s.id}
+                  title={`${s.label} 문제 풀기`}
+                  onClick={() =>
+                    setView({
+                      s: 'practice',
+                      mode: 'practice',
+                      keys: MC.filter((q) => q.subject === s.id).map((q) => q.key),
+                    })
+                  }
+                >
                   <span className="bn">{s.short}</span>
                   <span className="track">
                     <span className={low ? 'fill low' : 'fill'} style={{ width: `${p}%` }} />
                   </span>
                   <span className={low ? 'bv bad' : 'bv'}>{r.tries ? `${p}%` : '—'}</span>
-                </div>
+                </button>
               )
             })}
           </div>
