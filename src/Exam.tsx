@@ -93,7 +93,11 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
           </div>
         </div>
 
-        {q.variantOf && <span className="qvariant">변형 문제</span>}
+        {q.variantOf && (
+          <div className="qchips">
+            <span className="qchip variant">변형 문제</span>
+          </div>
+        )}
         <p className="qbody">{renderBody(q.body)}</p>
         {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
         {/* ponytail: 정오표(note)는 문제 푸는 중엔 안 보여준다 — "2번을 누르면 정답"이 답을 불어버린다.

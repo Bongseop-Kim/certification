@@ -138,15 +138,13 @@ code, .k {
 .bar .bv { font-family: var(--mono); font-size: 11.5px; text-align: right; font-variant-numeric: tabular-nums; }
 .bar .bv.bad { color: var(--fail); font-weight: 700; }
 
-.qbadge {
-  display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+.qchips { display: flex; flex-wrap: wrap; gap: 6px; align-self: flex-start; }
+.qchip {
+  display: inline-flex; align-items: center;
   font-family: var(--mono); font-size: 11px; color: var(--ink-muted);
   background: var(--surface-2); border: 1px solid var(--line-soft); border-radius: 20px; padding: 3px 9px;
 }
-.qvariant {
-  align-self: flex-start; padding: 2px 7px; border: 1px solid var(--accent); border-radius: 20px;
-  background: var(--accent-soft); color: var(--accent); font-family: var(--mono); font-size: 10px; font-weight: 700;
-}
+.qchip.variant { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .qbody { font-size: 15.5px; line-height: 1.6; font-weight: 500; margin: 0; }
 .stimulus {
   border: 1px solid var(--line-soft); background: var(--surface-2); border-radius: 8px;

@@ -129,7 +129,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
         onBack={onExit}
       />
       <div className="screen">
-        {graded ? (
+        {graded && (
           <div className={ok ? 'verdict ok' : 'verdict'}>
             <span className="vt">{ok ? '정답' : chosen === null ? '포기' : '오답'}</span>
             <span className="vd">
@@ -137,13 +137,17 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
               {!ok && chosen !== null && ` · 내 답 ${CIRCLED[chosen]}`}
             </span>
           </div>
-        ) : (
-          <span className="qbadge">
-            {s ? `${s.tries}회 풀어 ${s.correct}회 정답 · ${pct(s.correct, s.tries)}%` : '처음 푸는 문제'}
-          </span>
         )}
-
-        {q.variantOf && <span className="qvariant">변형 문제</span>}
+        {(!graded || q.variantOf) && (
+          <div className="qchips">
+            {!graded && (
+              <span className="qchip">
+                {s ? `${s.tries}회 풀어 ${s.correct}회 정답 · ${pct(s.correct, s.tries)}%` : '처음 푸는 문제'}
+              </span>
+            )}
+            {q.variantOf && <span className="qchip variant">변형 문제</span>}
+          </div>
+        )}
         <p className="qbody">{renderBody(q.body)}</p>
         {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
 
