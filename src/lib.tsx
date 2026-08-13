@@ -16,6 +16,7 @@ export type Question = {
   answer: string // mc는 0부터 세는 보기 인덱스, ox는 'O' | 'X'
   note: string | null // 원본 정오표
   source: string
+  variantOf?: string // 변형 문제일 때 원본 문제 key
 }
 
 export const SUBJECTS: { id: Subject; label: string; short: string }[] = [

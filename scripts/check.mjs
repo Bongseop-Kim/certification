@@ -6,6 +6,7 @@ import { readdirSync, readFileSync } from 'node:fs'
 const DIR = new URL('../questions/written/', import.meta.url)
 const SUBJECTS = ['system', 'network', 'app', 'general', 'law']
 const seen = new Set()
+const variants = []
 let total = 0
 
 for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
@@ -15,6 +16,7 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
     const at = `${file} ${q.key}`
     assert(q.key && !seen.has(q.key), `${at}: key가 없거나 중복`)
     seen.add(q.key)
+    if (q.variantOf) variants.push([at, q.variantOf])
     assert(SUBJECTS.includes(q.subject), `${at}: subject가 ${q.subject}`)
     assert(q.body?.trim(), `${at}: body 없음`)
     if (q.type === 'mc') {
@@ -37,4 +39,5 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
   total += qs.length
   console.log(`ok ${file} — ${qs.length}문항`)
 }
+for (const [at, original] of variants) assert(seen.has(original), `${at}: 원본 ${original} 없음`)
 console.log(`총 ${total}문항 이상 없음`)

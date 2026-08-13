@@ -143,6 +143,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
           </span>
         )}
 
+        {q.variantOf && <span className="qvariant">변형 문제</span>}
         <p className="qbody">{renderBody(q.body)}</p>
         {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
 
