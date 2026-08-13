@@ -1,0 +1,1517 @@
+[
+  {
+    "key": "2025-1#1",
+    "no": 1,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 사이버킬체인(Cyber Kill Chain)의 단계 중 빈칸 ㉠, ㉡에 들어갈 단계로 옳은 것은?",
+    "stimulus": "① ( ㉠ )\n② 무기화(Weaponization)\n③ 전달(Delivery)\n④ ( ㉡ )\n⑤ 설치(Installation)\n⑥ 명령&제어(Command & Control)\n⑦ 행동개시(Actions on Objectives)",
+    "choices": [
+      "㉠ : 정찰(Reconnaissance) ㉡ : 악용(Exploitation)",
+      "㉠ : 취약점(Vulnerability) ㉡ : 정찰(Reconnaissance)",
+      "㉠ : 악용(Exploitation) ㉡ : 정찰(Reconnaissance)",
+      "㉠ : 정찰(Reconnaissance) ㉡ : 취약점(Vulnerability)"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#2",
+    "no": 2,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 침입탐지 시스템은?",
+    "stimulus": "이것은 1998년 발표된 오픈소스 기반의 침입탐지 시스템으로 단일 스레드 방식으로 동작하며, 이 시스템의 패턴매칭 방법은 바이너리 비교 방법과 텍스트 비교 방법이 있으며, 텍스트 비교 방법은 바이너리 비교 방법에 비해 속도가 느리지만 유연한 패턴매칭을 제공한다.",
+    "choices": ["nmap", "snort", "suricata", "TCP wrapper"],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#3",
+    "no": 3,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 APT(Advanced Persistent Threat) 공격의 특징이 아닌 것은?",
+    "stimulus": null,
+    "choices": [
+      "확실한 공격동기",
+      "불특정 다수에 대한 공격",
+      "맞춤형 공격",
+      "지속적이고 천천히 진행하는 공격"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#4",
+    "no": 4,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 공유기에 대한 설명 중 괄호 안에 알맞은 암호화 알고리즘은?",
+    "stimulus": "공유기 펌웨어 업데이트 시 파일 고유 해시값을 비교하여 변조 여부에 대한 무결성 검증을 실시할 수 있도록 한다. 무결성 인증 시 ( ) 이상의 암호화 알고리즘을 사용하도록 한다.",
+    "choices": ["Base64", "MD5", "SHA-256", "SHA-128"],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#5",
+    "no": 5,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음의 괄호 안에 들어갈 내용이 아닌 것은?",
+    "stimulus": "SNMP(Simple Network Management Protocol)에서 접근통제(Access Control)를 설정하지 않아 인증되지 않은 내부 서버로부터의 SNMP 트래픽을 차단하지 않으면 ( ), ( ), ( )의 SNMP 공격에 노출될 수 있다.",
+    "choices": ["장치 구성 변경", "라우팅 테이블 조작", "악의적인 TFTP 서버 구동", "버퍼 오버플로우"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#6",
+    "no": 6,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 공격 위협은?",
+    "stimulus": "해당 취약점이 존재하는 경우 부적절하게 권한이 변경되거나 시스템 동작 및 운영에 악영향을 줄 가능성이 있으므로 \"|\", \"&\", \";\" 문자에 대한 필터링 구현이 필요함",
+    "choices": ["XPath 인젝션", "디렉터리 인덱싱", "운영체제 명령 실행", "정보 누출"],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#7",
+    "no": 7,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 윈도우즈 시스템에서 공유된 드라이브(C$)를 제거하는 명령은?",
+    "stimulus": null,
+    "choices": [
+      "netshare -delete c$",
+      "netshare /delete c$",
+      "net share c$ /delete",
+      "net -delete c$ share"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#8",
+    "no": 8,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 리눅스 시스템의 패스워드 관련 파일의 권한 및 소유주 설정으로 맞는 것은?",
+    "stimulus": null,
+    "choices": [
+      "-rw-r--r-- 1 root shadow 2845 Apr 24 2021 /etc/shadow",
+      "-rw-r--r-- 1 sys sys 2465 Apr 24 2021 /etc/passwd",
+      "-rw-r----- 1 sys shadow 2845 Apr 24 2021 /etc/shadow",
+      "-rw-r--r-- 1 root root 2465 Apr 24 2021 /etc/passwd"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#9",
+    "no": 9,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 DEP(Data Execution Prevention)를 적용하여 대응하고자 하는 공격 기법으로 옳은 것은?",
+    "stimulus": null,
+    "choices": ["XSS 공격", "Heap Spray 공격", "SQL 인젝션 공격", "CSRF 공격"],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#10",
+    "no": 10,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 Linux 시스템의 접근통제 기능인 TCP Wrapper와 관련 없는 파일은?",
+    "stimulus": null,
+    "choices": ["/etc/hosts", "/etc/hosts.allow", "/etc/hosts.deny", "/usr/sbin/tcpd"],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#11",
+    "no": 11,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 다른 테이블의 기본키를 참조하는 키는 무엇인가?",
+    "stimulus": null,
+    "choices": ["기본키", "슈퍼키", "후보키", "외래키"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#12",
+    "no": 12,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 네트워크 자산에 연결하려는 모든 사람과 디바이스를 신뢰할 수 없는 것으로 취급하고, 접속하고자 하는 모든 것에 접속 권한을 부여하기 전 선행 확인 과정을 거쳐야 한다는 개념은?",
+    "stimulus": null,
+    "choices": ["제로 트러스트", "루트킷", "익스플로잇", "제로데이"],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#13",
+    "no": 13,
+    "subject": "system",
+    "type": "mc",
+    "body": "리눅스 시스템의 모든 PAM(Pluggable Authentication Modules) 모듈은 호출될 때 성공 또는 실패 결과를 생성한다. PAM control-flag는 모듈의 성공 또는 실패 결과에 따라 어떻게 PAM-API가 동작할지를 나타내는데, control-flag에서 사용하는 제어 플래그로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": ["sufficient", "requisite", "required", "session"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#14",
+    "no": 14,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 내용으로 리눅스 시스템 상에서 확인하고자 하는 것은?",
+    "stimulus": "# ls -al /bin/su\n-rwsr-x--x. 1 root user 34188 Nov 22 07:31 /bin/su",
+    "choices": [
+      "su 파일에 접근했던 기록을 보는 것이다.",
+      "su 파일에 일반 사용자의 접근권한이 제거되어 있는지 확인하는 것이다.",
+      "su 파일로 사용자의 접근권한을 수정하려는 것을 확인하는 것이다.",
+      "su 명령으로 ls 명령을 실행한 히스토리를 보고자 하는 것이다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#15",
+    "no": 15,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 리눅스 시스템의 기본 방화벽인 iptables에서 현재 정책을 파일로 저장하기 위한 명령은?",
+    "stimulus": null,
+    "choices": [
+      "iptables-restore > iptables.conf",
+      "iptables-save > iptables.conf",
+      "iptables-config > iptables.conf",
+      "iptables-store > iptables.conf"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#16",
+    "no": 16,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 홈가전 사물인터넷(IoT) 위협 및 보안에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "홈가전, 네트워크 카메라 등의 네트워크 제품에 대한 주요 보안 위협에는 사진 및 동영상을 공격자의 서버 및 이메일로 전송하는 것이 있다. 이에 대한 원인으로는 접근 통제 및 전송 암호화 등의 부재가 있다.",
+      "홈가전 IoT 제품의 보안 요구사항에는 시큐어 코딩, 알려진 보안위협 및 취약점 제거, 최신 제3자(3rd party) 소프트웨어 사용 등이 있다.",
+      "시큐어 코딩이 적용되지 않은 스마트 홈가전 제품의 경우 입력 데이터 검증 및 표현, 보안 기능, 시간 및 상태, 에러 처리 등에서 보안 취약점이 발생할 수 있다.",
+      "스마트 홈가전 제품에 데이터 기밀성 및 무결성을 위해 안전한 암호인 MD5, SHA-1 등의 사용이 권장된다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#17",
+    "no": 17,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 대표적인 포트 스캐닝 도구는?",
+    "stimulus": null,
+    "choices": ["ping", "snort", "iptables", "nmap"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#18",
+    "no": 18,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 유닉스/리눅스 시스템 로그파일의 이름과 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "wtmp : 사용자들의 로그인, 로그아웃 사용자에 대한 정보를 가지고 있다.",
+      "utmp : 시스템에 현재 로그인한 사용자들에 대한 정보를 가지고 있다.",
+      "btmp : 사용자별로 가장 마지막에 로그인한 시간과 접속 주소 등에 대한 정보를 가지고 있다.",
+      "pacct : 사용자가 로그인한 후부터 로그아웃 때까지 입력한 명령, 시간 등에 대한 정보를 가지고 있다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#19",
+    "no": 19,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 중 동적 메모리 할당 연결(malloc) 상위 수준 데이터를 조작하여 프로그램 함수 포인터를 변경하는 공격은 무엇인가?",
+    "stimulus": null,
+    "choices": ["루트킷", "스택 버퍼 오버플로우", "힙 버퍼 오버플로우", "포맷 스트링"],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#20",
+    "no": 20,
+    "subject": "system",
+    "type": "mc",
+    "body": "다음 교착상태 해결 방안 중 교착상태 발견 후 환형대기를 배제시키거나 자원을 중단하는 메모리 할당 기법은?",
+    "stimulus": null,
+    "choices": ["교착상태 회피", "교착상태 예방", "교착상태 복구", "교착상태 탐지"],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#21",
+    "no": 21,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 AH(Authentication Header) 프로토콜에 대한 설명이 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "무결성을 지원한다.",
+      "기밀성을 지원한다.",
+      "재전송 방지를 지원한다.",
+      "데이터 발신지 인증을 지원한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#22",
+    "no": 22,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 침입탐지 시스템의 기능으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": ["침입자 회피", "데이터 필터링과 압축", "데이터 수집", "데이터 분석과 대응"],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#23",
+    "no": 23,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 DDoS 긴급 대응 절차의 순서로 옳은 것은?",
+    "stimulus": "가. 차단 조치\n나. 초동 조치\n다. 공격 탐지\n라. 상세 분석\n마. 모니터링",
+    "choices": ["마-다-나-가-라", "다-마-나-가-라", "다-마-나-라-가", "마-다-나-라-가"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#24",
+    "no": 24,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 스니핑 공격기법으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": ["SPAN 포트 태핑", "스위치 재밍", "ICMP 리다이렉트", "S/MIME 이용"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#25",
+    "no": 25,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 네트워크 기반의 프로그램에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "Netstat - 자신의 컴퓨터 네트워크 상태를 다양하게 보여주는 명령어로써 연결 상태, 라우팅 테이블, 패킷 통계, 프로토콜별 통계 등의 정보를 활용할 수 있는 명령어이다.",
+      "Ipconfig - UDP 패킷을 이용해 IP 패킷의 진행경로를 추적한다. 그리고 그 패킷이 지나가는 router의 IP 주소나 이름을 출력한다.",
+      "Ping - 상대방 컴퓨터, 네트워크 장비, 서버 장비까지 통신이 잘되는지를 확인하는 명령어이다.",
+      "Traceroute - 목적지까지의 데이터 도달여부를 확인하는 도구이다. 네트워크와 라우팅의 문제점을 찾아내는 목적으로 많이 사용된다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#26",
+    "no": 26,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 내용은 스니핑 방지대책으로 활용되는 암호화와 관련된 내용이다. 괄호 안에 들어갈 것은?",
+    "stimulus": "웹 환경에서 스니핑을 당하지 않는 가장 효과적인 방법은 ( )와 같이 암호화된 웹 서비스를 이용하는 것이다. ( )는 SSL을 활용하여 데이터를 암호화 하여 데이터를 스니핑 하더라도 내용을 알 수 없게 하는 방법이다.",
+    "choices": ["S/MIME", "SSH", "PGP", "HTTPS"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#27",
+    "no": 27,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 사용자마다 계정 및 패스워드를 설정하고 원격에서 텔넷을 이용하여 라우터에 접속할 때, 계정 및 패스워드를 이용하여 로그인할 수 있도록 설정한 것은?",
+    "stimulus": null,
+    "choices": [
+      "Router#username XXXX password XXXX\nRouter(config)#line vty 0 4\nRouter(config-line)#login local",
+      "Router(config)#username XXXX\nRouter(config)#password XXXX\nRouter(config)#line vty 0 4\nRouter(config-line)#login local",
+      "Router(config)#username XXXX password XXXX\nRouter(config)#line vty 0 4\nRouter(config-line)#login local",
+      "Router(config)#line vty 0\nRouter(config-if)#username XXXX password XXXX\nRouter(config-line)#login local"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#28",
+    "no": 28,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 내용에서 괄호에 들어갈 것은?",
+    "stimulus": "DNS 스푸핑은 공격 대상이 의도하지 않은 주소로 접속하게 하는 기법으로 DNS 리졸버와 DNS 서버 사이의 빠른 통신 방식 제공을 위해 ( ) 통신과 인증이 없는 취약점을 이용한다.",
+    "choices": ["IP", "TCP", "UDP", "ICMP"],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#29",
+    "no": 29,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 VoIP에서 사용자 에이전트 간의 세션을 설정, 변경 및 연결 해제하는 프로토콜은?",
+    "stimulus": null,
+    "choices": ["RTP", "RTCP", "SIP", "SDP"],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#30",
+    "no": 30,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 방화벽 기술은?",
+    "stimulus": "라우터나 게이트웨이로 구현된 방화벽의 발전된 형태로서 패킷단위가 아닌 세션단위로 처리를 한다. 이 기술을 사용한 방화벽은 연결을 맺은 후 종료할 때까지 연결테이블에 저장된 세션 정보를 바탕으로 침입여부를 판단할 수 있다.",
+    "choices": ["Access Control List", "Application Proxy", "Deep Packet Inspection", "Stateful Inspection"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#31",
+    "no": 31,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 SNMP(Simple Network Management Protocol)에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "관리 시스템을 Manager, 관리 대상을 Agent로 분류한다.",
+      "TCP 프로토콜을 사용한다.",
+      "OSI 7계층 중 애플리케이션 계층 프로토콜이다.",
+      "네트워크상의 호스트 정보를 자동으로 수집한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#32",
+    "no": 32,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 다수의 서버와 PC를 이용해 비정상적인 트래픽을 유발시켜서 대상 시스템을 마비시키는 공격은?",
+    "stimulus": null,
+    "choices": ["APT", "Null 스캔", "DDoS", "스니핑"],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#33",
+    "no": 33,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 IP 주소를 클래스 별로 분류할 때 사용하는 시작 주소값과 해당 클래스에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "클래스 A - 시작하는 주소값이 '0'으로 멀티캐스트용으로 사용한다.",
+      "클래스 C - 시작하는 주소값이 '110'으로 호스트 식별자는 8비트만을 사용한다.",
+      "클래스 D - 시작하는 주소값이 '1110'으로 가장 넓은 범위의 주소를 갖는다.",
+      "클래스 B - 시작하는 주소값이 '10'으로 191.0.0.0 ~ 191.255.255.255 범위의 주소를 사용할 수 있다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#34",
+    "no": 34,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 전자메일의 보안을 위해 사용되는 암호화 및 인증 프로토콜은?",
+    "stimulus": null,
+    "choices": [
+      "SSH(Secure Shell)",
+      "SSL/TLS(Secure Sockets Layer / Transport Layer Security)",
+      "IPSec(Internet Protocol Security)",
+      "PGP(Pretty Good Privacy)"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#35",
+    "no": 35,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음의 무선 LAN에 대한 설명 중 옳은 것은?",
+    "stimulus": "가. IEEE 802.11은 무선 LAN의 기본 블록으로써 기본 서비스 세트(BSS, basic service set)를 정의하고 있다.\n나. AP가 없는 BSS는 애드 혹(ad hoc) 네트워크라 부르고 AP를 가진 BSS는 기반구조 네트워크라 부른다.\n다. 확장 서비스 세트(ESS, Extended Service Set)는 AP를 가진 1개 이상의 BSS로 구성된다.\n라. MAC 부계층인 분산 조정 함수(DCF, Distributed Coordination Function)에서 사용되는 매체 접속 방식은 CSMA/CD이다.",
+    "choices": ["나, 다", "가, 나, 다", "나, 다, 라", "가, 나"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#36",
+    "no": 36,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 웹 사이트 스푸핑(URL 스푸핑) 공격에 대한 대응 방안으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "네트워크 트래픽 모니터링",
+      "웹사이트 주소가 https://로 시작하는지 확인",
+      "잘못된 Domain 주소 식별 등 타이포스쿼팅(Typosquatting) 주의",
+      "로그인 자격증명에 패스워드 관리자(Password Managers) 도구를 사용"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#37",
+    "no": 37,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 포트스캔에 대한 대응 방안으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "불필요한 서비스는 종료한다.",
+      "불필요한 패킷을 차단하도록 방화벽을 설정한다.",
+      "침입탐지 시스템(IDS)을 사용해 포트 스캔을 탐지한다.",
+      "시스템에 rootkit을 설치하여 포트스캔 이력에 대해 확인한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#38",
+    "no": 38,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 침입차단시스템을 설계할 때 수립하는 목표로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "여러 개의 경로를 설치하여 외부 사용자가 올바른 접근 경로 선택이 어렵도록 설계한다.",
+      "모든 트래픽은 반드시 침입차단시스템을 통과하도록 설계한다.",
+      "지역보안정책에 의해 정의된 트래픽만 통과할 수 있게 설계한다.",
+      "안전한 운영체제를 갖춘 신뢰시스템에 침입차단시스템을 설치하도록 설계한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#39",
+    "no": 39,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 내용에서 탐지할 조건에 해당하는 항목은?",
+    "stimulus": "alert tcp any any -> 1.1.1.1 80 (msg:\"Example\"; content:\"example\"; sid:100002; rev:1;)",
+    "choices": ["1.1.1.1 80", "tcp", "alert", "content: \"example\""],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#40",
+    "no": 40,
+    "subject": "network",
+    "type": "mc",
+    "body": "다음 중 NAC(Network Access Control)에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "RADIUS나 Kerberos같은 인증서버는 NAC의 주요한 구성 요소이다.",
+      "오염된 기기들이 내부망에 접근을 못하게 하여 내부망을 안전하게 지키는 역할을 수행한다.",
+      "라우터 관리자와 피해 시스템 간의 공격패킷에서 공통적인 특성을 갖는 패킷들을 분별하는 기능을 제공한다.",
+      "연결되어 있는 기기들의 보안이 보안 정책에 맞는지 계속 확인하여 혹시나 발생할 수 있는 위험에 대비한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#41",
+    "no": 41,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 공격은?",
+    "stimulus": "· Blind SQL Injection의 유형 중 하나\n· 대입값에 대한 참/거짓 결과를 응답 전송시간에 따라 판별\n· sleep(), benchmark() 함수 등을 사용",
+    "choices": [
+      "Time based Blind SQL Injection",
+      "Blooean based Blind SQL Injection",
+      "Union based Blind SQL Injection",
+      "Mass Blind SQL Injection"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#42",
+    "no": 42,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 중 이메일 시스템에서 호스트로부터 전달된 메일을 사용자의 메일함으로 저장하는 역할을 하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "SMTP(Simple Mail Transfer Protocol)",
+      "MTA(Mail Transfer Agent)",
+      "MUA(Mail User Agent)",
+      "MDA(Mail Delivery Agent)"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#43",
+    "no": 43,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 설명에서 괄호에 들어갈 내용으로 옳은 것은?",
+    "stimulus": "웹 세션 동작 메커니즘 중 클라이언트가 세션 토큰을 포함하지 않은 HTTP 요청 메시지를 전송했을 때, 서버는 클라이언트로 응답 메시지를 보내는 경우 헤더에 ( ) 값을 설정하면 클라이언트에 쿠키를 만들 수 있다.",
+    "choices": ["Cookie", "Set-Cookie", "Session", "Keep-alive"],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#44",
+    "no": 44,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용의 취약점과 관련된 웹 서비스 공격 유형은?",
+    "stimulus": "Index of /\n\nName                Last modified       Size  Description\nadd_vhost.php       2018-08-16 10:39     22K\nfavicon.ico         2010-12-31 08:40    198K\nindex.php           2018-09-08 18:55     32K\ntest_sockets.php    2015-09-21 18:30     742\ntestmysql.php       2016-12-13 13:50     763\nwamplangues/        2018-10-23 11:44       -\nwampthemes/         2018-07-27 14:59       -",
+    "choices": ["SSRF", "XSS", "SQL Injection", "Directory listing"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#45",
+    "no": 45,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 중 DNS(Domain Name System) 공격 유형은?",
+    "stimulus": null,
+    "choices": ["Slowloris Attack", "RUDY Attack", "Slow read Attack", "DNS Query Flooding"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#46",
+    "no": 46,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용과 같은 보안대책을 적용할 수 있는 설계 항목은?",
+    "stimulus": "<error-page>\n  <error-code>500</error-code>\n  <location>/WEB-INF/jsp/common/error/500error.jsp</location>\n</error-page>",
+    "choices": ["중요자원 접근 통제", "세션통제", "DBMS 조회 및 결과 검증", "예외처리"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#47",
+    "no": 47,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용은 취약한 JAVA코드 일부이다. 이에 대한 설명으로 옳은 것은?",
+    "stimulus": "...(생략)...\nString date = request.getParameter(\"date\");\nString command = new String(\"cmd.exe /c backuplog.bat\");\nRuntime.getRuntime().exec(command + date);\n...(생략)...",
+    "choices": [
+      "문자열을 사용할 때 포맷 문자열이 적절히 사용되었는지 검사한다.",
+      "배열을 사용할 때에는 배열의 크기를 확인하고 크기를 넘어가는 접근이 일어나지 않도록 한다.",
+      "의도하지 않은 운영체제 명령어가 실행되지 않도록 입력 값 검증을 수행한다.",
+      "허용된 형식의 파일만 업로드 할 수 있도록 확장자를 검사한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#48",
+    "no": 48,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 중 인터넷 뱅킹 시스템 이용 시 클라이언트 보안 위협요소와 관련 있는 것은?",
+    "stimulus": null,
+    "choices": ["Poor Programming", "Trojan Horse", "Weak Encryption", "UNIX/NT Security Holes"],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#49",
+    "no": 49,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 SQL Injection 공격 유형은?",
+    "stimulus": "데이터베이스에 참 또는 거짓 질의를 하고 애플리케이션 응답에 따라 데이터베이스의 내용을 추측하여 공격하는 방식이다.",
+    "choices": [
+      "Blind based SQL Injection",
+      "Stored Procedure based SQL Injection",
+      "Error based SQL Injection",
+      "Union based SQL Injection"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#50",
+    "no": 50,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 중 전자우편 보안시스템에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "PEM은 전송 계층에서 동작하는 전자우편 보안 도구로서 하위 프로토콜, 운영체제 및 호스트와 독립적으로 동작하나 기존 시스템의 변경 없이 동작할 수 없다.",
+      "PGP는 인터넷에서 사용되는 전자우편 보안 도구로서 전송되는 내용을 암호화하여 전송한다.",
+      "S/MIME는 기존의 전자우편 보안시스템의 단점을 보완하기 위해 개발되었으며 IETF의 작업그룹에서 RSADSI(RSA Data Security Inc.)의 기술을 기반으로 개발되었다.",
+      "S/MIME은 강력한 암호화, 디지털 서명, 사용의 용이성, 상호운영성 등의 장점이 있다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#51",
+    "no": 51,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 기술들은 전자상거래의 안전성을 지원할 목적으로 이용되는 보안 프로토콜이다. 괄호 안에 들어가야 할 적당한 용어는?",
+    "stimulus": "전자상거래의 안전성을 지원할 목적으로 IPSec(Internet Protocol Security)와 SSL(Secure Socket Layer) 및 OTP(One Time Password)등이 사용된다. 이중 IPSec은 (ⓐ) 계층에서, SSL은 (ⓑ) 계층에서, OTP는 (ⓒ) 계층에서 각각 동작된다.",
+    "choices": [
+      "ⓐ : 네트워크  ⓑ : 전송  ⓒ : 응용",
+      "ⓐ : 응용  ⓑ : 응용  ⓒ : 전송",
+      "ⓐ : 네트워크  ⓑ : 응용  ⓒ : 전송",
+      "ⓐ : 응용  ⓑ : 네트워크  ⓒ : 전송"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#52",
+    "no": 52,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 중 익명 FTP 서버를 이용하여 해당 FTP 서버를 경유해서 호스트를 스캔하는 공격 유형 방식은?",
+    "stimulus": null,
+    "choices": [
+      "tFTP(trivial FTP) 공격",
+      "익명 FTP 서비스의 취약점",
+      "FTP 바운스 공격(bounce attack) 취약점",
+      "로그인 시도를 이용한 패스워드 노출(brute forcing) 취약점"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#53",
+    "no": 53,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 중 DNS 데이터 위변조 공격을 방지하기 위한 표준기술인 DNSSEC(Domain Name System Security Extension)의 리소스 레코드(Resource Record)에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "NSEC(Next Secure) : DNS 데이터 존재의 인증을 위해 정의된 리소스 레코드",
+      "RRSIG : 메인 네임 시스템의 각 리소스 레코드 데이터에 대한 전자서명 데이터를 저장하기 위한 리소스 레코드",
+      "DNSKEY : 도메인 존(zone)의 공개키(public key) 데이터를 저장하여 제공하기 위한 리소스 레코드",
+      "DS(Delegation Signer) : DNS 고유의 위임체계에 따라 보안 측면의 인증된 위임체계를 구성하기 위한 데이터를 저장하는 리소스 레코드"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#54",
+    "no": 54,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용에서 괄호 안에 들어갈 용어는?",
+    "stimulus": "· ( )은(는) 사전에 정의한 X.509 인증서 또는 공개키를 사용하여 서버와 호스트를 연결하는 프로세스이며, MITM(Man-in-the-Middle) 공격을 저지하기 위한 수단으로 사용되고 있음\n· Android 플랫폼의 경우, ( )을(를) 설정 및 활성화하려면 <pin-set> 설정을 통해 구성할 수 있음\n· iOS 플랫폼의 경우, ( )을(를) 설정 및 활성화하려면 TrustKit을 사용해 구성할 수 있음",
+    "choices": ["피닝(Pinning)", "세이프티넷(SafetyNet)", "키체인(Keychain)", "딥링크(Deeplink)"],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#55",
+    "no": 55,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 것은?",
+    "stimulus": "무선 디지털 콘텐츠 유통 시장에서 콘텐츠 및 지적 재산권을 보호하고 사용자에게 새로운 구매 서비스를 제공하는 시스템",
+    "choices": ["WPKI", "모바일 OTP", "ebXML", "모바일 DRM"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#56",
+    "no": 56,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용에서 C 소스코드의 취약점은?",
+    "stimulus": "int main(int argc, char *argv[]) {\n    char buffer[10];\n    strcpy(buffer, argv[1]);\n    ...\n}",
+    "choices": [
+      "디렉토리 리스팅(Directory Listing)",
+      "포맷 스트링(Format String)",
+      "SQL 주입(SQL Injection)",
+      "버퍼 오버플로우(Buffer Overflow)"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#57",
+    "no": 57,
+    "subject": "app",
+    "type": "mc",
+    "body": "웹 취약점 중 파일 업로드 취약점에 대한 시큐어 코딩 시 대응 방안으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "업로드 되어 저장되는 파일의 타입, 크기, 개수, 실행권한을 제한해야 한다.",
+      "업로드 되어 저장되는 파일은 외부에서 식별되지 않아야 한다.",
+      "파일 업로드 기능이 필요 없다면 해당 기능을 삭제한다.",
+      "파일명에 경로조작이 가능한 '..', '/', '\\' 문자는 제거하고 사용할 수 있도록 필터링한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#58",
+    "no": 58,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 중 HTTP Request 패킷에 포함되지 않는 것은?",
+    "stimulus": null,
+    "choices": ["HTTP 전송 방법", "Server IP", "User-Agent", "Cookie"],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#59",
+    "no": 59,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용의 FTP 보안 대책으로 옳은 것은?",
+    "stimulus": "불가피하게 익명 접속을 허용해야 할 때도 익명 업로드(쓰기 기능)는 절대로 허용하지 않는다.",
+    "choices": [
+      "FTP 서비스는 디폴트로 서비스 중지 상태 유지",
+      "익명 FTP 보안 대책 수립",
+      "최신 FTP 애플리케이션 유지",
+      "tFTP 보안대책"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#60",
+    "no": 60,
+    "subject": "app",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 MS-SQL의 확장 프로시저는?",
+    "stimulus": "데이터베이스를 통해 운영체제의 명령어를 실행하고, 파일 등에 접근이 가능하도록 지원하는 확장 프로시저",
+    "choices": ["sp_MSgetversion", "xp_cmdshell", "xp_fileexist", "xp_dirtree"],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#61",
+    "no": 61,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 내용은 어떤 블록암호의 사용방식을 설명하고 있는가?",
+    "stimulus": "초기치를 암호화한 값과 평문 블록을 XOR하여 암호문 블록을 생성하고 그 암호문을 초기치로 하여 다시 암호화한 값과 평문 블록을 XOR하여 암호문 블록을 반복하여 생성하는 방식이다. 암호화에서는 특정 입력이 이후에 영향을 미치지만, 복호화에서는 특정 암호문의 오류가 계속적으로 이후에 영향을 미치지 않는다는 특징이 있다.",
+    "choices": [
+      "카운터 모드(Counter Mode)",
+      "출력피드백 모드(Output FeedBack Mode)",
+      "암호피드백 모드(Cipher FeedBack Mode)",
+      "선택 평문 공격(Chosen Plaintext Attack)"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#62",
+    "no": 62,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 RSA 알고리즘에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "소수의 곱셈과 인수분해를 기반으로 한다.",
+      "개인키와 공개키가 모두 같은 값으로 구성된다.",
+      "키 교환을 위해 디피-헬만 알고리즘을 사용한다.",
+      "대칭키 방식을 사용하여 암호화를 수행한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#63",
+    "no": 63,
+    "subject": "general",
+    "type": "mc",
+    "body": "SSL, IPSec 등 대부분의 네트워크 보안 프로토콜에서 RSA 공개키 암호를 이용하여 송신자(A)와 수신자(B) 간에 비밀 세션키를 공유하는 키 분배 방식을 지원하고 있다. 이때, 송신자(A)가 수신자(B)에게 전달하는 세션키를 암호화할 때 필요로 하는 키 정보에 해당하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "수신자(B)의 개인키(private key)",
+      "송신자(A)의 개인키(private key)",
+      "수신자(B)의 공개키(public key)",
+      "송신자(A)의 공개키(public key)"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#64",
+    "no": 64,
+    "subject": "general",
+    "type": "mc",
+    "body": "PKI의 구조 중 여러 개의 인증기관이 계층적으로 구성되어 있지 않고, 독립적으로 운영되는 구조는?",
+    "stimulus": null,
+    "choices": [
+      "네트워크 구조(Network structure)",
+      "계층 구조(Hierarchical structure)",
+      "분산 구조(Distributed structure)",
+      "복합형 구조(Hybrid structure)"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#65",
+    "no": 65,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 대칭키 암호의 단점으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "키 교환 당사자 간에 동일한 키를 공유해야 하므로 키 관리에 어려움이 있다.",
+      "대용량 자료를 암·복호화 하는데 부적절하다.",
+      "자주 키를 교환해야 하는 불편함이 있다.",
+      "N명의 사용자들 간에 서로 다른 비밀키를 공유해야 하기 때문에 사용자들이 많을수록 키 관리가 복잡하고 어렵다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#66",
+    "no": 66,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 OTP(One-Time Password)의 생성 및 인증 방식 중 시간 동기화(Time-synchronous) 방식에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "클라이언트와 서버의 시간 동기화가 정확하지 않으면 인증에 실패한다.",
+      "임의의 입력 값이 필요하지 않다.",
+      "서버와 클라이언트가 카운트값을 동일하게 증가시켜 가며, 카운트 값을 입력값으로 OTP를 생성해 인증하는 방식이다.",
+      "클라이언트는 현재 시각을 입력 값으로 OTP를 생성해 서버로 전송한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#67",
+    "no": 67,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 Rabin 알고리즘에 대한 특징으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "RSA 알고리즘과 이름만 다를 뿐 동일한 알고리즘이다.",
+      "RSA와 마찬가지로 인수분해 문제의 어려움에 기반하고 있다.",
+      "Rabin이 고안하였다.",
+      "RSA 암호시스템의 공개키를 변형한 것이다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#68",
+    "no": 68,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 전자상거래에서 이중서명에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "이중서명의 검증은 위변조 여부 확인일 뿐 사용자 인증은 포함되지 않는다.",
+      "이중서명에 대한 검증은 판매자가 수행한다.",
+      "판매자가 결제정보를 위변조하는 것을 방지한다.",
+      "카드결제에서 계좌정보나 구매물품 목록의 노출을 방지하는 효과가 있다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#69",
+    "no": 69,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 임의적 접근통제(DAC, Discretionary Access Control)의 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "접근제어가 객체의 내용과 무관하게 이루어진다.",
+      "권한을 가진 주체가 임의의 타 주체에 의한 객체 접근을 허가할 수 있다.",
+      "객체에 대한 보호 및 공유가 소유 주체에 의하여 이루어진다.",
+      "접근제어목록 없이 임의의 주체와 객체 간의 접근통제 관계를 정의한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#70",
+    "no": 70,
+    "subject": "general",
+    "type": "mc",
+    "body": "RSA 알고리즘에 다음과 같은 정보가 주어졌다고 가정하고, N=p × q라고 할 때, 적절한 p + q의 값은? (단, Φ(N)는 Euler 함수를 나타낸다.)",
+    "stimulus": "N=2419, Φ(N)=2320",
+    "choices": ["102", "100", "98", "104"],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#71",
+    "no": 71,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 해시함수의 특징 중 \"일방향성을 갖는다\"라는 의미로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "메시지가 1비트라도 변화하면 해시값은 다른 값이 되어야 한다.",
+      "어떤 길이의 메시지를 입력으로 주더라도 항상 짧은 해시값을 생성한다.",
+      "해시값을 구하기 위해 시간이 너무 오래 걸리면 안 된다.",
+      "해시값으로부터 원본 메시지를 역산할 수 없다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#72",
+    "no": 72,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 RSA를 이용한 비밀키 분배 방식의 안정성에 대한 근거로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "이산대수의 어려움",
+      "배낭문제의 어려움",
+      "두 소수의 곱으로 이루어진 수에 대한 소인수분해의 어려움",
+      "타원곡선 상에서 계산의 어려움"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#73",
+    "no": 73,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 것은?",
+    "stimulus": "이것은 1993년 미국 NIST(National Institute of Standards and Technology)에서 개발하여 미국표준 FIPS PUB 180(Federal Information Processing Standard Publication 180)으로 공포되었으며, 160비트 출력, 512비트 블록단위로 처리, 4라운드 80단계로 구성된 전용 해시함수이다.",
+    "choices": [
+      "MD5(Message Digest 5)",
+      "SHA(Secure Hash Algorithm)",
+      "RIPEMD-160(RACE Integrity Primitives Evaluation Message Digest - 160)",
+      "MD4(Message Digest 4)"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#74",
+    "no": 74,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 이산 로그 문제(Discrete Logarithm Problem)에 기반한 암호 알고리즘이 안전한 이유에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "이산 로그 문제를 풀기 위해서는 지수 시간이나 서브 지수 시간이 걸리기 때문에 공격자가 큰 소수를 사용해 이산 로그 문제를 풀기 위해서는 막대한 시간이 소요되는 것을 의미한다.",
+      "이산 로그 문제를 해결할 수 있는 알고리즘이 존재하기는 하나 일반적으로 큰 소수를 사용하는 경우에는 느리고 비효율적이기 때문에 이산 로그 문제를 풀기 위한 효율적인 알고리즘이 부재하다.",
+      "쇼어 알고리즘(Shor's Algorithm)을 사용하면 소인수 분해와 이산 로그 문제를 해결할 수 있는 방법이 없다.",
+      "그룹 G=Fp의 원소 g가 오더 N이라고 할 때 이산 로그 문제 g^x = h는 p가 스무스 소수나 p ≡ 3(mod 4)이고 a가 모듈로 p에 대한 이차잉여일 때 비교적 쉽게 풀릴 수 있다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#75",
+    "no": 75,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 NIST(National Institute of Standards and Technology)에서 정의하고 있는 RBAC의 하위 유형으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": ["Symmetric RBAC", "Flat RBAC", "Constrained RBAC", "Clustered RBAC"],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#76",
+    "no": 76,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 Active Attack과 Passive Attack을 순서대로 나열한 것은?",
+    "stimulus": null,
+    "choices": [
+      "트래픽분석공격 - 전송파일 도청",
+      "재생공격 - 메시지 변조 공격",
+      "삽입공격 - 삭제공격",
+      "삭제공격 - 전송파일 도청"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#77",
+    "no": 77,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 RSA(Rivest-Shamir-Adleman) 공개키 암호화 알고리즘에 대한 특징으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "공개키 암호화 방식이지만 디지털 서명에는 사용 불가능하다.",
+      "비밀키 암호방식(DES)보다 계산 속도가 느리다.",
+      "인수분해 문제를 기반으로 고안된 암호화 알고리즘이다.",
+      "RSA는 키 교환이 가능하다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#78",
+    "no": 78,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 사용자 간 전달되는 메시지(Message)의 위조를 막기 위하여 메시지의 무결성을 검증하는 기법은?",
+    "stimulus": null,
+    "choices": [
+      "순환중복검사(CRC: Cyclic Redundancy Checking)",
+      "일회용 패스워드(OTP: One-Time Password)",
+      "메시지 인증(Message Authentication)",
+      "패리티 검사(Parity Check)"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#79",
+    "no": 79,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 접근통제 보안 모델 중 클락 윌슨(Clark-Wilson) 모델에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "효율적인 업무처리와 임무분할의 원칙의 사용을 통해 무결성을 보장하기 위한 효과적인 수단을 제공한다.",
+      "기밀성을 확보하기 위해 개발된 보안모델이다.",
+      "제한 인터페이스 모델(restricted interface model)이라고도 부른다.",
+      "사용자는 객체(정보)에 직접 접근을 할 수 없고 Application을 통해서만 접근이 가능하다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#80",
+    "no": 80,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 전달하고자 하는 메시지를 암호화하여 한 사람을 통해서 보내고, 암호화 키는 다른 사람에게 가져가게 하는 것을 암호학적으로 구현한 것은?",
+    "stimulus": null,
+    "choices": ["전자봉투", "이중서명", "전자서명", "은닉서명"],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#81",
+    "no": 81,
+    "subject": "law",
+    "type": "mc",
+    "body": "ISMS-P 인증기준의 '보호대책 요구사항'은 정책, 조직, 자산, 교육 등 관리적 부문과 개발, 접근통제, 운영·보안관리 등 물리적·기술적 부문의 보호대책에 관한 사항으로 구성되어 있다. 다음 중 외부자 보안을 위한 항목의 내용으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "외부자 보안 이행 관리 - 외부자에 대한 점검 또는 감사 시 발견된 문제점에 대하여 개선계획을 수립·이행해야 함",
+      "외부자 현황 관리 - 관리체계 범위 내에서 발생하고 있는 업무 위탁 및 외부 시설·서비스의 이용현황을 식별해야 함",
+      "외부자 계약 변경 및 만료 시 보안 - 외부자 계약만료, 업무 종료, 담당자 변경 시 공식적인 절차에 따른 정보자산 반납, 정보시스템 접근계정 삭제, 비밀유지 확약서 체결 등이 이루어질 수 있도록 보안대책을 수립·이행해야 함",
+      "외부자 계약 시 보안 - 개인정보 처리업무를 위탁받은 수탁자가 관련 업무를 제3자에게 재위탁하는 경우 위탁자와 협의해야 함"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#82",
+    "no": 82,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 내용에서 괄호 안에 들어갈 용어로 옳은 것은?",
+    "stimulus": "위험은 비정상적인 일이 발생할 수 있는 가능성이다. 조직은 정보 자산의 취약성을 식별하고 발생 가능한 위협의 내용과 정도를 결정하는 위협분석 과정을 실행해야 한다. 위험의 구성요소는 ( ㉠ ), 위협, ( ㉡ ), 정보보호대책으로 이루어져 있다.",
+    "choices": [
+      "㉠ : 위기  ㉡ : 정보",
+      "㉠ : 위기  ㉡ : 취약성",
+      "㉠ : 정보  ㉡ : 취약성",
+      "㉠ : 자산  ㉡ : 취약성"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#83",
+    "no": 83,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 암호화 분류에 따른 알고리즘 예시가 잘못 연결된 것은?",
+    "stimulus": null,
+    "choices": [
+      "일방향 암호 알고리즘 - SHA-512",
+      "일방향 암호 알고리즘 - whirlpool",
+      "공개키 암호 알고리즘 - HIGHT",
+      "대칭키 암호 알고리즘 - SEED"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#84",
+    "no": 84,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 용어로 옳은 것은?",
+    "stimulus": "제품-서비스 개발 시 기획 단계부터 개인정보 처리의 전체 생애주기에 걸쳐 이용자의 프라이버시를 고려한 정책을 적용하여 설계에 반영하는 것을 의미하며, 국제적으로 광범위하게 통용되는 개인정보보호 원칙임",
+    "choices": [
+      "ISMS(Information Security Management System)",
+      "PbD(Privacy by Design)",
+      "PIMS(Personal Information Management System)",
+      "PIA(Privacy Impact Assessment)"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#85",
+    "no": 85,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 ISMS 인증 의무대상자에 대한 내용으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "정보통신서비스 부문 전년도 매출액이 10억원 이상인 자",
+      "연간 매출액 또는 세입이 1,500억원 이상으로 의료법 3조의 4에 따른 상급 종합병원",
+      "집적정보통신시설 IDC(Internet Data Center) 사업자",
+      "전년도 직전 3개월간 정보통신서비스 일일평균 이용자 수가 100만명 이상인 자"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#86",
+    "no": 86,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 정보주체가 개인정보처리자에게 자신의 개인정보에 대한 열람을 요구할 수 있는 사항으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "개인정보 처리에 관한 위탁 내용",
+      "개인정보의 수집·이용의 목적",
+      "개인정보의 항목 및 내용",
+      "개인정보 처리에 동의한 사실 및 내용"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#87",
+    "no": 87,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 정보보호산업의 진흥에 관한 법률 제17조(성능평가 지원)에 따른 정보보호제품 성능평가 기준이 아닌 것은?",
+    "stimulus": null,
+    "choices": [
+      "보안정책 설정, 감시기록 등 주요기능의 정상작동 여부",
+      "네트워크 트래픽/시스템 등을 처리하는 수준",
+      "UI.UX 디자인",
+      "메모리, CPU 등 자원의 처리 및 이용 수준"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#88",
+    "no": 88,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음은 클라우드컴퓨팅법에서 정의한 「이용자의 보호」를 설명하는 내용이다. 괄호안에 들어갈 용어로 옳은 것은?",
+    "stimulus": "클라우드컴퓨팅서비스 제공자는 ( ㉠ )의 제출명령이나 법관이 발부한 ( ㉡ )에 의하지 아니하고는 이용자의 동의 없이 이용자 정보를 제3자에게 제공하거나 서비스 제공 목적 외의 용도로 이용할 수 없음",
+    "choices": [
+      "㉠ : 국회  ㉡ : 소환장",
+      "㉠ : 국회  ㉡ : 영장",
+      "㉠ : 법원  ㉡ : 소환장",
+      "㉠ : 법원  ㉡ : 영장"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#89",
+    "no": 89,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 내용에서 설명하고 있는 용어로 옳은 것은?",
+    "stimulus": "해킹 등 사이버공격의 원인인 보안약점을 소프트웨어 개발 단계에서 사전에 제거하고 소프트웨어 개발 생명주기의 각 단계별로 수행하는 일련의 보안활동",
+    "choices": ["SW개발보안", "취약점진단", "정보보호 관리체계(ISMS) 인증", "IT감리"],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#90",
+    "no": 90,
+    "subject": "law",
+    "type": "mc",
+    "body": "정부는 안전한 클라우드 컴퓨팅 서비스 정보보호 관리체계를 만들기 위하여 클라우드 보안인증제를 실시하고 있다. 다음 문장의 괄호 안에 들어갈 내용은?",
+    "stimulus": "클라우드 보안인증제는 클라우드컴퓨팅서비스 사업자가 제공하는 서비스에 대해 정보보호 기준의 준수여부를 평가·인증하는 제도로서 클라우드컴퓨팅발전 및 이용자 보호에 관한 법률 제23조, 클라우드컴퓨팅서비스 정보보호에 관한 기준 고시 제3장 제7조를 근거로 실시하고 있다. 인증기준은 IaaS, SaaS 표준등급, SaaS 간편등급, ( ㉠ )가 있으며 IaaS 분야 및 DaaS 분야 인증의 유효기간은 ( ㉡ ) 년으로 운영하고, SaaS 분야 인증은 표준등급에 대해서는 유효기간을 ( ㉡ ) 년, 간편등급에 대해서는 유효기간을 ( ㉢ ) 년으로 운영하고 있다.",
+    "choices": [
+      "㉠ : PaaS  ㉡ : 6  ㉢ : 3",
+      "㉠ : DaaS  ㉡ : 5  ㉢ : 3",
+      "㉠ : DaaS  ㉡ : 6  ㉢ : 3",
+      "㉠ : PaaS  ㉡ : 5  ㉢ : 2"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#91",
+    "no": 91,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음은 정보통신망법의 목적에 관한 설명이다. 괄호안에 들어갈 용어로 옳은 것은?",
+    "stimulus": "정보통신망의 이용을 촉진하고 정보통신서비스를 이용하는 자를 ( ㉠ )함과 아울러 정보통신망을 건전하고 ( ㉡ )하게 이용할 수 있는 환경을 조성하여 국민생활의 향상과 공공복리의 증진에 이바지함을 목적으로 한다.",
+    "choices": [
+      "㉠ : 관리  ㉡ : 안전",
+      "㉠ : 관리  ㉡ : 적합",
+      "㉠ : 보호  ㉡ : 안전",
+      "㉠ : 보호  ㉡ : 적합"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#92",
+    "no": 92,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 누구나 접근할 수 있는 보안등급의 정보로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "자금계획, 원가분석, 사업 수익성 보고서",
+      "사규, 기업규정, 업무절차",
+      "복리후생 정보, 홍보자료, 연구/실험 재료",
+      "신규 투자계획, 임원 회의록, 이사회 회의록"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#93",
+    "no": 93,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 주요정보통신기반시설의 취약점 분석·평가를 수행할 수 있는 기관이 아닌 것은?",
+    "stimulus": null,
+    "choices": [
+      "「정보보호산업의 진흥에 관한 법률」 제23조에 따라 지정된 정보보호 전문서비스 기업",
+      "「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제47조에 따라 지정된 정보보호 관리체계 인증기관",
+      "「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제52조의 규정에 의한 한국인터넷진흥원",
+      "「정부출연연구기관 등의 설립·운영 및 육성에 관한 법률」 제8조의 규정에 의한 한국전자통신연구원"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#94",
+    "no": 94,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 피싱(phishing) 메일 공격 예방 및 대응 방법으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "포털사이트 고객센터에서 메일이 발송된 경우 실제 정상 고객센터에서 보낸 메일인지 확인",
+      "개인정보나 계정인증 관련 메일 수신 시 메일에 포함된 링크를 클릭하여 이상 여부 확인",
+      "악성코드로 자주 사용되는 한글, 오피스, PDF문서 등에 대한 최신 버전 업데이트 적용",
+      "첨부파일의 연결 링크가 외부사이트가 아닌 정상사이트인지 확인"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#95",
+    "no": 95,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음은 위험처리 절차에 대한 도식이다. 빈칸 중 (b)에 해당하는 단계로 옳은 것은?",
+    "stimulus": "위험 식별\n  ↓\n[위험도 ≤ 목표위험수준?] --Y--> (a)\n  ↓ N\n[비용효과적 대책 존재?] --Y--> (b)\n  ↓ N\n[적절한 보험 또는 전가 대상 존재?] --Y--> (c)\n  ↓ N\n(d)",
+    "choices": ["위험회피", "위험수용", "위험감소", "위험전가"],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#96",
+    "no": 96,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 정보 자산의 식별과 분류에서 물리보안 시스템에 해당하는 것은?",
+    "stimulus": null,
+    "choices": ["백신 소프트웨어", "CCTV", "휴대용 저장매체", "네트워크 장비"],
+    "answer": "1",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#97",
+    "no": 97,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 시스템 개발 보안과 관련된 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "운영환경으로의 이관은 통제된 절차에 따라 이루어져야 하고 실행코드는 시험과 사용자 인수 후 실행하여야 한다.",
+      "개발 및 시험 시스템은 운영시스템에 대한 비인가 접근 및 변경의 위험을 감소하기 위해 원칙적으로 분리하여야 한다.",
+      "정보시스템 개발을 외주 위탁하는 경우 분석 및 설계단계에서 구현 및 이관까지의 준수해야 할 보안요구사항을 계약서에 명시하고 이행여부를 관리 감독하여야 한다.",
+      "개발 및 시험 시스템은 운영시스템과 환경이 분리되어 있으므로 운영데이터 유출을 예방하기 위해서는 원칙적으로 운영시스템에 대한 데이터 생성, 이용 및 관리, 파기, 기술적 보호조치에 관한 절차만 수립되어도 무방하다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#98",
+    "no": 98,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 시스템이 취할 수 있는 가장 최선의 보안 접근 방법으로, 여러 계층의 보안 대책이나 대응수단을 구성하여 한 가지 통제가 대응에 실패하더라도 전체 시스템을 위험에 빠트리지 않는 보안 접근법은?",
+    "stimulus": null,
+    "choices": [
+      "전체적 보안(Holistic Security)",
+      "최선의 보안(Best Effort Security)",
+      "다계층 보안(Depense in Depth)",
+      "제로 트러스트 보안(Zero Trust Security)"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#99",
+    "no": 99,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 위험관리계획 수립 시 반영되는 위험관리 방법 및 절차의 내용에 대한 설명 중 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "기간 : 최소 월 1회 이상 수행될 수 있도록 일정 수립",
+      "대상 : 인증 범위 내 모든 서비스 및 자산 포함",
+      "예산 : 위험 식별 및 평가 시행을 위한 예산 계획을 매년 수립하고 정보보호 최고책임자 등 경영진 승인",
+      "방법 : 조직의 특성을 반영한 위험평가 방법론 정의"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  },
+  {
+    "key": "2025-1#100",
+    "no": 100,
+    "subject": "law",
+    "type": "mc",
+    "body": "다음 중 전자금융 감독규정에서 규정하고 있는 정보보호위원회 역할로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "연간 정보보호 교육 계획에 관한 사항",
+      "클라우드컴퓨팅서비스의 이용에 관한 사항",
+      "취약점 분석, 평가 결과 및 보완조치의 이행계획에 관한 사항",
+      "전산보안사고 및 전산보안관련 규정 위반자의 처리에 관한 사항"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2025-1"
+  }
+]
