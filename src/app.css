@@ -116,6 +116,23 @@ code, .k {
 .banner .go { margin-left: auto; font-size: 13px; font-weight: 650; color: var(--accent); white-space: nowrap; }
 .banner.plain .go { color: var(--ink-muted); }
 
+.progress-card, .recent-mock {
+  border: 1px solid var(--line); border-radius: 10px; padding: 14px;
+  background: var(--surface); display: flex; flex-direction: column; gap: 9px;
+}
+.progress-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.progress-head strong { display: block; margin-top: 3px; font-family: var(--mono); font-size: 18px; }
+.progress-head > span { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); }
+.progress-track { height: 8px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+.progress-track span { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+.progress-card button {
+  align-self: flex-start; padding: 0; background: none; border: 0;
+  color: var(--accent); font-size: 12.5px; font-weight: 650;
+}
+.progress-card button:disabled { color: var(--ink-faint); cursor: default; }
+.recent-mock strong { font-size: 14px; }
+.recent-mock > span { font-family: var(--mono); font-size: 11px; color: var(--ink-muted); }
+
 .copy {
   align-self: flex-end; background: none; border: 0; padding: 2px 0;
   font-size: 12px; color: var(--ink-faint);

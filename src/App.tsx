@@ -9,7 +9,10 @@ import { Setup } from './Setup.tsx'
 import {
   MC,
   OX,
+  PASS_AVERAGE,
+  PASS_SUBJECT,
   byKey,
+  dayLabel,
   PER_SUBJECT,
   QUESTIONS,
   SUBJECTS,
@@ -24,6 +27,7 @@ import {
   useFlags,
   visible,
   wrongKeys,
+  type Attempt,
   type Mode,
   type Saved,
 } from './lib.tsx'
@@ -145,6 +149,7 @@ export default function App() {
             stats={stats}
             marks={marks}
             hidden={hidden}
+            attempts={attempts}
             loading={loading}
             error={error ?? flagError}
             setView={setView}
@@ -160,6 +165,7 @@ function Home({
   stats,
   marks,
   hidden,
+  attempts,
   loading,
   error,
   setView,
@@ -167,6 +173,7 @@ function Home({
   stats: ReturnType<typeof statsByKey>
   marks: Set<string>
   hidden: Set<string>
+  attempts: Attempt[]
   loading: boolean
   error?: string
   setView: (v: View) => void
@@ -176,6 +183,48 @@ function Home({
   const marked = [...marks].filter((k) => byKey.has(k) && !hidden.has(k))
   const pool = visible(MC, hidden)
   const resume = loadMock()
+  const solved = pool.filter((q) => stats.has(q.key)).length
+  const unseen = pool.length - solved
+  const review = [
+    ...wrong.filter((k) => byKey.get(k)?.type === 'mc'),
+    ...pool
+      .filter((q) => {
+        const s = stats.get(q.key)
+        return s && s.tries > 1 && s.lastCorrect && s.correct / s.tries < 0.8
+      })
+      .sort((a, b) => {
+        const sa = stats.get(a.key)!
+        const sb = stats.get(b.key)!
+        return sa.correct / sa.tries - sb.correct / sb.tries || sb.last.localeCompare(sa.last)
+      })
+      .map((q) => q.key),
+  ].filter((k, i, keys) => keys.indexOf(k) === i).slice(0, 10)
+
+  const latestMock = (() => {
+    const sessions = new Map<string, Attempt[]>()
+    for (const a of attempts) {
+      if (!a.session_id || (a.mode !== 'mock100' && a.mode !== 'mock_short')) continue
+      sessions.set(a.session_id, [...(sessions.get(a.session_id) ?? []), a])
+    }
+    return [...sessions.values()].sort((a, b) =>
+      b[b.length - 1].answered_at.localeCompare(a[a.length - 1].answered_at),
+    )[0]
+  })()
+
+  const latestMockSummary = (() => {
+    if (!latestMock) return null
+    const correct = latestMock.filter((a) => a.correct).length
+    const full = latestMock[0].mode === 'mock100'
+    const failed = full && SUBJECTS.some((subject) => {
+      const rows = latestMock.filter((a) => byKey.get(a.question_key)?.subject === subject.id)
+      return rows.length > 0 && rows.filter((a) => a.correct).length / rows.length < PASS_SUBJECT
+    })
+    const passed = full && !failed && correct / latestMock.length >= PASS_AVERAGE
+    return {
+      title: full ? `최근 모의고사 · ${passed ? '합격' : '불합격'}` : '최근 간단 모의',
+      detail: `${dayLabel(latestMock[0].answered_at)} · ${correct}/${latestMock.length} · ${pct(correct, latestMock.length)}%`,
+    }
+  })()
 
   const startMock100 = () => {
     if (resume && !confirm('진행 중인 모의고사가 있습니다. 새로 시작하면 사라집니다.')) return
@@ -200,6 +249,61 @@ function Home({
             </div>
             <span className="go">이어풀기 →</span>
           </button>
+        )}
+
+        <div className="progress-card">
+          <div className="progress-head">
+            <div>
+              <div className="label">객관식 학습 진도</div>
+              <strong>{loading ? '기록 불러오는 중' : `${solved} / ${pool.length}문제`}</strong>
+            </div>
+            <span>{loading ? '—' : `${pct(solved, pool.length)}%`}</span>
+          </div>
+          <div className="progress-track">
+            <span style={{ width: `${pct(solved, pool.length)}%` }} />
+          </div>
+          <button
+            disabled={!unseen || loading}
+            onClick={() =>
+              setView({
+                s: 'practice',
+                mode: 'practice',
+                keys: shuffle(pool.filter((q) => !stats.has(q.key))).map((q) => q.key),
+              })
+            }
+          >
+            {loading
+              ? '기록을 불러오고 있습니다'
+              : unseen
+                ? `안 푼 문제 ${unseen}개부터 풀기 →`
+                : '모든 문제를 한 번 이상 풀었습니다'}
+          </button>
+        </div>
+
+        <button
+          className="banner"
+          disabled={!review.length || loading}
+          onClick={() => setView({ s: 'practice', mode: 'review', keys: review })}
+        >
+          <div>
+            <div className="bt">오늘의 복습{!loading && ` ${review.length}문제`}</div>
+            <div className="bd">
+              {loading
+                ? '기록을 불러오고 있습니다'
+                : review.length
+                  ? '최근 오답과 반복해서 약한 문제'
+                  : '복습할 문제가 생기면 여기에 모입니다'}
+            </div>
+          </div>
+          {review.length > 0 && <span className="go">시작 →</span>}
+        </button>
+
+        {latestMockSummary && (
+          <div className="recent-mock">
+            <div className="label">최근 시험</div>
+            <strong>{latestMockSummary.title}</strong>
+            <span>{latestMockSummary.detail}</span>
+          </div>
         )}
 
         <button className="card" onClick={() => setView({ s: 'practice', mode: 'practice' })}>
