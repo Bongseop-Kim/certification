@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Exam } from './Exam.tsx'
+import { CryptoMap } from './CryptoMap.tsx'
 import { Memo } from './Memo.tsx'
 import { History, type HistTab } from './History.tsx'
 import { Nav } from './Nav.tsx'
@@ -46,6 +47,7 @@ type View =
   | { s: 'short'; keys: string[]; mode: 'short' | 'memo' }
   | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
   | { s: 'memo' }
+  | { s: 'crypto-map' }
   | { s: 'history' }
 
 /** 과목별 20문항, 과목 순서대로 배치한 100문항 */
@@ -172,8 +174,10 @@ export default function App() {
         )
       case 'memo':
         return (
-          <Memo hidden={hidden} onExit={home} />
+          <Memo hidden={hidden} onExit={home} onOpenCrypto={() => setView({ s: 'crypto-map' })} />
         )
+      case 'crypto-map':
+        return <CryptoMap onExit={home} />
       case 'history':
         return (
           <History
@@ -361,6 +365,14 @@ function Home({
             </div>
           </div>
           {memo.length > 0 && <span className="go">시작 →</span>}
+        </button>
+
+        <button className="banner plain" onClick={() => setView({ s: 'crypto-map' })}>
+          <div>
+            <div className="bt">암호학 지도</div>
+            <div className="bd">암호 분류부터 공격까지, 외울 것들의 관계를 그림으로</div>
+          </div>
+          <span className="go">보기 →</span>
         </button>
 
         {latestMockSummary && (

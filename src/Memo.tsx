@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { MemoVisuals } from './MemoVisuals.tsx'
 import { Nav } from './Nav.tsx'
 import { MEMO, renderBody, visible } from './lib.tsx'
 
@@ -14,6 +15,7 @@ const TABS = [
 type Props = {
   hidden: Set<string>
   onExit: () => void
+  onOpenCrypto: () => void
 }
 
 /**
@@ -21,7 +23,7 @@ type Props = {
  * 기본이 가림 상태인 이유 — 다시 읽기는 가장 약한 학습법이라 읽는 페이지가 아니라 스스로 묻는 표여야 한다.
  * 카드를 실제로 푸는 건 홈의 '오늘 암기'가 맡는다. 여기는 보기만 하는 화면이다.
  */
-export function Memo({ hidden, onExit }: Props) {
+export function Memo({ hidden, onExit, onOpenCrypto }: Props) {
   const [tab, setTab] = useState(TABS[0]?.id)
   const [open, setOpen] = useState<Set<string>>(new Set())
 
@@ -53,6 +55,18 @@ export function Memo({ hidden, onExit }: Props) {
             </button>
           ))}
         </div>
+
+        {tab === 'memo-crypto' ? (
+          <button className="banner plain" onClick={onOpenCrypto}>
+            <div><div className="bt">암호학 지도</div><div className="bd">표로 외우기 전에 큰 그림부터 보기</div></div>
+            <span className="go">보기 →</span>
+          </button>
+        ) : (
+          <details className="memo-guide" key={tab}>
+            <summary>{TABS.find((t) => t.id === tab)?.label} 한눈에 보기</summary>
+            <MemoVisuals source={tab} />
+          </details>
+        )}
 
         <div className="hlist">
           {rows.map((q) => (
