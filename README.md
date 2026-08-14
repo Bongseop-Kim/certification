@@ -17,7 +17,7 @@ npm run build   # tsc + vite build
 | 풀이 기록 | Supabase `attempts` (`schema.sql`) |
 | 문제당 표시 | Supabase `flags` — 북마크(`mark`), 관심 없음(`hide`) |
 | 기출 파서 | `scripts/parse_exam.py` (PDF → JSON), `scripts/stimulus/*.json` (이미지 지문 필사) |
-| 화면 | `src/App.tsx`(홈) `Practice` `Setup` `Exam` `Result` `Ox` `History` |
+| 화면 | `src/App.tsx`(홈) `Practice` `Setup` `Exam` `Result` `Ox` `Short` `Memo` `History` |
 
 집계(정답률·오답노트·합격 판정)는 `attempts` 전량을 클라이언트에서 계산한다. 뷰도 RPC도 없다.
 
@@ -30,6 +30,8 @@ npm run build   # tsc + vite build
 - 관심 없음은 출제 후보에서만 빼고 기록은 그대로 둔다. 출제/목록 지점은 `visible(qs, hidden)`을 거친다
 - 암기 카드는 4지선다로 만들지 않는다. 보기가 있으면 소거법으로 맞아 회상 훈련이 안 된다 (`npm run check`가 막는다)
 - 오늘 볼 카드는 `memoDue()`가 `attempts`에서 파생한다. 연속 정답 수 = Leitner 박스(0·1·3·7·21일), 하루 30장
+- `Memo`(암기표)는 같은 카드를 표로 되돌린 화면이다. 별도 정리글을 만들지 않는다 — 원본이 둘로 갈린다.
+  카드를 파일 안에 표 순서대로 써두면 `no` 순 나열만으로 표가 복원된다
 
 ## 아직 없는 것
 

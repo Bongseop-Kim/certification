@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Exam } from './Exam.tsx'
+import { Memo } from './Memo.tsx'
 import { History, type HistTab } from './History.tsx'
 import { Nav } from './Nav.tsx'
 import { Ox } from './Ox.tsx'
@@ -9,6 +10,7 @@ import { Setup } from './Setup.tsx'
 import { Short } from './Short.tsx'
 import {
   MC,
+  MEMO,
   OX,
   SHORT,
   PASS_AVERAGE,
@@ -43,6 +45,7 @@ type View =
   | { s: 'ox'; keys: string[] }
   | { s: 'short'; keys: string[]; mode: 'short' | 'memo' }
   | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
+  | { s: 'memo' }
   | { s: 'history' }
 
 /** 과목별 20문항, 과목 순서대로 배치한 100문항 */
@@ -152,6 +155,15 @@ export default function App() {
                     : { s: 'practice', mode: 'review', keys },
               )
             }
+          />
+        )
+      case 'memo':
+        return (
+          <Memo
+            stats={stats}
+            hidden={hidden}
+            onExit={home}
+            onSolve={(keys) => setView({ s: 'short', keys, mode: 'memo' })}
           />
         )
       case 'history':
@@ -381,6 +393,15 @@ function Home({
           <div className="ct">단답 특강</div>
           <div className="cd">용어를 직접 입력하며 핵심 개념 회상</div>
           <div className="cm">단답 문제 {visible(SHORT, hidden).length}개</div>
+        </button>
+        <button
+          className="card"
+          onClick={() => setView({ s: 'memo' })}
+          disabled={!visible(MEMO, hidden).length}
+        >
+          <div className="ct">암기표</div>
+          <div className="cd">외우기 전에 한눈에. 답은 가려져 있고 한 줄씩 눌러 확인합니다</div>
+          <div className="cm">암기 카드 {visible(MEMO, hidden).length}장 · 시험 직전 훑어보기</div>
         </button>
 
         <button

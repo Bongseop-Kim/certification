@@ -297,4 +297,9 @@ code, .k {
 .hitem .hm { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); }
 .hitem .star { margin-left: auto; color: var(--accent); flex: none; }
 .hitem .star.off { color: var(--line); }
+.hitem .ans {
+  margin-left: auto; flex: none; max-width: 45%; text-align: right; word-break: break-word;
+  font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--ink);
+}
+.hitem .ans.off { color: var(--line); letter-spacing: -0.05em; }
 .empty { color: var(--ink-muted); font-size: 13.5px; text-align: center; padding: 32px 0; }
