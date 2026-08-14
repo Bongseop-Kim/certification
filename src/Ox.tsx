@@ -91,14 +91,10 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
           ))}
         </div>
 
-        {flash && !flash.ok ? (
+        {flash && !flash.ok && (
           <button className="btn" onClick={advance}>
             다음 문제 →
           </button>
-        ) : (
-          <div className="keys" style={{ justifyContent: 'center' }}>
-            <span className="kb">O</span> 또는 <span className="kb">X</span>
-          </div>
         )}
 
         {last && (

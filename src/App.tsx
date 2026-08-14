@@ -172,12 +172,7 @@ export default function App() {
         )
       case 'memo':
         return (
-          <Memo
-            stats={stats}
-            hidden={hidden}
-            onExit={home}
-            onSolve={(keys) => setView({ s: 'short', keys, mode: 'memo' })}
-          />
+          <Memo hidden={hidden} onExit={home} />
         )
       case 'history':
         return (
@@ -287,7 +282,7 @@ function Home({
     <>
       <Nav title="보안기사 문제집" meta={`문제 ${visible(QUESTIONS, hidden).length}개`} />
       <div className="screen">
-        {error && <div className="verdict">기록 서버 오류 — {error}</div>}
+        {error && <div className="verdict toast">기록 서버 오류 — {error}</div>}
 
         {resume && (
           <button className="banner" onClick={() => setView({ s: 'exam', mode: 'mock100', saved: resume })}>
@@ -311,7 +306,8 @@ function Home({
             <span>{loading ? '—' : `${pct(solved, pool.length)}%`}</span>
           </div>
           <div className="progress-track">
-            <span style={{ width: `${pct(solved, pool.length)}%` }} />
+            {/* 기록이 도착하면 0에서 실제 값으로 차오른다. transition만으로 되고 JS는 없다 */}
+            <span style={{ transform: `scaleX(${pct(solved, pool.length) / 100})` }} />
           </div>
           <button
             disabled={!unseen || loading}
@@ -455,7 +451,7 @@ function Home({
             과목별 정답률
           </div>
           <div className="bars">
-            {SUBJECTS.map((s) => {
+            {SUBJECTS.map((s, i) => {
               const r = rates.get(s.id) ?? { tries: 0, correct: 0 }
               const p = pct(r.correct, r.tries)
               const low = r.tries > 0 && p < 40
@@ -474,7 +470,10 @@ function Home({
                 >
                   <span className="bn">{s.short}</span>
                   <span className="track">
-                    <span className={low ? 'fill low' : 'fill'} style={{ width: `${p}%` }} />
+                    <span
+                      className={low ? 'fill low' : 'fill'}
+                      style={{ transform: `scaleX(${p / 100})`, transitionDelay: `${i * 50}ms` }}
+                    />
                   </span>
                   <span className={low ? 'bv bad' : 'bv'}>{r.tries ? `${p}%` : '—'}</span>
                 </button>

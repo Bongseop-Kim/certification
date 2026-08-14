@@ -3,10 +3,10 @@ import { Nav } from './Nav.tsx'
 import { byKey, dayLabel, pct, renderBody, subjectTag, wrongKeys, type FlagKind, type Stat } from './lib.tsx'
 
 const TABS = [
-  { id: 'weak', label: '약한 문제', hint: '정답률 낮은 순' },
-  { id: 'wrong', label: '틀린 문제', hint: '최근 오답 순' },
-  { id: 'mark', label: '북마크', hint: '별표한 문제' },
-  { id: 'hide', label: '관심없음', hint: '출제에서 제외된 문제 · 해제를 누르면 되살아납니다' },
+  { id: 'weak', label: '약한 문제' },
+  { id: 'wrong', label: '틀린 문제' },
+  { id: 'mark', label: '북마크' },
+  { id: 'hide', label: '관심없음' },
 ] as const
 
 export type HistTab = (typeof TABS)[number]['id']
@@ -53,7 +53,6 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
             </button>
           ))}
         </div>
-        <div className="keys">{TABS.find((t) => t.id === tab)?.hint}</div>
 
         {keys.length === 0 ? (
           <div className="empty">아직 없습니다.</div>

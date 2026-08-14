@@ -90,9 +90,6 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           {picked.size ? '' : '전 과목 '}
           {n}문항 시작
         </button>
-        <div className="keys">
-          선택한 과목의 문제 {selected.length}개 중 {n}개를 뽑습니다
-        </div>
       </div>
     </>
   )

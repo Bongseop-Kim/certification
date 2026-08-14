@@ -78,13 +78,17 @@ export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome 
               과목별 점수{full && ' — 세로선이 과락 기준 40%'}
             </div>
             <div className="bars">
-              {perSubject.map((s) => {
+              {perSubject.map((s, i) => {
                 const low = full && s.rate < PASS_SUBJECT
                 return (
                   <div className="gbar" key={s.id}>
                     <span className="bn">{s.short}</span>
                     <span className="track">
-                      <span className={low ? 'fill cut' : 'fill'} style={{ width: `${s.rate * 100}%` }} />
+                      {/* 120ms는 점수 카드가 먼저 자리잡길 기다리는 값. 이후 50ms씩 어긋나며 찬다 */}
+                      <span
+                        className={low ? 'fill cut' : 'fill'}
+                        style={{ transform: `scaleX(${s.rate})`, transitionDelay: `${120 + i * 50}ms` }}
+                      />
                       {full && <span className="cutline" />}
                     </span>
                     <span className={low ? 'bv bad' : 'bv'}>

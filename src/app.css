@@ -20,6 +20,10 @@
   --warn-soft: #f9f1de;
   --sans: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Pretendard, "Malgun Gothic", system-ui, sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  /* 내장 ease-out은 약하다. UI 진입/이탈은 전부 이 커브를 쓴다 */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  /* details 펼침 높이를 auto로 전환하려면 필요하다. 미지원 브라우저는 즉시 열림 */
+  interpolate-size: allow-keywords;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -53,9 +57,22 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
+/* 스크롤바는 숨긴다. 스크롤 동작 자체는 그대로 — 휠·터치·키보드 다 된다 */
+html { scrollbar-width: none; }           /* Firefox, Chrome 121+ */
+::-webkit-scrollbar { display: none; }    /* Safari, 구형 WebKit */
+
 button { font-family: inherit; cursor: pointer; }
+/* 누를 수 있는 건 눌린 티가 나야 한다. disabled는 :active가 안 걸려서 따로 막을 필요 없다 */
+.btn, .card, .ch, .banner, .ox button, .seg button {
+  transition: transform 150ms var(--ease-out), background-color 150ms var(--ease-out),
+              border-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+.btn:active, .card:active, .ch:active, .banner:active, .ox button:active { transform: scale(0.98); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+/* 이동·크기 모션만 끈다. 색·투명도 전환까지 0으로 만들면 값이 튀어서 오히려 거슬린다 */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition-property: opacity, color, background-color, border-color !important; }
+}
 
 /* ---------- 앱 셸 ---------- */
 .app {
@@ -110,9 +127,11 @@ code, .k {
 .switch { width: 40px; height: 22px; padding: 2px; border-radius: 999px; background: var(--line); flex: none; }
 .switch::after {
   content: ''; display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--surface);
+  /* margin-left로 점프시키면 스위치로 안 읽힌다. 노브는 미끄러져야 한다 */
+  transition: transform 200ms var(--ease-out);
 }
 .option-toggle[aria-checked="true"] .switch { background: var(--accent); }
-.option-toggle[aria-checked="true"] .switch::after { margin-left: 18px; }
+.option-toggle[aria-checked="true"] .switch::after { transform: translateX(18px); }
 
 .banner {
   border: 1px solid var(--accent-line); background: var(--accent-soft); border-radius: 10px;
@@ -132,7 +151,14 @@ code, .k {
 .progress-head strong { display: block; margin-top: 3px; font-family: var(--mono); font-size: 18px; }
 .progress-head > span { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); }
 .progress-track { height: 8px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
-.progress-track span { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+/* 채움은 width가 아니라 scaleX로 움직인다 — width는 레이아웃 속성이라 매 프레임 layout이 돈다.
+   둥근 끝은 track의 border-radius + overflow:hidden이 만든다. fill에 radius를 주면
+   scaleX에 눌려 타원으로 찌그러진다. */
+.progress-track span {
+  display: block; height: 100%; width: 100%; background: var(--accent);
+  transform-origin: left; transform: scaleX(0);
+  transition: transform 600ms var(--ease-out);
+}
 .progress-card button {
   align-self: flex-start; padding: 5px 0; min-height: 24px; background: none; border: 0;
   color: var(--accent); font-size: 12.5px; font-weight: 650; text-align: left;
@@ -158,7 +184,11 @@ code, .k {
 }
 .bar .bn { font-size: 12px; color: var(--ink-muted); }
 .bar .track { height: 7px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
-.bar .fill { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+.bar .fill {
+  display: block; height: 100%; width: 100%; background: var(--accent);
+  transform-origin: left; transform: scaleX(0);
+  transition: transform 600ms var(--ease-out);
+}
 .bar .fill.low { background: var(--fail); }
 .bar .bv { font-family: var(--mono); font-size: 11.5px; text-align: right; font-variant-numeric: tabular-nums; }
 .bar .bv.bad { color: var(--fail); font-weight: 700; }
@@ -195,6 +225,10 @@ code, .k {
   background: var(--fail-soft); border: 1px solid var(--fail);
 }
 .verdict.ok { background: var(--pass-soft); border-color: var(--pass); }
+/* 오류 배너 전용. 채점 결과 verdict는 하루 수십~백 회라 애니메이션하지 않는다 —
+   .screen > .verdict로 잡으면 그쪽까지 걸려서 클래스를 따로 뒀다 */
+.verdict.toast { transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); }
+@starting-style { .verdict.toast { opacity: 0; transform: translateY(-6px); } }
 .verdict .vt { font-weight: 700; color: var(--fail); font-size: 15px; }
 .verdict.ok .vt { color: var(--pass); }
 .verdict .vd { font-family: var(--mono); font-size: 11.5px; color: var(--ink-muted); margin-left: auto; }
@@ -218,6 +252,8 @@ code, .k {
 }
 
 .keys { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--ink-faint); font-family: var(--mono); flex-wrap: wrap; }
+/* 단축키 안내는 키보드가 있는 기기에서만. 폰에서는 읽을 이유가 없는 회색 글자다. */
+@media (hover: none) { .keys { display: none; } }
 .keys .kb {
   border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px;
   padding: 1px 6px; background: var(--surface-2); color: var(--ink-muted); font-size: 10.5px;
@@ -227,7 +263,8 @@ code, .k {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
   padding: 10px 12px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line-soft);
 }
-.timer .tv { font-family: var(--mono); font-size: 19px; font-weight: 600; font-variant-numeric: tabular-nums; }
+/* 남은 시간 → 초과로 넘어갈 때 색이 툭 바뀌지 않게. 시험당 최대 1회 */
+.timer .tv { font-family: var(--mono); font-size: 19px; font-weight: 600; font-variant-numeric: tabular-nums; transition: color 300ms var(--ease-out); }
 .timer .tv.over { color: var(--fail); }
 .timer .tl { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; }
 .timer .prog { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
@@ -237,6 +274,9 @@ code, .k {
   font-family: var(--mono); font-size: 9.5px; text-align: center; padding: 8px 0;
   border-radius: 4px; border: 1px solid var(--line-soft); color: var(--ink-faint);
   font-variant-numeric: tabular-nums; background: var(--surface);
+  /* 색상 전용이라 100셀이 동시에 걸려도 안전하다. '현재' 위치 이동은 추적하지 않는다 */
+  transition: background-color 150ms var(--ease-out), border-color 150ms var(--ease-out),
+              color 150ms var(--ease-out);
 }
 .omr button.done { background: var(--surface-2); color: var(--ink-muted); border-color: var(--line); }
 .omr button.mark { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
@@ -247,7 +287,11 @@ code, .k {
 .score {
   text-align: center; padding: 18px 14px; border-radius: 12px;
   background: var(--fail-soft); border: 1px solid var(--fail); display: flex; flex-direction: column; gap: 2px;
+  transition: opacity 250ms var(--ease-out), transform 250ms var(--ease-out);
 }
+/* 시험 1회당 한 번 보는 화면. 여기가 이 앱에서 delight가 허용되는 유일한 지점이다.
+   scale(0)이 아니라 0.96에서 — 무에서 튀어나오는 건 부자연스럽다 */
+@starting-style { .score { opacity: 0; transform: scale(0.96) translateY(6px); } }
 .score.ok { background: var(--pass-soft); border-color: var(--pass); }
 .score .big { font-family: var(--mono); font-size: 34px; font-weight: 700; color: var(--fail); }
 .score.ok .big { color: var(--pass); }
@@ -256,7 +300,12 @@ code, .k {
 .gbar { display: grid; grid-template-columns: 74px 1fr 58px; align-items: center; gap: 10px; }
 .gbar .bn { font-size: 12px; color: var(--ink-muted); }
 .gbar .track { height: 18px; background: var(--surface-2); border-radius: 4px; position: relative; overflow: hidden; }
-.gbar .fill { display: block; height: 100%; background: var(--pass); opacity: 0.85; }
+.gbar .fill {
+  display: block; height: 100%; width: 100%; background: var(--pass); opacity: 0.85;
+  transform-origin: left; transition: transform 400ms var(--ease-out);
+}
+/* 결과 화면은 마운트 시점에 이미 최종값을 안다. 진입값은 @starting-style로 준다 */
+@starting-style { .gbar .fill { transform: scaleX(0); } }
 .gbar .fill.cut { background: var(--fail); }
 .gbar .cutline { position: absolute; top: 0; bottom: 0; left: 40%; width: 1px; background: var(--ink-faint); opacity: 0.6; }
 .gbar .bv { font-family: var(--mono); font-size: 11.5px; text-align: right; font-variant-numeric: tabular-nums; }
@@ -285,6 +334,7 @@ code, .k {
 .hitem {
   display: flex; gap: 11px; padding: 12px 0; border-bottom: 1px solid var(--line-soft);
   align-items: flex-start; background: none; border-inline: 0; border-top: 0; width: 100%; text-align: left;
+  transition: background-color 120ms var(--ease-out);
 }
 .hitem .rate {
   font-family: var(--mono); font-size: 11px; font-weight: 700; flex: none; width: 40px; text-align: center;
@@ -304,11 +354,36 @@ code, .k {
   color: var(--accent); font-size: 14px; line-height: 1.45;
 }
 .star.off { color: var(--line); }
+/* 너비는 Memo가 탭별로 인라인 지정한다. 45%는 답이 유난히 길 때의 상한 — 넘으면 줄바꿈된다 */
 .hitem .ans {
-  margin-left: auto; flex: none; max-width: 45%; text-align: right; word-break: break-word;
+  /* 글자 줄 높이와 가림막 높이를 한 값에 묶는다. 안 그러면 body의 line-height 1.65가
+     상속돼 21.45px이 되고, 21px짜리 막대와 어긋나 토글할 때마다 행이 밀린다 */
+  --ans-h: 21px;
+  line-height: var(--ans-h);
+  flex: none; max-width: 45%; text-align: right; word-break: break-word;
   font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--ink);
+  transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out);
 }
-.hitem .ans.off { color: var(--line); letter-spacing: -0.05em; }
+/* 가린 상태는 글자가 아니라 가림막이다. 열 너비가 탭 안에서 고정이라 모든 행의 막대가
+   똑같아 답의 길이가 새지 않는다 — '····'는 4글자라는 힌트를 줬다. */
+.hitem .ans.off::before {
+  content: ''; display: block; height: 9px; width: 100%;
+  margin: calc((var(--ans-h) - 9px) / 2) 0; /* 막대를 글자 줄 높이 한가운데에 */
+  border-radius: 999px; background: var(--line-soft);
+  transition: background-color 160ms var(--ease-out);
+}
+/* 답은 새로 마운트될 때 딱 한 번 떠오른다. 되감기(다시 가리기)는 즉시 — 되돌리기는 시스템 응답이다 */
+@starting-style {
+  .hitem .ans:not(.off) { opacity: 0; transform: translateY(-3px); }
+}
+.hitem:active { background: var(--surface-2); }
+@media (hover: hover) and (pointer: fine) {
+  .hitem:hover .ans.off::before { background: var(--line); border-color: var(--line); }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* 이동만 뺀다. 페이드는 남겨야 답이 튀어나오지 않는다 */
+  @starting-style { .hitem .ans:not(.off) { transform: none; } }
+}
 .empty { color: var(--ink-muted); font-size: 13.5px; text-align: center; padding: 32px 0; }
 
 /* 홈의 모드 카드 묶음. 매일 쓰는 사람은 상단 3개(이어풀기·복습·암기)만 보면 된다 */
@@ -318,7 +393,18 @@ code, .k {
   display: flex; align-items: center; gap: 8px; list-style: none;
 }
 .modes > summary::-webkit-details-marker { display: none; }
-.modes > summary::after { content: '▾'; margin-left: auto; color: var(--ink-faint); }
-.modes[open] > summary::after { content: '▴'; }
+/* 글리프를 '▾'↔'▴'로 갈아끼우면 애니메이션이 안 된다. 하나만 두고 회전시킨다 */
+.modes > summary::after {
+  content: '▾'; margin-left: auto; color: var(--ink-faint);
+  transition: transform 250ms var(--ease-out);
+}
+.modes[open] > summary::after { transform: rotate(180deg); }
 .modes[open] > summary { border-bottom: 1px solid var(--line-soft); }
+/* block-size는 레이아웃 속성이지만 단일 요소 + 저빈도라 허용.
+   interpolate-size/::details-content 미지원 브라우저에서는 즉시 열림으로 폴백된다 */
+.modes::details-content {
+  block-size: 0; overflow: hidden;
+  transition: block-size 250ms var(--ease-out), content-visibility 250ms allow-discrete;
+}
+.modes[open]::details-content { block-size: auto; }
 .modes .inner { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
