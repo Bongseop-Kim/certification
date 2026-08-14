@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
 import {
-  byKey,
+  lookup,
   normalizeShortAnswer,
   renderBody,
   subjectTag,
@@ -10,14 +10,15 @@ import {
 
 type Props = {
   keys: string[]
+  mode: 'short' | 'memo'
   record: (rows: Omit<Attempt, 'answered_at'>[]) => Promise<number[]>
   onDone: (sessionId: string, elapsedMs: number) => void
   onExit: () => void
 }
 
-export function Short({ keys, record, onDone, onExit }: Props) {
+export function Short({ keys, mode, record, onDone, onExit }: Props) {
   const [session] = useState(() => ({ id: crypto.randomUUID(), startedAt: Date.now() }))
-  const questions = keys.flatMap((key) => byKey.get(key) ?? [])
+  const questions = keys.flatMap((key) => lookup(key) ?? [])
   const [idx, setIdx] = useState(0)
   const [chosen, setChosen] = useState('')
   const [graded, setGraded] = useState<{ chosen: string; ok: boolean }>()
@@ -29,7 +30,7 @@ export function Short({ keys, record, onDone, onExit }: Props) {
     const ok = normalizeShortAnswer(answer) === normalizeShortAnswer(q.answer)
     setGraded({ chosen: answer, ok })
     void record([
-      { question_key: q.key, correct: ok, chosen: answer, mode: 'short', session_id: session.id, note: null },
+      { question_key: q.key, correct: ok, chosen: answer, mode, session_id: session.id, note: null },
     ])
   }
 
@@ -44,7 +45,11 @@ export function Short({ keys, record, onDone, onExit }: Props) {
 
   return (
     <>
-      <Nav title="단답 특강" meta={`${subjectTag(q.subject)} · ${idx + 1}/${questions.length}`} onBack={onExit} />
+      <Nav
+        title={mode === 'memo' ? '암기 카드' : '단답 특강'}
+        meta={`${subjectTag(q.subject)} · ${idx + 1}/${questions.length}`}
+        onBack={onExit}
+      />
       <form
         className="screen"
         onSubmit={(event) => {

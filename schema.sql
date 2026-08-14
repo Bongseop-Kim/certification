@@ -11,7 +11,7 @@ create table attempts (
   answered_at  timestamptz not null default now(),
   correct      boolean not null,
   chosen       text,          -- 고른 답. mc는 보기 인덱스, ox는 O/X
-  mode         text not null check (mode in ('practice','mock100','mock_short','ox','review')),
+  mode         text not null check (mode in ('practice','mock100','mock_short','ox','short','memo','review')),
   session_id   uuid,          -- 모의고사 결과 재계산용
   note         text           -- "왜 틀렸는지" 오답 메모
 );

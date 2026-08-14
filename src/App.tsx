@@ -19,6 +19,7 @@ import {
   QUESTIONS,
   SUBJECTS,
   loadMock,
+  memoDue,
   pct,
   saveMock,
   shuffle,
@@ -40,7 +41,7 @@ type View =
   | { s: 'setup'; mode: 'mock_short' | 'ox' | 'short' }
   | { s: 'exam'; mode: 'mock100' | 'mock_short'; saved: Saved }
   | { s: 'ox'; keys: string[] }
-  | { s: 'short'; keys: string[] }
+  | { s: 'short'; keys: string[]; mode: 'short' | 'memo' }
   | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
   | { s: 'history' }
 
@@ -92,7 +93,7 @@ export default function App() {
               view.mode === 'ox'
                 ? setView({ s: 'ox', keys })
                 : view.mode === 'short'
-                  ? setView({ s: 'short', keys })
+                  ? setView({ s: 'short', keys, mode: 'short' })
                   : setView({
                     s: 'exam',
                     mode: 'mock_short',
@@ -128,9 +129,10 @@ export default function App() {
         return (
           <Short
             keys={view.keys}
+            mode={view.mode}
             record={record}
             onExit={home}
-            onDone={(sessionId, elapsedMs) => setView({ s: 'result', mode: 'short', sessionId, elapsedMs })}
+            onDone={(sessionId, elapsedMs) => setView({ s: 'result', mode: view.mode, sessionId, elapsedMs })}
           />
         )
       case 'result':
@@ -145,8 +147,8 @@ export default function App() {
               setView(
                 view.mode === 'ox'
                   ? { s: 'ox', keys }
-                  : view.mode === 'short'
-                    ? { s: 'short', keys }
+                  : view.mode === 'short' || view.mode === 'memo'
+                    ? { s: 'short', keys, mode: view.mode }
                     : { s: 'practice', mode: 'review', keys },
               )
             }
@@ -202,6 +204,7 @@ function Home({
 }) {
   const rates = subjectRates(stats)
   const wrong = wrongKeys(stats, hidden)
+  const memo = memoDue(attempts, hidden)
   const marked = [...marks].filter((k) => byKey.has(k) && !hidden.has(k))
   const pool = visible(MC, hidden)
   const resume = loadMock()
@@ -318,6 +321,24 @@ function Home({
             </div>
           </div>
           {review.length > 0 && <span className="go">시작 →</span>}
+        </button>
+
+        <button
+          className="banner"
+          disabled={!memo.length || loading}
+          onClick={() => setView({ s: 'short', keys: memo.map((q) => q.key), mode: 'memo' })}
+        >
+          <div>
+            <div className="bt">오늘 암기{!loading && ` ${memo.length}장`}</div>
+            <div className="bd">
+              {loading
+                ? '기록을 불러오고 있습니다'
+                : memo.length
+                  ? '암호 스펙·포트·파일 경로를 직접 입력'
+                  : '오늘 볼 카드를 다 봤습니다'}
+            </div>
+          </div>
+          {memo.length > 0 && <span className="go">시작 →</span>}
         </button>
 
         {latestMockSummary && (

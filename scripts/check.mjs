@@ -3,12 +3,13 @@
 import assert from 'node:assert/strict'
 import { readdirSync, readFileSync } from 'node:fs'
 
-const DIR = new URL('../questions/written/', import.meta.url)
+const DIRS = ['../questions/written/', '../questions/memo/'].map((d) => new URL(d, import.meta.url))
 const SUBJECTS = ['system', 'network', 'app', 'general', 'law']
 const seen = new Set()
 const variants = []
 let total = 0
 
+for (const DIR of DIRS)
 for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
   const qs = JSON.parse(readFileSync(new URL(file, DIR), 'utf8'))
   assert(Array.isArray(qs) && qs.length, `${file}: 배열이 비어 있다`)
@@ -33,8 +34,11 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
       assert.fail(`${at}: 모르는 type ${q.type}`)
     }
   }
+  // 암기 카드는 회상 훈련이 목적이라 전부 단답이어야 한다 (4지선다면 소거법으로 맞는다)
+  const memo = DIR.href.includes('/memo/')
+  if (memo) for (const q of qs) assert.equal(q.type, 'short', `${file} ${q.key}: 암기 카드는 short만`)
   // 기출 회차는 과목당 20문항 균등 (직접 만든 세트는 예외)
-  if (qs.length === 100) {
+  if (!memo && qs.length === 100) {
     for (const s of SUBJECTS) {
       assert.equal(qs.filter((q) => q.subject === s).length, 20, `${file}: ${s} 20문항 아님`)
     }

@@ -13,6 +13,7 @@ npm run build   # tsc + vite build
 | 무엇 | 어디 |
 |---|---|
 | 문제 원본 | `questions/written/*.json` — 빌드에 번들된다. DB에 없다 |
+| 암기 카드 | `questions/memo/*.json` — 전부 `short`. 출제 풀(`QUESTIONS`)에 섞지 않아 모의고사에 안 나온다 |
 | 풀이 기록 | Supabase `attempts` (`schema.sql`) |
 | 문제당 표시 | Supabase `flags` — 북마크(`mark`), 관심 없음(`hide`) |
 | 기출 파서 | `scripts/parse_exam.py` (PDF → JSON), `scripts/stimulus/*.json` (이미지 지문 필사) |
@@ -27,6 +28,8 @@ npm run build   # tsc + vite build
 - 해설(`explanation`)은 쓰지 않는다. 오답일 때 남기는 한 줄 메모(`attempts.note`)가 그 역할을 한다
 - 합격 판정: 과목당 40% 이상 **그리고** 평균 60% 이상 · 100문항 150분
 - 관심 없음은 출제 후보에서만 빼고 기록은 그대로 둔다. 출제/목록 지점은 `visible(qs, hidden)`을 거친다
+- 암기 카드는 4지선다로 만들지 않는다. 보기가 있으면 소거법으로 맞아 회상 훈련이 안 된다 (`npm run check`가 막는다)
+- 오늘 볼 카드는 `memoDue()`가 `attempts`에서 파생한다. 연속 정답 수 = Leitner 박스(0·1·3·7·21일), 하루 30장
 
 ## 아직 없는 것
 
