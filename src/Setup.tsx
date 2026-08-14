@@ -73,12 +73,15 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           </div>
         </div>
 
-        <button className="card" onClick={() => setWeak((w) => !w)}>
-          <div className="ct" style={{ justifyContent: 'space-between' }}>
+        <button
+          className="card option-toggle"
+          role="switch"
+          aria-checked={weak}
+          onClick={() => setWeak((w) => !w)}
+        >
+          <div className="ct">
             약한 문제 먼저
-            <span style={{ fontSize: 12, color: weak ? 'var(--accent)' : 'var(--ink-faint)' }}>
-              {weak ? '켜짐' : '꺼짐'}
-            </span>
+            <span className="switch" aria-hidden="true" />
           </div>
           <div className="cd">정답률이 낮거나 아직 안 푼 문제를 우선 뽑습니다</div>
         </button>

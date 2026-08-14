@@ -105,6 +105,13 @@ code, .k {
 .card .ct { font-weight: 650; font-size: 15px; display: flex; align-items: center; gap: 7px; }
 .card .cd { font-size: 12.5px; color: var(--ink-muted); }
 .card .cm { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); }
+.option-toggle .ct { justify-content: space-between; width: 100%; }
+.switch { width: 40px; height: 22px; padding: 2px; border-radius: 999px; background: var(--line); flex: none; }
+.switch::after {
+  content: ''; display: block; width: 18px; height: 18px; border-radius: 50%; background: var(--surface);
+}
+.option-toggle[aria-checked="true"] .switch { background: var(--accent); }
+.option-toggle[aria-checked="true"] .switch::after { margin-left: 18px; }
 
 .banner {
   border: 1px solid var(--accent-line); background: var(--accent-soft); border-radius: 10px;
