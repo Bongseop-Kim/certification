@@ -52,6 +52,7 @@ export function Short({ keys, mode, record, onDone, onExit }: Props) {
       />
       <form
         className="screen"
+        role="main"
         onSubmit={(event) => {
           event.preventDefault()
           if (graded) next()

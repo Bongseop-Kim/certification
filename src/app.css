@@ -62,6 +62,10 @@ html { scrollbar-width: none; }           /* Firefox, Chrome 121+ */
 ::-webkit-scrollbar { display: none; }    /* Safari, 구형 WebKit */
 
 button { font-family: inherit; cursor: pointer; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
 /* 누를 수 있는 건 눌린 티가 나야 한다. disabled는 :active가 안 걸려서 따로 막을 필요 없다 */
 .btn, .card, .ch, .banner, .ox button, .seg button {
   transition: transform 150ms var(--ease-out), background-color 150ms var(--ease-out),
@@ -79,6 +83,7 @@ button { font-family: inherit; cursor: pointer; }
   max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex; flex-direction: column; /* .screen이 남는 높이를 먹어야 .dock이 바닥에 붙는다 */
   background: var(--surface);
   border-inline: 1px solid var(--line-soft);
@@ -90,7 +95,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 /* padding으로 44px 타겟을 만들고 음수 margin으로 원래 자리에 되돌린다 (WCAG 2.5.8) */
 .navbar .back { color: var(--ink-muted); font-size: 17px; line-height: 1; background: none; border: 0; padding: 13px 12px; margin: -13px -8px; }
-.navbar .t { font-weight: 650; font-size: 16px; }
+.navbar .t { margin: 0; font-weight: 650; font-size: 16px; }
 .navbar .meta { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--ink-muted); }
 .screen { padding: 16px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
 
@@ -113,7 +118,7 @@ code, .k {
   flex: 1; text-align: center; padding: 8px 4px; font-size: 13px; font-weight: 600;
   color: var(--ink-muted); border-radius: 6px; background: none; border: 0;
 }
-.seg button[aria-selected="true"], .seg button[aria-checked="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
 .seg button:disabled { color: var(--ink-faint); cursor: default; }
 
 .card {
@@ -211,9 +216,12 @@ code, .k {
   border: 1px solid var(--line-soft); border-radius: 8px; font-size: 14px; line-height: 1.5;
   background: var(--surface); color: var(--ink);
 }
+.ch:has(input) { cursor: pointer; }
+.ch:has(input:disabled) { cursor: default; }
+.ch:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
 .ch .no { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); flex: none; width: 14px; padding-top: 1px; }
-.ch[aria-checked="true"] { border-color: var(--accent); background: var(--accent-soft); }
-.ch[aria-checked="true"] .no { color: var(--accent); }
+.ch.selected, .ch[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.ch.selected .no, .ch[aria-pressed="true"] .no { color: var(--accent); }
 .ch.correct { border-color: var(--pass); background: var(--pass-soft); }
 .ch.wrong { border-color: var(--fail); background: var(--fail-soft); }
 .ch .mk { margin-left: auto; font-family: var(--mono); font-size: 11px; font-weight: 700; flex: none; }
@@ -319,6 +327,7 @@ code, .k {
 }
 .ox button.correct { border-color: var(--pass); background: var(--pass-soft); color: var(--pass); }
 .ox button.wrong { border-color: var(--fail); background: var(--fail-soft); color: var(--fail); }
+.ox button:disabled { cursor: default; }
 .short-answer { display: flex; flex-direction: column; gap: 7px; }
 .short-answer input {
   width: 100%; padding: 13px 14px; border-radius: 8px; border: 1px solid var(--line);

@@ -45,10 +45,10 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
   return (
     <>
       <Nav title="내 기록" meta={`푼 문제 ${solved}`} onBack={onExit} />
-      <div className="screen">
-        <div className="seg" role="tablist">
+      <main className="screen">
+        <div className="seg" role="group" aria-label="기록 분류">
           {TABS.map((t) => (
-            <button key={t.id} role="tab" aria-selected={t.id === tab} onClick={() => setTab(t.id)}>
+            <button key={t.id} aria-pressed={t.id === tab} onClick={() => setTab(t.id)}>
               {t.label}
             </button>
           ))}
@@ -112,7 +112,7 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
             이 목록 {Math.min(keys.length, 20)}개 모아 풀기
           </button>
         )}
-      </div>
+      </main>
     </>
   )
 }

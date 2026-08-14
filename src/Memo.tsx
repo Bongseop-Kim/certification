@@ -45,10 +45,10 @@ export function Memo({ hidden, onExit }: Props) {
   return (
     <>
       <Nav title="암기표" meta={`${visible(MEMO, hidden).length}장`} onBack={onExit} />
-      <div className="screen">
-        <div className="seg" role="tablist">
+      <main className="screen">
+        <div className="seg" role="group" aria-label="암기표 분류">
           {TABS.map((t) => (
-            <button key={t.id} role="tab" aria-selected={t.id === tab} onClick={() => setTab(t.id)}>
+            <button key={t.id} aria-pressed={t.id === tab} onClick={() => setTab(t.id)}>
               {t.label}
             </button>
           ))}
@@ -72,7 +72,7 @@ export function Memo({ hidden, onExit }: Props) {
             </button>
           ))}
         </div>
-      </div>
+      </main>
     </>
   )
 }

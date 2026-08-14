@@ -54,7 +54,7 @@ export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome 
         meta={duration(elapsedMs)}
         onBack={onHome}
       />
-      <div className="screen">
+      <main className="screen">
         <div className={passed || !full ? 'score ok' : 'score'}>
           <span className="big">{full ? (passed ? '합격' : '불합격') : `${rate}%`}</span>
           <span className="pt">
@@ -126,7 +126,7 @@ export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome 
         <button className="btn weak" onClick={onHome}>
           홈으로
         </button>
-      </div>
+      </main>
     </>
   )
 }

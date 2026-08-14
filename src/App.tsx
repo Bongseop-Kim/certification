@@ -281,7 +281,7 @@ function Home({
   return (
     <>
       <Nav title="보안기사 문제집" meta={`문제 ${visible(QUESTIONS, hidden).length}개`} />
-      <div className="screen">
+      <main className="screen">
         {error && <div className="verdict toast">기록 서버 오류 — {error}</div>}
 
         {resume && (
@@ -421,31 +421,6 @@ function Home({
           </div>
         </details>
 
-        <button
-          className="banner plain"
-          disabled={!wrong.length}
-          onClick={() => setView({ s: 'practice', mode: 'review', keys: wrong })}
-        >
-          <div>
-            <div className="bt">틀린 문제 {wrong.length}개</div>
-            <div className="bd">{wrong.length ? '최근 오답부터 모아 풀기' : '틀린 문제는 여기 모입니다'}</div>
-          </div>
-          {wrong.length > 0 && <span className="go">모아 풀기 →</span>}
-        </button>
-
-        <button
-          className="banner plain"
-          disabled={!marked.length}
-          onClick={() => setView({ s: 'practice', mode: 'review', keys: marked })}
-        >
-          <div>
-            <div className="bt">★ 즐겨찾기 {marked.length}개</div>
-            <div className="bd">{marked.length ? '별표한 문제만 모아 풀기' : '문제를 풀다 ★를 누르면 여기 모입니다'}</div>
-          </div>
-          {marked.length > 0 && <span className="go">모아 풀기 →</span>}
-        </button>
-
-
         <div>
           <div className="label" style={{ marginBottom: 10 }}>
             과목별 정답률
@@ -483,9 +458,9 @@ function Home({
         </div>
 
         <button className="btn weak" onClick={() => setView({ s: 'history' })} disabled={loading}>
-          내 기록 · 오답노트
+          내 기록 · 오답 {wrong.length} · 북마크 {marked.length}
         </button>
-      </div>
+      </main>
     </>
   )
 }

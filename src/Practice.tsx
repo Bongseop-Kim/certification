@@ -109,12 +109,12 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
     return (
       <>
         <Nav title={mode === 'review' ? '오답 모아 풀기' : '연습형'} onBack={onExit} />
-        <div className="screen">
+        <main className="screen">
           <div className="empty">{queue.length}문항을 다 풀었습니다.</div>
           <button className="btn" onClick={onExit}>
             홈으로
           </button>
-        </div>
+        </main>
       </>
     )
   }
@@ -128,7 +128,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
         meta={`${subjectTag(q.subject)} · ${idx + 1}${mode === 'review' ? `/${queue.length}` : ''}`}
         onBack={onExit}
       />
-      <div className="screen">
+      <main className="screen">
         {graded && (
           <div role="status" className={ok ? 'verdict ok' : 'verdict'}>
             <span className="vt">{ok ? '정답' : chosen === null ? '포기' : '오답'}</span>
@@ -159,20 +159,27 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
                 : i === chosen
                   ? 'ch wrong'
                   : 'ch'
-              : 'ch'
+              : i === chosen
+                ? 'ch selected'
+                : 'ch'
             return (
-              <button
+              <label
                 key={i}
                 className={cls}
-                aria-checked={!graded && i === chosen}
-                role="radio"
-                onClick={() => !graded && setChosen(i)}
               >
+                <input
+                  className="sr-only"
+                  type="radio"
+                  name="practice-choice"
+                  checked={i === chosen}
+                  disabled={graded}
+                  onChange={() => setChosen(i)}
+                />
                 <span className="no">{CIRCLED[i]}</span>
                 <span>{renderBody(c)}</span>
                 {graded && String(i) === q.answer && <span className="mk">정답</span>}
                 {graded && !ok && i === chosen && <span className="mk">내 답</span>}
-              </button>
+              </label>
             )
           })}
         </div>
@@ -247,7 +254,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
           )}
           </div>
         </div>
-      </div>
+      </main>
     </>
   )
 }

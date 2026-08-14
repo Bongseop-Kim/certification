@@ -83,7 +83,7 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
         meta={`${subjectTag(q.subject)} · ${idx + 1}`}
         onBack={exit}
       />
-      <div className="screen">
+      <main className="screen">
         <div className="timer">
           <div>
             <div className="tl">{limitMs ? (over ? '초과' : '남은 시간') : '경과'}</div>
@@ -112,16 +112,20 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
 
         <div className="choices" role="radiogroup" aria-label="보기">
           {(q.choices ?? []).map((c, i) => (
-            <button
+            <label
               key={i}
-              className="ch"
-              role="radio"
-              aria-checked={answers[q.key] === String(i)}
-              onClick={() => setAnswers((a) => ({ ...a, [q.key]: String(i) }))}
+              className={answers[q.key] === String(i) ? 'ch selected' : 'ch'}
             >
+              <input
+                className="sr-only"
+                type="radio"
+                name="exam-choice"
+                checked={answers[q.key] === String(i)}
+                onChange={() => setAnswers((a) => ({ ...a, [q.key]: String(i) }))}
+              />
               <span className="no">{CIRCLED[i]}</span>
               <span>{renderBody(c)}</span>
-            </button>
+            </label>
           ))}
         </div>
 
@@ -191,7 +195,7 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
             </button>
           </div>
         </div>
-      </div>
+      </main>
     </>
   )
 }

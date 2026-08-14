@@ -38,7 +38,7 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
         meta={mode === 'ox' ? 'OX' : mode === 'short' ? '주관식' : '4지선다'}
         onBack={onExit}
       />
-      <div className="screen">
+      <main className="screen">
         <div>
           <div className="label" style={{ marginBottom: 10 }}>
             과목
@@ -48,13 +48,14 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
               const size = pool.filter((q) => q.subject === s.id).length
               const on = picked.has(s.id)
               return (
-                <button key={s.id} className="ch" aria-checked={on} role="checkbox" onClick={() => toggle(s.id)}>
+                <label key={s.id} className={on ? 'ch selected' : 'ch'}>
+                  <input className="sr-only" type="checkbox" checked={on} onChange={() => toggle(s.id)} />
                   <span className="no">{on ? '☑' : '☐'}</span>
                   <span>{s.label}</span>
                   <span className="mk" style={{ color: on ? 'var(--accent)' : 'var(--ink-faint)' }}>
                     {size}
                   </span>
-                </button>
+                </label>
               )
             })}
           </div>
@@ -64,9 +65,9 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           <div className="label" style={{ marginBottom: 8 }}>
             문항 수
           </div>
-          <div className="seg" role="radiogroup" aria-label="문항 수">
+          <div className="seg" role="group" aria-label="문항 수">
             {counts.map((c) => (
-              <button key={c} role="radio" aria-checked={c === count} onClick={() => setCount(c)}>
+              <button key={c} aria-pressed={c === count} onClick={() => setCount(c)}>
                 {c}
               </button>
             ))}
@@ -90,7 +91,7 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           {picked.size ? '' : '전 과목 '}
           {n}문항 시작
         </button>
-      </div>
+      </main>
     </>
   )
 }

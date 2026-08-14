@@ -64,7 +64,7 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
   return (
     <>
       <Nav title="OX 특강" meta={`${subjectTag(q.subject)} · ${idx + 1}/${questions.length}`} onBack={onExit} />
-      <div className="screen">
+      <main className="screen">
         <div className="streak">
           <span>연속 {streak}개</span>
           <span className="dots">
@@ -79,14 +79,17 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
         </p>
 
         {/* 정오답을 테두리 색으로만 알리면 색각이상 사용자가 구분 못 한다 (WCAG 1.4.1) */}
-        <div className="ox">
+        <div className="ox" role="group" aria-label="OX 선택">
           {(['O', 'X'] as const).map((v) => (
             <button
               key={v}
               className={flash?.chosen === v ? (flash.ok ? 'correct' : 'wrong') : ''}
+              aria-label={flash?.chosen === v ? `${v}, ${flash.ok ? '정답' : '오답'}` : v}
+              disabled={Boolean(flash)}
               onClick={() => answer(v)}
             >
-              {flash?.chosen === v ? (flash.ok ? '✓' : '✗') : v}
+              {v}
+              {flash?.chosen === v && <span aria-hidden="true"> {flash.ok ? '✓' : '✗'}</span>}
             </button>
           ))}
         </div>
@@ -107,7 +110,7 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
             </p>
           </div>
         )}
-      </div>
+      </main>
     </>
   )
 }
