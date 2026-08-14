@@ -7,6 +7,7 @@ import {
   TIME_LIMIT_MIN,
   byKey,
   hms,
+  loadMock,
   renderBody,
   saveMock,
   type Attempt,
@@ -24,10 +25,16 @@ type Props = {
 }
 
 export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit }: Props) {
-  const [answers, setAnswers] = useState<Record<string, string>>(saved.answers)
-  const [idx, setIdx] = useState(saved.idx)
+  // mock100 진행 상태의 정본은 localStorage다. 브라우저 뒤로/앞으로 가기로 이 화면에
+  // 다시 들어와도 히스토리에 박제된 낡은 saved가 아니라 마지막 저장분에서 이어간다.
+  const [start] = useState(() => {
+    const disk = mode === 'mock100' ? loadMock() : null
+    return disk?.sessionId === saved.sessionId ? disk : saved
+  })
+  const [answers, setAnswers] = useState<Record<string, string>>(start.answers)
+  const [idx, setIdx] = useState(start.idx)
   const [now, setNow] = useState(Date.now())
-  const questions = saved.keys.flatMap((k) => byKey.get(k) ?? [])
+  const questions = start.keys.flatMap((k) => byKey.get(k) ?? [])
   const q = questions[idx]
 
   useEffect(() => {
@@ -37,12 +44,12 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
 
   // 답을 고를 때마다 진행 상태를 덮어쓴다. 앱을 닫아도 이어풀 수 있다.
   useEffect(() => {
-    if (mode === 'mock100') saveMock({ ...saved, answers, idx })
-  }, [mode, saved, answers, idx])
+    if (mode === 'mock100') saveMock({ ...start, answers, idx })
+  }, [mode, start, answers, idx])
 
   const unanswered = questions.filter((x) => answers[x.key] === undefined).length
   const limitMs = mode === 'mock100' ? TIME_LIMIT_MIN * 60_000 : 0
-  const elapsed = now - saved.startedAt
+  const elapsed = now - start.startedAt
   const left = limitMs - elapsed
   const over = limitMs > 0 && left < 0
 
@@ -54,7 +61,7 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
         correct: answers[x.key] === x.answer,
         chosen: answers[x.key] ?? null,
         mode,
-        session_id: saved.sessionId,
+        session_id: start.sessionId,
         note: null,
       })),
     )
@@ -103,7 +110,7 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
         {/* ponytail: 정오표(note)는 문제 푸는 중엔 안 보여준다 — "2번을 누르면 정답"이 답을 불어버린다.
             모의고사는 채점 화면이 따로라, 여기선 아예 렌더하지 않는다. 연습형은 채점 후에 보여준다. */}
 
-        <div className="choices">
+        <div className="choices" role="radiogroup" aria-label="보기">
           {(q.choices ?? []).map((c, i) => (
             <button
               key={i}
@@ -121,7 +128,7 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
         <CopyBtn q={q} />
 
         <div className="row">
-          <button className="btn weak" onClick={() => toggleMark(q.key)}>
+          <button className="btn weak" aria-label="북마크" onClick={() => toggleMark(q.key)}>
             {marks.has(q.key) ? '★' : '☆'}
           </button>
           <button className="btn weak" style={{ flex: 2 }} disabled={!idx} onClick={() => setIdx((i) => i - 1)}>
@@ -172,13 +179,17 @@ export function Exam({ mode, saved, record, marks, toggleMark, onSubmit, onExit 
           </div>
         </div>
 
-        <div className="row">
-          <button className="btn weak" onClick={exit}>
-            {mode === 'mock100' ? '나가기 (진행 저장)' : '나가기'}
-          </button>
-          <button className="btn" onClick={submit}>
-            {unanswered ? `제출 · ${unanswered}문항 남음` : '제출'}
-          </button>
+        {/* 제출은 답안지 100칸 아래라 매번 스크롤해야 했다 — 이 줄만 하단 고정.
+            이전/다음은 선택지 바로 아래(답안지 위)라 이미 스크롤 없이 닿는다. */}
+        <div className="dock">
+          <div className="row">
+            <button className="btn weak" onClick={exit}>
+              {mode === 'mock100' ? '나가기 (진행 저장)' : '나가기'}
+            </button>
+            <button className="btn" onClick={submit}>
+              {unanswered ? `제출 · ${unanswered}문항 남음` : '제출'}
+            </button>
+          </div>
         </div>
       </div>
     </>

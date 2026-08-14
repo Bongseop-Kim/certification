@@ -130,7 +130,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
       />
       <div className="screen">
         {graded && (
-          <div className={ok ? 'verdict ok' : 'verdict'}>
+          <div role="status" className={ok ? 'verdict ok' : 'verdict'}>
             <span className="vt">{ok ? '정답' : chosen === null ? '포기' : '오답'}</span>
             <span className="vd">
               정답 {CIRCLED[Number(q.answer)]}
@@ -151,7 +151,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
         <p className="qbody">{renderBody(q.body)}</p>
         {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
 
-        <div className="choices">
+        <div className="choices" role="radiogroup" aria-label="보기">
           {(q.choices ?? []).map((c, i) => {
             const cls = graded
               ? String(i) === q.answer
@@ -214,7 +214,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
               <button className="btn weak" title="이 문제를 다시 출제하지 않습니다" onClick={hide}>
                 관심 없음
               </button>
-              <button className="btn" onClick={next}>
+              <button className="btn" style={{ flex: 2 }} onClick={next}>
                 다음 문제
               </button>
             </div>

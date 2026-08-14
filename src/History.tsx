@@ -46,9 +46,9 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
     <>
       <Nav title="내 기록" meta={`푼 문제 ${solved}`} onBack={onExit} />
       <div className="screen">
-        <div className="seg">
+        <div className="seg" role="tablist">
           {TABS.map((t) => (
-            <button key={t.id} aria-selected={t.id === tab} onClick={() => setTab(t.id)}>
+            <button key={t.id} role="tab" aria-selected={t.id === tab} onClick={() => setTab(t.id)}>
               {t.label}
             </button>
           ))}
@@ -67,30 +67,30 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
               return (
                 <div key={k}>
                   {/* ponytail: OX는 연습형 상세 화면이 없어서 그 행만 기존 펼치기 유지 */}
-                  <button
-                    className="hitem"
-                    onClick={() => (q.type === 'mc' ? onSolve([k]) : setOpen(open === k ? undefined : k))}
-                  >
-                    <span className={cls}>{p === null ? '—' : `${p}%`}</span>
-                    <span className="hb">
-                      <span className="hq">{renderBody(q.body)}</span>
-                      <span className="hm">
-                        {subjectTag(q.subject)} ·{' '}
-                        {s
-                          ? `${s.tries}회 시도 · 마지막 ${dayLabel(s.last)}${s.notes.length ? ` · 메모 ${s.notes.length}개` : ''}`
-                          : '아직 안 푼 문제'}
+                  <div className="hrow">
+                    <button
+                      className="hitem"
+                      onClick={() => (q.type === 'mc' ? onSolve([k]) : setOpen(open === k ? undefined : k))}
+                    >
+                      <span className={cls}>{p === null ? '—' : `${p}%`}</span>
+                      <span className="hb">
+                        <span className="hq">{renderBody(q.body)}</span>
+                        <span className="hm">
+                          {subjectTag(q.subject)} ·{' '}
+                          {s
+                            ? `${s.tries}회 시도 · 마지막 ${dayLabel(s.last)}${s.notes.length ? ` · 메모 ${s.notes.length}개` : ''}`
+                            : '아직 안 푼 문제'}
+                        </span>
                       </span>
-                    </span>
-                    <span
+                    </button>
+                    <button
                       className={tab === 'hide' || marks.has(k) ? 'star' : 'star off'}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        toggle(k, tab === 'hide' ? 'hide' : 'mark')
-                      }}
+                      aria-label={tab === 'hide' ? '관심 없음 해제' : marks.has(k) ? '북마크 해제' : '북마크'}
+                      onClick={() => toggle(k, tab === 'hide' ? 'hide' : 'mark')}
                     >
                       {tab === 'hide' ? '해제' : marks.has(k) ? '★' : '☆'}
-                    </span>
-                  </button>
+                    </button>
+                  </div>
                   {open === k && (
                     <div className="callout" style={{ margin: '4px 0 10px' }}>
                       <span className="cot">정답 {q.type === 'mc' ? `${Number(q.answer) + 1}번` : q.answer}</span>

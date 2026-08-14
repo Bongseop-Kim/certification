@@ -75,15 +75,17 @@ export function Short({ keys, mode, record, onDone, onExit }: Props) {
         </label>
 
         {graded && (
-          <div className={graded.ok ? 'verdict ok' : 'verdict'}>
+          <div role="status" className={graded.ok ? 'verdict ok' : 'verdict'}>
             <span className="vt">{graded.ok ? '정답입니다' : '오답입니다'}</span>
             {!graded.ok && <span className="vd">정답 {q.answer}</span>}
           </div>
         )}
 
-        <button className="btn" type="submit" disabled={!graded && !chosen.trim()}>
-          {graded ? (idx + 1 >= questions.length ? '결과 보기' : '다음 문제') : '채점'}
-        </button>
+        <div className="dock">
+          <button className="btn" type="submit" disabled={!graded && !chosen.trim()}>
+            {graded ? (idx + 1 >= questions.length ? '결과 보기' : '다음 문제') : '채점'}
+          </button>
+        </div>
       </form>
     </>
   )

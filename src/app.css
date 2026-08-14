@@ -22,7 +22,7 @@
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root {
     --ground: #0d1114;
     --surface: #171c20;
     --surface-2: #1e242a;
@@ -71,7 +71,8 @@ button { font-family: inherit; cursor: pointer; }
   border-bottom: 1px solid var(--line-soft);
   position: sticky; top: 0; background: var(--surface); z-index: 1;
 }
-.navbar .back { color: var(--ink-muted); font-size: 17px; line-height: 1; background: none; border: 0; padding: 0 4px; }
+/* padding으로 44px 타겟을 만들고 음수 margin으로 원래 자리에 되돌린다 (WCAG 2.5.8) */
+.navbar .back { color: var(--ink-muted); font-size: 17px; line-height: 1; background: none; border: 0; padding: 13px 12px; margin: -13px -8px; }
 .navbar .t { font-weight: 650; font-size: 16px; }
 .navbar .meta { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--ink-muted); }
 .screen { padding: 16px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
@@ -95,7 +96,7 @@ code, .k {
   flex: 1; text-align: center; padding: 8px 4px; font-size: 13px; font-weight: 600;
   color: var(--ink-muted); border-radius: 6px; background: none; border: 0;
 }
-.seg button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+.seg button[aria-selected="true"], .seg button[aria-checked="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
 .seg button:disabled { color: var(--ink-faint); cursor: default; }
 
 .card {
@@ -133,8 +134,8 @@ code, .k {
 .progress-track { height: 8px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
 .progress-track span { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
 .progress-card button {
-  align-self: flex-start; padding: 0; background: none; border: 0;
-  color: var(--accent); font-size: 12.5px; font-weight: 650;
+  align-self: flex-start; padding: 5px 0; min-height: 24px; background: none; border: 0;
+  color: var(--accent); font-size: 12.5px; font-weight: 650; text-align: left;
 }
 .progress-card button:disabled { color: var(--ink-faint); cursor: default; }
 .recent-mock strong { font-size: 14px; }
@@ -153,7 +154,7 @@ code, .k {
 .bars { display: flex; flex-direction: column; gap: 10px; }
 .bar {
   display: grid; grid-template-columns: 74px 1fr 42px; align-items: center; gap: 10px;
-  width: 100%; background: none; border: 0; padding: 2px 0; text-align: left; color: inherit;
+  width: 100%; background: none; border: 0; padding: 7px 0; text-align: left; color: inherit;
 }
 .bar .bn { font-size: 12px; color: var(--ink-muted); }
 .bar .track { height: 7px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
@@ -233,7 +234,7 @@ code, .k {
 
 .omr { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; }
 .omr button {
-  font-family: var(--mono); font-size: 9.5px; text-align: center; padding: 5px 0;
+  font-family: var(--mono); font-size: 9.5px; text-align: center; padding: 8px 0;
   border-radius: 4px; border: 1px solid var(--line-soft); color: var(--ink-faint);
   font-variant-numeric: tabular-nums; background: var(--surface);
 }
@@ -292,14 +293,32 @@ code, .k {
 .rate.bad { background: var(--fail-soft); color: var(--fail); }
 .rate.mid { background: var(--warn-soft); color: var(--warn); }
 .rate.good { background: var(--pass-soft); color: var(--pass); }
-.hitem .hb { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.hitem .hb { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1; }
 .hitem .hq { font-size: 13.5px; line-height: 1.45; color: var(--ink); }
 .hitem .hm { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); }
-.hitem .star { margin-left: auto; color: var(--accent); flex: none; }
-.hitem .star.off { color: var(--line); }
+/* 별표는 hitem 안에 중첩하면 키보드로 못 누른다 — 형제 버튼으로 뺀다 */
+.hrow { display: flex; align-items: flex-start; border-bottom: 1px solid var(--line-soft); }
+.hrow .hitem { border-bottom: 0; flex: 1; min-width: 0; }
+.star {
+  flex: none; background: none; border: 0; padding: 12px 2px 12px 10px;
+  color: var(--accent); font-size: 14px; line-height: 1.45;
+}
+.star.off { color: var(--line); }
 .hitem .ans {
   margin-left: auto; flex: none; max-width: 45%; text-align: right; word-break: break-word;
   font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--ink);
 }
 .hitem .ans.off { color: var(--line); letter-spacing: -0.05em; }
 .empty { color: var(--ink-muted); font-size: 13.5px; text-align: center; padding: 32px 0; }
+
+/* 홈의 모드 카드 묶음. 매일 쓰는 사람은 상단 3개(이어풀기·복습·암기)만 보면 된다 */
+.modes { border: 1px solid var(--line-soft); border-radius: 10px; background: var(--surface-2); }
+.modes > summary {
+  padding: 12px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+  display: flex; align-items: center; gap: 8px; list-style: none;
+}
+.modes > summary::-webkit-details-marker { display: none; }
+.modes > summary::after { content: '▾'; margin-left: auto; color: var(--ink-faint); }
+.modes[open] > summary::after { content: '▴'; }
+.modes[open] > summary { border-bottom: 1px solid var(--line-soft); }
+.modes .inner { padding: 12px; display: flex; flex-direction: column; gap: 10px; }

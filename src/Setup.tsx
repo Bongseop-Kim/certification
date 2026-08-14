@@ -43,7 +43,7 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           <div className="label" style={{ marginBottom: 10 }}>
             과목
           </div>
-          <div className="choices">
+          <div className="choices" role="group" aria-label="과목">
             {SUBJECTS.map((s) => {
               const size = pool.filter((q) => q.subject === s.id).length
               const on = picked.has(s.id)
@@ -64,9 +64,9 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           <div className="label" style={{ marginBottom: 8 }}>
             문항 수
           </div>
-          <div className="seg">
+          <div className="seg" role="radiogroup" aria-label="문항 수">
             {counts.map((c) => (
-              <button key={c} aria-selected={c === count} onClick={() => setCount(c)}>
+              <button key={c} role="radio" aria-checked={c === count} onClick={() => setCount(c)}>
                 {c}
               </button>
             ))}

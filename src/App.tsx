@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Exam } from './Exam.tsx'
 import { Memo } from './Memo.tsx'
 import { History, type HistTab } from './History.tsx'
@@ -64,8 +64,21 @@ export default function App() {
   const { attempts, record, addNote, error, loading } = useAttempts()
   const { marks, hidden, toggle, error: flagError } = useFlags()
   const toggleMark = (key: string) => void toggle(key, 'mark')
-  const [view, setView] = useState<View>({ s: 'home' })
+  const [view, show] = useState<View>({ s: 'home' })
   const [histTab, setHistTab] = useState<HistTab>('weak')
+
+  // 화면 전환을 히스토리에 남긴다. 안 그러면 모바일에서 뒤로 스와이프할 때
+  // 앱 자체를 나가버려서 풀던 문제가 날아간다. View는 전부 직렬화 가능하다.
+  const setView = (v: View) => {
+    history.pushState({ view: v }, '')
+    show(v)
+  }
+  useEffect(() => {
+    const onPop = (e: PopStateEvent) => show((e.state as { view?: View } | null)?.view ?? { s: 'home' })
+    addEventListener('popstate', onPop)
+    return () => removeEventListener('popstate', onPop)
+  }, [])
+
   const home = () => setView({ s: 'home' })
   const stats = statsByKey(attempts)
 
@@ -292,7 +305,8 @@ function Home({
           <div className="progress-head">
             <div>
               <div className="label">객관식 학습 진도</div>
-              <strong>{loading ? '기록 불러오는 중' : `${solved} / ${pool.length}문제`}</strong>
+              {/* 로딩 중에도 자리 폭을 지켜서 숫자가 들어올 때 레이아웃이 안 튀게 한다 */}
+              <strong>{loading ? `— / ${pool.length}문제` : `${solved} / ${pool.length}문제`}</strong>
             </div>
             <span>{loading ? '—' : `${pct(solved, pool.length)}%`}</span>
           </div>
@@ -361,48 +375,55 @@ function Home({
           </div>
         )}
 
-        <button className="card" onClick={() => setView({ s: 'practice', mode: 'practice' })}>
-          <div className="ct">연습형</div>
-          <div className="cd">답을 고르면 바로 정답을 봅니다</div>
-          <div className="cm">문항 제한 없음 · 안 푼 문제 먼저</div>
-        </button>
-        <button className="card" onClick={startMock100}>
-          <div className="ct">모의고사</div>
-          <div className="cd">실제 시험처럼 100문항을 끝까지 풀고 한 번에 채점</div>
-          <div className="cm">과목별 20문항 · 150분 · 합격 판정</div>
-        </button>
-        <button className="card" onClick={() => setView({ s: 'setup', mode: 'mock_short' })}>
-          <div className="ct">간단 모의</div>
-          <div className="cd">과목을 골라 짧게. 출퇴근길 한 세트</div>
-          <div className="cm">10 / 20 / 30문항</div>
-        </button>
-        <button
-          className="card"
-          onClick={() => setView({ s: 'setup', mode: 'ox' })}
-          disabled={!visible(OX, hidden).length}
-        >
-          <div className="ct">OX 특강</div>
-          <div className="cd">과목별 O/X를 빠르게 넘기며 개념 점검</div>
-          <div className="cm">OX 문제 {visible(OX, hidden).length}개</div>
-        </button>
-        <button
-          className="card"
-          onClick={() => setView({ s: 'setup', mode: 'short' })}
-          disabled={!visible(SHORT, hidden).length}
-        >
-          <div className="ct">단답 특강</div>
-          <div className="cd">용어를 직접 입력하며 핵심 개념 회상</div>
-          <div className="cm">단답 문제 {visible(SHORT, hidden).length}개</div>
-        </button>
-        <button
-          className="card"
-          onClick={() => setView({ s: 'memo' })}
-          disabled={!visible(MEMO, hidden).length}
-        >
-          <div className="ct">암기표</div>
-          <div className="cd">외우기 전에 한눈에. 답은 가려져 있고 한 줄씩 눌러 확인합니다</div>
-          <div className="cm">암기 카드 {visible(MEMO, hidden).length}장 · 시험 직전 훑어보기</div>
-        </button>
+        {/* ponytail: 네이티브 details. 홈에 탭 가능한 블록이 13개라 매일 쓰는 3개(이어풀기·복습·암기)가
+            묻혔다. 상태도 JS도 없이 접는다. */}
+        <details className="modes">
+          <summary>풀이 모드 6가지</summary>
+          <div className="inner">
+            <button className="card" onClick={() => setView({ s: 'practice', mode: 'practice' })}>
+              <div className="ct">연습형</div>
+              <div className="cd">답을 고르면 바로 정답을 봅니다</div>
+              <div className="cm">문항 제한 없음 · 안 푼 문제 먼저</div>
+            </button>
+            <button className="card" onClick={startMock100}>
+              <div className="ct">모의고사</div>
+              <div className="cd">실제 시험처럼 100문항을 끝까지 풀고 한 번에 채점</div>
+              <div className="cm">과목별 20문항 · 150분 · 합격 판정</div>
+            </button>
+            <button className="card" onClick={() => setView({ s: 'setup', mode: 'mock_short' })}>
+              <div className="ct">간단 모의</div>
+              <div className="cd">과목을 골라 짧게. 출퇴근길 한 세트</div>
+              <div className="cm">10 / 20 / 30문항</div>
+            </button>
+            <button
+              className="card"
+              onClick={() => setView({ s: 'setup', mode: 'ox' })}
+              disabled={!visible(OX, hidden).length}
+            >
+              <div className="ct">OX 특강</div>
+              <div className="cd">과목별 O/X를 빠르게 넘기며 개념 점검</div>
+              <div className="cm">OX 문제 {visible(OX, hidden).length}개</div>
+            </button>
+            <button
+              className="card"
+              onClick={() => setView({ s: 'setup', mode: 'short' })}
+              disabled={!visible(SHORT, hidden).length}
+            >
+              <div className="ct">단답 특강</div>
+              <div className="cd">용어를 직접 입력하며 핵심 개념 회상</div>
+              <div className="cm">단답 문제 {visible(SHORT, hidden).length}개</div>
+            </button>
+            <button
+              className="card"
+              onClick={() => setView({ s: 'memo' })}
+              disabled={!visible(MEMO, hidden).length}
+            >
+              <div className="ct">암기표</div>
+              <div className="cd">외우기 전에 한눈에. 답은 가려져 있고 한 줄씩 눌러 확인합니다</div>
+              <div className="cm">암기 카드 {visible(MEMO, hidden).length}장 · 시험 직전 훑어보기</div>
+            </button>
+          </div>
+        </details>
 
         <button
           className="banner plain"

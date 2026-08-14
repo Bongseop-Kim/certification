@@ -42,9 +42,9 @@ export function Memo({ stats, hidden, onSolve, onExit }: Props) {
     <>
       <Nav title="암기표" meta={`${visible(MEMO, hidden).length}장`} onBack={onExit} />
       <div className="screen">
-        <div className="seg">
+        <div className="seg" role="tablist">
           {TABS.map((t) => (
-            <button key={t.id} aria-selected={t.id === tab} onClick={() => setTab(t.id)}>
+            <button key={t.id} role="tab" aria-selected={t.id === tab} onClick={() => setTab(t.id)}>
               {t.label}
             </button>
           ))}

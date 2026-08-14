@@ -20,6 +20,14 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
 
   const q = questions[idx]
 
+  const advance = () => {
+    setFlash(null)
+    if (idx + 1 >= questions.length) onDone(session.id, Date.now() - session.startedAt)
+    else setIdx(idx + 1)
+  }
+
+  // 정답은 450ms 뒤 자동으로 넘어간다. 오답은 넘기지 않는다 — 정답을 읽는 데 걸리는
+  // 시간은 사람마다 달라서 고정 타이머로 정할 수 없다.
   const answer = (chosen: 'O' | 'X') => {
     if (!q || flash) return
     const ok = q.answer === chosen
@@ -29,20 +37,20 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
     void record([
       { question_key: q.key, correct: ok, chosen, mode: 'ox', session_id: session.id, note: null },
     ])
-    timer.current = setTimeout(
-      () => {
-        setFlash(null)
-        if (idx + 1 >= questions.length) onDone(session.id, Date.now() - session.startedAt)
-        else setIdx(idx + 1)
-      },
-      ok ? 450 : 1100,
-    )
+    if (ok) timer.current = setTimeout(advance, 450)
   }
 
   useEffect(() => () => clearTimeout(timer.current), [])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (flash && !flash.ok) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          advance()
+        }
+        return
+      }
       if (e.key === 'o' || e.key === 'O') answer('O')
       if (e.key === 'x' || e.key === 'X') answer('X')
     }
@@ -70,6 +78,7 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
           {renderBody(q.body)}
         </p>
 
+        {/* 정오답을 테두리 색으로만 알리면 색각이상 사용자가 구분 못 한다 (WCAG 1.4.1) */}
         <div className="ox">
           {(['O', 'X'] as const).map((v) => (
             <button
@@ -77,17 +86,26 @@ export function Ox({ keys, record, onDone, onExit }: Props) {
               className={flash?.chosen === v ? (flash.ok ? 'correct' : 'wrong') : ''}
               onClick={() => answer(v)}
             >
-              {v}
+              {flash?.chosen === v ? (flash.ok ? '✓' : '✗') : v}
             </button>
           ))}
         </div>
-        <div className="keys" style={{ justifyContent: 'center' }}>
-          <span className="kb">O</span> 또는 <span className="kb">X</span>
-        </div>
+
+        {flash && !flash.ok ? (
+          <button className="btn" onClick={advance}>
+            다음 문제 →
+          </button>
+        ) : (
+          <div className="keys" style={{ justifyContent: 'center' }}>
+            <span className="kb">O</span> 또는 <span className="kb">X</span>
+          </div>
+        )}
 
         {last && (
-          <div className="callout">
-            <span className="cot">직전 문제 · {last.ok ? '정답' : '오답'}</span>
+          <div role="status" className="callout">
+            <span className="cot">
+              {flash ? '이 문제' : '직전 문제'} · {last.ok ? '정답' : '오답'}
+            </span>
             <p>
               {renderBody(last.body)} — <strong>{last.answer}</strong>
             </p>
