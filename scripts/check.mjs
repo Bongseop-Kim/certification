@@ -26,6 +26,9 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
     } else if (q.type === 'ox') {
       assert(q.choices === null, `${at}: ox는 choices가 null`)
       assert(q.answer === 'O' || q.answer === 'X', `${at}: ox answer가 ${q.answer}`)
+    } else if (q.type === 'short') {
+      assert(q.choices === null, `${at}: short는 choices가 null`)
+      assert(q.answer?.trim(), `${at}: short answer 없음`)
     } else {
       assert.fail(`${at}: 모르는 type ${q.type}`)
     }

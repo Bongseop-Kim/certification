@@ -93,7 +93,7 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
                   </button>
                   {open === k && (
                     <div className="callout" style={{ margin: '4px 0 10px' }}>
-                      <span className="cot">정답 {q.type === 'ox' ? q.answer : `${Number(q.answer) + 1}번`}</span>
+                      <span className="cot">정답 {q.type === 'mc' ? `${Number(q.answer) + 1}번` : q.answer}</span>
                       {s?.notes.length ? (
                         s.notes.map((n, i) => <p key={i}>“{n}”</p>)
                       ) : (

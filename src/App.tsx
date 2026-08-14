@@ -6,9 +6,11 @@ import { Ox } from './Ox.tsx'
 import { Practice } from './Practice.tsx'
 import { Result } from './Result.tsx'
 import { Setup } from './Setup.tsx'
+import { Short } from './Short.tsx'
 import {
   MC,
   OX,
+  SHORT,
   PASS_AVERAGE,
   PASS_SUBJECT,
   byKey,
@@ -35,9 +37,10 @@ import {
 type View =
   | { s: 'home' }
   | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[]; fromHistory?: boolean }
-  | { s: 'setup'; mode: 'mock_short' | 'ox' }
+  | { s: 'setup'; mode: 'mock_short' | 'ox' | 'short' }
   | { s: 'exam'; mode: 'mock100' | 'mock_short'; saved: Saved }
   | { s: 'ox'; keys: string[] }
+  | { s: 'short'; keys: string[] }
   | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
   | { s: 'history' }
 
@@ -88,7 +91,9 @@ export default function App() {
             onStart={(keys) =>
               view.mode === 'ox'
                 ? setView({ s: 'ox', keys })
-                : setView({
+                : view.mode === 'short'
+                  ? setView({ s: 'short', keys })
+                  : setView({
                     s: 'exam',
                     mode: 'mock_short',
                     saved: { sessionId: crypto.randomUUID(), keys, answers: {}, marked: [], idx: 0, startedAt: Date.now() },
@@ -119,6 +124,15 @@ export default function App() {
             onDone={(sessionId, elapsedMs) => setView({ s: 'result', mode: 'ox', sessionId, elapsedMs })}
           />
         )
+      case 'short':
+        return (
+          <Short
+            keys={view.keys}
+            record={record}
+            onExit={home}
+            onDone={(sessionId, elapsedMs) => setView({ s: 'result', mode: 'short', sessionId, elapsedMs })}
+          />
+        )
       case 'result':
         return (
           <Result
@@ -127,7 +141,15 @@ export default function App() {
             elapsedMs={view.elapsedMs}
             attempts={attempts}
             onHome={home}
-            onReview={(keys) => setView({ s: 'practice', mode: 'review', keys })}
+            onReview={(keys) =>
+              setView(
+                view.mode === 'ox'
+                  ? { s: 'ox', keys }
+                  : view.mode === 'short'
+                    ? { s: 'short', keys }
+                    : { s: 'practice', mode: 'review', keys },
+              )
+            }
           />
         )
       case 'history':
@@ -329,6 +351,15 @@ function Home({
           <div className="ct">OX 특강</div>
           <div className="cd">과목별 O/X를 빠르게 넘기며 개념 점검</div>
           <div className="cm">OX 문제 {visible(OX, hidden).length}개</div>
+        </button>
+        <button
+          className="card"
+          onClick={() => setView({ s: 'setup', mode: 'short' })}
+          disabled={!visible(SHORT, hidden).length}
+        >
+          <div className="ct">단답 특강</div>
+          <div className="cd">용어를 직접 입력하며 핵심 개념 회상</div>
+          <div className="cm">단답 문제 {visible(SHORT, hidden).length}개</div>
         </button>
 
         <button

@@ -40,7 +40,7 @@ export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome 
   return (
     <>
       <Nav
-        title={full ? '모의고사 결과' : mode === 'ox' ? 'OX 결과' : '간단 모의 결과'}
+        title={full ? '모의고사 결과' : mode === 'ox' ? 'OX 결과' : mode === 'short' ? '단답 결과' : '간단 모의 결과'}
         meta={duration(elapsedMs)}
         onBack={onHome}
       />

@@ -9,11 +9,11 @@ export type Question = {
   key: string
   no: number
   subject: Subject
-  type: 'mc' | 'ox'
+  type: 'mc' | 'ox' | 'short'
   body: string
   stimulus: string | null
   choices: string[] | null
-  answer: string // mc는 0부터 세는 보기 인덱스, ox는 'O' | 'X'
+  answer: string // mc는 0부터 세는 보기 인덱스, ox는 'O' | 'X', short는 정답 문자열
   note: string | null // 원본 정오표
   source: string
   variantOf?: string // 변형 문제일 때 원본 문제 key
@@ -37,6 +37,7 @@ export const QUESTIONS = Object.keys(files)
   .flatMap((f) => files[f])
 export const MC = QUESTIONS.filter((q) => q.type === 'mc')
 export const OX = QUESTIONS.filter((q) => q.type === 'ox')
+export const SHORT = QUESTIONS.filter((q) => q.type === 'short')
 export const byKey = new Map(QUESTIONS.map((q) => [q.key, q]))
 
 export const PASS_SUBJECT = 0.4
@@ -47,7 +48,7 @@ export const CIRCLED = ['①', '②', '③', '④', '⑤']
 
 /* ---------- 풀이 기록 (여기만 서버) ---------- */
 
-export type Mode = 'practice' | 'mock100' | 'mock_short' | 'ox' | 'review'
+export type Mode = 'practice' | 'mock100' | 'mock_short' | 'ox' | 'short' | 'review'
 
 export type Attempt = {
   id?: number
@@ -149,6 +150,10 @@ export function shuffle<T>(xs: readonly T[]) {
   }
   return a
 }
+
+/** 단답 채점에서는 띄어쓰기·대소문자·가운뎃점 같은 표기 차이를 무시한다. */
+export const normalizeShortAnswer = (answer: string) =>
+  answer.normalize('NFKC').toLocaleLowerCase('ko').replace(/[\s·.()_\-/]/g, '')
 
 /** 안 푼 문제 → 정답률 낮은 문제 → 맞은 문제 (동률은 랜덤) */
 export function weakFirst(qs: readonly Question[], stats: Map<string, Stat>) {
