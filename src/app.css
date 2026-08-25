@@ -289,6 +289,12 @@ code, .k {
 .omr button.done { background: var(--surface-2); color: var(--ink-muted); border-color: var(--line); }
 .omr button.mark { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
 .omr button.now { background: var(--accent); border-color: var(--accent); color: #fff; }
+.omr button.ok { background: var(--pass-soft); border-color: var(--pass); color: var(--pass); }
+.omr button.miss { background: var(--fail-soft); border-color: var(--fail); color: var(--fail); }
+/* 펼친 칸만 진하게 — .now를 같이 붙여 쓴다 */
+.omr button.ok.now { background: var(--pass); color: #fff; }
+.omr button.miss.now { background: var(--fail); color: #fff; }
+.detail { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
 .legend { display: flex; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 10px; color: var(--ink-faint); }
 .legend b { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
 

@@ -1,12 +1,17 @@
+import { useState } from 'react'
 import { Nav } from './Nav.tsx'
 import {
+  CIRCLED,
+  CopyBtn,
   PASS_AVERAGE,
   PASS_SUBJECT,
   SUBJECTS,
   TIME_LIMIT_MIN,
   byKey,
   duration,
+  lookup,
   pct,
+  renderBody,
   type Attempt,
   type Mode,
 } from './lib.tsx'
@@ -21,6 +26,7 @@ type Props = {
 }
 
 export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome }: Props) {
+  const [open, setOpen] = useState<number | null>(null)
   const rows = attempts.filter((a) => a.session_id === sessionId)
   const correct = rows.filter((a) => a.correct).length
   const rate = pct(correct, rows.length)
@@ -120,6 +126,35 @@ export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome 
           </>
         )}
 
+        <div>
+          <div className="label" style={{ marginBottom: 8 }}>
+            문제 다시 보기
+          </div>
+          <div className="omr">
+            {rows.map((a, i) => (
+              <button
+                key={a.question_key}
+                className={`${a.correct ? 'ok' : 'miss'}${i === open ? ' now' : ''}`}
+                aria-expanded={i === open}
+                onClick={() => setOpen((o) => (o === i ? null : i))}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+          <div className="legend" style={{ marginTop: 9 }}>
+            <span>
+              <b style={{ background: 'var(--pass-soft)', border: '1px solid var(--pass)' }} />
+              정답
+            </span>
+            <span>
+              <b style={{ background: 'var(--fail-soft)', border: '1px solid var(--fail)' }} />
+              오답
+            </span>
+          </div>
+          {open !== null && <Detail no={open + 1} attempt={rows[open]} />}
+        </div>
+
         <button className="btn" disabled={!wrong.length} onClick={() => onReview(wrong)}>
           틀린 문제 {wrong.length}개 모아 풀기
         </button>
@@ -128,5 +163,53 @@ export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome 
         </button>
       </main>
     </>
+  )
+}
+
+/** 채점 후에만 열리는 패널이라 정답도 원본 정오표도 그대로 보여준다 */
+function Detail({ no, attempt }: { no: number; attempt: Attempt }) {
+  const q = lookup(attempt.question_key)
+  if (!q) return null
+  const mc = q.type === 'mc'
+  const label = (v: string) => (mc ? (CIRCLED[Number(v)] ?? v) : v)
+
+  return (
+    <div className="detail">
+      <div role="status" className={attempt.correct ? 'verdict ok' : 'verdict'}>
+        <span className="vt">
+          {no}번 · {attempt.correct ? '정답' : attempt.chosen === null ? '무응답' : '오답'}
+        </span>
+        <span className="vd">
+          정답 {label(q.answer)}
+          {!attempt.correct && attempt.chosen !== null && ` · 내 답 ${label(attempt.chosen)}`}
+        </span>
+      </div>
+      <p className="qbody">{renderBody(q.body)}</p>
+      {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
+      {mc && (
+        <div className="choices">
+          {(q.choices ?? []).map((c, i) => (
+            <div
+              key={i}
+              className={
+                String(i) === q.answer ? 'ch correct' : String(i) === attempt.chosen ? 'ch wrong' : 'ch'
+              }
+            >
+              <span className="no">{CIRCLED[i]}</span>
+              <span>{renderBody(c)}</span>
+              {String(i) === q.answer && <span className="mk">정답</span>}
+              {!attempt.correct && String(i) === attempt.chosen && <span className="mk">내 답</span>}
+            </div>
+          ))}
+        </div>
+      )}
+      {q.note && (
+        <div className="callout">
+          <span className="cot">원본 정오표</span>
+          <p>{q.note}</p>
+        </div>
+      )}
+      <CopyBtn q={q} />
+    </div>
   )
 }
