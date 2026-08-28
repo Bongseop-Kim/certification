@@ -1,0 +1,1498 @@
+[
+  {
+    "key": "2026-algisa-system-comprehensive#1",
+    "no": 1,
+    "subject": "system",
+    "type": "mc",
+    "body": "단말 시스템에 해당하는 것으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "방화벽, IDS, IPS, VPN 게이트웨이",
+      "PC, 모바일 기기, 프린터, IoT 기기",
+      "DB 서버, DNS 서버, 메일 서버, 파일 서버",
+      "라우터, 스위치, 허브, 리피터"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#2",
+    "no": 2,
+    "subject": "system",
+    "type": "mc",
+    "body": "네트워크 프린터의 시스템 보안 대책으로 가장 적절하지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "저장된 인쇄 작업과 주소록의 접근을 통제한다.",
+      "관리 편의를 위해 관리 인터페이스를 인터넷에 공개한다.",
+      "관리자 기본 비밀번호를 변경한다.",
+      "펌웨어를 최신 상태로 유지한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#3",
+    "no": 3,
+    "subject": "system",
+    "type": "mc",
+    "body": "IoT 단말의 보안 특성으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "항상 범용 PC보다 계산 자원이 많아 보안 기능에 제약이 없다.",
+      "네트워크에 연결되지 않으므로 인증이 필요 없다.",
+      "출고 후에는 펌웨어 취약점을 수정할 필요가 없다.",
+      "제한된 자원과 긴 운영기간 때문에 안전한 초기 설정과 업데이트 지원이 중요하다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#4",
+    "no": 4,
+    "subject": "system",
+    "type": "mc",
+    "body": "IIoT(산업용 사물인터넷) 시스템의 보안에서 특히 함께 고려해야 하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "기밀성뿐 아니라 설비 가용성과 물리적 안전",
+      "화면 해상도와 글꼴 크기만",
+      "웹 브라우저 북마크 동기화만",
+      "개인용 게임 성능만"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#5",
+    "no": 5,
+    "subject": "system",
+    "type": "mc",
+    "body": "서버 종류와 주된 기능의 연결로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "WAS - 물리 프린터의 인쇄 대기열만 관리",
+      "DB 서버 - 구조화된 데이터의 저장과 질의 처리",
+      "DNS 서버 - 도메인 이름과 IP 주소 정보 제공",
+      "파일 서버 - 파일의 중앙 저장과 공유"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#6",
+    "no": 6,
+    "subject": "system",
+    "type": "mc",
+    "body": "WEB 서버와 WAS의 일반적인 역할을 바르게 설명한 것은?",
+    "stimulus": null,
+    "choices": [
+      "WEB 서버와 WAS는 운영체제가 아니므로 보안 설정 대상이 아니다.",
+      "WAS는 네트워크 패킷을 물리적으로 중계하는 장비다.",
+      "WEB 서버는 정적 콘텐츠와 HTTP 처리를, WAS는 동적 비즈니스 로직 실행을 주로 담당한다.",
+      "WEB 서버는 DB 파일만 저장하고 WAS는 DNS 질의만 처리한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#7",
+    "no": 7,
+    "subject": "system",
+    "type": "mc",
+    "body": "DB 서버의 시스템 보안 대책으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "모든 애플리케이션이 DB 관리자 계정을 공유한다.",
+      "외부에서 관리자 포트에 제한 없이 접속하게 한다.",
+      "감사를 피하기 위해 질의 로그를 즉시 삭제한다.",
+      "업무별 최소 권한 계정을 사용하고 중요 작업을 감사 로그로 남긴다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#8",
+    "no": 8,
+    "subject": "system",
+    "type": "mc",
+    "body": "파일 서버의 정보 유출을 줄이는 대책으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "공유 폴더 권한을 업무상 필요한 사용자와 행위로 제한한다.",
+      "모든 공유 폴더에 익명 쓰기 권한을 준다.",
+      "퇴직자의 계정을 계속 활성화한다.",
+      "접근 로그를 남기지 않는다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#9",
+    "no": 9,
+    "subject": "system",
+    "type": "mc",
+    "body": "DNS 서버의 불필요한 정보 노출을 줄이는 설정으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 로그와 변경 이력을 남기지 않는다.",
+      "영역 전송(Zone Transfer)을 허가된 보조 DNS 서버로 제한한다.",
+      "모든 외부 호스트에 영역 전송을 허용한다.",
+      "관리자 인증 없이 설정을 변경하게 한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#10",
+    "no": 10,
+    "subject": "system",
+    "type": "mc",
+    "body": "메일 서버가 스팸 중계에 악용되는 것을 막기 위한 대책은?",
+    "stimulus": null,
+    "choices": [
+      "메일 로그를 비활성화한다.",
+      "관리자 계정의 비밀번호를 기본값으로 둔다.",
+      "허가되지 않은 사용자의 오픈 릴레이를 차단한다.",
+      "모든 외부 발신자의 중계를 익명으로 허용한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#11",
+    "no": 11,
+    "subject": "system",
+    "type": "mc",
+    "body": "클라우드 보안의 책임공유 원칙에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "클라우드 제공자가 모든 보안 책임을 지므로 고객은 설정을 검토할 필요가 없다.",
+      "고객이 물리 데이터센터를 직접 보호하므로 제공자는 책임이 없다.",
+      "책임공유는 데이터를 암호화하지 않아도 된다는 뜻이다.",
+      "서비스 모델에 따라 범위는 달라지지만 고객은 자신의 데이터와 계정·권한 설정에 대한 책임을 계속 가진다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#12",
+    "no": 12,
+    "subject": "system",
+    "type": "mc",
+    "body": "운영체제 분류의 연결로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "Windows - 단말 및 서버 OS",
+      "Linux - 단말 및 서버 OS",
+      "Android와 iOS - 모바일 단말 OS",
+      "DNS - 임베디드 운영체제"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#13",
+    "no": 13,
+    "subject": "system",
+    "type": "mc",
+    "body": "임베디드 OS의 일반적인 특징으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "네트워크 기능이 있어도 접근통제를 적용할 수 없다.",
+      "특정 기능과 제한된 자원에 맞춰 구성되며 불필요한 기능 최소화가 중요하다.",
+      "항상 데스크톱 OS와 같은 구성요소를 모두 포함한다.",
+      "펌웨어 업데이트 기능이 있으면 보안 검증이 필요 없다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#14",
+    "no": 14,
+    "subject": "system",
+    "type": "mc",
+    "body": "시스템 환경정보에 해당하는 것으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "감사 결과의 승인 서명만",
+      "업무 문서의 본문과 결재 의견만",
+      "OS 버전, 설치 소프트웨어, 실행 서비스, 네트워크 설정",
+      "사용자 패스워드 원문, 개인키 원문, OTP 값"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#15",
+    "no": 15,
+    "subject": "system",
+    "type": "mc",
+    "body": "시스템 인증정보에 해당하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "CPU 온도와 메모리 사용률만",
+      "프린터 용지 크기와 잉크 잔량만",
+      "웹 페이지의 공개 이미지 파일만",
+      "계정 식별자, 패스워드 검증정보, 인증 토큰과 키"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#16",
+    "no": 16,
+    "subject": "system",
+    "type": "mc",
+    "body": "감사 로그의 주된 목적은?",
+    "stimulus": null,
+    "choices": [
+      "누가 언제 어떤 자원에 어떤 행위를 했는지 추적할 근거를 제공한다.",
+      "사용자의 패스워드를 평문으로 보관한다.",
+      "모든 시스템 오류를 자동으로 수정한다.",
+      "접근통제를 대신해 모든 요청을 허용한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#17",
+    "no": 17,
+    "subject": "system",
+    "type": "mc",
+    "body": "관리적 시스템 보안위협에 해당하는 사례는?",
+    "stimulus": null,
+    "choices": [
+      "SQL 구문에 공격 문자열을 삽입하는 행위",
+      "퇴직자 계정을 비활성화하지 않아 내부 시스템 접근이 가능한 상태",
+      "암호화 통신의 패킷을 수동으로 도청하는 행위",
+      "메모리 경계를 넘어 데이터를 쓰는 프로그램 오류"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#18",
+    "no": 18,
+    "subject": "system",
+    "type": "mc",
+    "body": "권한설정 미흡으로 인한 위험을 가장 잘 설명한 것은?",
+    "stimulus": null,
+    "choices": [
+      "공유 관리자 계정은 사용자별 책임추적성을 높인다.",
+      "최소 권한은 모든 사용자에게 관리자 권한을 주는 원칙이다.",
+      "업무상 필요 이상의 권한이 부여되면 계정 오용이나 침해의 피해 범위가 커진다.",
+      "권한이 많을수록 감사가 쉬워져 피해가 줄어든다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#19",
+    "no": 19,
+    "subject": "system",
+    "type": "mc",
+    "body": "내부자 위협의 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "외부 네트워크에서만 발생하므로 계정 관리와 무관하다.",
+      "악의가 있는 경우에만 해당하고 실수에 의한 유출은 제외된다.",
+      "방화벽 한 대로 모든 내부자 위협을 완전히 제거할 수 있다.",
+      "정상 권한과 업무 지식을 악용할 수 있어 최소 권한, 임무 분리와 행위 감사가 중요하다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#20",
+    "no": 20,
+    "subject": "system",
+    "type": "mc",
+    "body": "기술적 시스템 보안위협에 해당하지 않는 것은?",
+    "stimulus": null,
+    "choices": [
+      "취약점을 이용한 비인가 접근",
+      "통신이나 저장정보의 도청",
+      "정보의 유출·변조",
+      "보안교육 계획의 미수립"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#21",
+    "no": 21,
+    "subject": "system",
+    "type": "mc",
+    "body": "APT(Advanced Persistent Threat) 공격의 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "오직 물리적 절도만 사용하며 악성코드는 사용하지 않는다.",
+      "특정 목표를 대상으로 장기간 은밀하게 침투·거점을 유지하며 정보를 수집한다.",
+      "불특정 다수에게 한 번의 대량 트래픽만 보내고 즉시 종료한다.",
+      "패치가 완료된 시스템에는 어떤 방법으로도 접근하지 않는다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#22",
+    "no": 22,
+    "subject": "system",
+    "type": "mc",
+    "body": "APT 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "로그를 삭제해 공격자에게 정보를 주지 않는다.",
+      "관리자 계정을 모든 직원이 공유한다.",
+      "초기 침투 차단뿐 아니라 행위 모니터링, 권한 통제, 구간 분리와 사고대응을 함께 적용한다.",
+      "백신 서명 하나만 설치하면 모든 APT가 차단된다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#23",
+    "no": 23,
+    "subject": "system",
+    "type": "mc",
+    "body": "알려진 취약점에 대한 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "취약점 정보가 공개되면 시스템 로그를 모두 삭제한다.",
+      "서비스 영향과 무관하게 항상 시스템을 폐기한다.",
+      "벤더가 패치를 내놓아도 적용 여부를 확인하지 않는다.",
+      "자산과 버전을 식별하고 영향도를 평가한 뒤 보안패치나 완화조치를 적용·검증한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#24",
+    "no": 24,
+    "subject": "system",
+    "type": "mc",
+    "body": "취약점 스캐너의 주된 기능은?",
+    "stimulus": null,
+    "choices": [
+      "시스템과 서비스의 설정·버전·응답을 검사해 알려진 취약 가능성을 식별한다.",
+      "모든 취약점을 자동으로 악용해 관리자 권한을 획득한다.",
+      "업무 데이터의 기밀성을 위해 파일을 암호화한다.",
+      "사용자의 접근 권한을 영구적으로 삭제한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#25",
+    "no": 25,
+    "subject": "system",
+    "type": "mc",
+    "body": "취약점 스캐너 결과를 해석할 때의 주의사항으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "인증 스캔과 비인증 스캔은 항상 완전히 같은 결과를 낸다.",
+      "오탐과 미탐이 있을 수 있으므로 자산 상태와 증거를 확인해 결과를 검증한다.",
+      "스캐너의 모든 경고는 별도 확인 없이 실제 침해로 확정한다.",
+      "경고가 없으면 시스템에 취약점이 전혀 없다고 단정한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#26",
+    "no": 26,
+    "subject": "system",
+    "type": "mc",
+    "body": "포트 스캐너와 취약점 스캐너의 차이로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "포트 스캐너만 인증정보를 발급할 수 있다.",
+      "둘 다 로그를 수집하는 기능만 수행한다.",
+      "포트 스캐너는 주로 열려 있는 서비스 지점을 찾고, 취약점 스캐너는 알려진 취약·설정 문제까지 점검한다.",
+      "포트 스캐너는 파일을 암호화하고, 취약점 스캐너는 파일을 복호화한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#27",
+    "no": 27,
+    "subject": "system",
+    "type": "mc",
+    "body": "SQL Injection이 발생하는 근본 원인으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "DB 서버의 디스크를 암호화한다.",
+      "모든 SQL 질의에 트랜잭션을 사용한다.",
+      "DB 계정에 최소 권한을 적용한다.",
+      "외부 입력 데이터가 SQL 명령 구조의 일부로 해석되도록 쿼리를 구성한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#28",
+    "no": 28,
+    "subject": "system",
+    "type": "mc",
+    "body": "SQL Injection의 가장 직접적인 예방책은?",
+    "stimulus": null,
+    "choices": [
+      "SQL 구조와 입력값을 분리하는 매개변수화 질의(Prepared Statement)를 사용한다.",
+      "사용자 입력을 문자열 연결로 SQL에 그대로 붙인다.",
+      "DB 오류 메시지를 더 자세히 외부에 표시한다.",
+      "애플리케이션이 항상 DB 관리자 계정을 사용한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#29",
+    "no": 29,
+    "subject": "system",
+    "type": "mc",
+    "body": "Blind SQL Injection의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 영역 전송만으로 DB를 복구하는 공격이다.",
+      "DB 결과가 직접 보이지 않아도 참·거짓 응답이나 시간 차이를 이용해 정보를 추론한다.",
+      "SQL 구문을 전혀 사용하지 않는 공격이다.",
+      "운영체제의 메모리 경계를 넘어 쓰는 공격이다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#30",
+    "no": 30,
+    "subject": "system",
+    "type": "mc",
+    "body": "SQL Injection이 성공했을 때 피해 범위를 줄이는 보조 대책은?",
+    "stimulus": null,
+    "choices": [
+      "모든 사용자에게 DB 계정 비밀번호를 공유한다.",
+      "DB 감사 로그를 사용하지 않는다.",
+      "애플리케이션 DB 계정에 필요한 테이블과 명령만 허용한다.",
+      "애플리케이션 DB 계정에 전체 관리자 권한을 준다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#31",
+    "no": 31,
+    "subject": "system",
+    "type": "mc",
+    "body": "버퍼 오버플로의 정의로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "패스워드 해시를 사전과 비교하는 공격",
+      "네트워크의 열린 포트를 조사하는 행위",
+      "정상 파일의 해시값을 기준값과 비교하는 행위",
+      "버퍼가 수용할 수 있는 범위를 넘어 데이터를 기록해 인접 메모리를 훼손하는 취약점"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#32",
+    "no": 32,
+    "subject": "system",
+    "type": "mc",
+    "body": "스택 기반 버퍼 오버플로가 제어 흐름을 탈취할 때 공격 대상이 될 수 있는 것은?",
+    "stimulus": null,
+    "choices": [
+      "함수의 반환 주소",
+      "DNS의 TTL 값",
+      "파일의 확장자",
+      "프린터의 용지 크기"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#33",
+    "no": 33,
+    "subject": "system",
+    "type": "mc",
+    "body": "ASLR(Address Space Layout Randomization)의 목적은?",
+    "stimulus": null,
+    "choices": [
+      "DB 질의를 매개변수화한다.",
+      "프로세스의 코드·스택·힙 등의 메모리 배치를 무작위화해 주소 예측을 어렵게 한다.",
+      "모든 입력 길이를 자동으로 제한한다.",
+      "파일 변경을 해시값으로 탐지한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#34",
+    "no": 34,
+    "subject": "system",
+    "type": "mc",
+    "body": "DEP/NX(Data Execution Prevention/No-eXecute)의 목적은?",
+    "stimulus": null,
+    "choices": [
+      "SQL 명령과 입력 데이터를 결합한다.",
+      "모든 사용자를 관리자 그룹에 추가한다.",
+      "데이터 영역으로 지정된 메모리에서 코드가 실행되는 것을 제한한다.",
+      "메모리 주소를 항상 같은 위치에 배치한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#35",
+    "no": 35,
+    "subject": "system",
+    "type": "mc",
+    "body": "스택 카나리(Stack Canary)의 동작 원리는?",
+    "stimulus": null,
+    "choices": [
+      "스택의 모든 주소를 외부에 공개한다.",
+      "메모리의 데이터 영역을 실행 가능하게 바꾼다.",
+      "패스워드를 평문으로 스택에 보관한다.",
+      "반환 주소 앞의 보호값이 변경되었는지 확인해 스택 훼손을 탐지한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#36",
+    "no": 36,
+    "subject": "system",
+    "type": "mc",
+    "body": "포맷 스트링 취약점이 발생하는 경우는?",
+    "stimulus": null,
+    "choices": [
+      "공격자가 제어하는 문자열을 출력 함수의 서식 문자열로 직접 사용한다.",
+      "고정된 서식 문자열에 입력값을 데이터 인자로 전달한다.",
+      "DB 질의에 매개변수 바인딩을 사용한다.",
+      "파일 무결성 기준값을 별도 보관한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#37",
+    "no": 37,
+    "subject": "system",
+    "type": "mc",
+    "body": "TOCTOU(Time Of Check To Time Of Use) 레이스 컨디션 공격의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "네트워크 패킷의 출발지 주소를 위조한다.",
+      "자원을 검사한 시점과 실제 사용 시점 사이에 공격자가 자원 상태를 바꾼다.",
+      "동일한 패스워드를 여러 사이트에서 사용한다.",
+      "해시 충돌을 생일 역설로 찾는다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#38",
+    "no": 38,
+    "subject": "system",
+    "type": "mc",
+    "body": "권한 상승(Privilege Escalation)에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "관리자가 최소 권한을 적용한다.",
+      "파일의 해시값을 계산한다.",
+      "취약점이나 잘못된 권한설정을 이용해 원래 허용된 것보다 높은 권한을 획득한다.",
+      "정상 사용자가 자신의 비밀번호를 변경한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#39",
+    "no": 39,
+    "subject": "system",
+    "type": "mc",
+    "body": "바이러스와 웜의 차이로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "바이러스는 스스로 전파하지만 웜은 반드시 숙주 파일이 필요하다.",
+      "둘 다 정상 원격관리 도구만을 뜻한다.",
+      "둘 다 파일 무결성 점검 솔루션이다.",
+      "바이러스는 보통 숙주 파일이나 프로그램에 기생하고, 웜은 네트워크 등을 통해 스스로 전파할 수 있다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#40",
+    "no": 40,
+    "subject": "system",
+    "type": "mc",
+    "body": "트로이목마의 특징으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "정상 프로그램으로 위장해 사용자가 실행하도록 유도하고 악성 기능을 수행한다.",
+      "반드시 스스로 복제하여 네트워크 전체로 확산한다.",
+      "오직 부트 섹터에만 존재한다.",
+      "시스템 로그의 무결성을 보장한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#41",
+    "no": 41,
+    "subject": "system",
+    "type": "mc",
+    "body": "루트킷(Rootkit)의 주된 목적은?",
+    "stimulus": null,
+    "choices": [
+      "파일의 정상 백업본을 생성한다.",
+      "공격자의 존재와 악성 프로세스·파일 등을 숨기고 권한 있는 접근을 유지한다.",
+      "운영체제 패치를 자동 검증한다.",
+      "사용자의 MFA 등록을 돕는다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#42",
+    "no": 42,
+    "subject": "system",
+    "type": "mc",
+    "body": "랜섬웨어 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "복구 가능성을 확인하지 않고 백업 파일 이름만 만든다.",
+      "매크로와 실행파일을 출처와 무관하게 허용한다.",
+      "패치와 실행통제에 더해 복구 시험을 거친 오프라인·분리 백업을 유지한다.",
+      "백업 저장소를 운영 시스템과 같은 권한으로 항상 연결한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#43",
+    "no": 43,
+    "subject": "system",
+    "type": "mc",
+    "body": "시스템 하드닝(Hardening)에 해당하지 않는 것은?",
+    "stimulus": null,
+    "choices": [
+      "안전한 보안 기준 설정 적용",
+      "최소 권한과 패치 적용",
+      "편의를 위한 기본 비밀번호 유지",
+      "불필요한 서비스와 계정 제거"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#44",
+    "no": 44,
+    "subject": "system",
+    "type": "mc",
+    "body": "불필요한 서비스와 포트를 비활성화하는 주된 이유는?",
+    "stimulus": null,
+    "choices": [
+      "공격 표면을 줄이기 위해",
+      "사용자 권한을 자동으로 관리자까지 높이기 위해",
+      "로그 생성을 모두 막기 위해",
+      "패치 적용을 영구적으로 피하기 위해"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#45",
+    "no": 45,
+    "subject": "system",
+    "type": "mc",
+    "body": "보안 설정 기준선(Security Baseline)의 활용으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "취약한 기본 설정을 그대로 보존한다.",
+      "승인된 기준 설정과 현재 설정을 비교해 이탈을 식별하고 교정한다.",
+      "모든 시스템에 업무와 무관한 동일 관리자 계정을 만든다.",
+      "기준선 수립 후에는 환경 변화와 관계없이 검토하지 않는다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#46",
+    "no": 46,
+    "subject": "system",
+    "type": "mc",
+    "body": "시스템 인증강화 대책으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "패스워드를 화면과 로그에 평문으로 기록한다.",
+      "퇴직자의 인증 토큰을 계속 활성화한다.",
+      "관리자와 원격접속에 MFA를 적용하고 실패 횟수 제한과 안전한 세션 관리를 사용한다.",
+      "모든 사용자가 하나의 관리자 계정을 공유한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#47",
+    "no": 47,
+    "subject": "system",
+    "type": "mc",
+    "body": "보안패치 관리 절차로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "패치 공지를 확인하지 않고 무기한 연기한다.",
+      "시험 없이 모든 운영 시스템에 동시에 적용하고 복구 계획을 두지 않는다.",
+      "설치 명령 실행만 확인하고 실제 버전은 검증하지 않는다.",
+      "대상 식별과 우선순위 결정 후 패치를 확보·시험·적용하고 설치 결과를 검증한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#48",
+    "no": 48,
+    "subject": "system",
+    "type": "mc",
+    "body": "보안패치의 적용 우선순위를 정할 때 가장 적절한 기준은?",
+    "stimulus": null,
+    "choices": [
+      "취약점의 심각도와 악용 가능성, 자산 중요도와 노출 정도를 함께 고려한다.",
+      "파일 이름의 알파벳 순서만 사용한다.",
+      "모든 자산의 중요도가 같다고 가정한다.",
+      "서비스 영향과 복구 가능성은 고려하지 않는다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#49",
+    "no": 49,
+    "subject": "system",
+    "type": "mc",
+    "body": "클라우드 시스템의 계정·권한 보안으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "공개 저장소에 비밀키를 저장한다.",
+      "관리자 권한을 최소화하고 MFA, 역할 분리와 활동 로그를 적용한다.",
+      "장기 접근키를 여러 사용자가 공유한다.",
+      "사용하지 않는 계정과 키를 계속 유지한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#50",
+    "no": 50,
+    "subject": "system",
+    "type": "mc",
+    "body": "파일 위·변조 탐지의 기본 원리로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "파일의 수정 시간을 항상 과거로 바꾼다.",
+      "모든 파일의 읽기 권한을 전 세계에 허용한다.",
+      "신뢰할 수 있는 시점의 파일 해시와 현재 해시를 비교한다.",
+      "파일 확장자만 같으면 정상으로 판정한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#51",
+    "no": 51,
+    "subject": "system",
+    "type": "mc",
+    "body": "DLP(Data Loss Prevention) 솔루션의 주된 기능은?",
+    "stimulus": null,
+    "choices": [
+      "열린 포트만 식별하고 취약점을 패치한다.",
+      "운영체제의 스케줄링 알고리즘을 변경한다.",
+      "DNS 이름을 IP 주소로 변환한다.",
+      "중요정보를 식별하고 이메일·웹·이동식 매체 등 유출 경로의 전송을 탐지·통제한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#52",
+    "no": 52,
+    "subject": "system",
+    "type": "mc",
+    "body": "시스템 접근통제 대책으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "주체의 업무 역할에 따라 객체의 읽기·쓰기·실행 권한을 최소한으로 부여한다.",
+      "인증 여부와 무관하게 모든 요청을 허용한다.",
+      "파일 소유자와 권한 정보를 제거한다.",
+      "관리자 권한을 기본 권한으로 사용한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#53",
+    "no": 53,
+    "subject": "system",
+    "type": "mc",
+    "body": "로그를 중앙 서버로 수집하는 주된 장점은?",
+    "stimulus": null,
+    "choices": [
+      "모든 이벤트를 정상 행위로 자동 판정한다.",
+      "여러 시스템의 사건을 함께 분석하고 침해 시스템에서의 로그 훼손 위험을 줄일 수 있다.",
+      "각 시스템의 시간 차이를 더 크게 만든다.",
+      "로그 접근통제를 적용할 필요가 없어진다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#54",
+    "no": 54,
+    "subject": "system",
+    "type": "mc",
+    "body": "로그 분석에서 시스템 간 시각 동기화가 중요한 이유는?",
+    "stimulus": null,
+    "choices": [
+      "사용자 계정의 권한을 자동으로 높이기 위해",
+      "악성코드의 실행을 무조건 차단하기 위해",
+      "서로 다른 시스템에서 발생한 이벤트의 시간 순서를 정확히 연계하기 위해",
+      "로그 파일의 크기를 항상 0으로 만들기 위해"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#55",
+    "no": 55,
+    "subject": "system",
+    "type": "mc",
+    "body": "로그의 증거가치를 높이는 보호조치로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "모든 사용자가 로그를 수정·삭제할 수 있게 한다.",
+      "타임스탬프를 기록하지 않는다.",
+      "저장공간 확보를 위해 이벤트 발생 즉시 삭제한다.",
+      "로그 접근을 제한하고 원격 전송·무결성 검증·보존정책을 적용한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#56",
+    "no": 56,
+    "subject": "system",
+    "type": "mc",
+    "body": "시스템 로그와 감사 로그의 관계로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "시스템 로그는 운영상 상태·오류를 포함할 수 있고, 감사 로그는 보안 관련 사용자·관리 행위의 책임추적에 초점을 둔다.",
+      "시스템 로그에는 이벤트가 없고 감사 로그에만 오류가 있다.",
+      "감사 로그는 패스워드 원문만 저장한다.",
+      "두 로그 모두 보안 분석에 사용할 수 없다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#57",
+    "no": 57,
+    "subject": "system",
+    "type": "mc",
+    "body": "이벤트 상관분석(Correlation)의 예로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "이벤트 원본을 삭제하고 요약도 남기지 않는다.",
+      "여러 번의 로그인 실패 뒤 성공한 관리자 로그인과 중요 파일 변경을 시간순으로 연결해 분석한다.",
+      "로그 한 줄을 읽지 않고 모두 정상으로 처리한다.",
+      "서로 다른 시스템의 시간을 의도적으로 다르게 설정한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#58",
+    "no": 58,
+    "subject": "system",
+    "type": "mc",
+    "body": "Linux 계정 파일에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "/etc/shadow는 일반 사용자에게 쓰기 권한을 주는 공개 메모 파일이다.",
+      "/etc/passwd와 /etc/shadow는 네트워크 패킷 캡처 파일이다.",
+      "/etc/passwd에는 계정 기본정보가, /etc/shadow에는 보호된 패스워드 검증정보가 저장된다.",
+      "/etc/passwd에는 모든 사용자의 평문 패스워드가 반드시 저장된다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#59",
+    "no": 59,
+    "subject": "system",
+    "type": "mc",
+    "body": "Linux 일반 파일의 권한이 640일 때 의미로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "소유자 읽기·쓰기·실행, 그룹 읽기·쓰기, 기타 사용자 권한 없음",
+      "소유자 읽기, 그룹 쓰기, 기타 사용자 실행",
+      "모든 사용자가 읽기·쓰기 가능",
+      "소유자 읽기·쓰기, 그룹 읽기, 기타 사용자 권한 없음"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#60",
+    "no": 60,
+    "subject": "system",
+    "type": "mc",
+    "body": "실행 파일에 설정된 SetUID 비트의 효과는?",
+    "stimulus": null,
+    "choices": [
+      "실행 중 유효 사용자 ID가 파일 소유자의 ID가 된다.",
+      "누구나 파일 내용을 수정할 수 있게 한다.",
+      "파일을 실행할 때마다 소유권을 삭제한다.",
+      "디렉터리의 파일을 소유자만 삭제하게 한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#61",
+    "no": 61,
+    "subject": "system",
+    "type": "mc",
+    "body": "공용 쓰기 디렉터리에 설정한 Sticky Bit의 효과는?",
+    "stimulus": null,
+    "choices": [
+      "디렉터리를 암호화해 내용을 볼 수 없게 한다.",
+      "일반적으로 파일 소유자·디렉터리 소유자·관리자만 해당 파일을 삭제하거나 이름을 바꿀 수 있다.",
+      "디렉터리의 모든 파일에 SetUID를 자동 설정한다.",
+      "모든 사용자가 다른 사용자의 파일을 자유롭게 삭제하게 한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#62",
+    "no": 62,
+    "subject": "system",
+    "type": "mc",
+    "body": "Linux의 umask 값이 하는 역할은?",
+    "stimulus": null,
+    "choices": [
+      "패스워드 해시 알고리즘을 선택한다.",
+      "실행 중인 모든 프로세스를 종료한다.",
+      "새 파일과 디렉터리를 만들 때 기본 권한에서 제거할 권한 비트를 지정한다.",
+      "기존 파일의 소유자를 자동으로 root로 바꾼다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#63",
+    "no": 63,
+    "subject": "system",
+    "type": "mc",
+    "body": "sudo 사용의 보안상 장점으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "root 비밀번호를 모든 사용자에게 공유해야 한다.",
+      "모든 사용자의 명령 기록을 삭제한다.",
+      "권한 검사를 우회해 항상 관리자 셸을 제공한다.",
+      "사용자별로 허용 명령을 제한하고 실행 기록을 남기면서 필요한 작업만 권한 상승시킬 수 있다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#64",
+    "no": 64,
+    "subject": "system",
+    "type": "mc",
+    "body": "PAM(Pluggable Authentication Modules)의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "응용 프로그램과 인증 방식을 분리해 모듈 조합으로 인증 정책을 구성할 수 있다.",
+      "Linux 커널의 디스크 스케줄링만 담당한다.",
+      "파일 시스템의 모든 파일을 자동 암호화한다.",
+      "네트워크 패킷의 경로만 추적한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#65",
+    "no": 65,
+    "subject": "system",
+    "type": "mc",
+    "body": "Windows의 SAM(Security Account Manager)에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "Linux의 패키지 저장소 목록이다.",
+      "로컬 사용자 계정과 패스워드 검증정보를 관리하는 데이터베이스다.",
+      "인터넷 DNS 영역 정보를 저장하는 서버다.",
+      "이메일 본문을 암호화하는 프로토콜이다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#66",
+    "no": 66,
+    "subject": "system",
+    "type": "mc",
+    "body": "Windows 레지스트리의 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "시스템 설정과 무관해 공격자가 변경해도 영향이 없다.",
+      "Linux에서만 사용하는 평문 패스워드 파일이다.",
+      "운영체제와 응용 프로그램의 구성정보를 계층적으로 저장하므로 중요 키의 접근과 변경을 통제해야 한다.",
+      "오직 사용자 문서의 본문만 저장한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#67",
+    "no": 67,
+    "subject": "system",
+    "type": "mc",
+    "body": "Windows 이벤트 로그의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "Application 로그 - 커널 부팅 장치 오류만",
+      "System 로그 - 사용자 문서의 본문만",
+      "Security 로그 - 모든 사용자의 평문 패스워드",
+      "Security 로그 - 감사 정책에 따른 로그온과 보안 관련 이벤트"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#68",
+    "no": 68,
+    "subject": "system",
+    "type": "mc",
+    "body": "Windows UAC(User Account Control)의 주된 목적은?",
+    "stimulus": null,
+    "choices": [
+      "관리자 수준 변경이 필요할 때 승인이나 자격 증명을 요구해 무단 권한 상승 위험을 줄인다.",
+      "모든 프로그램을 항상 최고 관리자 권한으로 실행한다.",
+      "드라이브 전체를 자동으로 암호화한다.",
+      "네트워크 포트의 상태를 스캔한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#69",
+    "no": 69,
+    "subject": "system",
+    "type": "mc",
+    "body": "Windows BitLocker의 주된 보호 대상은?",
+    "stimulus": null,
+    "choices": [
+      "로그인 실패 횟수",
+      "드라이브에 저장된 데이터의 기밀성",
+      "웹 요청의 SQL 구문",
+      "DNS 서버의 영역 전송"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#70",
+    "no": 70,
+    "subject": "system",
+    "type": "mc",
+    "body": "Nmap의 주된 활용으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "사용자 패스워드의 안전한 저장",
+      "DB 트랜잭션의 원자성 보장",
+      "호스트 발견, 포트 상태 확인, 서비스·버전과 운영체제 추정",
+      "파일 내용의 자동 복구"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#71",
+    "no": 71,
+    "subject": "system",
+    "type": "mc",
+    "body": "Nmap의 TCP SYN 스캔 옵션과 특징의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "-sT - UDP 데이터그램만 전송하는 방식",
+      "-sU - 운영체제 종류만 탐지하는 방식",
+      "-O - 서비스 버전만 탐지하는 방식",
+      "-sS - 완전한 TCP 연결을 맺지 않는 Half-open 방식"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#72",
+    "no": 72,
+    "subject": "system",
+    "type": "mc",
+    "body": "Nmap의 TCP Connect 스캔 옵션과 특징은?",
+    "stimulus": null,
+    "choices": [
+      "-sT - 운영체제의 connect 시스템 호출로 TCP 연결을 시도한다.",
+      "-sS - ICMP만 이용해 경로를 추적한다.",
+      "-sU - TCP 3-way handshake를 완성한다.",
+      "-Pn - 대상의 서비스 버전을 식별한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#73",
+    "no": 73,
+    "subject": "system",
+    "type": "mc",
+    "body": "Nmap에서 UDP 포트를 스캔하는 옵션은?",
+    "stimulus": null,
+    "choices": [
+      "-sT",
+      "-sU",
+      "-sV",
+      "-O"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#74",
+    "no": 74,
+    "subject": "system",
+    "type": "mc",
+    "body": "Nmap 옵션의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "-sV - 호스트 발견 생략, -O - TCP Connect 스캔",
+      "-sV - 포트 범위 지정, -O - DNS 영역 전송",
+      "-sV - 서비스와 버전 탐지, -O - 운영체제 탐지",
+      "-sV - UDP 스캔, -O - 출력 파일 삭제"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#75",
+    "no": 75,
+    "subject": "system",
+    "type": "mc",
+    "body": "Nmap 옵션의 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "-Pn은 패스워드를 검사하고, -p는 패치를 적용한다.",
+      "-Pn은 운영체제만 탐지하고, -p는 로그를 삭제한다.",
+      "-Pn은 UDP만 스캔하고, -p는 파일 권한을 바꾼다.",
+      "-Pn은 호스트 발견 단계를 생략하고 대상을 활성 상태로 간주하며, -p는 스캔할 포트를 지정한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#76",
+    "no": 76,
+    "subject": "system",
+    "type": "mc",
+    "body": "Nmap 포트 상태 중 filtered의 의미로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "패킷 필터링 때문에 Nmap이 포트의 열림 여부를 확정하기 어렵다.",
+      "애플리케이션이 연결을 적극적으로 수락한다.",
+      "포트에 수신 중인 서비스가 없다는 사실이 확정되었다.",
+      "대상 운영체제가 반드시 Linux라는 뜻이다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#77",
+    "no": 77,
+    "subject": "system",
+    "type": "mc",
+    "body": "Kali Linux에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "DB 서버 전용 상용 운영체제다.",
+      "침투 테스트와 보안 감사를 위한 여러 도구를 포함한 Debian 기반 Linux 배포판이다.",
+      "취약점을 자동으로 모두 수정하는 단일 백신 제품이다.",
+      "Windows의 로컬 계정 데이터베이스다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#78",
+    "no": 78,
+    "subject": "system",
+    "type": "mc",
+    "body": "Kali Linux와 같은 보안 분석 도구의 활용 원칙으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "도구가 낸 결과는 오탐 가능성이 없으므로 검증하지 않는다.",
+      "운영 서비스 영향을 고려하지 않고 최대 부하로 실행한다.",
+      "명시적으로 허가받은 대상과 범위에서 점검하고 결과를 검증한다.",
+      "인터넷의 임의 시스템을 사전 승인 없이 공격한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#79",
+    "no": 79,
+    "subject": "system",
+    "type": "mc",
+    "body": "안티멀웨어 솔루션의 탐지 방식으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "오직 파일 이름만 보고 악성 여부를 확정한다.",
+      "운영체제 패치를 적용하지 못하게 한다.",
+      "모든 정상 프로그램을 관리자 권한으로 실행한다.",
+      "알려진 악성코드 서명과 의심 행위·휴리스틱 등을 이용할 수 있다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#80",
+    "no": 80,
+    "subject": "system",
+    "type": "mc",
+    "body": "HIDS(Host-based IDS)의 특징으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "개별 호스트의 로그, 파일 변경과 프로세스 활동 등을 감시한다.",
+      "네트워크 구간의 모든 패킷만 물리적으로 증폭한다.",
+      "사용자 패스워드를 발급하는 인증기관이다.",
+      "DB 질의를 자동 매개변수화하는 컴파일러다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#81",
+    "no": 81,
+    "subject": "system",
+    "type": "mc",
+    "body": "HIPS(Host-based IPS)의 특징으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "인증서 폐지 상태만 온라인 조회한다.",
+      "호스트에서 악성 행위를 탐지하고 정책에 따라 차단할 수 있다.",
+      "탐지만 가능하고 어떤 대응도 수행할 수 없다.",
+      "네트워크 주소를 도메인 이름으로만 변환한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#82",
+    "no": 82,
+    "subject": "system",
+    "type": "mc",
+    "body": "EDR(Endpoint Detection and Response)의 주된 기능은?",
+    "stimulus": null,
+    "choices": [
+      "디스크 스케줄링 순서만 최적화한다.",
+      "사용자 패스워드를 평문으로 중앙 저장한다.",
+      "엔드포인트 행위와 원격측정 정보를 지속 수집·분석하고 조사와 격리 등 대응을 지원한다.",
+      "방화벽 규칙 없이 네트워크 주소만 변환한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#83",
+    "no": 83,
+    "subject": "system",
+    "type": "mc",
+    "body": "FIM(File Integrity Monitoring) 솔루션의 기능은?",
+    "stimulus": null,
+    "choices": [
+      "인터넷 도메인을 IP 주소로 변환한다.",
+      "사용자 역할을 자동으로 관리자까지 높인다.",
+      "패킷의 전송 경로만 표시한다.",
+      "중요 파일의 해시·속성 기준값과 현재 상태를 비교해 비인가 변경을 탐지한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#84",
+    "no": 84,
+    "subject": "system",
+    "type": "mc",
+    "body": "특권 계정 관리(PAM) 솔루션의 기능으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "관리자 자격증명의 보관·대여·회수와 세션 기록, 접근 승인을 통제한다.",
+      "일반 파일의 확장자만 변경한다.",
+      "DNS 응답을 캐시에 저장한다.",
+      "웹 페이지의 정적 이미지만 압축한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#85",
+    "no": 85,
+    "subject": "system",
+    "type": "mc",
+    "body": "애플리케이션 허용목록(Application Allowlisting)의 원리는?",
+    "stimulus": null,
+    "choices": [
+      "파일 변경 이력을 기록하지 않는다.",
+      "승인된 프로그램만 실행하도록 허용하고 나머지 실행을 차단한다.",
+      "알려진 악성 프로그램만 제외하고 모든 미확인 프로그램을 허용한다.",
+      "모든 사용자가 임의 프로그램을 관리자 권한으로 설치하게 한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#86",
+    "no": 86,
+    "subject": "system",
+    "type": "mc",
+    "body": "매체제어 솔루션의 활용으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "웹 요청을 SQL 질의로 변환한다.",
+      "공개키 인증서를 발급한다.",
+      "USB 저장장치 같은 이동식 매체의 사용과 파일 반출을 정책에 따라 허용·차단·기록한다.",
+      "운영체제의 메모리 주소를 무작위화한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#87",
+    "no": 87,
+    "subject": "system",
+    "type": "mc",
+    "body": "보안 솔루션 도입 후 운영으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "설치만 하면 운영과 점검은 필요 없다.",
+      "오탐이 발생하면 모든 탐지 기능을 영구 중지한다.",
+      "경보와 대응 이력을 모두 삭제한다.",
+      "정책과 탐지 규칙을 환경에 맞게 조정하고 경보를 검증하며 업데이트 상태를 관리한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  },
+  {
+    "key": "2026-algisa-system-comprehensive#88",
+    "no": 88,
+    "subject": "system",
+    "type": "mc",
+    "body": "시스템 보안의 다계층 방어(Defense in Depth)로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "하드닝·패치·인증·접근통제·탐지·백업을 조합해 한 통제가 실패해도 다른 통제가 보완하게 한다.",
+      "백신 하나만 설치하고 다른 통제는 제거한다.",
+      "관리자 계정을 공유해 대응 속도를 높인다.",
+      "로그를 남기지 않아 공격자에게 정보를 주지 않는다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-system-comprehensive"
+  }
+]

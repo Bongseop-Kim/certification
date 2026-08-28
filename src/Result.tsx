@@ -13,6 +13,7 @@ import {
   pct,
   renderBody,
   type Attempt,
+  type FlagKind,
   type Mode,
 } from './lib.tsx'
 
@@ -21,11 +22,14 @@ type Props = {
   sessionId: string
   elapsedMs: number
   attempts: Attempt[]
+  marks: Set<string>
+  hidden: Set<string>
+  toggle: (key: string, kind: FlagKind) => void
   onReview: (keys: string[]) => void
   onHome: () => void
 }
 
-export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome }: Props) {
+export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, toggle, onReview, onHome }: Props) {
   const [open, setOpen] = useState<number | null>(null)
   const rows = attempts.filter((a) => a.session_id === sessionId)
   const correct = rows.filter((a) => a.correct).length
@@ -152,7 +156,16 @@ export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome 
               오답
             </span>
           </div>
-          {open !== null && <Detail no={open + 1} attempt={rows[open]} />}
+          {open !== null && (
+            <Detail
+              no={open + 1}
+              attempt={rows[open]}
+              flags={
+                // 모의고사·간단 모의에서만 상세에 북마크/관심없음 버튼을 노출한다
+                mode === 'mock100' || mode === 'mock_short' ? { marks, hidden, toggle } : undefined
+              }
+            />
+          )}
         </div>
 
         <button className="btn" disabled={!wrong.length} onClick={() => onReview(wrong)}>
@@ -167,7 +180,15 @@ export function Result({ mode, sessionId, elapsedMs, attempts, onReview, onHome 
 }
 
 /** 채점 후에만 열리는 패널이라 정답도 원본 정오표도 그대로 보여준다 */
-function Detail({ no, attempt }: { no: number; attempt: Attempt }) {
+function Detail({
+  no,
+  attempt,
+  flags,
+}: {
+  no: number
+  attempt: Attempt
+  flags?: { marks: Set<string>; hidden: Set<string>; toggle: (key: string, kind: FlagKind) => void }
+}) {
   const q = lookup(attempt.question_key)
   if (!q) return null
   const mc = q.type === 'mc'
@@ -207,6 +228,20 @@ function Detail({ no, attempt }: { no: number; attempt: Attempt }) {
         <div className="callout">
           <span className="cot">원본 정오표</span>
           <p>{q.note}</p>
+        </div>
+      )}
+      {flags && (
+        <div className="row">
+          <button className="btn weak" onClick={() => flags.toggle(q.key, 'mark')}>
+            {flags.marks.has(q.key) ? '★ 북마크' : '☆ 북마크'}
+          </button>
+          <button
+            className="btn weak"
+            title="이 문제를 다시 출제하지 않습니다"
+            onClick={() => flags.toggle(q.key, 'hide')}
+          >
+            {flags.hidden.has(q.key) ? '관심 없음 해제' : '관심 없음'}
+          </button>
         </div>
       )}
       <CopyBtn q={q} />

@@ -41,7 +41,7 @@ import {
 type View =
   | { s: 'home' }
   | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[]; fromHistory?: boolean }
-  | { s: 'setup'; mode: 'mock_short' | 'ox' | 'short' }
+  | { s: 'setup'; mode: 'practice' | 'mock_short' | 'ox' | 'short' }
   | { s: 'exam'; mode: 'mock100' | 'mock_short'; saved: Saved }
   | { s: 'ox'; keys: string[] }
   | { s: 'short'; keys: string[]; mode: 'short' | 'memo' }
@@ -108,9 +108,11 @@ export default function App() {
             hidden={hidden}
             onExit={home}
             onStart={(keys) =>
-              view.mode === 'ox'
-                ? setView({ s: 'ox', keys })
-                : view.mode === 'short'
+              view.mode === 'practice'
+                ? setView({ s: 'practice', mode: 'practice', keys })
+                : view.mode === 'ox'
+                  ? setView({ s: 'ox', keys })
+                  : view.mode === 'short'
                   ? setView({ s: 'short', keys, mode: 'short' })
                   : setView({
                     s: 'exam',
@@ -160,6 +162,9 @@ export default function App() {
             sessionId={view.sessionId}
             elapsedMs={view.elapsedMs}
             attempts={attempts}
+            marks={marks}
+            hidden={hidden}
+            toggle={toggle}
             onHome={home}
             onReview={(keys) =>
               setView(
@@ -388,9 +393,9 @@ function Home({
         <details className="modes">
           <summary>풀이 모드 6가지</summary>
           <div className="inner">
-            <button className="card" onClick={() => setView({ s: 'practice', mode: 'practice' })}>
+            <button className="card" onClick={() => setView({ s: 'setup', mode: 'practice' })}>
               <div className="ct">연습형</div>
-              <div className="cd">답을 고르면 바로 정답을 봅니다</div>
+              <div className="cd">과목을 골라 답을 고르면 바로 정답을 봅니다</div>
               <div className="cm">문항 제한 없음 · 안 푼 문제 먼저</div>
             </button>
             <button className="card" onClick={startMock100}>

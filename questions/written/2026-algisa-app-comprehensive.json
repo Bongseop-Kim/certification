@@ -1,0 +1,1719 @@
+[
+  {
+    "key": "2026-algisa-app-comprehensive#1",
+    "no": 1,
+    "subject": "app",
+    "type": "mc",
+    "body": "FTP의 연결 구조에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 질의 연결을 그대로 파일 전송에 사용한다.",
+      "명령과 응답을 위한 제어 연결과 파일 전송을 위한 데이터 연결을 별도로 사용한다.",
+      "하나의 UDP 연결만으로 명령과 파일을 모두 전송한다.",
+      "제어 연결 없이 데이터 연결만 항상 유지한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#2",
+    "no": 2,
+    "subject": "app",
+    "type": "mc",
+    "body": "기본 FTP 제어 연결에 사용하는 서버 포트는?",
+    "stimulus": null,
+    "choices": [
+      "UDP 69",
+      "TCP 22",
+      "TCP 21",
+      "TCP 20"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#3",
+    "no": 3,
+    "subject": "app",
+    "type": "mc",
+    "body": "FTP 능동(Active) 모드의 데이터 연결 특징은?",
+    "stimulus": null,
+    "choices": [
+      "클라이언트가 서버의 임의 수신 포트로 데이터 연결을 시작한다.",
+      "데이터 연결 없이 제어 연결로 파일을 전송한다.",
+      "항상 UDP 69번 포트를 사용한다.",
+      "서버가 클라이언트가 지정한 데이터 포트로 연결을 시작한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#4",
+    "no": 4,
+    "subject": "app",
+    "type": "mc",
+    "body": "FTP 수동(Passive) 모드의 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "서버가 수신할 데이터 포트를 알려주고 클라이언트가 그 포트로 연결한다.",
+      "서버가 클라이언트의 임의 포트로만 역접속한다.",
+      "제어 연결을 종료한 후에만 데이터를 전송한다.",
+      "파일을 ICMP 메시지로 전송한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#5",
+    "no": 5,
+    "subject": "app",
+    "type": "mc",
+    "body": "기본 FTP의 보안상 약점은?",
+    "stimulus": null,
+    "choices": [
+      "서버가 사용자 인증을 전혀 지원하지 않는다.",
+      "계정정보와 데이터가 암호화되지 않아 도청에 노출될 수 있다.",
+      "공개키 인증서를 반드시 사용해 도청이 불가능하다.",
+      "파일 전송 전에 항상 종단간 암호화를 강제한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#6",
+    "no": 6,
+    "subject": "app",
+    "type": "mc",
+    "body": "FTPS와 SFTP의 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "FTPS는 UDP만 사용하고 SFTP는 ICMP만 사용한다.",
+      "SFTP는 기본 FTP의 PORT 명령을 반드시 사용한다.",
+      "FTPS는 FTP에 TLS를 적용하고, SFTP는 SSH 기반의 별도 파일 전송 프로토콜이다.",
+      "FTPS와 SFTP는 이름만 다르고 완전히 같은 프로토콜이다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#7",
+    "no": 7,
+    "subject": "app",
+    "type": "mc",
+    "body": "익명 FTP 운영 시 가장 적절한 보안 대책은?",
+    "stimulus": null,
+    "choices": [
+      "시스템 루트 디렉터리 전체를 익명 사용자에게 공개한다.",
+      "익명 사용자가 실행파일을 업로드하고 즉시 실행하게 한다.",
+      "접속과 파일 전송 로그를 남기지 않는다.",
+      "공개가 필요한 전용 디렉터리만 허용하고 쓰기·실행 권한을 최소화한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#8",
+    "no": 8,
+    "subject": "app",
+    "type": "mc",
+    "body": "FTP Bounce 공격의 원리로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "PORT 명령을 악용해 FTP 서버가 제3의 호스트와 포트로 데이터 연결을 맺게 한다.",
+      "FTP 서버의 패스워드 파일을 해시로 보호한다.",
+      "클라이언트가 PASV 응답의 포트로 정상 접속한다.",
+      "TLS 인증서를 검증해 중간자 공격을 막는다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#9",
+    "no": 9,
+    "subject": "app",
+    "type": "mc",
+    "body": "FTP 계정에 대한 무차별 대입 공격의 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "실패한 로그인 기록을 즉시 삭제한다.",
+      "로그인 실패 제한, 강한 인증과 접속 로그 모니터링을 적용한다.",
+      "모든 계정에 같은 짧은 비밀번호를 사용한다.",
+      "관리자 계정의 원격 로그인을 익명으로 허용한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#10",
+    "no": 10,
+    "subject": "app",
+    "type": "mc",
+    "body": "FTP와 TFTP의 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "FTP는 UDP 69번만 사용하고 계정 인증을 지원하지 않는다.",
+      "TFTP는 FTP보다 복잡한 디렉터리 탐색 명령을 제공한다.",
+      "TFTP는 UDP 69번을 사용하며 기본적으로 사용자 인증 기능이 없는 단순 파일 전송 프로토콜이다.",
+      "TFTP는 SSH 기반이며 공개키 인증을 항상 강제한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#11",
+    "no": 11,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자우편 프로토콜의 역할 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "SMTP - DNS 영역 전송, POP3 - 파일 업로드",
+      "IMAP - 웹 페이지 전송, SMTP - 원격 셸",
+      "POP3 - 공개키 인증서 발급, IMAP - 포트 스캔",
+      "SMTP - 메일 전송, POP3·IMAP - 메일 수신과 조회"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#12",
+    "no": 12,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자우편 시스템 구성요소의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "MUA - 사용자가 메일을 작성·조회, MTA - 메일 전송·중계, MDA - 수신자 우편함에 배달",
+      "MUA - DNS 질의, MTA - 파일 암호화, MDA - 포트 스캔",
+      "MUA - 메일 중계만, MTA - 사용자 화면만, MDA - 공개키 발급",
+      "세 구성요소는 모두 네트워크 방화벽의 종류다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#13",
+    "no": 13,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNS의 MX 레코드가 전자우편 전달에서 하는 역할은?",
+    "stimulus": null,
+    "choices": [
+      "첨부파일의 악성코드를 자동 삭제한다.",
+      "도메인의 메일을 받을 메일 교환 서버를 지정한다.",
+      "메일 본문의 해시값을 저장한다.",
+      "사용자의 평문 비밀번호를 공개한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#14",
+    "no": 14,
+    "subject": "app",
+    "type": "mc",
+    "body": "오픈 릴레이(Open Relay) 메일 서버의 위험은?",
+    "stimulus": null,
+    "choices": [
+      "모든 수신 메일에 전자서명이 자동 적용된다.",
+      "DNSSEC 검증이 항상 강제된다.",
+      "인증되지 않은 제3자가 서버를 스팸 중계에 악용할 수 있다.",
+      "허가된 내부 사용자만 자신의 메일을 발송할 수 있다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#15",
+    "no": 15,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자우편 스푸핑에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "메일 본문을 종단간 암호화하는 정상 기능이다.",
+      "메일 서버의 저장공간을 백업하는 절차다.",
+      "수신자가 메일을 폴더별로 분류하는 기능이다.",
+      "발신자 주소나 헤더를 위조해 다른 사람이 보낸 메일처럼 보이게 한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#16",
+    "no": 16,
+    "subject": "app",
+    "type": "mc",
+    "body": "스팸메일 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "발신 평판, 콘텐츠·헤더 분석과 인증 결과를 조합해 필터링한다.",
+      "모든 첨부파일과 링크를 자동 실행한다.",
+      "오픈 릴레이를 허용해 정상 메일 비율을 높인다.",
+      "사용자 신고와 필터 학습을 금지한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#17",
+    "no": 17,
+    "subject": "app",
+    "type": "mc",
+    "body": "피싱(Phishing) 메일의 특징으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "사용자가 요청한 뉴스레터를 발송한다.",
+      "신뢰할 만한 기관이나 사람을 사칭해 링크 접속, 자격증명 입력이나 송금을 유도한다.",
+      "DNS 서버의 정상 영역 전송을 수행한다.",
+      "메일을 공개키로 정상 서명한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#18",
+    "no": 18,
+    "subject": "app",
+    "type": "mc",
+    "body": "악성 첨부파일 메일의 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "출처가 불명확한 매크로를 자동 활성화한다.",
+      "메일 보안 게이트웨이의 검사를 우회한다.",
+      "위험한 파일 형식과 매크로 실행을 통제하고 샌드박스·악성코드 검사를 적용한다.",
+      "파일 확장자만 정상처럼 보이면 무조건 실행한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#19",
+    "no": 19,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자우편 웜(Worm)의 특징으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "사용자가 요청한 파일만 수동으로 압축한다.",
+      "메일 서버의 인증서를 발급한다.",
+      "DNS 응답의 무결성을 검증한다.",
+      "주소록이나 네트워크를 이용해 자신을 복제·전파할 수 있다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#20",
+    "no": 20,
+    "subject": "app",
+    "type": "mc",
+    "body": "SPF(Sender Policy Framework)의 역할은?",
+    "stimulus": null,
+    "choices": [
+      "DNS에 게시된 정책을 이용해 해당 도메인의 메일 발송이 허용된 서버인지 확인한다.",
+      "메일 본문을 수신자의 공개키로 암호화한다.",
+      "첨부파일의 실행 권한을 제거한다.",
+      "사용자의 우편함을 서버와 동기화한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#21",
+    "no": 21,
+    "subject": "app",
+    "type": "mc",
+    "body": "DKIM(DomainKeys Identified Mail)의 역할은?",
+    "stimulus": null,
+    "choices": [
+      "모든 첨부파일을 대칭키로 암호화한다.",
+      "도메인의 개인키로 메일에 서명하고 DNS의 공개키로 서명을 검증하게 한다.",
+      "발신 서버의 IP 주소 목록만 게시한다.",
+      "사용자의 메일함을 로컬로 내려받아 삭제한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#22",
+    "no": 22,
+    "subject": "app",
+    "type": "mc",
+    "body": "DMARC의 기능으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "DB의 접근 권한을 역할별로 부여한다.",
+      "웹 브라우저의 쿠키를 삭제한다.",
+      "SPF와 DKIM 결과 및 발신 도메인 정렬을 바탕으로 처리 정책과 보고 방법을 제공한다.",
+      "FTP 제어 연결을 암호화한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#23",
+    "no": 23,
+    "subject": "app",
+    "type": "mc",
+    "body": "S/MIME의 보안 기능으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 영역 전송만 보호한다.",
+      "FTP의 데이터 포트만 숨긴다.",
+      "메일의 발신 서버 IP만 DNS에 게시한다.",
+      "X.509 인증서 기반으로 전자우편의 암호화와 디지털서명을 지원한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#24",
+    "no": 24,
+    "subject": "app",
+    "type": "mc",
+    "body": "PGP와 S/MIME의 신뢰 방식 비교로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "PGP는 신뢰망(Web of Trust)을 사용할 수 있고, S/MIME은 일반적으로 X.509 PKI를 사용한다.",
+      "PGP와 S/MIME은 모두 DNS 캐시만 신뢰한다.",
+      "PGP는 FTP 전용이고 S/MIME은 DB 전용이다.",
+      "두 방식 모두 전자서명을 지원하지 않는다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#25",
+    "no": 25,
+    "subject": "app",
+    "type": "mc",
+    "body": "일반적인 웹 애플리케이션 동작 순서로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "브라우저가 서버의 개인키를 받아 직접 처리",
+      "브라우저 요청 → 웹/WAS 처리 → 필요 시 DB 조회 → HTTP 응답",
+      "DB 응답 → DNS 패치 → FTP 제어 → 브라우저 요청",
+      "메일 전송 → 포트 스캔 → 인증서 폐지 → 웹 응답"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#26",
+    "no": 26,
+    "subject": "app",
+    "type": "mc",
+    "body": "HTTPS가 HTTP에 추가하는 핵심 보호는?",
+    "stimulus": null,
+    "choices": [
+      "사용자 입력의 SQL Injection 자동 차단",
+      "서버 디스크의 모든 파일 자동 백업",
+      "TLS를 이용한 통신 기밀성·무결성과 서버 인증",
+      "웹 애플리케이션의 모든 취약점 자동 제거"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#27",
+    "no": 27,
+    "subject": "app",
+    "type": "mc",
+    "body": "세션 쿠키에 HttpOnly 속성을 설정하는 주된 목적은?",
+    "stimulus": null,
+    "choices": [
+      "쿠키가 HTTPS에서만 전송되게 한다.",
+      "교차 사이트 요청에 쿠키가 전송되는 방식을 제어한다.",
+      "쿠키의 만료시간을 무제한으로 만든다.",
+      "클라이언트 측 스크립트가 쿠키를 읽는 것을 제한한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#28",
+    "no": 28,
+    "subject": "app",
+    "type": "mc",
+    "body": "쿠키 보안 속성의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "Secure - HTTPS 연결에서만 전송, SameSite - 교차 사이트 요청의 쿠키 전송 제한",
+      "Secure - 자바스크립트 접근 차단, SameSite - 쿠키 암호화",
+      "Secure - 쿠키 영구 저장, SameSite - 서버 인증서 폐지",
+      "Secure - SQL Injection 차단, SameSite - 파일 업로드 검사"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#29",
+    "no": 29,
+    "subject": "app",
+    "type": "mc",
+    "body": "로그인 성공 직후 세션 식별자를 새로 발급해야 하는 주된 이유는?",
+    "stimulus": null,
+    "choices": [
+      "DB 백업 용량을 줄이기 위해",
+      "공격자가 미리 알게 한 세션 식별자를 계속 쓰는 세션 고정 공격을 막기 위해",
+      "DNSSEC 서명 검증을 생략하기 위해",
+      "웹 서버의 5xx 오류를 숨기기 위해"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#30",
+    "no": 30,
+    "subject": "app",
+    "type": "mc",
+    "body": "세션 고정(Session Fixation) 공격의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 응답의 TTL을 늘린다.",
+      "전자서명을 두 번 적용한다.",
+      "공격자가 정한 세션 식별자를 피해자가 로그인 후에도 사용하게 해 인증 세션을 탈취한다.",
+      "서버의 메모리 주소를 무작위화한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#31",
+    "no": 31,
+    "subject": "app",
+    "type": "mc",
+    "body": "HTTP 상태 코드 분류로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "2xx - 서버 오류, 3xx - 인증 실패",
+      "4xx - 정상 성공, 5xx - 리다이렉션",
+      "1xx - DB 오류, 2xx - DNS 오류",
+      "4xx - 클라이언트 요청 오류, 5xx - 서버 처리 오류"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#32",
+    "no": 32,
+    "subject": "app",
+    "type": "mc",
+    "body": "웹 애플리케이션에서 5xx 오류가 급증했을 때 가장 적절한 초기 분석은?",
+    "stimulus": null,
+    "choices": [
+      "요청 추적정보와 웹/WAS 로그, 자원 사용량, DB·외부 서비스 상태를 같은 시간대에 확인한다.",
+      "원인을 확인하지 않고 모든 로그를 삭제한다.",
+      "사용자 브라우저의 북마크만 초기화한다.",
+      "보안 경보를 모두 정상으로 처리한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#33",
+    "no": 33,
+    "subject": "app",
+    "type": "mc",
+    "body": "웹 서비스의 장애 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "가용성 문제를 해결하기 위해 접근통제를 제거한다.",
+      "상태 점검, 이중화·부하분산, 자원 한계 모니터링과 복구 절차를 준비한다.",
+      "단일 서버에 모든 기능을 집중하고 백업을 두지 않는다.",
+      "오류 발생 시 원인과 무관하게 로그를 끈다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#34",
+    "no": 34,
+    "subject": "app",
+    "type": "mc",
+    "body": "SQL Injection의 원인으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "쿠키에 HttpOnly를 설정한다.",
+      "DB 계정에 최소 권한을 적용한다.",
+      "신뢰할 수 없는 입력이 SQL 명령 구조의 일부로 해석되도록 질의를 만든다.",
+      "HTML 출력에 문맥별 인코딩을 적용한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#35",
+    "no": 35,
+    "subject": "app",
+    "type": "mc",
+    "body": "SQL Injection의 가장 직접적인 시큐어코딩 대응은?",
+    "stimulus": null,
+    "choices": [
+      "입력값을 문자열 연결로 SQL에 붙인다.",
+      "DB 오류를 상세히 사용자에게 표시한다.",
+      "애플리케이션에 DB 관리자 권한을 부여한다.",
+      "SQL 구조와 입력값을 분리하는 매개변수화 질의를 사용한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#36",
+    "no": 36,
+    "subject": "app",
+    "type": "mc",
+    "body": "저장형 XSS(Stored XSS)의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "악성 스크립트가 서버에 저장되어 해당 콘텐츠를 조회하는 여러 사용자에게 전달된다.",
+      "악성 문자열이 응답에 즉시 반사될 뿐 서버에 저장되지 않는다.",
+      "브라우저의 DOM 처리만으로 발생하고 서버 응답과 무관하다.",
+      "DB 명령을 조작해 관리자 권한을 얻는 공격이다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#37",
+    "no": 37,
+    "subject": "app",
+    "type": "mc",
+    "body": "반사형 XSS(Reflected XSS)의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "파일 경로의 상위 디렉터리로 이동하는 공격이다.",
+      "요청에 포함된 악성 입력이 서버 응답에 즉시 포함되어 피해자의 브라우저에서 실행된다.",
+      "악성 스크립트가 DB에 영구 저장되어야만 발생한다.",
+      "서버가 내부 URL로 요청을 보내는 공격이다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#38",
+    "no": 38,
+    "subject": "app",
+    "type": "mc",
+    "body": "DOM 기반 XSS의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "메일 서버의 오픈 릴레이만 악용한다.",
+      "DNSSEC 서명을 위조한다.",
+      "클라이언트 스크립트가 신뢰할 수 없는 데이터를 위험한 DOM 실행 지점에 넣어 브라우저에서 발생한다.",
+      "서버의 SQL 구문만 변조한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#39",
+    "no": 39,
+    "subject": "app",
+    "type": "mc",
+    "body": "XSS의 가장 핵심적인 출력 단계 대응은?",
+    "stimulus": null,
+    "choices": [
+      "모든 입력을 SQL 문자열로 연결한다.",
+      "세션 식별자를 URL에 항상 노출한다.",
+      "사용자 입력을 그대로 innerHTML에 넣는다.",
+      "HTML, 속성, 자바스크립트, URL 등 출력 문맥에 맞게 인코딩한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#40",
+    "no": 40,
+    "subject": "app",
+    "type": "mc",
+    "body": "CSRF(Cross-Site Request Forgery)의 원리로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "로그인된 사용자의 브라우저가 공격자가 만든 요청을 대상 사이트에 보내게 해 사용자 권한으로 상태 변경을 수행한다.",
+      "사용자 입력을 SQL 명령으로 실행한다.",
+      "서버가 내부 네트워크로 임의 요청을 보낸다.",
+      "브라우저에 저장된 스크립트를 DB에서 실행한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#41",
+    "no": 41,
+    "subject": "app",
+    "type": "mc",
+    "body": "CSRF 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "세션 쿠키의 SameSite 속성을 항상 None으로만 둔다.",
+      "예측 불가능한 CSRF 토큰을 검증하고 SameSite 쿠키 등으로 교차 사이트 요청을 제한한다.",
+      "상태 변경 요청을 GET으로만 제공한다.",
+      "요청 출처와 토큰을 확인하지 않는다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#42",
+    "no": 42,
+    "subject": "app",
+    "type": "mc",
+    "body": "운영체제 명령 삽입(Command Injection)의 원인은?",
+    "stimulus": null,
+    "choices": [
+      "브라우저가 SameSite 쿠키를 적용한다.",
+      "DNS 응답에 전자서명을 붙인다.",
+      "신뢰할 수 없는 입력을 셸 명령 문자열에 결합해 명령 구문으로 해석하게 한다.",
+      "파일의 해시값을 비교한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#43",
+    "no": 43,
+    "subject": "app",
+    "type": "mc",
+    "body": "경로 조작(Path Traversal) 공격의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "메일 발신자 주소를 위조한다.",
+      "브라우저가 다른 사이트로 상태 변경 요청을 보낸다.",
+      "DB 결과의 시간 차이로 정보를 추론한다.",
+      "../ 같은 경로 요소를 조작해 허용된 디렉터리 밖의 파일에 접근한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#44",
+    "no": 44,
+    "subject": "app",
+    "type": "mc",
+    "body": "파일 업로드 기능의 보안 대책으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "허용 확장자·실제 형식·크기를 검사하고 무작위 파일명으로 웹 루트 밖에 저장한다.",
+      "사용자가 보낸 파일명을 서버 경로로 그대로 사용한다.",
+      "업로드된 스크립트에 실행 권한을 준다.",
+      "Content-Type 헤더만 믿고 다른 검사는 하지 않는다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#45",
+    "no": 45,
+    "subject": "app",
+    "type": "mc",
+    "body": "IDOR(Insecure Direct Object Reference)에 해당하는 사례는?",
+    "stimulus": null,
+    "choices": [
+      "DB 계정이 자신의 업무 테이블만 조회한다.",
+      "요청의 주문번호만 바꾸자 소유권 검사 없이 다른 사용자의 주문이 조회된다.",
+      "입력값이 HTML 문맥에 맞게 인코딩된다.",
+      "로그인 후 세션 식별자가 재발급된다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#46",
+    "no": 46,
+    "subject": "app",
+    "type": "mc",
+    "body": "SSRF(Server-Side Request Forgery)의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "SQL 구문의 조건을 조작한다.",
+      "FTP 서버가 PORT 명령으로 제3의 포트를 스캔한다.",
+      "공격자가 제공한 주소로 서버가 요청을 보내게 해 내부 서비스나 메타데이터에 접근한다.",
+      "피해자의 브라우저가 로그인 권한으로 상태 변경 요청을 보낸다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#47",
+    "no": 47,
+    "subject": "app",
+    "type": "mc",
+    "body": "XXE(XML External Entity) 공격의 원리로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "HTML 출력에서 특수문자를 인코딩한다.",
+      "메일의 DKIM 서명을 검증한다.",
+      "DNSSEC의 RRSIG 레코드를 정상 검증한다.",
+      "외부 엔터티 처리가 허용된 XML 파서를 악용해 내부 파일이나 네트워크 자원에 접근한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#48",
+    "no": 48,
+    "subject": "app",
+    "type": "mc",
+    "body": "웹 보안 설정으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "디렉터리 목록과 불필요한 관리 기능을 끄고 오류 응답에서 내부 정보를 숨긴다.",
+      "기본 관리자 계정과 샘플 애플리케이션을 그대로 공개한다.",
+      "스택 추적과 DB 접속정보를 사용자에게 표시한다.",
+      "사용하지 않는 HTTP 메서드를 모두 허용한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#49",
+    "no": 49,
+    "subject": "app",
+    "type": "mc",
+    "body": "클릭재킹(Clickjacking)의 대응으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 재귀 질의를 외부에 무제한 허용한다.",
+      "CSP frame-ancestors 또는 X-Frame-Options로 허용하지 않은 프레임 삽입을 제한한다.",
+      "SQL 질의를 문자열로 연결한다.",
+      "모든 쿠키에서 Secure 속성을 제거한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#50",
+    "no": 50,
+    "subject": "app",
+    "type": "mc",
+    "body": "CORS(Cross-Origin Resource Sharing)에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "DB의 저장 데이터를 암호화하는 방식이다.",
+      "메일 발신 서버의 IP를 검증하는 방식이다.",
+      "서버가 브라우저에 허용할 교차 출처를 응답 헤더로 알리는 정책이며 사용자 인증을 대신하지 않는다.",
+      "모든 출처의 요청을 자동으로 인증하는 방식이다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#51",
+    "no": 51,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNS의 계층 구조를 바르게 나열한 것은?",
+    "stimulus": null,
+    "choices": [
+      "권한 있는 DNS → 웹 서버 → FTP 서버",
+      "메일 서버 → 루트 DNS → DB 서버",
+      "브라우저 → 파일 서버 → 인증기관",
+      "루트 DNS → 최상위 도메인 DNS → 권한 있는 DNS"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#52",
+    "no": 52,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNS 재귀 질의와 반복 질의의 차이로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "재귀 질의는 서버가 최종 답을 구해 반환하고, 반복 질의는 다음에 물을 서버 정보를 반환할 수 있다.",
+      "재귀 질의는 UDP를 사용할 수 없고 반복 질의만 UDP를 쓴다.",
+      "재귀 질의는 파일을 전송하고 반복 질의는 메일을 전송한다.",
+      "두 방식은 항상 동일한 서버 동작을 요구한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#53",
+    "no": 53,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNS 레코드의 연결로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "PTR - 도메인의 웹 문서 본문",
+      "A - IPv4 주소",
+      "AAAA - IPv6 주소",
+      "MX - 메일 교환 서버"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#54",
+    "no": 54,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNS 캐시 포이즈닝 공격의 결과로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "FTP의 파일을 TLS로 암호화한다.",
+      "메일 첨부파일의 매크로를 제거한다.",
+      "재귀 DNS 캐시에 위조된 정보를 넣어 사용자를 공격자가 지정한 주소로 유도한다.",
+      "DB의 SQL 구문을 매개변수화한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#55",
+    "no": 55,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNS 캐시 포이즈닝의 성공 가능성을 낮추는 대책은?",
+    "stimulus": null,
+    "choices": [
+      "모든 질의에 같은 ID와 포트를 반복 사용한다.",
+      "외부의 재귀 질의를 무제한 허용한다.",
+      "권한 없는 서버의 응답을 우선 신뢰한다.",
+      "예측하기 어려운 질의 ID와 출발지 포트를 사용하고 DNSSEC 검증을 적용한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#56",
+    "no": 56,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNS 영역 전송 보안 대책으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "영역 전송을 허가된 보조 DNS 서버로 제한하고 필요하면 전송 인증을 적용한다.",
+      "모든 인터넷 호스트에 AXFR을 허용한다.",
+      "영역 파일의 접근통제를 제거한다.",
+      "DNS 변경 로그를 기록하지 않는다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#57",
+    "no": 57,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNSSEC이 DNS 데이터에 제공하는 핵심 보안 속성은?",
+    "stimulus": null,
+    "choices": [
+      "도메인 등록자의 익명성",
+      "데이터 출처 인증과 무결성",
+      "질의와 응답 내용의 기밀성",
+      "모든 DDoS 공격의 차단"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#58",
+    "no": 58,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNSSEC에 대한 설명으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 데이터의 기밀성을 제공한다.",
+      "위조된 DNS 데이터의 수용 가능성을 낮춘다.",
+      "DNS 응답 데이터의 서명을 검증할 수 있다.",
+      "존의 공개키를 신뢰 사슬로 검증할 수 있다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#59",
+    "no": 59,
+    "subject": "app",
+    "type": "mc",
+    "body": "DNS 증폭 공격의 원리로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 응답에 전자서명을 붙여 크기를 줄인다.",
+      "TCP 연결을 정상 종료해 서버 부하를 낮춘다.",
+      "DB 백업 파일을 DNS 캐시에 저장한다.",
+      "피해자의 주소로 출발지를 위조한 작은 UDP 질의를 보내 더 큰 DNS 응답이 피해자에게 향하게 한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#60",
+    "no": 60,
+    "subject": "app",
+    "type": "mc",
+    "body": "공개 DNS 서버가 증폭 공격에 악용되는 것을 줄이는 대책은?",
+    "stimulus": null,
+    "choices": [
+      "재귀 서비스를 허가된 사용자로 제한하고 응답률 제한 등을 적용한다.",
+      "모든 외부 사용자에게 무제한 재귀를 제공한다.",
+      "응답 크기를 불필요하게 최대화한다.",
+      "출발지 주소 검증을 금지한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#61",
+    "no": 61,
+    "subject": "app",
+    "type": "mc",
+    "body": "도메인 탈취 위험을 줄이는 운영 대책으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "권한 있는 DNS 변경 이력을 남기지 않는다.",
+      "등록기관 계정에 MFA와 잠금 기능을 적용하고 도메인·네임서버 변경을 감시한다.",
+      "등록기관 계정을 여러 사람이 공유한다.",
+      "도메인 갱신 알림을 끈다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#62",
+    "no": 62,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 보안의 목표로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "감사 기록 없이 모든 질의를 허용한다.",
+      "백업과 복구 기능을 제거한다.",
+      "인가된 사용자만 필요한 데이터와 기능에 접근하게 하고 데이터의 기밀성·무결성·가용성을 보호한다.",
+      "모든 사용자가 DBA 권한을 공유하게 한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#63",
+    "no": 63,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 계정 권한 관리로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "모든 애플리케이션이 공용 DBA 계정을 사용한다.",
+      "퇴직자의 DB 계정을 유지한다.",
+      "읽기 전용 업무에도 삭제 권한을 부여한다.",
+      "애플리케이션과 업무별 계정을 분리하고 필요한 객체와 명령만 허용한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#64",
+    "no": 64,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 뷰(View)를 보안에 활용하는 방법은?",
+    "stimulus": null,
+    "choices": [
+      "사용자에게 필요한 행과 열만 노출하도록 제한된 논리적 화면을 제공한다.",
+      "모든 원본 테이블의 모든 열을 자동 공개한다.",
+      "DB 패스워드를 평문으로 저장한다.",
+      "네트워크 패킷의 출발지 주소를 변환한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#65",
+    "no": 65,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 암호화의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "두 방식 모두 접근통제와 키 관리가 필요 없다.",
+      "저장 데이터 암호화 - 디스크·파일 유출 대응, 전송구간 암호화 - 네트워크 도청 대응",
+      "저장 데이터 암호화 - SQL Injection 제거, 전송구간 암호화 - 권한 오용 제거",
+      "저장 데이터 암호화 - 가용성만 제공, 전송구간 암호화 - 백업 삭제"
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#66",
+    "no": 66,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 감사 로그에 우선 포함해야 할 정보로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "암호화키의 원문",
+      "모든 데이터의 불필요한 전체 복사본",
+      "접속 계정, 시각, 출발지, 수행한 질의·변경과 성공 여부",
+      "사용자의 평문 패스워드"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#67",
+    "no": 67,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 접근제어·감사 솔루션의 주된 기능은?",
+    "stimulus": null,
+    "choices": [
+      "웹 페이지의 HTML을 자동 작성한다.",
+      "DNS 질의를 재귀적으로 해결한다.",
+      "FTP 파일을 압축한다.",
+      "DB 접속과 질의를 정책에 따라 허용·차단하고 행위를 기록·분석한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#68",
+    "no": 68,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 백업 보안으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "백업을 암호화하고 접근을 제한하며 정기적으로 복구 시험을 수행한다.",
+      "백업 파일을 인터넷에 공개한다.",
+      "복구 가능성을 확인하지 않는다.",
+      "운영 DB와 같은 계정으로 모든 사용자가 백업을 삭제하게 한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#69",
+    "no": 69,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 추론(Inference) 공격의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "DNS 응답의 출발지를 위조한다.",
+      "허용된 통계 질의 결과들을 조합해 공개되지 않은 민감정보를 추정한다.",
+      "SQL 구문에 운영체제 명령을 직접 삽입한다.",
+      "파일의 상위 디렉터리로 이동한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#70",
+    "no": 70,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 집성(Aggregation) 문제의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "모든 데이터를 하나의 테이블로 정상 이전한다.",
+      "백업 파일을 여러 매체에 분산한다.",
+      "개별적으로 낮은 민감도의 정보들을 결합해 더 민감한 정보를 얻는다.",
+      "DB 파일을 압축해 저장공간을 줄인다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#71",
+    "no": 71,
+    "subject": "app",
+    "type": "mc",
+    "body": "DB 서버의 SQL Injection 대응으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "애플리케이션 DB 계정에 최소 권한을 적용한다.",
+      "오류 메시지의 내부정보 노출을 줄인다.",
+      "사용자 입력을 SQL 문자열에 그대로 연결한다.",
+      "매개변수화 질의를 사용한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#72",
+    "no": 72,
+    "subject": "app",
+    "type": "mc",
+    "body": "저장 프로시저를 사용할 때의 SQL Injection 보안 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "저장 프로시저 내부에서도 동적 SQL에 입력을 문자열 연결하면 SQL Injection이 발생할 수 있다.",
+      "저장 프로시저를 쓰기만 하면 입력 처리와 무관하게 항상 안전하다.",
+      "저장 프로시저는 DB 권한과 무관하다.",
+      "저장 프로시저는 웹 브라우저에서만 실행된다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#73",
+    "no": 73,
+    "subject": "app",
+    "type": "mc",
+    "body": "데이터 마스킹(Data Masking)의 목적으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "SQL Injection 공격문을 자동 생성한다.",
+      "조회 화면이나 비운영 환경에서 민감정보의 일부를 가려 불필요한 노출을 줄인다.",
+      "원본 데이터를 누구나 복호화하도록 공개한다.",
+      "DB의 모든 접근통제를 제거한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#74",
+    "no": 74,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자상거래의 보안 요구사항으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "라우팅, 단편화, 브로드캐스트, 멀티캐스트",
+      "CPU 스케줄링, 페이징, 교착상태, 캐시",
+      "기밀성, 무결성, 인증, 부인 방지",
+      "압축성, 확장성, 화면 해상도, 인쇄 속도"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#75",
+    "no": 75,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자상거래 결제 구성요소의 역할로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "구매자는 판매자의 개인키를 발급한다.",
+      "가맹점은 카드 발급사의 루트 인증기관을 운영해야만 한다.",
+      "PG는 DNS 루트 서버의 질의만 처리한다.",
+      "지급결제대행기관(PG)은 가맹점과 금융기관 사이의 결제정보 전달과 처리를 중계한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#76",
+    "no": 76,
+    "subject": "app",
+    "type": "mc",
+    "body": "신용카드 기반 전자지불에서 승인(Authorization)의 의미는?",
+    "stimulus": null,
+    "choices": [
+      "카드 발급기관 등이 거래 가능 여부와 한도를 확인해 승인 또는 거절하는 과정",
+      "가맹점이 카드번호를 공개 게시하는 과정",
+      "사용자가 결제 후 모든 로그를 삭제하는 과정",
+      "DNS 서버가 카드번호를 IP 주소로 변환하는 과정"
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#77",
+    "no": 77,
+    "subject": "app",
+    "type": "mc",
+    "body": "결제 토큰화(Tokenization)의 목적은?",
+    "stimulus": null,
+    "choices": [
+      "거래내역의 무결성 검증을 금지한다.",
+      "실제 카드번호 대신 제한된 용도의 대체값을 사용해 카드정보 노출 위험을 줄인다.",
+      "카드번호를 모든 거래처에 평문으로 복제한다.",
+      "사용자 인증을 제거한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#78",
+    "no": 78,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자화폐 시스템에서 중요한 보안 문제는?",
+    "stimulus": null,
+    "choices": [
+      "DNS 영역 전송의 무제한 공개",
+      "웹 서버의 디렉터리 목록 활성화",
+      "같은 전자화폐를 여러 번 사용하는 이중사용(Double Spending) 방지",
+      "메일 서버의 오픈 릴레이 허용"
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#79",
+    "no": 79,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자수표의 보안에 활용되는 대표 기술은?",
+    "stimulus": null,
+    "choices": [
+      "익명 FTP의 쓰기 권한",
+      "DNS 재귀 질의",
+      "웹 디렉터리 목록",
+      "작성자 인증과 위·변조 방지를 위한 디지털서명"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#80",
+    "no": 80,
+    "subject": "app",
+    "type": "mc",
+    "body": "SSL/TLS와 SET의 차이로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "SSL/TLS는 통신 채널 보호에 널리 쓰이고, SET은 카드 결제 거래의 당사자와 결제정보 보호를 위해 설계되었다.",
+      "SSL/TLS는 전자화폐만, SET은 DNS 질의만 보호한다.",
+      "SSL/TLS와 SET은 모두 파일 전송 프로토콜이다.",
+      "SET은 암호기술을 사용하지 않는다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#81",
+    "no": 81,
+    "subject": "app",
+    "type": "mc",
+    "body": "SET의 이중서명(Dual Signature)이 제공하는 효과는?",
+    "stimulus": null,
+    "choices": [
+      "DNS 응답을 두 서버에서 반복 전송한다.",
+      "주문정보와 결제정보를 연결하면서 판매자와 결제기관이 서로에게 불필요한 정보를 보지 못하게 한다.",
+      "같은 카드번호를 두 번 평문 전송한다.",
+      "모든 거래에서 사용자 인증을 생략한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#82",
+    "no": 82,
+    "subject": "app",
+    "type": "mc",
+    "body": "전자상거래에서 PKI 인증서의 활용으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "모든 결제정보를 암호화 없이 전송한다.",
+      "가맹점의 DB 관리자 권한을 구매자에게 준다.",
+      "거래 당사자의 신원과 공개키를 연결하고 디지털서명 검증을 지원한다.",
+      "사용자의 개인키를 인증서에 공개한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#83",
+    "no": 83,
+    "subject": "app",
+    "type": "mc",
+    "body": "고위험 전자결제의 사용자 인증강화로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "패스워드를 여러 사용자가 공유한다.",
+      "거래 승인 전에 인증을 생략한다.",
+      "OTP 값을 장기간 고정해 재사용한다.",
+      "패스워드 외에 OTP나 보안 토큰 등 서로 다른 요소를 추가한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#84",
+    "no": 84,
+    "subject": "app",
+    "type": "mc",
+    "body": "무선·모바일 플랫폼의 전자상거래 보안 대책으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "서버 인증서를 검증하고 중요정보를 안전한 저장소에 보관하며 앱 위·변조와 기기 분실에 대비한다.",
+      "공용 무선망에서는 인증서 오류를 무조건 무시한다.",
+      "결제 비밀정보를 앱 코드에 평문으로 넣는다.",
+      "루팅·탈옥 여부와 무관하게 모든 보호기능을 끈다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#85",
+    "no": 85,
+    "subject": "app",
+    "type": "mc",
+    "body": "안전한 소프트웨어 개발의 적용 시점으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "보안 요구사항은 운영자만 알고 개발자에게 알리지 않는다.",
+      "요구사항부터 설계·구현·시험·배포·운영까지 개발 생명주기 전반에 적용한다.",
+      "배포가 끝난 뒤 사고가 발생했을 때만 적용한다.",
+      "코딩 단계에는 적용하지 않고 문서 작성에만 적용한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#86",
+    "no": 86,
+    "subject": "app",
+    "type": "mc",
+    "body": "개발 보안 요구사항으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "모든 사용자에게 관리자 권한을 주는 것을 기본 요구로 한다.",
+      "민감정보를 로그에 평문으로 남기도록 요구한다.",
+      "인증·권한·입력검증·암호화·로그·오류처리 요구를 기능 요구와 함께 검증 가능하게 정의한다.",
+      "보안 요구를 구현 후 구두로만 전달한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#87",
+    "no": 87,
+    "subject": "app",
+    "type": "mc",
+    "body": "위협 모델링(Threat Modeling)의 목적으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "소스코드의 들여쓰기만 자동 정리한다.",
+      "운영 로그를 모두 삭제한다.",
+      "사용자 요구사항을 보안 검토 없이 축소한다.",
+      "자산·신뢰경계·데이터 흐름과 가능한 위협을 설계 단계에서 식별해 대응을 정한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#88",
+    "no": 88,
+    "subject": "app",
+    "type": "mc",
+    "body": "입력값 검증의 원칙으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "서버에서 길이·형식·범위와 허용값을 검증하되 출력 인코딩과 별도 보안통제도 적용한다.",
+      "클라이언트 검증만 통과하면 서버 검증은 생략한다.",
+      "차단 목록 하나로 모든 문맥의 공격을 완전히 방지한다.",
+      "입력값을 검증하면 접근통제는 필요 없다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#89",
+    "no": 89,
+    "subject": "app",
+    "type": "mc",
+    "body": "출력 인코딩을 적용할 때 가장 중요한 기준은?",
+    "stimulus": null,
+    "choices": [
+      "인코딩은 서버가 아닌 사용자에게 맡긴다.",
+      "데이터가 삽입되는 HTML·속성·자바스크립트·URL 등의 문맥에 맞는 방식을 사용한다.",
+      "모든 문맥에 같은 SQL 이스케이프만 사용한다.",
+      "입력값을 Base64로 바꾸면 모든 공격이 차단된다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#90",
+    "no": 90,
+    "subject": "app",
+    "type": "mc",
+    "body": "애플리케이션 접근통제 구현으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "클라이언트가 보낸 역할 값을 그대로 신뢰한다.",
+      "로그인만 확인하고 모든 객체 접근을 허용한다.",
+      "신뢰할 수 있는 서버 측에서 요청마다 권한과 객체 소유권을 검증하고 기본 거부를 적용한다.",
+      "화면에서 버튼을 숨기는 것만으로 서버 권한검사를 대신한다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#91",
+    "no": 91,
+    "subject": "app",
+    "type": "mc",
+    "body": "안전한 오류처리와 로깅으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "스택 추적과 DB 비밀번호를 사용자에게 그대로 보여준다.",
+      "모든 예외를 무시하고 로그를 남기지 않는다.",
+      "세션 토큰과 개인키를 로그에 평문으로 기록한다.",
+      "사용자에게는 일반화된 오류를 제공하고 내부 로그에는 추적에 필요한 정보를 남기되 비밀정보는 제외한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#92",
+    "no": 92,
+    "subject": "app",
+    "type": "mc",
+    "body": "애플리케이션 비밀정보 관리로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "API 키와 비밀번호를 소스코드에서 분리해 접근통제된 비밀 저장소로 관리하고 주기적으로 교체한다.",
+      "비밀정보를 공개 저장소의 코드에 하드코딩한다.",
+      "모든 환경이 같은 관리자 비밀번호를 공유한다.",
+      "퇴직자에게 발급한 키를 계속 사용한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#93",
+    "no": 93,
+    "subject": "app",
+    "type": "mc",
+    "body": "SAST(Static Application Security Testing)의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "운영체제의 포트 상태만 스캔한다.",
+      "애플리케이션을 실행하지 않고 소스코드나 중간 산출물을 분석해 취약 패턴을 찾는다.",
+      "실행 중인 애플리케이션의 외부 인터페이스에 요청을 보내 분석한다.",
+      "오픈소스 의존성의 버전만 대조한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#94",
+    "no": 94,
+    "subject": "app",
+    "type": "mc",
+    "body": "DAST(Dynamic Application Security Testing)의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "의존성 목록의 알려진 취약점만 확인한다.",
+      "개발자의 코딩 스타일만 검사한다.",
+      "실행 중인 애플리케이션을 외부에서 요청·응답 기반으로 점검한다.",
+      "소스코드만 읽고 실행 환경은 사용하지 않는다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#95",
+    "no": 95,
+    "subject": "app",
+    "type": "mc",
+    "body": "SCA(Software Composition Analysis)의 주된 목적은?",
+    "stimulus": null,
+    "choices": [
+      "브라우저의 DOM만 분석해 XSS를 실행한다.",
+      "DNS의 재귀 질의를 차단한다.",
+      "사용자 비밀번호를 생성한다.",
+      "오픈소스·제3자 의존성과 버전을 식별해 알려진 취약점과 라이선스 위험을 점검한다."
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#96",
+    "no": 96,
+    "subject": "app",
+    "type": "mc",
+    "body": "퍼징(Fuzzing)의 특징으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "비정상·경계 입력을 대량으로 제공해 충돌, 예외와 취약 동작을 찾는다.",
+      "정상 입력 하나만 반복해 기능 명세를 작성한다.",
+      "DB의 모든 사용자에게 관리자 권한을 준다.",
+      "메일 서버의 오픈 릴레이를 활성화한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#97",
+    "no": 97,
+    "subject": "app",
+    "type": "mc",
+    "body": "IAST(Interactive Application Security Testing)의 특징은?",
+    "stimulus": null,
+    "choices": [
+      "제3자 라이브러리의 라이선스만 검사한다.",
+      "애플리케이션 실행 중 내부 계측 정보와 테스트 요청을 결합해 취약점을 분석한다.",
+      "소스코드와 실행정보를 전혀 사용하지 않는다.",
+      "오직 DNS 패킷만 캡처한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#98",
+    "no": 98,
+    "subject": "app",
+    "type": "mc",
+    "body": "WAF(Web Application Firewall)의 활용에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "운영체제의 모든 악성코드를 제거하는 백신과 완전히 같다.",
+      "DB 백업의 복구 가능성을 자동 보장한다.",
+      "HTTP 요청을 분석해 알려진 공격 패턴을 탐지·차단할 수 있지만 취약한 코드를 수정하는 근본 대책을 대신하지는 않는다.",
+      "설치하면 시큐어코딩과 패치가 모두 불필요하다."
+    ],
+    "answer": "2",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#99",
+    "no": 99,
+    "subject": "app",
+    "type": "mc",
+    "body": "무선 인터넷 보안기술의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "WTLS - DB 접근제어, WPKI - FTP 포트 스캔",
+      "WTLS - 전자화폐 이중사용, WPKI - DNS 재귀 질의",
+      "WTLS - 파일 압축, WPKI - 메일 중계",
+      "WTLS - WAP 환경의 전송 보안, WPKI - 무선 환경에 적용한 공개키 기반구조"
+    ],
+    "answer": "3",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#100",
+    "no": 100,
+    "subject": "app",
+    "type": "mc",
+    "body": "보안 코드 리뷰의 장점으로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "자동 도구가 놓치기 쉬운 업무 로직과 권한검사 오류를 사람이 코드와 설계 문맥에서 확인할 수 있다.",
+      "실행 중인 서버의 포트 상태만 확인한다.",
+      "모든 취약점을 수정 없이 자동 차단한다.",
+      "제3자 라이브러리의 라이선스만 검사한다."
+    ],
+    "answer": "0",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  },
+  {
+    "key": "2026-algisa-app-comprehensive#101",
+    "no": 101,
+    "subject": "app",
+    "type": "mc",
+    "body": "개발보안 도구 결과의 처리로 가장 적절한 것은?",
+    "stimulus": null,
+    "choices": [
+      "결과를 저장하지 않고 수정 여부도 확인하지 않는다.",
+      "오탐 여부와 실제 영향도를 검토해 우선순위를 정하고 수정 후 재검증한다.",
+      "도구가 낸 모든 경고를 검토 없이 실제 침해로 확정한다.",
+      "경고가 없으면 취약점이 전혀 없다고 단정한다."
+    ],
+    "answer": "1",
+    "note": null,
+    "source": "2026-algisa-app-comprehensive"
+  }
+]

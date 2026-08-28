@@ -3,7 +3,7 @@ import { Nav } from './Nav.tsx'
 import { MC, OX, SHORT, SUBJECTS, shuffle, visible, weakFirst, type Stat, type Subject } from './lib.tsx'
 
 type Props = {
-  mode: 'mock_short' | 'ox' | 'short'
+  mode: 'practice' | 'mock_short' | 'ox' | 'short'
   stats: Map<string, Stat>
   hidden: Set<string>
   onStart: (keys: string[]) => void
@@ -19,7 +19,8 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
   const [weak, setWeak] = useState(true)
 
   const selected = picked.size ? pool.filter((q) => picked.has(q.subject)) : pool
-  const n = Math.min(count, selected.length)
+  // 연습형은 문항 제한 없이 고른 과목 전체를 푼다
+  const n = mode === 'practice' ? selected.length : Math.min(count, selected.length)
 
   const toggle = (id: Subject) =>
     setPicked((prev) => {
@@ -34,7 +35,7 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
   return (
     <>
       <Nav
-        title={mode === 'ox' ? 'OX 특강' : mode === 'short' ? '단답 특강' : '간단 모의'}
+        title={mode === 'ox' ? 'OX 특강' : mode === 'short' ? '단답 특강' : mode === 'practice' ? '연습형' : '간단 모의'}
         meta={mode === 'ox' ? 'OX' : mode === 'short' ? '주관식' : '4지선다'}
         onBack={onExit}
       />
@@ -61,7 +62,7 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           </div>
         </div>
 
-        <div>
+        {mode !== 'practice' && <div>
           <div className="label" style={{ marginBottom: 8 }}>
             문항 수
           </div>
@@ -72,7 +73,7 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
               </button>
             ))}
           </div>
-        </div>
+        </div>}
 
         <button
           className="card option-toggle"
