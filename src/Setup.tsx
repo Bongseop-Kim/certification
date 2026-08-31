@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { MC, OX, SHORT, SUBJECTS, shuffle, visible, weakFirst, type Stat, type Subject } from './lib.tsx'
+import { MC, SHORT, SUBJECTS, shuffle, visible, weakFirst, type Stat, type Subject } from './lib.tsx'
 
 type Props = {
-  mode: 'practice' | 'mock_short' | 'ox' | 'short'
+  mode: 'practice' | 'mock_short' | 'short'
   stats: Map<string, Stat>
   hidden: Set<string>
   onStart: (keys: string[]) => void
@@ -12,8 +12,8 @@ type Props = {
 
 export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
   // 관심 없음은 여기서 한 번 걷어낸다. 과목별 개수 표시까지 자동으로 따라온다.
-  const pool = visible(mode === 'ox' ? OX : mode === 'short' ? SHORT : MC, hidden)
-  const counts = mode === 'ox' ? [10, 20, 30, 50] : [10, 20, 30]
+  const pool = visible(mode === 'short' ? SHORT : MC, hidden)
+  const counts = [10, 20, 30]
   const [picked, setPicked] = useState<Set<Subject>>(new Set())
   const [count, setCount] = useState(counts[0])
   const [weak, setWeak] = useState(true)
@@ -35,8 +35,8 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
   return (
     <>
       <Nav
-        title={mode === 'ox' ? 'OX 특강' : mode === 'short' ? '단답 특강' : mode === 'practice' ? '연습형' : '간단 모의'}
-        meta={mode === 'ox' ? 'OX' : mode === 'short' ? '주관식' : '4지선다'}
+        title={mode === 'short' ? '단답 특강' : mode === 'practice' ? '연습형' : '간단 모의'}
+        meta={mode === 'short' ? '주관식' : '4지선다'}
         onBack={onExit}
       />
       <main className="screen">

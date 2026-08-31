@@ -10,9 +10,9 @@ create table attempts (
   question_key text not null,  -- '2023-03-11#82' (회차#번호). JSON의 key 필드와 같다
   answered_at  timestamptz not null default now(),
   correct      boolean not null,
-  chosen       text,          -- 고른 답. mc는 보기 인덱스, ox는 O/X
-  mode         text not null check (mode in ('practice','mock100','mock_short','ox','short','memo','review')),
-  session_id   uuid,          -- 모의고사 결과 재계산용
+  chosen       text,          -- 고른 답. mc는 보기 인덱스, short는 입력한 문자열
+  mode         text not null check (mode in ('practice','mock_short','short','review')),
+  session_id   uuid,          -- 간단 모의·단답 결과 재계산용
   note         text           -- "왜 틀렸는지" 오답 메모
 );
 create index attempts_question_key_idx on attempts (question_key);
@@ -35,6 +35,6 @@ create table flags (
 alter table flags enable row level security;
 create policy anon_all on flags for all to anon using (true) with check (true);
 
--- 정답률, 오답노트, 과목별 대시보드, 모의고사 결과가 전부 이 테이블에서 파생된다.
+-- 정답률, 오답노트, 과목별 대시보드, 간단 모의 결과가 전부 이 테이블에서 파생된다.
 -- 집계는 클라이언트에서 한다(뷰도 RPC도 만들지 않는다).
 -- ponytail: attempts 전량 로드. 수만 행 넘어 느려지면 answered_at 기준 .range()

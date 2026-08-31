@@ -65,7 +65,7 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
               const cls = p === null ? 'rate' : p < 40 ? 'rate bad' : p < 80 ? 'rate mid' : 'rate good'
               return (
                 <div key={k}>
-                  {/* ponytail: OX는 연습형 상세 화면이 없어서 그 행만 기존 펼치기 유지 */}
+                  {/* ponytail: 단답은 연습형 상세 화면이 없어서 그 행만 기존 펼치기 유지 */}
                   <div className="hrow">
                     <button
                       className="hitem"

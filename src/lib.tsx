@@ -9,11 +9,11 @@ export type Question = {
   key: string
   no: number
   subject: Subject
-  type: 'mc' | 'ox' | 'short'
+  type: 'mc' | 'short'
   body: string
   stimulus: string | null
   choices: string[] | null
-  answer: string // mc는 0부터 세는 보기 인덱스, ox는 'O' | 'X', short는 정답 문자열
+  answer: string // mc는 0부터 세는 보기 인덱스, short는 정답 문자열
   note: string | null // 원본 정오표
   source: string
   variantOf?: string // 변형 문제일 때 원본 문제 key
@@ -36,32 +36,15 @@ export const QUESTIONS = Object.keys(files)
   .sort()
   .flatMap((f) => files[f])
 export const MC = QUESTIONS.filter((q) => q.type === 'mc')
-export const OX = QUESTIONS.filter((q) => q.type === 'ox')
 export const SHORT = QUESTIONS.filter((q) => q.type === 'short')
 export const byKey = new Map(QUESTIONS.map((q) => [q.key, q]))
 
-// ponytail: 암기 카드는 별도 디렉터리. QUESTIONS(=출제 풀)에 섞으면 모의고사 100문항에 딸려 들어간다.
-const memoFiles = import.meta.glob<Question[]>('../questions/memo/*.json', {
-  eager: true,
-  import: 'default',
-})
-export const MEMO = Object.keys(memoFiles)
-  .sort()
-  .flatMap((f) => memoFiles[f])
-const memoByKey = new Map(MEMO.map((q) => [q.key, q]))
-
-/** 기출 + 암기 카드. byKey는 기출만 담아 과목별 정답률·오답노트 집계를 그대로 둔다 */
-export const lookup = (key: string) => byKey.get(key) ?? memoByKey.get(key)
-
-export const PASS_SUBJECT = 0.4
-export const PASS_AVERAGE = 0.6
-export const TIME_LIMIT_MIN = 150
-export const PER_SUBJECT = 20
 export const CIRCLED = ['①', '②', '③', '④', '⑤']
 
 /* ---------- 풀이 기록 (여기만 서버) ---------- */
 
-export type Mode = 'practice' | 'mock100' | 'mock_short' | 'ox' | 'short' | 'memo' | 'review'
+// DB의 옛 기록에는 삭제된 모드(mock100·ox·memo)도 남아 있지만, 집계는 mode를 안 본다
+export type Mode = 'practice' | 'mock_short' | 'short' | 'review'
 
 export type Attempt = {
   id?: number
@@ -241,34 +224,7 @@ export function useFlags() {
   return { marks, hidden, toggle, error }
 }
 
-/* ---------- 암기 카드 일정: 3박스 Leitner ---------- */
-
-// ponytail: 연속 정답 수가 곧 박스다. 카드 수백 장 규모에서 SM-2/FSRS는 이득이 측정되지 않는다.
-// 카드가 500장을 넘고 복습량이 부담되면 그때 per-card ease factor를 붙인다.
-const BOX_DAYS = [0, 1, 3, 7, 21]
-export const MEMO_PER_DAY = 30
-
-/** 오늘 볼 암기 카드. 복습 대상이 먼저, 남는 자리에 새 카드 */
-export function memoDue(attempts: Attempt[], hidden: Set<string>, now = Date.now()) {
-  const last = new Map<string, { streak: number; at: number }>()
-  for (const a of attempts) {
-    if (a.mode !== 'memo') continue
-    const prev = last.get(a.question_key)
-    last.set(a.question_key, {
-      streak: a.correct ? (prev?.streak ?? 0) + 1 : 0,
-      at: +new Date(a.answered_at),
-    })
-  }
-  const cards = visible(MEMO, hidden)
-  const review = cards.filter((q) => {
-    const p = last.get(q.key)
-    return p && now - p.at >= BOX_DAYS[Math.min(p.streak, BOX_DAYS.length - 1)] * 86_400_000
-  })
-  const fresh = cards.filter((q) => !last.has(q.key))
-  return [...shuffle(review), ...fresh].slice(0, MEMO_PER_DAY)
-}
-
-/* ---------- 모의고사 중간 저장 (localStorage) ---------- */
+/* ---------- 간단 모의 세션 ---------- */
 
 export type Saved = {
   sessionId: string
@@ -277,19 +233,6 @@ export type Saved = {
   marked: string[]
   idx: number
   startedAt: number
-}
-const MOCK_KEY = 'mock100'
-
-export function loadMock(): Saved | null {
-  try {
-    return JSON.parse(localStorage.getItem(MOCK_KEY) ?? 'null') as Saved | null
-  } catch {
-    return null
-  }
-}
-export function saveMock(s: Saved | null) {
-  if (s) localStorage.setItem(MOCK_KEY, JSON.stringify(s))
-  else localStorage.removeItem(MOCK_KEY)
 }
 
 /* ---------- 표시 ---------- */

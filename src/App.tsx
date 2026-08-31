@@ -1,33 +1,21 @@
 import { useEffect, useState } from 'react'
 import { Exam } from './Exam.tsx'
-import { CryptoMap } from './CryptoMap.tsx'
-import { Memo } from './Memo.tsx'
 import { History, type HistTab } from './History.tsx'
 import { Nav } from './Nav.tsx'
-import { Ox } from './Ox.tsx'
 import { Practice } from './Practice.tsx'
 import { Result } from './Result.tsx'
 import { Setup } from './Setup.tsx'
 import { Short } from './Short.tsx'
 import {
   MC,
-  MEMO,
-  OX,
   SHORT,
-  PASS_AVERAGE,
-  PASS_SUBJECT,
   byKey,
   dayLabel,
-  PER_SUBJECT,
   QUESTIONS,
   SUBJECTS,
-  loadMock,
-  memoDue,
   pct,
-  saveMock,
   shuffle,
   statsByKey,
-  stampLabel,
   subjectRates,
   useAttempts,
   useFlags,
@@ -41,26 +29,11 @@ import {
 type View =
   | { s: 'home' }
   | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[]; fromHistory?: boolean }
-  | { s: 'setup'; mode: 'practice' | 'mock_short' | 'ox' | 'short' }
-  | { s: 'exam'; mode: 'mock100' | 'mock_short'; saved: Saved }
-  | { s: 'ox'; keys: string[] }
-  | { s: 'short'; keys: string[]; mode: 'short' | 'memo' }
+  | { s: 'setup'; mode: 'practice' | 'mock_short' | 'short' }
+  | { s: 'exam'; saved: Saved }
+  | { s: 'short'; keys: string[] }
   | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
-  | { s: 'memo' }
-  | { s: 'crypto-map' }
   | { s: 'history' }
-
-/** 과목별 20문항, 과목 순서대로 배치한 100문항 */
-// ponytail: 관심 없음이 많으면 과목별 20문항을 못 채워 100문항 미만이 된다.
-// 합격 판정은 비율 기준이라 계산은 그대로 성립한다. 실제로 걸리면 그때 경고를 띄운다.
-function newMock100(hidden: Set<string>): Saved {
-  const keys = SUBJECTS.flatMap((s) =>
-    shuffle(visible(MC, hidden).filter((q) => q.subject === s.id))
-      .slice(0, PER_SUBJECT)
-      .map((q) => q.key),
-  )
-  return { sessionId: crypto.randomUUID(), keys, answers: {}, marked: [], idx: 0, startedAt: Date.now() }
-}
 
 export default function App() {
   const { attempts, record, addNote, error, loading } = useAttempts()
@@ -110,13 +83,10 @@ export default function App() {
             onStart={(keys) =>
               view.mode === 'practice'
                 ? setView({ s: 'practice', mode: 'practice', keys })
-                : view.mode === 'ox'
-                  ? setView({ s: 'ox', keys })
-                  : view.mode === 'short'
-                  ? setView({ s: 'short', keys, mode: 'short' })
+                : view.mode === 'short'
+                  ? setView({ s: 'short', keys })
                   : setView({
                     s: 'exam',
-                    mode: 'mock_short',
                     saved: { sessionId: crypto.randomUUID(), keys, answers: {}, marked: [], idx: 0, startedAt: Date.now() },
                   })
             }
@@ -125,34 +95,23 @@ export default function App() {
       case 'exam':
         return (
           <Exam
-            mode={view.mode}
             saved={view.saved}
             record={record}
             marks={marks}
             toggleMark={toggleMark}
             onExit={home}
             onSubmit={(elapsedMs) =>
-              setView({ s: 'result', mode: view.mode, sessionId: view.saved.sessionId, elapsedMs })
+              setView({ s: 'result', mode: 'mock_short', sessionId: view.saved.sessionId, elapsedMs })
             }
-          />
-        )
-      case 'ox':
-        return (
-          <Ox
-            keys={view.keys}
-            record={record}
-            onExit={home}
-            onDone={(sessionId, elapsedMs) => setView({ s: 'result', mode: 'ox', sessionId, elapsedMs })}
           />
         )
       case 'short':
         return (
           <Short
             keys={view.keys}
-            mode={view.mode}
             record={record}
             onExit={home}
-            onDone={(sessionId, elapsedMs) => setView({ s: 'result', mode: view.mode, sessionId, elapsedMs })}
+            onDone={(sessionId, elapsedMs) => setView({ s: 'result', mode: 'short', sessionId, elapsedMs })}
           />
         )
       case 'result':
@@ -168,21 +127,11 @@ export default function App() {
             onHome={home}
             onReview={(keys) =>
               setView(
-                view.mode === 'ox'
-                  ? { s: 'ox', keys }
-                  : view.mode === 'short' || view.mode === 'memo'
-                    ? { s: 'short', keys, mode: view.mode }
-                    : { s: 'practice', mode: 'review', keys },
+                view.mode === 'short' ? { s: 'short', keys } : { s: 'practice', mode: 'review', keys },
               )
             }
           />
         )
-      case 'memo':
-        return (
-          <Memo hidden={hidden} onExit={home} onOpenCrypto={() => setView({ s: 'crypto-map' })} />
-        )
-      case 'crypto-map':
-        return <CryptoMap onExit={home} />
       case 'history':
         return (
           <History
@@ -233,10 +182,8 @@ function Home({
 }) {
   const rates = subjectRates(stats)
   const wrong = wrongKeys(stats, hidden)
-  const memo = memoDue(attempts, hidden)
   const marked = [...marks].filter((k) => byKey.has(k) && !hidden.has(k))
   const pool = visible(MC, hidden)
-  const resume = loadMock()
   const solved = pool.filter((q) => stats.has(q.key)).length
   const unseen = pool.length - solved
   const review = [
@@ -257,7 +204,7 @@ function Home({
   const latestMock = (() => {
     const sessions = new Map<string, Attempt[]>()
     for (const a of attempts) {
-      if (!a.session_id || (a.mode !== 'mock100' && a.mode !== 'mock_short')) continue
+      if (!a.session_id || a.mode !== 'mock_short') continue
       sessions.set(a.session_id, [...(sessions.get(a.session_id) ?? []), a])
     }
     return [...sessions.values()].sort((a, b) =>
@@ -268,42 +215,17 @@ function Home({
   const latestMockSummary = (() => {
     if (!latestMock) return null
     const correct = latestMock.filter((a) => a.correct).length
-    const full = latestMock[0].mode === 'mock100'
-    const failed = full && SUBJECTS.some((subject) => {
-      const rows = latestMock.filter((a) => byKey.get(a.question_key)?.subject === subject.id)
-      return rows.length > 0 && rows.filter((a) => a.correct).length / rows.length < PASS_SUBJECT
-    })
-    const passed = full && !failed && correct / latestMock.length >= PASS_AVERAGE
     return {
-      title: full ? `최근 모의고사 · ${passed ? '합격' : '불합격'}` : '최근 간단 모의',
+      title: '최근 간단 모의',
       detail: `${dayLabel(latestMock[0].answered_at)} · ${correct}/${latestMock.length} · ${pct(correct, latestMock.length)}%`,
     }
   })()
-
-  const startMock100 = () => {
-    if (resume && !confirm('진행 중인 모의고사가 있습니다. 새로 시작하면 사라집니다.')) return
-    const saved = newMock100(hidden)
-    saveMock(saved)
-    setView({ s: 'exam', mode: 'mock100', saved })
-  }
 
   return (
     <>
       <Nav title="보안기사 문제집" meta={`문제 ${visible(QUESTIONS, hidden).length}개`} />
       <main className="screen">
         {error && <div className="verdict toast">기록 서버 오류 — {error}</div>}
-
-        {resume && (
-          <button className="banner" onClick={() => setView({ s: 'exam', mode: 'mock100', saved: resume })}>
-            <div>
-              <div className="bt">모의고사 이어풀기</div>
-              <div className="bd">
-                {Object.keys(resume.answers).length}/{resume.keys.length} · {stampLabel(new Date(resume.startedAt).toISOString())} 시작
-              </div>
-            </div>
-            <span className="go">이어풀기 →</span>
-          </button>
-        )}
 
         <div className="progress-card">
           <div className="progress-head">
@@ -336,6 +258,42 @@ function Home({
           </button>
         </div>
 
+        <div>
+          <div className="label" style={{ marginBottom: 10 }}>
+            과목별 진도
+          </div>
+          <div className="bars">
+            {SUBJECTS.map((s, i) => {
+              const qs = pool.filter((q) => q.subject === s.id)
+              const done = qs.filter((q) => stats.has(q.key)).length
+              return (
+                <button
+                  className="bar wide"
+                  key={s.id}
+                  title={`${s.label} 안 푼 문제 풀기`}
+                  disabled={loading || done === qs.length}
+                  onClick={() =>
+                    setView({
+                      s: 'practice',
+                      mode: 'practice',
+                      keys: shuffle(qs.filter((q) => !stats.has(q.key))).map((q) => q.key),
+                    })
+                  }
+                >
+                  <span className="bn">{s.short}</span>
+                  <span className="track">
+                    <span
+                      className="fill"
+                      style={{ transform: `scaleX(${qs.length ? done / qs.length : 0})`, transitionDelay: `${i * 50}ms` }}
+                    />
+                  </span>
+                  <span className="bv">푼 {done} · 안 푼 {qs.length - done}</span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
         <button
           className="banner"
           disabled={!review.length || loading}
@@ -354,32 +312,6 @@ function Home({
           {review.length > 0 && <span className="go">시작 →</span>}
         </button>
 
-        <button
-          className="banner"
-          disabled={!memo.length || loading}
-          onClick={() => setView({ s: 'short', keys: memo.map((q) => q.key), mode: 'memo' })}
-        >
-          <div>
-            <div className="bt">오늘 암기{!loading && ` ${memo.length}장`}</div>
-            <div className="bd">
-              {loading
-                ? '기록을 불러오고 있습니다'
-                : memo.length
-                  ? '암호 스펙·포트·파일 경로를 직접 입력'
-                  : '오늘 볼 카드를 다 봤습니다'}
-            </div>
-          </div>
-          {memo.length > 0 && <span className="go">시작 →</span>}
-        </button>
-
-        <button className="banner plain" onClick={() => setView({ s: 'crypto-map' })}>
-          <div>
-            <div className="bt">암호학 지도</div>
-            <div className="bd">암호 분류부터 공격까지, 외울 것들의 관계를 그림으로</div>
-          </div>
-          <span className="go">보기 →</span>
-        </button>
-
         {latestMockSummary && (
           <div className="recent-mock">
             <div className="label">최근 시험</div>
@@ -388,55 +320,25 @@ function Home({
           </div>
         )}
 
-        {/* ponytail: 네이티브 details. 홈에 탭 가능한 블록이 13개라 매일 쓰는 3개(이어풀기·복습·암기)가
-            묻혔다. 상태도 JS도 없이 접는다. */}
-        <details className="modes">
-          <summary>풀이 모드 6가지</summary>
-          <div className="inner">
-            <button className="card" onClick={() => setView({ s: 'setup', mode: 'practice' })}>
-              <div className="ct">연습형</div>
-              <div className="cd">과목을 골라 답을 고르면 바로 정답을 봅니다</div>
-              <div className="cm">문항 제한 없음 · 안 푼 문제 먼저</div>
-            </button>
-            <button className="card" onClick={startMock100}>
-              <div className="ct">모의고사</div>
-              <div className="cd">실제 시험처럼 100문항을 끝까지 풀고 한 번에 채점</div>
-              <div className="cm">과목별 20문항 · 150분 · 합격 판정</div>
-            </button>
-            <button className="card" onClick={() => setView({ s: 'setup', mode: 'mock_short' })}>
-              <div className="ct">간단 모의</div>
-              <div className="cd">과목을 골라 짧게. 출퇴근길 한 세트</div>
-              <div className="cm">10 / 20 / 30문항</div>
-            </button>
-            <button
-              className="card"
-              onClick={() => setView({ s: 'setup', mode: 'ox' })}
-              disabled={!visible(OX, hidden).length}
-            >
-              <div className="ct">OX 특강</div>
-              <div className="cd">과목별 O/X를 빠르게 넘기며 개념 점검</div>
-              <div className="cm">OX 문제 {visible(OX, hidden).length}개</div>
-            </button>
-            <button
-              className="card"
-              onClick={() => setView({ s: 'setup', mode: 'short' })}
-              disabled={!visible(SHORT, hidden).length}
-            >
-              <div className="ct">단답 특강</div>
-              <div className="cd">용어를 직접 입력하며 핵심 개념 회상</div>
-              <div className="cm">단답 문제 {visible(SHORT, hidden).length}개</div>
-            </button>
-            <button
-              className="card"
-              onClick={() => setView({ s: 'memo' })}
-              disabled={!visible(MEMO, hidden).length}
-            >
-              <div className="ct">암기표</div>
-              <div className="cd">외우기 전에 한눈에. 답은 가려져 있고 한 줄씩 눌러 확인합니다</div>
-              <div className="cm">암기 카드 {visible(MEMO, hidden).length}장 · 시험 직전 훑어보기</div>
-            </button>
-          </div>
-        </details>
+        <button className="card" onClick={() => setView({ s: 'setup', mode: 'practice' })}>
+          <div className="ct">연습형</div>
+          <div className="cd">과목을 골라 답을 고르면 바로 정답을 봅니다</div>
+          <div className="cm">문항 제한 없음 · 안 푼 문제 먼저</div>
+        </button>
+        <button className="card" onClick={() => setView({ s: 'setup', mode: 'mock_short' })}>
+          <div className="ct">간단 모의</div>
+          <div className="cd">과목을 골라 짧게. 출퇴근길 한 세트</div>
+          <div className="cm">10 / 20 / 30문항</div>
+        </button>
+        <button
+          className="card"
+          onClick={() => setView({ s: 'setup', mode: 'short' })}
+          disabled={!visible(SHORT, hidden).length}
+        >
+          <div className="ct">단답 특강</div>
+          <div className="cd">용어를 직접 입력하며 핵심 개념 회상</div>
+          <div className="cm">단답 문제 {visible(SHORT, hidden).length}개</div>
+        </button>
 
         <div>
           <div className="label" style={{ marginBottom: 10 }}>

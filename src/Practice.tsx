@@ -30,7 +30,7 @@ type Props = {
 
 export function Practice({ mode, keys, stats, record, addNote, marks, hidden, toggle, onExit }: Props) {
   // 출제 순서는 들어올 때 한 번만 정한다. 답을 맞힐 때마다 순서가 흔들리면 못 푼다.
-  // 연습형은 4지선다만. OX는 별도 모드라 목록에서 넘어와도 걸러낸다.
+  // 연습형은 4지선다만. 단답은 별도 모드라 목록에서 넘어와도 걸러낸다.
   const [queue] = useState<Question[]>(() =>
     keys
       ? keys.flatMap((k) => byKey.get(k) ?? []).filter((q) => q.type === 'mc')
