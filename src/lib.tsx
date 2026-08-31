@@ -99,14 +99,16 @@ export function useAttempts() {
 
 /* ---------- 집계 (뷰도 RPC도 만들지 않는다) ---------- */
 
-export type Stat = { tries: number; correct: number; last: string; notes: string[]; lastCorrect: boolean }
+export type Stat = { tries: number; correct: number; last: string; notes: string[]; lastCorrect: boolean; streak: number }
 
 export function statsByKey(attempts: Attempt[]) {
   const m = new Map<string, Stat>()
+  // attempts는 answered_at 오름차순으로 온다(쿼리 정렬 + 낙관적 append). streak은 그 순서에 기댄다.
   for (const a of attempts) {
-    const s = m.get(a.question_key) ?? { tries: 0, correct: 0, last: '', notes: [], lastCorrect: true }
+    const s = m.get(a.question_key) ?? { tries: 0, correct: 0, last: '', notes: [], lastCorrect: true, streak: 0 }
     s.tries++
     if (a.correct) s.correct++
+    s.streak = a.correct ? s.streak + 1 : 0
     if (a.answered_at >= s.last) {
       s.last = a.answered_at
       s.lastCorrect = a.correct
@@ -151,13 +153,34 @@ export function shuffle<T>(xs: readonly T[]) {
 export const normalizeShortAnswer = (answer: string) =>
   answer.normalize('NFKC').toLocaleLowerCase('ko').replace(/[\s·.()_\-/]/g, '')
 
-/** 안 푼 문제 → 정답률 낮은 문제 → 맞은 문제 (동률은 랜덤) */
-export function weakFirst(qs: readonly Question[], stats: Map<string, Stat>) {
-  const rate = (q: Question) => {
-    const s = stats.get(q.key)
-    return !s || s.tries === 0 ? -1 : s.correct / s.tries
-  }
-  return shuffle(qs).sort((a, b) => rate(a) - rate(b))
+/* ---------- 간격 반복 (Leitner) ---------- */
+
+// 연속 정답 n회 → INTERVALS[n]일 뒤에 다시 낸다. 배열을 벗어나면(연속 6회) 졸업.
+// ponytail: SM-2/FSRS 대신 고정 간격. 스케줄은 저장하지 않고 매번 attempts에서 재계산한다.
+const INTERVALS = [0, 1, 3, 7, 16, 35]
+const DAY = 86400000
+const NEVER = 8.64e15 // Date 표현 한계. 졸업 문제를 정렬 맨 뒤로 보내는 유한 센티널
+
+/** 다음 복습 시각(ms). 안 푼 문제는 0(최우선), 졸업 문제는 NEVER(맨 뒤) */
+const dueAt = (s?: Stat) =>
+  !s || !s.tries ? 0
+  : s.streak >= INTERVALS.length ? NEVER
+  : new Date(s.last).getTime() + INTERVALS[s.streak] * DAY
+
+/** 복습 기한이 지난 문제 key. 가장 오래 밀린 순 */
+export function dueKeys(stats: Map<string, Stat>, hidden: Set<string>) {
+  const now = Date.now()
+  return [...stats]
+    .filter(([key]) => byKey.has(key) && !hidden.has(key))
+    .map(([key, s]) => [key, dueAt(s)] as const)
+    .filter(([, due]) => due <= now)
+    .sort((a, b) => a[1] - b[1])
+    .map(([key]) => key)
+}
+
+/** 안 푼 문제 → 복습 기한이 오래 지난 순 → 기한 안 된 문제 → 졸업 문제 */
+export function dueFirst(qs: readonly Question[], stats: Map<string, Stat>) {
+  return shuffle(qs).sort((a, b) => dueAt(stats.get(a.key)) - dueAt(stats.get(b.key)))
 }
 
 /* ---------- 문제당 플래그: 북마크(mark) · 관심 없음(hide) ---------- */

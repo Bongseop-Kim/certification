@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { MC, SHORT, SUBJECTS, shuffle, visible, weakFirst, type Stat, type Subject } from './lib.tsx'
+import { MC, SHORT, SUBJECTS, dueFirst, shuffle, visible, type Stat, type Subject } from './lib.tsx'
 
 type Props = {
   mode: 'practice' | 'mock_short' | 'short'
@@ -30,7 +30,7 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
     })
 
   const start = () =>
-    onStart((weak ? weakFirst(selected, stats) : shuffle(selected)).slice(0, n).map((q) => q.key))
+    onStart((weak ? dueFirst(selected, stats) : shuffle(selected)).slice(0, n).map((q) => q.key))
 
   return (
     <>
@@ -82,10 +82,10 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           onClick={() => setWeak((w) => !w)}
         >
           <div className="ct">
-            약한 문제 먼저
+            복습 주기 우선
             <span className="switch" aria-hidden="true" />
           </div>
-          <div className="cd">정답률이 낮거나 아직 안 푼 문제를 우선 뽑습니다</div>
+          <div className="cd">안 푼 문제와 복습 기한이 지난 문제를 우선 뽑습니다</div>
         </button>
 
         <button className="btn" onClick={start} disabled={!n}>

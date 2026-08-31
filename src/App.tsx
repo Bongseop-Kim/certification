@@ -11,6 +11,7 @@ import {
   SHORT,
   byKey,
   dayLabel,
+  dueKeys,
   QUESTIONS,
   SUBJECTS,
   pct,
@@ -186,20 +187,10 @@ function Home({
   const pool = visible(MC, hidden)
   const solved = pool.filter((q) => stats.has(q.key)).length
   const unseen = pool.length - solved
-  const review = [
-    ...wrong.filter((k) => byKey.get(k)?.type === 'mc'),
-    ...pool
-      .filter((q) => {
-        const s = stats.get(q.key)
-        return s && s.tries > 1 && s.lastCorrect && s.correct / s.tries < 0.8
-      })
-      .sort((a, b) => {
-        const sa = stats.get(a.key)!
-        const sb = stats.get(b.key)!
-        return sa.correct / sa.tries - sb.correct / sb.tries || sb.last.localeCompare(sa.last)
-      })
-      .map((q) => q.key),
-  ].filter((k, i, keys) => keys.indexOf(k) === i).slice(0, 10)
+  // 간격 반복 큐. 유형별로 자르는 이유: 재생기가 둘(Practice=객관식, Short=단답)이라 세션도 나뉜다.
+  const due = dueKeys(stats, hidden)
+  const dueMc = due.filter((k) => byKey.get(k)!.type === 'mc').slice(0, 20)
+  const dueShort = due.filter((k) => byKey.get(k)!.type === 'short').slice(0, 20)
 
   const latestMock = (() => {
     const sessions = new Map<string, Attempt[]>()
@@ -296,21 +287,31 @@ function Home({
 
         <button
           className="banner"
-          disabled={!review.length || loading}
-          onClick={() => setView({ s: 'practice', mode: 'review', keys: review })}
+          disabled={!dueMc.length || loading}
+          onClick={() => setView({ s: 'practice', mode: 'review', keys: dueMc })}
         >
           <div>
-            <div className="bt">오늘의 복습{!loading && ` ${review.length}문제`}</div>
+            <div className="bt">오늘의 복습{!loading && ` ${dueMc.length}문제`}</div>
             <div className="bd">
               {loading
                 ? '기록을 불러오고 있습니다'
-                : review.length
-                  ? '최근 오답과 반복해서 약한 문제'
-                  : '복습할 문제가 생기면 여기에 모입니다'}
+                : dueMc.length
+                  ? '복습 기한이 지난 객관식 — 맞힐수록 주기가 길어집니다'
+                  : '복습 기한이 된 문제가 생기면 여기에 모입니다'}
             </div>
           </div>
-          {review.length > 0 && <span className="go">시작 →</span>}
+          {dueMc.length > 0 && <span className="go">시작 →</span>}
         </button>
+
+        {!loading && dueShort.length > 0 && (
+          <button className="banner" onClick={() => setView({ s: 'short', keys: dueShort })}>
+            <div>
+              <div className="bt">단답 복습 {dueShort.length}문제</div>
+              <div className="bd">복습 기한이 지난 단답 문제</div>
+            </div>
+            <span className="go">시작 →</span>
+          </button>
+        )}
 
         {latestMockSummary && (
           <div className="recent-mock">

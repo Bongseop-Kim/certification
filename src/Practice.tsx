@@ -9,7 +9,7 @@ import {
   pct,
   renderBody,
   visible,
-  weakFirst,
+  dueFirst,
   type Attempt,
   type FlagKind,
   type Question,
@@ -34,7 +34,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
   const [queue] = useState<Question[]>(() =>
     keys
       ? keys.flatMap((k) => byKey.get(k) ?? []).filter((q) => q.type === 'mc')
-      : weakFirst(visible(MC, hidden), stats),
+      : dueFirst(visible(MC, hidden), stats),
   )
   const [idx, setIdx] = useState(0)
   const [chosen, setChosen] = useState<number | null>(null)
