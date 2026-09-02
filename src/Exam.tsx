@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Nav } from './Nav.tsx'
+import { typeLabel } from './Setup.tsx'
 import {
   CIRCLED,
   CopyBtn,
   subjectTag,
   byKey,
   hms,
+  normalizeShortAnswer,
   renderBody,
   type Attempt,
   type Saved,
@@ -32,7 +34,9 @@ export function Exam({ saved, record, marks, toggleMark, onSubmit, onExit }: Pro
     return () => clearInterval(t)
   }, [])
 
-  const unanswered = questions.filter((x) => answers[x.key] === undefined).length
+  // 단답은 입력했다 지운 빈 칸도 미응답으로 친다
+  const answered = (x: { key: string }) => Boolean(answers[x.key]?.trim())
+  const unanswered = questions.filter((x) => !answered(x)).length
   const elapsed = now - saved.startedAt
 
   const submit = async () => {
@@ -40,8 +44,11 @@ export function Exam({ saved, record, marks, toggleMark, onSubmit, onExit }: Pro
     await record(
       questions.map((x) => ({
         question_key: x.key,
-        correct: answers[x.key] === x.answer,
-        chosen: answers[x.key] ?? null,
+        correct:
+          x.type === 'short'
+            ? answered(x) && normalizeShortAnswer(answers[x.key]) === normalizeShortAnswer(x.answer)
+            : answers[x.key] === x.answer,
+        chosen: answered(x) ? answers[x.key].trim() : null,
         mode: 'mock_short',
         session_id: saved.sessionId,
         note: null,
@@ -59,7 +66,7 @@ export function Exam({ saved, record, marks, toggleMark, onSubmit, onExit }: Pro
 
   return (
     <>
-      <Nav title="간단 모의" meta={`${subjectTag(q.subject)} · ${idx + 1}`} onBack={exit} />
+      <Nav title={`${typeLabel(q.type)} 모의`} meta={`${subjectTag(q.subject)} · ${idx + 1}`} onBack={exit} />
       <main className="screen">
         <div className="timer">
           <div>
@@ -84,6 +91,20 @@ export function Exam({ saved, record, marks, toggleMark, onSubmit, onExit }: Pro
         {/* ponytail: 정오표(note)는 문제 푸는 중엔 안 보여준다 — "2번을 누르면 정답"이 답을 불어버린다.
             모의고사는 채점 화면이 따로라, 여기선 아예 렌더하지 않는다. 연습형은 채점 후에 보여준다. */}
 
+        {q.type === 'short' ? (
+          <label className="short-answer">
+            <span className="label">정답</span>
+            {/* key로 문항마다 새 input을 만들어 autoFocus가 매번 걸리게 한다. Enter는 다음 문항 */}
+            <input
+              key={q.key}
+              autoFocus
+              value={answers[q.key] ?? ''}
+              placeholder="정답을 입력하세요"
+              onChange={(e) => setAnswers((a) => ({ ...a, [q.key]: e.target.value }))}
+              onKeyDown={(e) => e.key === 'Enter' && idx < questions.length - 1 && setIdx((i) => i + 1)}
+            />
+          </label>
+        ) : (
         <div className="choices" role="radiogroup" aria-label="보기">
           {(q.choices ?? []).map((c, i) => (
             <label
@@ -102,6 +123,7 @@ export function Exam({ saved, record, marks, toggleMark, onSubmit, onExit }: Pro
             </label>
           ))}
         </div>
+        )}
 
         <CopyBtn q={q} />
 
@@ -130,7 +152,7 @@ export function Exam({ saved, record, marks, toggleMark, onSubmit, onExit }: Pro
             {questions.map((x, i) => (
               <button
                 key={x.key}
-                className={i === idx ? 'now' : marks.has(x.key) ? 'mark' : answers[x.key] !== undefined ? 'done' : ''}
+                className={i === idx ? 'now' : marks.has(x.key) ? 'mark' : answered(x) ? 'done' : ''}
                 onClick={() => setIdx(i)}
               >
                 {i + 1}

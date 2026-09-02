@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
+import { typeLabel } from './Setup.tsx'
 import {
   CIRCLED,
   CopyBtn,
@@ -41,7 +42,7 @@ export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, to
   return (
     <>
       <Nav
-        title={mode === 'short' ? '단답 결과' : '간단 모의 결과'}
+        title={`${typeLabel(byKey.get(rows[0]?.question_key)?.type ?? 'mc')} ${mode === 'mock_short' ? '모의' : '연습'} 결과`}
         meta={duration(elapsedMs)}
         onBack={onHome}
       />

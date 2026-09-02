@@ -4,7 +4,7 @@ import { History, type HistTab } from './History.tsx'
 import { Nav } from './Nav.tsx'
 import { Practice } from './Practice.tsx'
 import { Result } from './Result.tsx'
-import { Setup } from './Setup.tsx'
+import { Setup, typeLabel, type Form } from './Setup.tsx'
 import { Short } from './Short.tsx'
 import {
   MC,
@@ -24,13 +24,14 @@ import {
   wrongKeys,
   type Attempt,
   type Mode,
+  type Question,
   type Saved,
 } from './lib.tsx'
 
 type View =
   | { s: 'home' }
   | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[]; fromHistory?: boolean }
-  | { s: 'setup'; mode: 'practice' | 'mock_short' | 'short' }
+  | { s: 'setup'; type: Question['type']; form: Form }
   | { s: 'exam'; saved: Saved }
   | { s: 'short'; keys: string[] }
   | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
@@ -77,19 +78,20 @@ export default function App() {
       case 'setup':
         return (
           <Setup
-            mode={view.mode}
+            type={view.type}
+            form={view.form}
             stats={stats}
             hidden={hidden}
             onExit={home}
             onStart={(keys) =>
-              view.mode === 'practice'
-                ? setView({ s: 'practice', mode: 'practice', keys })
-                : view.mode === 'short'
-                  ? setView({ s: 'short', keys })
-                  : setView({
+              view.form === 'mock'
+                ? setView({
                     s: 'exam',
                     saved: { sessionId: crypto.randomUUID(), keys, answers: {}, marked: [], idx: 0, startedAt: Date.now() },
                   })
+                : view.type === 'short'
+                  ? setView({ s: 'short', keys })
+                  : setView({ s: 'practice', mode: 'practice', keys })
             }
           />
         )
@@ -127,8 +129,9 @@ export default function App() {
             toggle={toggle}
             onHome={home}
             onReview={(keys) =>
+              // 한 세션은 한 유형이라 첫 문제로 재생기를 고른다
               setView(
-                view.mode === 'short' ? { s: 'short', keys } : { s: 'practice', mode: 'review', keys },
+                byKey.get(keys[0])?.type === 'short' ? { s: 'short', keys } : { s: 'practice', mode: 'review', keys },
               )
             }
           />
@@ -207,7 +210,7 @@ function Home({
     if (!latestMock) return null
     const correct = latestMock.filter((a) => a.correct).length
     return {
-      title: '최근 간단 모의',
+      title: `최근 ${typeLabel(byKey.get(latestMock[0].question_key)?.type ?? 'mc')} 모의`,
       detail: `${dayLabel(latestMock[0].answered_at)} · ${correct}/${latestMock.length} · ${pct(correct, latestMock.length)}%`,
     }
   })()
@@ -321,25 +324,47 @@ function Home({
           </div>
         )}
 
-        <button className="card" onClick={() => setView({ s: 'setup', mode: 'practice' })}>
-          <div className="ct">연습형</div>
-          <div className="cd">과목을 골라 답을 고르면 바로 정답을 봅니다</div>
-          <div className="cm">문항 제한 없음 · 안 푼 문제 먼저</div>
-        </button>
-        <button className="card" onClick={() => setView({ s: 'setup', mode: 'mock_short' })}>
-          <div className="ct">간단 모의</div>
-          <div className="cd">과목을 골라 짧게. 출퇴근길 한 세트</div>
-          <div className="cm">10 / 20 / 30문항</div>
-        </button>
-        <button
-          className="card"
-          onClick={() => setView({ s: 'setup', mode: 'short' })}
-          disabled={!visible(SHORT, hidden).length}
-        >
-          <div className="ct">단답 특강</div>
-          <div className="cd">용어를 직접 입력하며 핵심 개념 회상</div>
-          <div className="cm">단답 문제 {visible(SHORT, hidden).length}개</div>
-        </button>
+        <div>
+          <div className="label" style={{ marginBottom: 10 }}>
+            풀이 모드
+          </div>
+          <div className="modes">
+            {(
+              [
+                { type: 'mc', title: '객관식', meta: '4지선다', desc: '기출 4지선다. 과목을 골라 풉니다', pool: pool },
+                { type: 'short', title: '단답형', meta: '주관식', desc: '용어를 직접 입력해 핵심 개념을 회상합니다', pool: visible(SHORT, hidden) },
+              ] as const
+            ).map((m) => (
+              <div className="mode" key={m.type}>
+                <div className="mh">
+                  <strong>{m.title}</strong>
+                  <span>
+                    {m.meta} · {m.pool.length}개
+                  </span>
+                </div>
+                <div className="md">{m.desc}</div>
+                <div className="row">
+                  <button
+                    className="mbtn"
+                    disabled={!m.pool.length}
+                    onClick={() => setView({ s: 'setup', type: m.type, form: 'practice' })}
+                  >
+                    <b>연습</b>
+                    <span>바로 채점 · 문항 제한 없음</span>
+                  </button>
+                  <button
+                    className="mbtn"
+                    disabled={!m.pool.length}
+                    onClick={() => setView({ s: 'setup', type: m.type, form: 'mock' })}
+                  >
+                    <b>모의</b>
+                    <span>제출 후 채점 · 10 / 20 / 30</span>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div>
           <div className="label" style={{ marginBottom: 10 }}>

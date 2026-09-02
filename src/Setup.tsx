@@ -1,26 +1,31 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { MC, SHORT, SUBJECTS, dueFirst, shuffle, visible, type Stat, type Subject } from './lib.tsx'
+import { MC, SHORT, SUBJECTS, dueFirst, shuffle, visible, type Question, type Stat, type Subject } from './lib.tsx'
+
+export type Form = 'practice' | 'mock'
 
 type Props = {
-  mode: 'practice' | 'mock_short' | 'short'
+  type: Question['type']
+  form: Form
   stats: Map<string, Stat>
   hidden: Set<string>
   onStart: (keys: string[]) => void
   onExit: () => void
 }
 
-export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
+export const typeLabel = (type: Question['type']) => (type === 'short' ? '단답' : '객관식')
+
+export function Setup({ type, form, stats, hidden, onStart, onExit }: Props) {
   // 관심 없음은 여기서 한 번 걷어낸다. 과목별 개수 표시까지 자동으로 따라온다.
-  const pool = visible(mode === 'short' ? SHORT : MC, hidden)
+  const pool = visible(type === 'short' ? SHORT : MC, hidden)
   const counts = [10, 20, 30]
   const [picked, setPicked] = useState<Set<Subject>>(new Set())
   const [count, setCount] = useState(counts[0])
   const [weak, setWeak] = useState(true)
 
   const selected = picked.size ? pool.filter((q) => picked.has(q.subject)) : pool
-  // 연습형은 문항 제한 없이 고른 과목 전체를 푼다
-  const n = mode === 'practice' ? selected.length : Math.min(count, selected.length)
+  // 연습은 문항 제한 없이 고른 과목 전체를 푼다
+  const n = form === 'practice' ? selected.length : Math.min(count, selected.length)
 
   const toggle = (id: Subject) =>
     setPicked((prev) => {
@@ -35,8 +40,8 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
   return (
     <>
       <Nav
-        title={mode === 'short' ? '단답 특강' : mode === 'practice' ? '연습형' : '간단 모의'}
-        meta={mode === 'short' ? '주관식' : '4지선다'}
+        title={`${typeLabel(type)} ${form === 'practice' ? '연습' : '모의'}`}
+        meta={type === 'short' ? '주관식' : '4지선다'}
         onBack={onExit}
       />
       <main className="screen">
@@ -62,7 +67,7 @@ export function Setup({ mode, stats, hidden, onStart, onExit }: Props) {
           </div>
         </div>
 
-        {mode !== 'practice' && <div>
+        {form === 'mock' && <div>
           <div className="label" style={{ marginBottom: 8 }}>
             문항 수
           </div>

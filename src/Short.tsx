@@ -44,7 +44,7 @@ export function Short({ keys, record, onDone, onExit }: Props) {
 
   return (
     <>
-      <Nav title="단답 특강" meta={`${subjectTag(q.subject)} · ${idx + 1}/${questions.length}`} onBack={onExit} />
+      <Nav title="단답 연습" meta={`${subjectTag(q.subject)} · ${idx + 1}/${questions.length}`} onBack={onExit} />
       <form
         className="screen"
         role="main"
