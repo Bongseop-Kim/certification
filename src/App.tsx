@@ -31,7 +31,7 @@ import {
 type View =
   | { s: 'home' }
   | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[]; fromHistory?: boolean }
-  | { s: 'setup'; type: Question['type']; form: Form }
+  | { s: 'setup'; type: Question['type']; form: Form; due?: string[] }
   | { s: 'exam'; saved: Saved }
   | { s: 'short'; keys: string[] }
   | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
@@ -82,6 +82,7 @@ export default function App() {
             form={view.form}
             stats={stats}
             hidden={hidden}
+            due={view.due}
             onExit={home}
             onStart={(keys) =>
               view.form === 'mock'
@@ -91,7 +92,7 @@ export default function App() {
                   })
                 : view.type === 'short'
                   ? setView({ s: 'short', keys })
-                  : setView({ s: 'practice', mode: 'practice', keys })
+                  : setView({ s: 'practice', mode: view.form, keys })
             }
           />
         )
@@ -192,8 +193,8 @@ function Home({
   const unseen = pool.length - solved
   // 간격 반복 큐. 유형별로 자르는 이유: 재생기가 둘(Practice=객관식, Short=단답)이라 세션도 나뉜다.
   const due = dueKeys(stats, hidden)
-  const dueMc = due.filter((k) => byKey.get(k)!.type === 'mc').slice(0, 20)
-  const dueShort = due.filter((k) => byKey.get(k)!.type === 'short').slice(0, 20)
+  const dueMc = due.filter((k) => byKey.get(k)!.type === 'mc')
+  const dueShort = due.filter((k) => byKey.get(k)!.type === 'short')
 
   const latestMock = (() => {
     const sessions = new Map<string, Attempt[]>()
@@ -291,10 +292,10 @@ function Home({
         <button
           className="banner"
           disabled={!dueMc.length || loading}
-          onClick={() => setView({ s: 'practice', mode: 'review', keys: dueMc })}
+          onClick={() => setView({ s: 'setup', type: 'mc', form: 'review', due: dueMc })}
         >
           <div>
-            <div className="bt">오늘의 복습{!loading && ` ${dueMc.length}문제`}</div>
+            <div className="bt">오늘의 복습{!loading && ` ${Math.min(20, dueMc.length)}문제`}</div>
             <div className="bd">
               {loading
                 ? '기록을 불러오고 있습니다'
@@ -303,16 +304,16 @@ function Home({
                   : '복습 기한이 된 문제가 생기면 여기에 모입니다'}
             </div>
           </div>
-          {dueMc.length > 0 && <span className="go">시작 →</span>}
+          {dueMc.length > 0 && <span className="go">과목 선택 →</span>}
         </button>
 
         {!loading && dueShort.length > 0 && (
-          <button className="banner" onClick={() => setView({ s: 'short', keys: dueShort })}>
+          <button className="banner" onClick={() => setView({ s: 'setup', type: 'short', form: 'review', due: dueShort })}>
             <div>
-              <div className="bt">단답 복습 {dueShort.length}문제</div>
+              <div className="bt">단답 복습 {Math.min(20, dueShort.length)}문제</div>
               <div className="bd">복습 기한이 지난 단답 문제</div>
             </div>
-            <span className="go">시작 →</span>
+            <span className="go">과목 선택 →</span>
           </button>
         )}
 
