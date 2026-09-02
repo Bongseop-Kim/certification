@@ -1,0 +1,3344 @@
+[
+  {
+    "key": "2026-notes-network#1",
+    "no": 1,
+    "subject": "network",
+    "type": "mc",
+    "body": "프로토콜의 3요소 중 각 비트가 갖는 의미를 나타내며 전송제어·오류수정 등 제어정보를 규정하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "구문(Syntax)",
+      "의미(Semantics)",
+      "타이밍(Timing)",
+      "캡슐화(Encapsulation)"
+    ],
+    "answer": "1",
+    "note": "IMG_5206",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#2",
+    "no": 2,
+    "subject": "network",
+    "type": "short",
+    "body": "프로토콜의 3요소 중 데이터의 형식, 부호화, 신호 레벨 등 데이터가 어떤 구조와 순서로 표현되는지를 나타내는 것을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "구문",
+    "note": "IMG_5206",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#3",
+    "no": 3,
+    "subject": "network",
+    "type": "mc",
+    "body": "OSI 7계층 중 네트워크 보안(암·복호화)과 압축·압축해제, 포맷 변환을 수행하는 계층은?",
+    "stimulus": null,
+    "choices": [
+      "응용 계층",
+      "표현 계층",
+      "세션 계층",
+      "전송 계층"
+    ],
+    "answer": "1",
+    "note": "IMG_5207",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#4",
+    "no": 4,
+    "subject": "network",
+    "type": "mc",
+    "body": "OSI 7계층 중 소켓 프로그램, 동기화, 세션 연결·관리·종료를 특징으로 하는 계층은?",
+    "stimulus": null,
+    "choices": [
+      "표현 계층",
+      "세션 계층",
+      "전송 계층",
+      "네트워크 계층"
+    ],
+    "answer": "1",
+    "note": "IMG_5207",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#5",
+    "no": 5,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP/IP 계층과 그 계층에서 다루는 메시지 종류의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "응용 계층 - Segment",
+      "전송 계층 - Packet",
+      "네트워크 계층 - Packet",
+      "데이터링크 계층 - Message"
+    ],
+    "answer": "2",
+    "note": "IMG_5207",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#6",
+    "no": 6,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP/IP 계층별 보안 프로토콜 정리에서 데이터링크 계층의 보안 프로토콜로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "IPSec",
+      "SSL/TLS",
+      "L2TP",
+      "S/MIME"
+    ],
+    "answer": "2",
+    "note": "IMG_5207",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#7",
+    "no": 7,
+    "subject": "network",
+    "type": "mc",
+    "body": "종단 노드(End-Node) 사이에서 패킷 중계를 담당하는 노드를 무엇이라 하는가?",
+    "stimulus": null,
+    "choices": [
+      "호스트(Host)",
+      "링크(Link)",
+      "중계 노드(Intermediate Node)",
+      "종단 노드"
+    ],
+    "answer": "2",
+    "note": "IMG_5208",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#8",
+    "no": 8,
+    "subject": "network",
+    "type": "mc",
+    "body": "캡슐화와 역캡슐화가 일어나는 위치에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "라우터에서는 캡슐화와 역캡슐화가 모두 이루어진다.",
+      "데이터링크 계층 스위치에서 캡슐화와 역캡슐화가 이루어진다.",
+      "발신지 호스트에서는 역캡슐화만 이루어진다.",
+      "도착지 호스트에서는 캡슐화만 이루어진다."
+    ],
+    "answer": "0",
+    "note": "IMG_5208",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#9",
+    "no": 9,
+    "subject": "network",
+    "type": "mc",
+    "body": "다중화(Multiplexing)가 의미하는 것으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "하나의 패킷을 여러 조각으로 나누어 전송하는 것",
+      "상위 계층 프로토콜에서 오는 여러 개의 패킷을 한 계층에서 하나의 프로토콜로 캡슐화하는 것",
+      "동일한 패킷을 여러 경로로 중복 전송하는 것",
+      "라우팅 테이블을 여러 라우터가 공유하는 것"
+    ],
+    "answer": "1",
+    "note": "IMG_5209",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#10",
+    "no": 10,
+    "subject": "network",
+    "type": "mc",
+    "body": "클래스 C 네트워크 하나가 수용할 수 있는 호스트 수로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "126개",
+      "254개",
+      "1,022개",
+      "65,534개"
+    ],
+    "answer": "1",
+    "note": "IMG_5210",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#11",
+    "no": 11,
+    "subject": "network",
+    "type": "mc",
+    "body": "추후 사용을 위해 예약된 주소로 제시된 IPv4 주소 클래스는?",
+    "stimulus": null,
+    "choices": [
+      "클래스 B",
+      "클래스 C",
+      "클래스 D",
+      "클래스 E"
+    ],
+    "answer": "3",
+    "note": "IMG_5210",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#12",
+    "no": 12,
+    "subject": "network",
+    "type": "short",
+    "body": "호스트가 IP 데이터그램을 보내려 하지만 자신의 근원지 주소를 모를 때 사용하는 디스-호스트(this-host) 주소를 쓰시오. (주소만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "0.0.0.0",
+    "note": "IMG_5211",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#13",
+    "no": 13,
+    "subject": "network",
+    "type": "mc",
+    "body": "특수 IP 주소 정리에서 네트워크 식별자와 호스트 식별자가 모두 1인 제한적 브로드캐스트 주소의 송신·수신 가능 여부로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "송신 가능, 수신 불가",
+      "송신 불가, 수신 가능",
+      "송신 가능, 수신 가능",
+      "송신 불가, 수신 불가"
+    ],
+    "answer": "0",
+    "note": "IMG_5211",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#14",
+    "no": 14,
+    "subject": "network",
+    "type": "mc",
+    "body": "8개의 클래스 C 블록을 하나의 슈퍼블록으로 결합할 때 슈퍼넷 마스크의 프리픽스 길이는?",
+    "stimulus": null,
+    "choices": [
+      "/18",
+      "/21",
+      "/24",
+      "/27"
+    ],
+    "answer": "1",
+    "note": "IMG_5211",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#15",
+    "no": 15,
+    "subject": "network",
+    "type": "short",
+    "body": "하나의 클래스 C 블록을 8개의 서브블록으로 나눌 때 서브넷 마스크의 프리픽스 길이는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "27",
+    "note": "IMG_5211",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#16",
+    "no": 16,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv4 데이터그램의 헤더 크기 범위로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "8바이트 고정",
+      "40바이트 고정",
+      "20~60바이트",
+      "20~65,535바이트"
+    ],
+    "answer": "2",
+    "note": "IMG_5212",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#17",
+    "no": 17,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv4 헤더의 식별자(Identification) 필드의 역할로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "패킷이 경유할 수 있는 최대 홉수를 나타낸다.",
+      "상위 계층 프로토콜을 식별한다.",
+      "호스트가 보낸 각 데이터그램을 유일하게 식별한다.",
+      "헤더의 오류를 검출한다."
+    ],
+    "answer": "2",
+    "note": "IMG_5212",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#18",
+    "no": 18,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv4 헤더의 Type-Of-Service(TOS) 필드 구성으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "3비트 우선권 + 4비트 TOS + 1비트 예약",
+      "4비트 우선권 + 4비트 TOS",
+      "2비트 우선권 + 6비트 TOS",
+      "8비트 전체가 우선권 필드"
+    ],
+    "answer": "0",
+    "note": "IMG_5212",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#19",
+    "no": 19,
+    "subject": "network",
+    "type": "mc",
+    "body": "전송 계층과 응용 계층 사이의 다중화·역다중화를 위해 상위 프로토콜 식별자가 들어 있는 곳은?",
+    "stimulus": null,
+    "choices": [
+      "프레임 헤더의 type 필드",
+      "IP 헤더의 protocol 필드",
+      "TCP/UDP 헤더의 destination port 필드",
+      "IP 헤더의 identification 필드"
+    ],
+    "answer": "2",
+    "note": "IMG_5212",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#20",
+    "no": 20,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv6 헤더에서 IPv4의 TTL 필드와 같은 목적으로 사용되는 필드는?",
+    "stimulus": null,
+    "choices": [
+      "트래픽 클래스",
+      "흐름 레이블",
+      "다음 헤더",
+      "홉 제한"
+    ],
+    "answer": "3",
+    "note": "IMG_5213",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#21",
+    "no": 21,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv6 헤더의 페이로드 길이 필드가 정의하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "기본 헤더를 포함한 전체 길이",
+      "기본 헤더를 제외한 데이터그램의 길이",
+      "확장 헤더의 개수",
+      "페이로드의 체크섬 값"
+    ],
+    "answer": "1",
+    "note": "IMG_5213",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#22",
+    "no": 22,
+    "subject": "network",
+    "type": "short",
+    "body": "IPv6 기본 헤더의 고정 크기는 몇 바이트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "40",
+    "note": "IMG_5213",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#23",
+    "no": 23,
+    "subject": "network",
+    "type": "short",
+    "body": "IPv6 헤더에서 흐름 레이블(Flow Label) 필드의 크기는 몇 비트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "20",
+    "note": "IMG_5213",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#24",
+    "no": 24,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv6의 새로운 헤더 포맷에서 삭제된 필드로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "체크섬 필드",
+      "홉 제한 필드",
+      "다음 헤더 필드",
+      "페이로드 길이 필드"
+    ],
+    "answer": "0",
+    "note": "IMG_5214",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#25",
+    "no": 25,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv6의 주소 자동설정에서 로컬 IPv6 주소를 생성하기 위해 결합하는 두 요소는?",
+    "stimulus": null,
+    "choices": [
+      "IP 주소와 포트 번호",
+      "서브넷 마스크와 게이트웨이 주소",
+      "LAN상의 MAC 주소와 라우터가 제공하는 네트워크 프리픽스",
+      "DHCP 임대 시간과 도메인 이름"
+    ],
+    "answer": "2",
+    "note": "IMG_5214",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#26",
+    "no": 26,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv6의 확장된 주소 공간 덕분에 불필요해진다고 제시된 기술은?",
+    "stimulus": null,
+    "choices": [
+      "NAT",
+      "VLAN",
+      "VPN",
+      "QoS"
+    ],
+    "answer": "0",
+    "note": "IMG_5214",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#27",
+    "no": 27,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv4와 IPv6의 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "IPv4의 헤더 크기는 고정이고 IPv6는 가변이다.",
+      "IPv4는 IPSec을 자체 지원하고 IPv6는 별도 설치가 필요하다.",
+      "IPv4는 클래스 단위 비순차할당, IPv6는 네트워크 규모에 따른 순차할당 방식이다.",
+      "IPv4는 브로드캐스트 주소가 없고 IPv6는 있다."
+    ],
+    "answer": "2",
+    "note": "IMG_5214",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#28",
+    "no": 28,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPv6를 사용하는 두 호스트가 통신할 때 패킷이 IPv4 지역을 지나면 IPv4 패킷으로 캡슐화되는 전환 방식은?",
+    "stimulus": null,
+    "choices": [
+      "이중 스택",
+      "터널링",
+      "헤더 변환",
+      "슈퍼네팅"
+    ],
+    "answer": "1",
+    "note": "IMG_5215",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#29",
+    "no": 29,
+    "subject": "network",
+    "type": "mc",
+    "body": "IP 멀티캐스트 그룹에서 호스트 멤버를 관리하는 프로토콜은?",
+    "stimulus": null,
+    "choices": [
+      "ARP",
+      "RARP",
+      "IGMP",
+      "ICMP"
+    ],
+    "answer": "2",
+    "note": "IMG_5216",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#30",
+    "no": 30,
+    "subject": "network",
+    "type": "mc",
+    "body": "IP 프로토콜의 서비스 특성으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "신뢰적이고 연결지향적인 전송 서비스",
+      "비신뢰적이고 비연결형인 최선형(best-effort) 전송 서비스",
+      "연결지향적이며 순서를 보장하는 서비스",
+      "오류 발생 시 자동으로 재전송하는 서비스"
+    ],
+    "answer": "1",
+    "note": "IMG_5216",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#31",
+    "no": 31,
+    "subject": "network",
+    "type": "mc",
+    "body": "ARP 요청 메시지와 응답 메시지의 전송 방식 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "요청 - 유니캐스트, 응답 - 브로드캐스트",
+      "요청 - 브로드캐스트, 응답 - 유니캐스트",
+      "요청과 응답 모두 브로드캐스트",
+      "요청과 응답 모두 멀티캐스트"
+    ],
+    "answer": "1",
+    "note": "IMG_5216",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#32",
+    "no": 32,
+    "subject": "network",
+    "type": "mc",
+    "body": "ICMPv4 메시지의 두 가지 큰 분류로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "오류보고 메시지와 질의 메시지",
+      "요청 메시지와 응답 메시지",
+      "제어 메시지와 데이터 메시지",
+      "단방향 메시지와 양방향 메시지"
+    ],
+    "answer": "0",
+    "note": "IMG_5217",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#33",
+    "no": 33,
+    "subject": "network",
+    "type": "mc",
+    "body": "라우터의 혼잡 상황으로 IP 데이터그램이 손실되었음을 송신 호스트에 알리는 ICMP 메시지는?",
+    "stimulus": null,
+    "choices": [
+      "Echo Reply",
+      "Redirect",
+      "Source Quench",
+      "Destination Unreachable"
+    ],
+    "answer": "2",
+    "note": "IMG_5217",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#34",
+    "no": 34,
+    "subject": "network",
+    "type": "mc",
+    "body": "목적지 IP 주소에 대해 더 적합한 경로가 있음을 알리기 위해 라우터가 보내는 ICMP 메시지는?",
+    "stimulus": null,
+    "choices": [
+      "Redirect",
+      "Source Quench",
+      "Echo Request",
+      "Destination Unreachable"
+    ],
+    "answer": "0",
+    "note": "IMG_5217",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#35",
+    "no": 35,
+    "subject": "network",
+    "type": "short",
+    "body": "ICMPv4를 정의한 RFC 번호는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "792",
+    "note": "IMG_5217",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#36",
+    "no": 36,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP 세그먼트 헤더의 크기 범위로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "8바이트 고정",
+      "20바이트 고정",
+      "40~60바이트",
+      "20~60바이트"
+    ],
+    "answer": "3",
+    "note": "IMG_5218",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#37",
+    "no": 37,
+    "subject": "network",
+    "type": "short",
+    "body": "UDP 헤더의 크기는 몇 바이트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "8",
+    "note": "IMG_5218",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#38",
+    "no": 38,
+    "subject": "network",
+    "type": "short",
+    "body": "TCP 헤더에서 순서번호(Sequence number) 필드의 크기는 몇 비트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "32",
+    "note": "IMG_5218",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#39",
+    "no": 39,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP 헤더의 헤더 길이 필드는 TCP 헤더를 몇 바이트 단위의 개수로 나타내는가?",
+    "stimulus": null,
+    "choices": [
+      "1바이트",
+      "2바이트",
+      "4바이트",
+      "8바이트"
+    ],
+    "answer": "2",
+    "note": "IMG_5219",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#40",
+    "no": 40,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP 제어 플래그 중 세그먼트를 받는 즉시 애플리케이션으로 전달하라는 의미를 갖는 것은?",
+    "stimulus": null,
+    "choices": [
+      "URG",
+      "PSH",
+      "RST",
+      "FIN"
+    ],
+    "answer": "1",
+    "note": "IMG_5219",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#41",
+    "no": 41,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP 제어 플래그 중 우선순위가 높은 데이터가 있음을 나타내며 긴급 포인터 필드값을 활용하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "URG",
+      "ACK",
+      "PSH",
+      "SYN"
+    ],
+    "answer": "0",
+    "note": "IMG_5219",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#42",
+    "no": 42,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP 제어 필드 값이 010010일 때 활성화된 플래그의 조합은?",
+    "stimulus": null,
+    "choices": [
+      "URG와 PSH",
+      "SYN과 FIN",
+      "ACK와 SYN",
+      "RST와 ACK"
+    ],
+    "answer": "2",
+    "note": "IMG_5219",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#43",
+    "no": 43,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP 헤더의 순서번호 필드가 정의하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "세그먼트에 포함된 첫 번째 데이터 바이트에 할당된 번호",
+      "전송된 세그먼트의 전체 개수",
+      "송신자가 다음에 받기를 기대하는 바이트 번호",
+      "세그먼트의 우선순위 값"
+    ],
+    "answer": "0",
+    "note": "IMG_5219",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#44",
+    "no": 44,
+    "subject": "network",
+    "type": "short",
+    "body": "TCP 헤더에 정의된 제어 비트(플래그)는 모두 몇 개인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "6",
+    "note": "IMG_5219",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#45",
+    "no": 45,
+    "subject": "network",
+    "type": "mc",
+    "body": "포트 번호 범위 구분으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "Well-known 0~255, Registered 256~1,023, Dynamic 1,024~65,535",
+      "Well-known 0~1,023, Registered 1,024~49,151, Dynamic 49,152~65,535",
+      "Well-known 0~1,023, Registered 1,024~65,535",
+      "Well-known 1~1,024, Registered 1,025~49,152, Dynamic 49,153~65,536"
+    ],
+    "answer": "1",
+    "note": "IMG_5220",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#46",
+    "no": 46,
+    "subject": "network",
+    "type": "mc",
+    "body": "Well-known 포트와 Dynamic 포트의 사용 주체에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "Well-known 포트는 클라이언트가, Dynamic 포트는 서버가 주로 사용한다.",
+      "Well-known 포트는 서버가, Dynamic 포트는 클라이언트가 주로 사용한다.",
+      "둘 다 서버만 사용한다.",
+      "둘 다 클라이언트만 사용한다."
+    ],
+    "answer": "1",
+    "note": "IMG_5220",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#47",
+    "no": 47,
+    "subject": "network",
+    "type": "short",
+    "body": "포트 번호를 표현하는 데 사용하는 비트 수는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "16",
+    "note": "IMG_5220",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#48",
+    "no": 48,
+    "subject": "network",
+    "type": "short",
+    "body": "TFTP가 사용하는 Well Known 포트 번호는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "69",
+    "note": "IMG_5220",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#49",
+    "no": 49,
+    "subject": "network",
+    "type": "short",
+    "body": "POP3 over SSL(POP3S)이 사용하는 포트 번호는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "995",
+    "note": "IMG_5220",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#50",
+    "no": 50,
+    "subject": "network",
+    "type": "mc",
+    "body": "3-way handshake에서 서버가 SYN을 수신하고 SYN+ACK를 전송한 뒤 갖는 상태는?",
+    "stimulus": null,
+    "choices": [
+      "LISTEN",
+      "SYN-SENT",
+      "SYN-RECEIVED",
+      "ESTABLISHED"
+    ],
+    "answer": "2",
+    "note": "IMG_5221",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#51",
+    "no": 51,
+    "subject": "network",
+    "type": "mc",
+    "body": "4-way handshake에서 서버가 FIN을 수신해 ACK를 보낸 뒤 애플리케이션이 종료하기를 기다리는 상태는?",
+    "stimulus": null,
+    "choices": [
+      "FIN-WAIT-1",
+      "FIN-WAIT-2",
+      "CLOSE-WAIT",
+      "LAST-ACK"
+    ],
+    "answer": "2",
+    "note": "IMG_5221",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#52",
+    "no": 52,
+    "subject": "network",
+    "type": "mc",
+    "body": "4-way handshake에서 서버가 FIN을 전송한 뒤 그에 대한 ACK를 기다리는 상태는?",
+    "stimulus": null,
+    "choices": [
+      "CLOSE-WAIT",
+      "LAST-ACK",
+      "TIME-WAIT",
+      "FIN-WAIT-2"
+    ],
+    "answer": "1",
+    "note": "IMG_5221",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#53",
+    "no": 53,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP의 TIME-WAIT 상태를 두는 이유로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "서버가 ACK를 받지 못하면 재전송하므로 이를 처리하기 위해 일정시간 대기한다.",
+      "순서번호를 0으로 초기화하기 위해서이다.",
+      "연결 테이블의 용량을 늘리기 위해서이다.",
+      "암호키를 폐기하기 위해서이다."
+    ],
+    "answer": "0",
+    "note": "IMG_5221",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#54",
+    "no": 54,
+    "subject": "network",
+    "type": "short",
+    "body": "TCP의 TIME-WAIT 상태에서 대기하는 시간은 최대 세그먼트 수명(MSL)의 몇 배인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "2",
+    "note": "IMG_5221",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#55",
+    "no": 55,
+    "subject": "network",
+    "type": "short",
+    "body": "다중 태스킹에서 태스크 관리를 위해 필요한 데이터베이스로, TCP Active Open 시 생성되는 제어 블록을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "TCB",
+    "note": "IMG_5221",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#56",
+    "no": 56,
+    "subject": "network",
+    "type": "mc",
+    "body": "정적 라우팅의 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "자동으로 갱신되며 다중 경로에 적합하다.",
+      "수동으로 설정하며 변경이 적을 때 유리하고 단일 경로에 적합하다.",
+      "링크 상태가 바뀔 때마다 자동으로 플러딩한다.",
+      "AS 간 경로 교환에만 사용된다."
+    ],
+    "answer": "1",
+    "note": "IMG_5222",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#57",
+    "no": 57,
+    "subject": "network",
+    "type": "mc",
+    "body": "IGRP가 거리벡터를 계산할 때 이용하는 파라미터로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "홉 카운트 하나만 사용",
+      "대역폭, 지연, 신뢰도, 부하, MTU",
+      "AS 경로의 길이",
+      "링크 상태 데이터베이스"
+    ],
+    "answer": "1",
+    "note": "IMG_5222",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#58",
+    "no": 58,
+    "subject": "network",
+    "type": "mc",
+    "body": "시스코가 IGRP를 확장하여 EIGRP를 개발한 이유로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "IGRP가 AS 간 라우팅을 지원하지 못했기 때문",
+      "IGRP가 암호화를 지원하지 못했기 때문",
+      "IGRP가 CIDR이나 VLSM과 같은 새로운 네트워크 기술을 지원하지 못했기 때문",
+      "IGRP가 멀티캐스트를 지원하지 못했기 때문"
+    ],
+    "answer": "2",
+    "note": "IMG_5222",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#59",
+    "no": 59,
+    "subject": "network",
+    "type": "mc",
+    "body": "RIPv2가 RIPv1에 추가한 기능으로 제시되지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "서브넷마스크 식별",
+      "경로정보 인증",
+      "링크 상태 데이터베이스 유지",
+      "멀티캐스트 전송"
+    ],
+    "answer": "2",
+    "note": "IMG_5222",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#60",
+    "no": 60,
+    "subject": "network",
+    "type": "mc",
+    "body": "BGP가 외부 라우팅의 특수성을 반영하기 위해 사용하는 알고리즘은?",
+    "stimulus": null,
+    "choices": [
+      "벨만-포드 알고리즘",
+      "다익스트라 알고리즘",
+      "패스 벡터 알고리즘",
+      "플러딩 알고리즘"
+    ],
+    "answer": "2",
+    "note": "IMG_5222",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#61",
+    "no": 61,
+    "subject": "network",
+    "type": "short",
+    "body": "AS(자율 시스템) 간의 라우팅 정보를 교환하는 프로토콜 부류를 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "EGP",
+    "note": "IMG_5222",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#62",
+    "no": 62,
+    "subject": "network",
+    "type": "mc",
+    "body": "거리벡터 라우팅과 링크상태 라우팅이 이웃에게 전달하는 정보의 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "거리벡터는 자신에게 직접 연결된 망 정보만 전달한다.",
+      "링크상태는 모든 라우팅 테이블 값을 이웃에게 전달한다.",
+      "거리벡터는 모든 라우팅 테이블 값을 이웃에게 전달한다.",
+      "링크상태는 인접한 이웃으로부터만 망 정보를 수집한다."
+    ],
+    "answer": "2",
+    "note": "IMG_5223",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#63",
+    "no": 63,
+    "subject": "network",
+    "type": "mc",
+    "body": "거리벡터 라우팅과 링크상태 라우팅의 라우팅 광고 방식 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "거리벡터는 멀티캐스트, 링크상태는 브로드캐스트 방식으로 광고한다.",
+      "거리벡터는 브로드캐스트, 링크상태는 멀티캐스트 방식으로 광고한다.",
+      "둘 다 브로드캐스트 방식으로 광고한다.",
+      "둘 다 유니캐스트 방식으로 광고한다."
+    ],
+    "answer": "1",
+    "note": "IMG_5223",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#64",
+    "no": 64,
+    "subject": "network",
+    "type": "mc",
+    "body": "브리지와 라우터의 브로드캐스트 패킷 처리 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "브리지는 전달하지 않고 라우터는 전달한다.",
+      "브리지는 전달하고 라우터는 전달하지 않는다.",
+      "둘 다 전달하지 않는다.",
+      "둘 다 전달한다."
+    ],
+    "answer": "1",
+    "note": "IMG_5224",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#65",
+    "no": 65,
+    "subject": "network",
+    "type": "mc",
+    "body": "브리지와 라우터의 네트워크 주소 지정 방식 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "브리지는 포트마다 서로 다른 네트워크 주소를 지정한다.",
+      "라우터는 모든 포트에 동일한 네트워크 주소를 지정한다.",
+      "브리지는 모든 포트에 동일한 네트워크 주소를 지정한다.",
+      "브리지와 라우터 모두 포트마다 다른 네트워크 주소를 지정한다."
+    ],
+    "answer": "2",
+    "note": "IMG_5224",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#66",
+    "no": 66,
+    "subject": "network",
+    "type": "mc",
+    "body": "네트워크 장비 개관에서 L7 스위치의 기능으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "로드밸런싱",
+      "신호 증폭",
+      "MAC 주소 학습",
+      "IP 라우팅"
+    ],
+    "answer": "0",
+    "note": "IMG_5224",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#67",
+    "no": 67,
+    "subject": "network",
+    "type": "mc",
+    "body": "물리 계층 장비 중 신호를 증폭하여 네트워크의 길이를 확장하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "허브",
+      "리피터",
+      "브리지",
+      "게이트웨이"
+    ],
+    "answer": "1",
+    "note": "IMG_5224",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#68",
+    "no": 68,
+    "subject": "network",
+    "type": "mc",
+    "body": "스위치 방식 중 입력 프레임의 목적지 MAC 주소만 확인한 후 해당 포트로 전송하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "Cut-through",
+      "Store-and-Forward",
+      "Fragment Free",
+      "Flooding"
+    ],
+    "answer": "0",
+    "note": "IMG_5225",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#69",
+    "no": 69,
+    "subject": "network",
+    "type": "mc",
+    "body": "스위치 방식 중 전체 프레임을 버퍼에 저장하고 프레임 오류를 검사한 후 전송하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "Cut-through",
+      "Fragment Free",
+      "Store-and-Forward",
+      "Port Mirroring"
+    ],
+    "answer": "2",
+    "note": "IMG_5225",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#70",
+    "no": 70,
+    "subject": "network",
+    "type": "mc",
+    "body": "스위치의 종류와 스위칭 기준의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "L2 스위치 - IP 주소",
+      "L3 스위치 - MAC 주소",
+      "L4~L7 스위치 - 포트 번호 또는 패킷 내용",
+      "L2 스위치 - 포트 번호"
+    ],
+    "answer": "2",
+    "note": "IMG_5225",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#71",
+    "no": 71,
+    "subject": "network",
+    "type": "mc",
+    "body": "VLAN의 종류 중 가장 일반적이고 많이 사용된다고 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "Port 기반 VLAN",
+      "MAC 기반 VLAN",
+      "네트워크주소 기반 VLAN",
+      "프로토콜 기반 VLAN"
+    ],
+    "answer": "0",
+    "note": "IMG_5225",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#72",
+    "no": 72,
+    "subject": "network",
+    "type": "mc",
+    "body": "MAC 기반 VLAN이 자주 사용되지 않는 이유로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "MAC 주소가 라우팅되지 않기 때문",
+      "호스트들의 MAC 주소를 전부 등록해야 하기 때문",
+      "스위치가 MAC 주소를 읽을 수 없기 때문",
+      "VLAN 태깅 표준과 충돌하기 때문"
+    ],
+    "answer": "1",
+    "note": "IMG_5225",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#73",
+    "no": 73,
+    "subject": "network",
+    "type": "mc",
+    "body": "VLAN의 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "LAN을 논리적 세그먼트가 아닌 물리적 세그먼트로 분할한다.",
+      "그룹 소속원 자격은 하드웨어가 아닌 소프트웨어로 정의된다.",
+      "한 사람이 다른 그룹으로 이동하면 반드시 물리적 구성을 바꿔야 한다.",
+      "하나의 LAN은 하나의 VLAN으로만 구성할 수 있다."
+    ],
+    "answer": "1",
+    "note": "IMG_5225",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#74",
+    "no": 74,
+    "subject": "network",
+    "type": "short",
+    "body": "스위치 전송 방식 중 Cut-through와 Store-and-Forward의 장점을 혼합한 방식은? (영문으로)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "Fragment Free",
+    "note": "IMG_5225",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#75",
+    "no": 75,
+    "subject": "network",
+    "type": "mc",
+    "body": "무선랜 프로토콜 중 5GHz/54Mbps를 사용하며 802.11b와 호환되지 않는 것은?",
+    "stimulus": null,
+    "choices": [
+      "802.11",
+      "802.11a",
+      "802.11b",
+      "802.11g"
+    ],
+    "answer": "1",
+    "note": "IMG_5226",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#76",
+    "no": 76,
+    "subject": "network",
+    "type": "mc",
+    "body": "무선랜 프로토콜 중 여러 안테나를 사용하는 다중 입력/다중 출력(MIMO) 기술로 최대 600Mbps를 제공하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "802.11a",
+      "802.11g",
+      "802.11i",
+      "802.11n"
+    ],
+    "answer": "3",
+    "note": "IMG_5226",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#77",
+    "no": 77,
+    "subject": "network",
+    "type": "mc",
+    "body": "블루투스의 취약점을 이용하여 장비의 임의의 파일에 접근하는 공격은?",
+    "stimulus": null,
+    "choices": [
+      "블루스나핑",
+      "블루버깅",
+      "블루재킹",
+      "재밍"
+    ],
+    "answer": "0",
+    "note": "IMG_5226",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#78",
+    "no": 78,
+    "subject": "network",
+    "type": "mc",
+    "body": "공격 장치와 공격 대상 장치를 연결하여 공격 대상 장치에서 임의의 동작을 실행하는 블루투스 공격은?",
+    "stimulus": null,
+    "choices": [
+      "블루스나핑",
+      "블루버깅",
+      "블루재킹",
+      "재밍"
+    ],
+    "answer": "1",
+    "note": "IMG_5226",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#79",
+    "no": 79,
+    "subject": "network",
+    "type": "short",
+    "body": "1998년 블루투스를 공동 개발한 블루투스 스페셜 그룹을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "SIG",
+    "note": "IMG_5226",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#80",
+    "no": 80,
+    "subject": "network",
+    "type": "mc",
+    "body": "무선 AP의 리셋버튼을 통한 장비 초기화로 발생하는 장애는 무선랜의 어떤 취약점으로 분류되는가?",
+    "stimulus": null,
+    "choices": [
+      "물리적 취약점",
+      "기술적 취약점",
+      "관리적 취약점",
+      "운영적 취약점"
+    ],
+    "answer": "0",
+    "note": "IMG_5227",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#81",
+    "no": 81,
+    "subject": "network",
+    "type": "mc",
+    "body": "무선랜의 관리적 취약점에 해당하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "도청",
+      "불법 AP(Rogue AP)",
+      "전원 차단",
+      "전파관리 미흡"
+    ],
+    "answer": "3",
+    "note": "IMG_5227",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#82",
+    "no": 82,
+    "subject": "network",
+    "type": "mc",
+    "body": "EAP(Extensible Authentication Protocol)의 원래 설계 목적으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "PPP에서 사용할 목적으로 설계되어 PAP, CHAP 등 PPP 인증방식을 쉽게 확장할 수 있도록 함",
+      "무선 패킷을 AES로 암호화하기 위함",
+      "무선 AP의 SSID를 숨기기 위함",
+      "MAC 주소를 필터링하기 위함"
+    ],
+    "answer": "0",
+    "note": "IMG_5228",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#83",
+    "no": 83,
+    "subject": "network",
+    "type": "mc",
+    "body": "TKIP에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "AES 블록 암호를 사용한다.",
+      "RC4를 사용하면서 Key Mixing 함수와 Dynamic WEP Key, 메시지 무결성 스펙을 정의했다.",
+      "공개키 기반의 사용자 인증을 수행한다.",
+      "초기화 벡터(IV)를 사용하지 않는다."
+    ],
+    "answer": "1",
+    "note": "IMG_5228",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#84",
+    "no": 84,
+    "subject": "network",
+    "type": "mc",
+    "body": "CCMP에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "RC4 스트림 암호를 사용한다.",
+      "24비트 IV를 사용한다.",
+      "AES 블록 암호를 사용하여 데이터의 비밀성과 무결성을 보장한다.",
+      "인증 기능만 제공하고 암호화는 제공하지 않는다."
+    ],
+    "answer": "2",
+    "note": "IMG_5228",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#85",
+    "no": 85,
+    "subject": "network",
+    "type": "mc",
+    "body": "무선랜 보안 방식과 보안키 적용 방식의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "정적 WEP - 48비트 IV",
+      "동적 WEP - 48비트 IV",
+      "WPA v1 - 48비트 IV의 TKIP",
+      "WPA v2 - 24비트 IV의 CCMP"
+    ],
+    "answer": "2",
+    "note": "IMG_5228",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#86",
+    "no": 86,
+    "subject": "network",
+    "type": "mc",
+    "body": "WPA가 기존 장비에서 지원 가능한 이유로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "현재 사용되는 하드웨어의 변경 없이 소프트웨어 업그레이드를 통해 지원할 수 있기 때문",
+      "전용 암호 칩을 내장하기 때문",
+      "암호화를 수행하지 않기 때문",
+      "인증 서버가 모든 연산을 대신하기 때문"
+    ],
+    "answer": "0",
+    "note": "IMG_5228",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#87",
+    "no": 87,
+    "subject": "network",
+    "type": "short",
+    "body": "무선랜에서 AP를 구분하는 ID로 패킷 헤더에 덧붙여지는 SSID는 몇 바이트의 고유 식별자인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "32",
+    "note": "IMG_5228",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#88",
+    "no": 88,
+    "subject": "network",
+    "type": "mc",
+    "body": "WPA와 WPA2의 모드별 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "WPA 엔터프라이즈 모드의 인증은 PSK를 사용한다.",
+      "WPA2 개인모드의 암호화는 TKIP/MIC를 사용한다.",
+      "WPA 개인모드의 인증은 IEEE 802.1X/EAP를 사용한다.",
+      "WPA2 엔터프라이즈 모드의 암호화는 AES-CCMP를 사용한다."
+    ],
+    "answer": "3",
+    "note": "IMG_5229",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#89",
+    "no": 89,
+    "subject": "network",
+    "type": "mc",
+    "body": "WAP 프로토콜 구조에서 보안 계층(Security Layer)에 해당하는 프로토콜은?",
+    "stimulus": null,
+    "choices": [
+      "WSP",
+      "WTP",
+      "WTLS",
+      "WDP"
+    ],
+    "answer": "2",
+    "note": "IMG_5229",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#90",
+    "no": 90,
+    "subject": "network",
+    "type": "short",
+    "body": "WAP 프로토콜 구조에서 전송 계층(Transport Layer)에 해당하는 프로토콜을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "WDP",
+    "note": "IMG_5229",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#91",
+    "no": 91,
+    "subject": "network",
+    "type": "mc",
+    "body": "iOS와 안드로이드의 응용 프로그램 서명 방식 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "iOS는 개발자가 서명하고 안드로이드는 애플이 서명한다.",
+      "iOS는 애플이 자신의 CA를 통해 서명하고 안드로이드는 개발자가 서명한다.",
+      "둘 다 제3의 인증기관이 서명한다.",
+      "둘 다 서명하지 않는다."
+    ],
+    "answer": "1",
+    "note": "IMG_5230",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#92",
+    "no": 92,
+    "subject": "network",
+    "type": "mc",
+    "body": "iOS와 안드로이드의 프로그램 실행권한 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "iOS는 일반 사용자, 안드로이드는 관리자(root)",
+      "iOS는 관리자(root), 안드로이드는 일반 사용자",
+      "둘 다 관리자(root)",
+      "둘 다 일반 사용자"
+    ],
+    "answer": "1",
+    "note": "IMG_5230",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#93",
+    "no": 93,
+    "subject": "network",
+    "type": "mc",
+    "body": "안드로이드폰의 운영체제를 해킹해 관리자 권한을 얻는 행위를 가리키는 용어는?",
+    "stimulus": null,
+    "choices": [
+      "탈옥(Jailbreaking)",
+      "루팅(Rooting)",
+      "샌드박싱",
+      "컨테이너화"
+    ],
+    "answer": "1",
+    "note": "IMG_5230",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#94",
+    "no": 94,
+    "subject": "network",
+    "type": "short",
+    "body": "안드로이드 애플리케이션의 필수 권한과 각종 정보를 기술한 명세 파일의 이름을 쓰시오. (파일명만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "AndroidManifest.xml",
+    "note": "IMG_5230",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#95",
+    "no": 95,
+    "subject": "network",
+    "type": "mc",
+    "body": "네트워크 5대 관리 기능 중 비용을 계산하고 요금을 부과할 수 있는 기능은?",
+    "stimulus": null,
+    "choices": [
+      "계정 관리",
+      "구성 관리",
+      "성능 관리",
+      "장애 관리"
+    ],
+    "answer": "0",
+    "note": "IMG_5231",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#96",
+    "no": 96,
+    "subject": "network",
+    "type": "mc",
+    "body": "네트워크 5대 관리 기능 중 네트워크의 동작 및 효율성을 평가하는 기능은?",
+    "stimulus": null,
+    "choices": [
+      "구성 관리",
+      "성능 관리",
+      "장애 관리",
+      "보안 관리"
+    ],
+    "answer": "1",
+    "note": "IMG_5231",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#97",
+    "no": 97,
+    "subject": "network",
+    "type": "mc",
+    "body": "SNMP 관리 구성요소 중 객체의 이름을 붙이고 객체 유형을 정의하며 객체와 값의 부호화 방법에 대한 일반적인 규칙을 정의하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "SNMP",
+      "SMI",
+      "MIB",
+      "MTU"
+    ],
+    "answer": "1",
+    "note": "IMG_5231",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#98",
+    "no": 98,
+    "subject": "network",
+    "type": "mc",
+    "body": "SNMP의 관리자와 에이전트에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "관리자는 SNMP 서버 프로그램을, 에이전트는 SNMP 클라이언트 프로그램을 수행한다.",
+      "관리자는 SNMP 클라이언트 프로그램을 수행하는 호스트이고, 에이전트는 SNMP 서버 프로그램을 수행하는 라우터 또는 호스트이다.",
+      "관리자와 에이전트 모두 클라이언트 프로그램을 수행한다.",
+      "에이전트는 별도의 프로그램 없이 하드웨어만으로 동작한다."
+    ],
+    "answer": "1",
+    "note": "IMG_5231",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#99",
+    "no": 99,
+    "subject": "network",
+    "type": "short",
+    "body": "SNMP를 규정한 RFC 번호는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "1157",
+    "note": "IMG_5231",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#100",
+    "no": 100,
+    "subject": "network",
+    "type": "mc",
+    "body": "SSH 컴포넌트와 역할의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "SSH-TRANS - 서버에 대해 클라이언트를 인증",
+      "SSH-AUTH - TCP상에 안전한 채널을 생성",
+      "SSH-CONN - 여러 개의 논리적 통신채널의 다중화를 수행",
+      "SSH-TRANS - 여러 개의 논리적 통신채널의 다중화를 수행"
+    ],
+    "answer": "2",
+    "note": "IMG_5232",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#101",
+    "no": 101,
+    "subject": "network",
+    "type": "mc",
+    "body": "SSH가 대체하기 위해 설계되었다고 제시된 평문 송·수신 서비스의 묶음은?",
+    "stimulus": null,
+    "choices": [
+      "rsh, rlogin, Telnet, FTP",
+      "HTTP, HTTPS, DNS, DHCP",
+      "SNMP, NTP, TFTP, SMTP",
+      "ARP, RARP, ICMP, IGMP"
+    ],
+    "answer": "0",
+    "note": "IMG_5232",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#102",
+    "no": 102,
+    "subject": "network",
+    "type": "short",
+    "body": "rlogin에서 클라이언트가 패스워드 입력 없이 로그인할 수 있도록 사전에 호스트를 등록하는 서버의 파일은? (경로 전체)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "/etc/hosts.equiv",
+    "note": "IMG_5232",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#103",
+    "no": 103,
+    "subject": "network",
+    "type": "mc",
+    "body": "ping 명령이 제공하는 정보로 제시되지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "대상 시스템에 ICMP 패킷 도달 가능여부",
+      "ICMP 패킷이 대상 시스템을 왕복하는 데 걸리는 시간",
+      "대상 시스템에서 열려 있는 포트의 목록",
+      "ICMP 패킷의 손실률"
+    ],
+    "answer": "2",
+    "note": "IMG_5233",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#104",
+    "no": 104,
+    "subject": "network",
+    "type": "mc",
+    "body": "운영체제별 기본 TTL 값의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "유닉스 계열 128, 윈도우 계열 255",
+      "유닉스 계열 255, 윈도우 계열 128",
+      "유닉스 계열 64, 윈도우 계열 32",
+      "유닉스 계열과 윈도우 계열 모두 64"
+    ],
+    "answer": "1",
+    "note": "IMG_5233",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#105",
+    "no": 105,
+    "subject": "network",
+    "type": "mc",
+    "body": "traceroute가 활용한다고 제시된 프로토콜의 묶음은?",
+    "stimulus": null,
+    "choices": [
+      "TCP, UDP, ARP",
+      "IP, TCP, SNMP",
+      "ICMP, ARP, RARP",
+      "ICMP, IP, UDP"
+    ],
+    "answer": "3",
+    "note": "IMG_5233",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#106",
+    "no": 106,
+    "subject": "network",
+    "type": "mc",
+    "body": "traceroute 수행 시 경로상의 중간 홉과 최종 목적지가 각각 보내는 메시지의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "중간 홉 - Destination-unreachable, 최종 목적지 - Time-exceeded",
+      "중간 홉 - Time-exceeded, 최종 목적지 - Destination-unreachable",
+      "중간 홉과 최종 목적지 모두 Time-exceeded",
+      "중간 홉과 최종 목적지 모두 Echo Reply"
+    ],
+    "answer": "1",
+    "note": "IMG_5233",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#107",
+    "no": 107,
+    "subject": "network",
+    "type": "mc",
+    "body": "netstat 옵션 중 네트워크 인터페이스에 대한 정보를 출력하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "-r",
+      "-i",
+      "-s",
+      "-a"
+    ],
+    "answer": "1",
+    "note": "IMG_5234",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#108",
+    "no": 108,
+    "subject": "network",
+    "type": "mc",
+    "body": "UNIX에서 네트워크 인터페이스의 설정정보를 확인하거나 IP주소·서브넷마스크 설정을 변경할 때 사용하는 명령은?",
+    "stimulus": null,
+    "choices": [
+      "route",
+      "netstat",
+      "ifconfig",
+      "tcpdump"
+    ],
+    "answer": "2",
+    "note": "IMG_5234",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#109",
+    "no": 109,
+    "subject": "network",
+    "type": "short",
+    "body": "라우팅 테이블에 라우팅 경로를 추가하거나 삭제할 때 사용하는 UNIX 명령은? (명령어만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "route",
+    "note": "IMG_5234",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#110",
+    "no": 110,
+    "subject": "network",
+    "type": "short",
+    "body": "tcpdump의 윈도우용 도구 이름은? (영문으로)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "windump",
+    "note": "IMG_5234",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#111",
+    "no": 111,
+    "subject": "network",
+    "type": "mc",
+    "body": "네트워크 보안 공격 유형에서 수동적 공격과 능동적 공격의 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "수동적 공격은 직접적인 피해가 있고 탐지가 쉽다.",
+      "능동적 공격은 직접적인 피해가 없고 탐지가 어렵다.",
+      "수동적 공격은 직접적인 피해가 없고 탐지가 어렵다.",
+      "수동적 공격과 능동적 공격 모두 탐지가 쉽다."
+    ],
+    "answer": "2",
+    "note": "IMG_5235",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#112",
+    "no": 112,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP SYN flooding 공격에서 일반적으로 사용하는 방법으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "출발지 주소를 공격자의 실제 IP로 설정한다.",
+      "사용하지 않는 IP 주소로 SYN 패킷의 출발지 주소를 위조한다.",
+      "목적지 포트를 매번 무작위로 변경한다.",
+      "ICMP 패킷의 크기를 정상보다 크게 만든다."
+    ],
+    "answer": "1",
+    "note": "IMG_5235",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#113",
+    "no": 113,
+    "subject": "network",
+    "type": "mc",
+    "body": "SYN flooding 대응 기법 중 연결 요청 클라이언트가 실제로 존재하는지 파악하기 위해 첫 번째 SYN을 폐기하고 재요청 패킷이 도착하는지 확인하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "Syn_Cookie",
+      "First SYN Drop",
+      "Backlog Queue 확장",
+      "인그레스 필터링"
+    ],
+    "answer": "1",
+    "note": "IMG_5236",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#114",
+    "no": 114,
+    "subject": "network",
+    "type": "mc",
+    "body": "SYN flooding 대응 기법 중 연결 테이블이 오버플로우될 때 일부 엔트리를 삭제하여 새로운 SYN 패킷을 처리할 수 있게 하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "Syn_Cookie",
+      "First SYN Drop",
+      "TCP 연결 테이블 엔트리 선택적 삭제",
+      "임계치 기반 차단"
+    ],
+    "answer": "2",
+    "note": "IMG_5236",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#115",
+    "no": 115,
+    "subject": "network",
+    "type": "mc",
+    "body": "Smurf 공격에서 공격자가 Ping 메시지를 보낼 때 사용하는 주소로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "제한적 브로드캐스트 주소",
+      "직접 브로드캐스트 주소",
+      "루프백 주소",
+      "링크 로컬 주소"
+    ],
+    "answer": "1",
+    "note": "IMG_5236",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#116",
+    "no": 116,
+    "subject": "network",
+    "type": "mc",
+    "body": "Smurf 공격의 세 가지 주요 구성요소로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "공격자, 증폭 네트워크, 공격대상 서버",
+      "공격자, C&C 서버, 에이전트",
+      "공격자, 마스터, 슬레이브",
+      "공격자, 반사 서버, 캐싱 서버"
+    ],
+    "answer": "0",
+    "note": "IMG_5236",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#117",
+    "no": 117,
+    "subject": "network",
+    "type": "mc",
+    "body": "LAND Attack의 보안 대책으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "자신의 시스템 주소와 동일한 소스 주소를 가진 외부 패킷을 필터링한다.",
+      "브로드캐스트 주소로 전송된 ICMP 패킷에 응답하지 않는다.",
+      "단편화가 일어난 패킷을 모두 폐기한다.",
+      "동일 IP의 연결 요청 임계치를 설정한다."
+    ],
+    "answer": "0",
+    "note": "IMG_5237",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#118",
+    "no": 118,
+    "subject": "network",
+    "type": "mc",
+    "body": "처음 패킷을 1번으로 보낸 후 다음 패킷을 보낼 때 순서번호를 모두 1번으로 조작하여 전송하는 DoS 공격은?",
+    "stimulus": null,
+    "choices": [
+      "Teardrop",
+      "Bonk",
+      "Boink",
+      "Land"
+    ],
+    "answer": "1",
+    "note": "IMG_5237",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#119",
+    "no": 119,
+    "subject": "network",
+    "type": "mc",
+    "body": "Bonk를 수정한 DoS 공격도구로 패킷 시퀀스 번호를 비정상적인 상태로 보내는 것은?",
+    "stimulus": null,
+    "choices": [
+      "Teardrop",
+      "Bonk",
+      "Boink",
+      "Smurf"
+    ],
+    "answer": "2",
+    "note": "IMG_5237",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#120",
+    "no": 120,
+    "subject": "network",
+    "type": "mc",
+    "body": "DDoS 공격 구성 요소 중 공격 대상에 직접적인 공격을 가하며 슬레이브 또는 좀비라고도 불리는 것은?",
+    "stimulus": null,
+    "choices": [
+      "봇 마스터",
+      "마스터",
+      "에이전트",
+      "표적"
+    ],
+    "answer": "2",
+    "note": "IMG_5238",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#121",
+    "no": 121,
+    "subject": "network",
+    "type": "mc",
+    "body": "DDoS 공격 구성 요소 중 공격자에게 직접 명령을 받아 여러 대의 에이전트를 관리하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "봇 마스터",
+      "C&C 서버",
+      "에이전트",
+      "표적"
+    ],
+    "answer": "1",
+    "note": "IMG_5238",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#122",
+    "no": 122,
+    "subject": "network",
+    "type": "mc",
+    "body": "악성 봇을 조종하는 조종자를 탐지하고 감염된 PC와 조종자 간의 접속을 차단해 2차 피해를 예방하기 위한 시스템은?",
+    "stimulus": null,
+    "choices": [
+      "DNSSEC",
+      "DNS 싱크홀",
+      "블랙홀 라우팅",
+      "인그레스 필터링"
+    ],
+    "answer": "1",
+    "note": "IMG_5238",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#123",
+    "no": 123,
+    "subject": "network",
+    "type": "mc",
+    "body": "많은 호스트로부터 통합된 UDP flood 서비스거부 공격을 유발하는 데 사용되는 전통적인 DDoS 도구는?",
+    "stimulus": null,
+    "choices": [
+      "트리누(Trinoo)",
+      "TFN",
+      "Stacheldraht",
+      "TFN2K"
+    ],
+    "answer": "0",
+    "note": "IMG_5239",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#124",
+    "no": 124,
+    "subject": "network",
+    "type": "mc",
+    "body": "마스터 시스템과 에이전트 데몬 사이의 통신을 암호화하는 기능이 추가된 전통적인 DDoS 공격도구는?",
+    "stimulus": null,
+    "choices": [
+      "트리누(Trinoo)",
+      "TFN",
+      "Stacheldraht",
+      "GET Flooding"
+    ],
+    "answer": "2",
+    "note": "IMG_5239",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#125",
+    "no": 125,
+    "subject": "network",
+    "type": "mc",
+    "body": "TFN2K의 특징으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "통신에 특정 포트가 사용되지 않고 암호화되어 있으며 포트가 임의로 결정된다.",
+      "UDP flood 공격만 수행할 수 있다.",
+      "공격 명령이 평문으로 전달된다.",
+      "에이전트를 사용하지 않고 단독으로 공격한다."
+    ],
+    "answer": "0",
+    "note": "IMG_5239",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#126",
+    "no": 126,
+    "subject": "network",
+    "type": "mc",
+    "body": "TFN 공격이 수행할 수 있는 공격으로 제시되지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "UDP flood 공격",
+      "TCP SYN flood 공격",
+      "ICMP 브로드캐스트 공격",
+      "HTTP GET Flooding 공격"
+    ],
+    "answer": "3",
+    "note": "IMG_5239",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#127",
+    "no": 127,
+    "subject": "network",
+    "type": "mc",
+    "body": "최신 DDoS 공격 분류에서 웹/DB 부하 공격의 IP 위·변조 가능 여부로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "위·변조가 가능하다.",
+      "위·변조가 불가능하며 실제 IP로 공격한다.",
+      "출발지만 위조하고 목적지는 위조하지 않는다.",
+      "IP 계층을 사용하지 않아 해당되지 않는다."
+    ],
+    "answer": "1",
+    "note": "IMG_5240",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#128",
+    "no": 128,
+    "subject": "network",
+    "type": "mc",
+    "body": "최신 DDoS 공격 분류에서 자원 소진 공격의 공격 유형으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "UDP Flooding",
+      "ICMP Flooding",
+      "TCP SYN, ACK Flooding",
+      "POST Flooding"
+    ],
+    "answer": "2",
+    "note": "IMG_5240",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#129",
+    "no": 129,
+    "subject": "network",
+    "type": "mc",
+    "body": "최신 DDoS 공격 분류에서 대역폭 공격의 피해 대상으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "동일 회선을 사용하는 모든 시스템의 접속 불가",
+      "대상 웹/DB 서버의 과부하",
+      "DNS 캐시의 오염",
+      "라우팅 테이블의 변조"
+    ],
+    "answer": "0",
+    "note": "IMG_5240",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#130",
+    "no": 130,
+    "subject": "network",
+    "type": "mc",
+    "body": "장치를 탐색할 때 주로 사용되는 프로토콜의 Search 명령을 악용하여 스푸핑된 피해자 IP로 대규모 응답이 가게 만드는 반사 공격은?",
+    "stimulus": null,
+    "choices": [
+      "NTP Reflection Attack",
+      "CLDAP Reflection Attack",
+      "SSDP Reflection Attack",
+      "DNS Reflection Attack"
+    ],
+    "answer": "2",
+    "note": "IMG_5240",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#131",
+    "no": 131,
+    "subject": "network",
+    "type": "mc",
+    "body": "HTTP POST 지시자를 이용해 서버로 전달할 대량의 데이터를 장시간에 걸쳐 분할 전송하여 연결을 오래 유지시키는 공격은?",
+    "stimulus": null,
+    "choices": [
+      "Slowloris",
+      "Slow HTTP POST DoS(RUDY)",
+      "Slow HTTP Read DoS",
+      "CC Attack"
+    ],
+    "answer": "1",
+    "note": "IMG_5241",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#132",
+    "no": 132,
+    "subject": "network",
+    "type": "mc",
+    "body": "웹서버와 TCP 연결 시 TCP 윈도우 크기 및 데이터 처리율을 감소시킨 후 HTTP 데이터를 송신하는 공격은?",
+    "stimulus": null,
+    "choices": [
+      "Slowloris",
+      "Slow HTTP POST DoS",
+      "Slow HTTP Read DoS",
+      "GET Flooding"
+    ],
+    "answer": "2",
+    "note": "IMG_5241",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#133",
+    "no": 133,
+    "subject": "network",
+    "type": "mc",
+    "body": "HTTP 메시지의 캐시 옵션을 조작해 캐싱서버가 아닌 웹서버가 직접 처리하도록 유도하는 공격은?",
+    "stimulus": null,
+    "choices": [
+      "GET Flooding with Cache-Control(CC Attack)",
+      "Slowloris",
+      "Slow HTTP Read DoS",
+      "Land"
+    ],
+    "answer": "0",
+    "note": "IMG_5241",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#134",
+    "no": 134,
+    "subject": "network",
+    "type": "short",
+    "body": "매개변수 처리에 사용되는 해시테이블의 충돌을 유발하는 DoS 공격의 이름은? (영문으로)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "HashDoS",
+    "note": "IMG_5246",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#135",
+    "no": 135,
+    "subject": "network",
+    "type": "mc",
+    "body": "네트워크 스캐닝 3단계 중 수집된 정보를 토대로 라우팅 테이블, SNMP 정보 등 더 실용적인 정보를 수집하는 과정은?",
+    "stimulus": null,
+    "choices": [
+      "풋프린팅",
+      "스캐닝",
+      "목록화",
+      "익스플로잇"
+    ],
+    "answer": "2",
+    "note": "IMG_5242",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#136",
+    "no": 136,
+    "subject": "network",
+    "type": "mc",
+    "body": "네트워크 스캐닝 3단계 중 신문, 게시판, 포털 검색 등으로 공격 대상의 IP 블록과 DNS/Mail 서버 정보를 수집하는 초기 과정은?",
+    "stimulus": null,
+    "choices": [
+      "풋프린팅",
+      "스캐닝",
+      "목록화",
+      "배너 그래빙"
+    ],
+    "answer": "0",
+    "note": "IMG_5242",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#137",
+    "no": 137,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP Half Open 스캔이 TCP Full Open 스캔의 단점을 보완한 점으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "세션에 대한 로그를 남기지 않아 추적이 어렵다.",
+      "닫힌 포트를 더 정확히 식별한다.",
+      "UDP 포트도 함께 스캔할 수 있다.",
+      "방화벽 규칙을 우회하여 목적지에 도달한다."
+    ],
+    "answer": "0",
+    "note": "IMG_5242",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#138",
+    "no": 138,
+    "subject": "network",
+    "type": "mc",
+    "body": "공격자가 자신이 라우터인 것처럼 MAC 주소를 위조한 ARP Reply 패킷을 네트워크에 브로드캐스트하여 호스트와 라우터 사이의 트래픽을 스니핑하는 기법은?",
+    "stimulus": null,
+    "choices": [
+      "ARP 스푸핑",
+      "ARP 리다이렉트",
+      "ICMP 리다이렉트",
+      "스위치 재밍"
+    ],
+    "answer": "1",
+    "note": "IMG_5243",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#139",
+    "no": 139,
+    "subject": "network",
+    "type": "mc",
+    "body": "트래픽을 분석 장비로 자동 복사해주는 스위치의 관리 기능을 공격자가 악용하여 패킷을 스니핑하는 방법은?",
+    "stimulus": null,
+    "choices": [
+      "스위치 재밍",
+      "ICMP 리다이렉트",
+      "ARP 리다이렉트",
+      "SPAN/포트 미러링 기능 이용"
+    ],
+    "answer": "3",
+    "note": "IMG_5243",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#140",
+    "no": 140,
+    "subject": "network",
+    "type": "mc",
+    "body": "스니퍼 탐지 방법 중 네트워크에 존재하지 않는 MAC 주소로 위장하여 ping을 보냈을 때 ICMP Echo Reply가 오면 스니핑으로 판단하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "ping을 이용한 방법",
+      "DNS 방법",
+      "유인(Decoy) 방법",
+      "ARP watch"
+    ],
+    "answer": "0",
+    "note": "IMG_5243",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#141",
+    "no": 141,
+    "subject": "network",
+    "type": "mc",
+    "body": "초기에 MAC 주소와 IP 주소의 매칭 값을 저장하고 ARP 트래픽을 모니터링하여 이를 변하게 하는 패킷을 탐지하는 스니퍼 탐지 방법은?",
+    "stimulus": null,
+    "choices": [
+      "ping을 이용한 방법",
+      "유인 방법",
+      "DNS 방법",
+      "ARP watch"
+    ],
+    "answer": "3",
+    "note": "IMG_5243",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#142",
+    "no": 142,
+    "subject": "network",
+    "type": "mc",
+    "body": "보안관리자가 의도적으로 뿌린 가짜 계정과 패스워드로 접속을 시도하는 시스템을 탐지하는 스니퍼 탐지 방법은?",
+    "stimulus": null,
+    "choices": [
+      "유인(Decoy) 방법",
+      "DNS 방법",
+      "ARP watch",
+      "ping을 이용한 방법"
+    ],
+    "answer": "0",
+    "note": "IMG_5243",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#143",
+    "no": 143,
+    "subject": "network",
+    "type": "mc",
+    "body": "스니퍼 탐지 방법 중 원격에서 대상 네트워크로 Ping sweep을 보내고 들어오는 Inverse-DNS lookup을 감시하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "ping을 이용한 방법",
+      "ARP를 이용하는 방법",
+      "DNS 방법",
+      "ARP watch"
+    ],
+    "answer": "2",
+    "note": "IMG_5243",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#144",
+    "no": 144,
+    "subject": "network",
+    "type": "mc",
+    "body": "DNS 스푸핑의 동작으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "실제 DNS 서버보다 빨리 공격 대상에게 DNS Response 패킷을 보낸다.",
+      "DNS 서버의 존 파일을 직접 수정한다.",
+      "DNS 질의를 TCP로 강제 전환시킨다.",
+      "DNS 서버의 캐시를 모두 삭제한다."
+    ],
+    "answer": "0",
+    "note": "IMG_5244",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#145",
+    "no": 145,
+    "subject": "network",
+    "type": "mc",
+    "body": "DNS 스푸핑의 보안 대책으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "hosts 파일에 중요한 사이트의 IP 주소를 확인해 적어둔다.",
+      "DNS 질의 포트를 하나로 고정한다.",
+      "모든 DNS 응답을 폐기한다.",
+      "ARP 캐시를 동적으로만 유지한다."
+    ],
+    "answer": "0",
+    "note": "IMG_5244",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#146",
+    "no": 146,
+    "subject": "network",
+    "type": "mc",
+    "body": "신뢰(트러스트) 관계를 이용한 IP 스푸핑에 가장 좋은 대책으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "모든 패킷을 암호화하는 것",
+      "방화벽을 이중화하는 것",
+      "트러스트를 사용하지 않는 것",
+      "IP 주소를 주기적으로 변경하는 것"
+    ],
+    "answer": "2",
+    "note": "IMG_5244",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#147",
+    "no": 147,
+    "subject": "network",
+    "type": "mc",
+    "body": "세션 하이재킹의 탐지 및 대응 방법으로 제시되지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "비동기화 상태 탐지",
+      "ACK Storm 탐지",
+      "패킷의 유실과 재전송 증가 탐지",
+      "ARP 캐시의 정적 등록"
+    ],
+    "answer": "3",
+    "note": "IMG_5245",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#148",
+    "no": 148,
+    "subject": "network",
+    "type": "mc",
+    "body": "신뢰를 위장한 이메일을 발송하는 사회공학 기법을 이용하는 공격은?",
+    "stimulus": null,
+    "choices": [
+      "ARP 스푸핑",
+      "IP 스푸핑",
+      "DNS 스푸핑",
+      "이메일 스푸핑"
+    ],
+    "answer": "3",
+    "note": "IMG_5246",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#149",
+    "no": 149,
+    "subject": "network",
+    "type": "mc",
+    "body": "IDS의 실행단계 순서로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "데이터 수집 → 데이터 가공 및 축약 → 침입분석 및 탐지 → 보고 및 대응",
+      "침입분석 및 탐지 → 데이터 수집 → 데이터 가공 및 축약 → 보고 및 대응",
+      "데이터 가공 및 축약 → 데이터 수집 → 보고 및 대응 → 침입분석 및 탐지",
+      "데이터 수집 → 침입분석 및 탐지 → 데이터 가공 및 축약 → 보고 및 대응"
+    ],
+    "answer": "0",
+    "note": "IMG_5247",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#150",
+    "no": 150,
+    "subject": "network",
+    "type": "mc",
+    "body": "부정오류(false negative)의 정의로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "합법적 사용자를 침입자로 판단하는 오류",
+      "로그를 기록하지 못하는 오류",
+      "정상 트래픽을 차단하는 오류",
+      "침입자를 합법적 사용자로 판단하는 오류"
+    ],
+    "answer": "3",
+    "note": "IMG_5247",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#151",
+    "no": 151,
+    "subject": "network",
+    "type": "mc",
+    "body": "행위기반(비정상행위) 침입탐지의 단점으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "패턴에 없는 새로운 공격을 탐지할 수 없다.",
+      "지속적인 공격패턴 갱신이 필요하다.",
+      "트로이목마와 백도어를 탐지할 수 없다.",
+      "정상과 비정상 구분을 위한 임계치 설정이 어렵다."
+    ],
+    "answer": "3",
+    "note": "IMG_5247",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#152",
+    "no": 152,
+    "subject": "network",
+    "type": "mc",
+    "body": "이상 탐지(Anomaly) 기법의 종류로 제시되지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "신경망 모델",
+      "마르코프 모델",
+      "상태전이분석",
+      "데이터 마이닝"
+    ],
+    "answer": "2",
+    "note": "IMG_5248",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#153",
+    "no": 153,
+    "subject": "network",
+    "type": "mc",
+    "body": "오용 탐지(Misuse) 기법의 종류로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "컴퓨터 면역시스템",
+      "통계적 방법",
+      "신경망 모델",
+      "페트리넷"
+    ],
+    "answer": "3",
+    "note": "IMG_5248",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#154",
+    "no": 154,
+    "subject": "network",
+    "type": "mc",
+    "body": "H-IDS와 N-IDS의 운영체제 종속성 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "H-IDS는 OS에 독립적이고 N-IDS는 OS에 종속적이다.",
+      "둘 다 OS에 종속적이다.",
+      "둘 다 OS에 독립적이다.",
+      "H-IDS는 OS에 종속적이고 N-IDS는 OS에 독립적이다."
+    ],
+    "answer": "3",
+    "note": "IMG_5248",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#155",
+    "no": 155,
+    "subject": "network",
+    "type": "mc",
+    "body": "H-IDS와 N-IDS의 스위치 환경 적용에 대한 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "H-IDS는 적합하고 N-IDS는 어렵다.",
+      "H-IDS는 어렵고 N-IDS는 적합하다.",
+      "둘 다 적합하다.",
+      "둘 다 어렵다."
+    ],
+    "answer": "0",
+    "note": "IMG_5248",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#156",
+    "no": 156,
+    "subject": "network",
+    "type": "mc",
+    "body": "호스트 기반 IDS의 단점으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "네트워크 트래픽 증가에 따라 성능 문제가 발생한다.",
+      "개별 서버의 성능저하가 없다.",
+      "네트워크 세그먼트당 하나의 감지기만 설치하면 된다.",
+      "해커에 의한 로그 자료의 변조 가능성이 있고 서버 부하가 발생한다."
+    ],
+    "answer": "3",
+    "note": "IMG_5248",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#157",
+    "no": 157,
+    "subject": "network",
+    "type": "mc",
+    "body": "오용 탐지와 이상 탐지의 Zero-day 공격 탐지 가능 여부 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "오용 탐지는 가능하고 이상 탐지는 불가능하다.",
+      "둘 다 불가능하다.",
+      "둘 다 가능하다.",
+      "오용 탐지는 불가능하고 이상 탐지는 가능하다."
+    ],
+    "answer": "3",
+    "note": "IMG_5248",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#158",
+    "no": 158,
+    "subject": "network",
+    "type": "mc",
+    "body": "허니팟의 요건으로 옳지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "해커에게 쉽게 노출되어야 한다.",
+      "쉽게 해킹이 가능한 것처럼 취약해 보여야 한다.",
+      "시스템을 통과하는 모든 패킷을 감시해야 한다.",
+      "외부에서 발견할 수 없도록 철저히 은닉되어야 한다."
+    ],
+    "answer": "3",
+    "note": "IMG_5249",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#159",
+    "no": 159,
+    "subject": "network",
+    "type": "mc",
+    "body": "Firewall, IDS, IPS 비교에서 패킷 내용 분석 기능이 없는 것은?",
+    "stimulus": null,
+    "choices": [
+      "Firewall",
+      "IDS",
+      "IPS",
+      "IDS와 IPS"
+    ],
+    "answer": "0",
+    "note": "IMG_5249",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#160",
+    "no": 160,
+    "subject": "network",
+    "type": "mc",
+    "body": "Firewall, IDS, IPS 비교에서 오용 차단이 가능한 것은?",
+    "stimulus": null,
+    "choices": [
+      "Firewall만",
+      "IDS만",
+      "Firewall과 IDS",
+      "IPS만"
+    ],
+    "answer": "3",
+    "note": "IMG_5249",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#161",
+    "no": 161,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPS의 단점으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "내부자 공격에 취약하다.",
+      "변형된 패턴에 대한 탐지가 어렵다.",
+      "패킷을 차단할 수 없다.",
+      "오탐 현상이 발생할 수 있고 장비가 고가이다."
+    ],
+    "answer": "3",
+    "note": "IMG_5249",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#162",
+    "no": 162,
+    "subject": "network",
+    "type": "short",
+    "body": "실제로 시스템이 공격당하는 것처럼 보이게 하여 침입자를 유인하고 추적·정보수집하는 침입탐지 기법을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "허니팟",
+    "note": "IMG_5249",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#163",
+    "no": 163,
+    "subject": "network",
+    "type": "mc",
+    "body": "방화벽의 운영 정책 중 모든 트래픽을 먼저 차단하고 허용해야 할 트래픽만 선별적으로 허용하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "Deny All 정책",
+      "Permit All 정책",
+      "Stateful 정책",
+      "Proxy 정책"
+    ],
+    "answer": "0",
+    "note": "IMG_5250",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#164",
+    "no": 164,
+    "subject": "network",
+    "type": "mc",
+    "body": "방화벽의 Permit All 정책이 주로 사용되는 예로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "중요 서버의 접속 차단 정책",
+      "외부에서 내부망으로의 접속차단 정책",
+      "DMZ 구성 정책",
+      "내부망에서 외부로의 접속차단 정책"
+    ],
+    "answer": "3",
+    "note": "IMG_5250",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#165",
+    "no": 165,
+    "subject": "network",
+    "type": "mc",
+    "body": "방화벽의 단점으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "로그와 통계자료를 유지할 수 없다.",
+      "내부 네트워크에 일관된 보안정책을 적용할 수 없다.",
+      "호스트 시스템 접근제어를 할 수 없다.",
+      "우회하는 트래픽은 제어할 수 없다."
+    ],
+    "answer": "3",
+    "note": "IMG_5250",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#166",
+    "no": 166,
+    "subject": "network",
+    "type": "mc",
+    "body": "방화벽을 가리켜 특별한 형태의 무엇이라고 설명하는가?",
+    "stimulus": null,
+    "choices": [
+      "참조모니터",
+      "프록시 서버",
+      "배스천 호스트",
+      "허니팟"
+    ],
+    "answer": "0",
+    "note": "IMG_5250",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#167",
+    "no": 167,
+    "subject": "network",
+    "type": "mc",
+    "body": "상태기반 검사 방화벽(stateful packet inspection firewall)이라는 용어를 최초로 사용한 업체는?",
+    "stimulus": null,
+    "choices": [
+      "체크포인트",
+      "시스코",
+      "IBM",
+      "에릭슨"
+    ],
+    "answer": "0",
+    "note": "IMG_5251",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#168",
+    "no": 168,
+    "subject": "network",
+    "type": "mc",
+    "body": "상태기반 검사 방화벽이 TCP 순서번호를 추적하여 막을 수 있다고 제시된 공격은?",
+    "stimulus": null,
+    "choices": [
+      "세션 하이재킹",
+      "SYN 플러딩",
+      "ARP 스푸핑",
+      "Ping of Death"
+    ],
+    "answer": "0",
+    "note": "IMG_5251",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#169",
+    "no": 169,
+    "subject": "network",
+    "type": "mc",
+    "body": "패킷 필터링을 위하여 사용되는 정보로 제시되지 않은 것은?",
+    "stimulus": null,
+    "choices": [
+      "발신지 IP 주소와 목적지 IP 주소",
+      "트래픽의 방향(인바운드 혹은 아웃바운드)",
+      "패킷의 상태(SYN 혹은 ACK)",
+      "패킷 페이로드에 포함된 문자열"
+    ],
+    "answer": "3",
+    "note": "IMG_5251",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#170",
+    "no": 170,
+    "subject": "network",
+    "type": "mc",
+    "body": "일반적인 라우터에 패킷 필터링 기능을 구현한 장비를 부르는 이름으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "스크린 라우터",
+      "코어 라우터",
+      "배스천 라우터",
+      "프록시 라우터"
+    ],
+    "answer": "0",
+    "note": "IMG_5251",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#171",
+    "no": 171,
+    "subject": "network",
+    "type": "mc",
+    "body": "응용프로그램 수준 프락시와 회선 수준 프락시의 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "응용프로그램 수준 프락시는 각 프로토콜마다 서로 다른 프락시를 요구하지 않는다.",
+      "회선 수준 프락시는 응용프로그램 수준 프락시보다 깊은 검사 능력을 제공한다.",
+      "회선 수준 프락시는 모니터되는 각 프로토콜마다 별도의 프락시가 필요하다.",
+      "응용프로그램 수준 프락시는 패킷당 처리가 많아 회선 수준 프락시보다 느리다."
+    ],
+    "answer": "3",
+    "note": "IMG_5252",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#172",
+    "no": 172,
+    "subject": "network",
+    "type": "mc",
+    "body": "배스천(bastion)이라는 이름의 유래로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "중세 성곽의 외부 방벽의 강화된 돌출부",
+      "고대 로마의 성문 감시탑",
+      "네덜란드의 방파제",
+      "프랑스의 요새 도시 이름"
+    ],
+    "answer": "0",
+    "note": "IMG_5252",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#173",
+    "no": 173,
+    "subject": "network",
+    "type": "mc",
+    "body": "스크리닝 라우터 구조의 단점으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "장비 추가비용이 많이 든다.",
+      "서비스 속도가 크게 느려진다.",
+      "설치와 관리가 매우 어렵고 구축비용이 많이 든다.",
+      "인증기능 수행이 불가능하고 1개의 장애물밖에 없어 방어의 깊이가 약하다."
+    ],
+    "answer": "3",
+    "note": "IMG_5253",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#174",
+    "no": 174,
+    "subject": "network",
+    "type": "mc",
+    "body": "이중 네트워크 호스트 구조(Dual-Homed Host Architecture)에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "두 개의 인터페이스를 가지며 라우팅 기능이 없는 방화벽을 설치하는 형태",
+      "라우터만으로 구성되어 별도의 호스트가 없는 형태",
+      "DMZ라는 완충지역을 운영하는 형태",
+      "두 대의 스크리닝 라우터만으로 구성하는 형태"
+    ],
+    "answer": "0",
+    "note": "IMG_5253",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#175",
+    "no": 175,
+    "subject": "network",
+    "type": "mc",
+    "body": "스크린드 호스트 게이트웨이 구조의 구성으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "듀얼-홈드 게이트웨이와 스크리닝 라우터를 결합한 형태",
+      "두 개의 스크리닝 라우터 사이에 DMZ를 두는 형태",
+      "라우터 하나만으로 필터링하는 형태",
+      "프락시 서버 두 대를 직렬로 배치한 형태"
+    ],
+    "answer": "0",
+    "note": "IMG_5253",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#176",
+    "no": 176,
+    "subject": "network",
+    "type": "mc",
+    "body": "VPN의 데이터 무결성 보장에 이용된다고 제시된 기술은?",
+    "stimulus": null,
+    "choices": [
+      "암호화 및 전자서명",
+      "순서번호 재배열",
+      "패킷 필터링",
+      "주소 변환"
+    ],
+    "answer": "0",
+    "note": "IMG_5254",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#177",
+    "no": 177,
+    "subject": "network",
+    "type": "short",
+    "body": "VPN에서 터널링되는 데이터를 부르는 이름은? (한글로)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "페이로드",
+    "note": "IMG_5254",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#178",
+    "no": 178,
+    "subject": "network",
+    "type": "mc",
+    "body": "계층별 터널링 프로토콜 비교에서 2계층 터널링의 캡슐화 대상으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "IP만",
+      "HTTP 메시지만",
+      "이더넷 프레임만",
+      "IP, IPX, 애플토크 등"
+    ],
+    "answer": "3",
+    "note": "IMG_5255",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#179",
+    "no": 179,
+    "subject": "network",
+    "type": "mc",
+    "body": "계층별 터널링 프로토콜 비교에서 2계층 터널링의 구현 형태로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "호스트-호스트",
+      "클라이언트-서버",
+      "서버-서버",
+      "라우터-라우터"
+    ],
+    "answer": "1",
+    "note": "IMG_5255",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#180",
+    "no": 180,
+    "subject": "network",
+    "type": "mc",
+    "body": "계층별 터널링 프로토콜 비교에서 MPLS의 특징으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "AH와 ESP 사용",
+      "자체 인증 지원",
+      "PPP 기술 활용",
+      "QoS 제공 기능"
+    ],
+    "answer": "3",
+    "note": "IMG_5255",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#181",
+    "no": 181,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPSec VPN과 SSL VPN의 적용 계층 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "IPSec VPN은 5계층, SSL VPN은 3계층",
+      "둘 다 5계층",
+      "둘 다 3계층",
+      "IPSec VPN은 3계층, SSL VPN은 5계층"
+    ],
+    "answer": "3",
+    "note": "IMG_5255",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#182",
+    "no": 182,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPSec VPN과 SSL VPN의 적합성 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "IPSec VPN은 Site to Remote, SSL VPN은 Site to Site",
+      "둘 다 Site to Remote",
+      "둘 다 Site to Site",
+      "IPSec VPN은 Site to Site, SSL VPN은 Site to Remote"
+    ],
+    "answer": "3",
+    "note": "IMG_5255",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#183",
+    "no": 183,
+    "subject": "network",
+    "type": "mc",
+    "body": "SSL VPN의 장점으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "종단간 보안이 가능하고 종단 부하가 없다.",
+      "애플리케이션 차원의 정교한 접근제어가 미흡하다.",
+      "별도의 소프트웨어 설치가 필요하다.",
+      "접속과 관리가 편리하고 클라이언트-서버 상호 인증이 가능하다."
+    ],
+    "answer": "3",
+    "note": "IMG_5255",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#184",
+    "no": 184,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPSec의 보안 서비스 중 재전송 패킷의 거부를 보장하는 수단으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "메시지 인증 코드(MAC)",
+      "전자서명",
+      "대칭키 암호화",
+      "순서번호(Sequence Number)"
+    ],
+    "answer": "3",
+    "note": "IMG_5256",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#185",
+    "no": 185,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPSec에서 비연결 무결성과 데이터 발신처 인증을 보장하는 수단으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "순서번호",
+      "해시 트리",
+      "공개키 인증서",
+      "메시지 인증 코드(MAC)"
+    ],
+    "answer": "3",
+    "note": "IMG_5256",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#186",
+    "no": 186,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPSec에서 제한된 트래픽 흐름의 기밀성이 제공되는 조건으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "AH 전송모드",
+      "AH 터널모드",
+      "ESP 전송모드",
+      "ESP 터널모드"
+    ],
+    "answer": "3",
+    "note": "IMG_5256",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#187",
+    "no": 187,
+    "subject": "network",
+    "type": "short",
+    "body": "IPSec의 보안 서비스를 규정한 RFC 번호는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "2401",
+    "note": "IMG_5256",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#188",
+    "no": 188,
+    "subject": "network",
+    "type": "mc",
+    "body": "IPSec 터널모드에서 AH를 사용할 때의 패킷 구성으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "IP 헤더 | AH 헤더 | IP 페이로드",
+      "IP 헤더 | IP 페이로드 | AH 트레일러",
+      "AH 헤더 | 새로운 IP 헤더 | IP 페이로드",
+      "새로운 IP 헤더 | AH 헤더 | IP 헤더 | IP 페이로드"
+    ],
+    "answer": "3",
+    "note": "IMG_5257",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#189",
+    "no": 189,
+    "subject": "network",
+    "type": "short",
+    "body": "IPSec에서 보안 연계(SA)가 포함되어 저장되는 데이터베이스를 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "SAD",
+    "note": "IMG_5257",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#190",
+    "no": 190,
+    "subject": "network",
+    "type": "mc",
+    "body": "TCP 연결 역추적 기술의 분류로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "능동 역추적과 수동 역추적",
+      "확률적 패킷 마킹과 패킷 로깅",
+      "홉 단위 역추적과 종단 역추적",
+      "호스트 기반 연결 역추적과 네트워크 기반 연결 역추적"
+    ],
+    "answer": "3",
+    "note": "IMG_5258",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#191",
+    "no": 191,
+    "subject": "network",
+    "type": "mc",
+    "body": "보안 위협에 대한 자동화된 분석과 대응 환경을 만들어 대응 시간을 단축하는 자동화된 통합보안관제 솔루션은?",
+    "stimulus": null,
+    "choices": [
+      "ESM",
+      "SIEM",
+      "SOAR",
+      "PMS"
+    ],
+    "answer": "2",
+    "note": "IMG_5258",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#192",
+    "no": 192,
+    "subject": "network",
+    "type": "mc",
+    "body": "수많은 IT 시스템 및 보안 시스템에서 발생하는 로그를 분석하여 이상 징후를 파악하고 그 결과를 경영진에게 보고할 수 있도록 해주는 시스템은?",
+    "stimulus": null,
+    "choices": [
+      "ESM",
+      "SIEM",
+      "NAC",
+      "SOAR"
+    ],
+    "answer": "1",
+    "note": "IMG_5258",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#193",
+    "no": 193,
+    "subject": "network",
+    "type": "short",
+    "body": "관리 대상 PC에 소프트웨어 업데이트 설치와 운영체제 패치 등을 중앙에서 강제하는 기업용 솔루션을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "PMS",
+    "note": "IMG_5258",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#194",
+    "no": 194,
+    "subject": "network",
+    "type": "mc",
+    "body": "PPP의 연결 순서로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "LCP → NCP → PAP/CHAP → IP통신",
+      "NCP → LCP → PAP/CHAP → IP통신",
+      "PAP/CHAP → LCP → NCP → IP통신",
+      "LCP → PAP/CHAP → NCP → IP통신"
+    ],
+    "answer": "3",
+    "note": "IMG_5123",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#195",
+    "no": 195,
+    "subject": "network",
+    "type": "mc",
+    "body": "PPP 인증 방식인 PAP와 CHAP의 비교로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "PAP는 챌린지 방식, CHAP는 평문기반 인증이다.",
+      "둘 다 평문기반 인증이다.",
+      "둘 다 챌린지 방식이다.",
+      "PAP는 평문기반 인증, CHAP는 챌린지 방식이다."
+    ],
+    "answer": "3",
+    "note": "IMG_5123",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#196",
+    "no": 196,
+    "subject": "network",
+    "type": "mc",
+    "body": "터널링 기술 중 3계층에서 동작하며 암호화를 제공하지 않는 것은?",
+    "stimulus": null,
+    "choices": [
+      "PPTP",
+      "L2TP",
+      "GRE",
+      "IPsec"
+    ],
+    "answer": "2",
+    "note": "IMG_5123",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#197",
+    "no": 197,
+    "subject": "network",
+    "type": "short",
+    "body": "PPP 연결 과정에서 인증 이후 IP 주소 등 네트워크 설정을 담당하는 단계의 프로토콜을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "NCP",
+    "note": "IMG_5123",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#198",
+    "no": 198,
+    "subject": "network",
+    "type": "mc",
+    "body": "서킷레벨 게이트웨이 방식의 방화벽이 사용하는 대표적인 프로토콜은?",
+    "stimulus": null,
+    "choices": [
+      "SOCKS",
+      "SOAP",
+      "SNMP",
+      "SMTP"
+    ],
+    "answer": "0",
+    "note": "IMG_5124",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#199",
+    "no": 199,
+    "subject": "network",
+    "type": "mc",
+    "body": "윈도우 ipconfig 옵션과 기능의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "/all - DNS 캐시 삭제",
+      "/flushdns - DHCP IP 다시 받기",
+      "/renew - DNS 캐시 확인",
+      "/release - DHCP에서 받은 IP 반납"
+    ],
+    "answer": "3",
+    "note": "IMG_5124",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#200",
+    "no": 200,
+    "subject": "network",
+    "type": "mc",
+    "body": "iptables의 체인 중 내 시스템을 거쳐가는 패킷에 적용되는 것은?",
+    "stimulus": null,
+    "choices": [
+      "INPUT",
+      "OUTPUT",
+      "FORWARD",
+      "ACCEPT"
+    ],
+    "answer": "2",
+    "note": "IMG_5125",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#201",
+    "no": 201,
+    "subject": "network",
+    "type": "mc",
+    "body": "iptables 옵션과 기능의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "-A 규칙조회",
+      "-D 규칙추가",
+      "-L 규칙삭제",
+      "-P 정책지정"
+    ],
+    "answer": "3",
+    "note": "IMG_5125",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#202",
+    "no": 202,
+    "subject": "network",
+    "type": "mc",
+    "body": "iptables에서 출발지 포트를 지정하는 옵션은?",
+    "stimulus": null,
+    "choices": [
+      "-s",
+      "-d",
+      "--sport",
+      "--dport"
+    ],
+    "answer": "2",
+    "note": "IMG_5125",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#203",
+    "no": 203,
+    "subject": "network",
+    "type": "short",
+    "body": "iptables에서 응답 없이 패킷을 차단하는 타겟을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "DROP",
+    "note": "IMG_5125",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#204",
+    "no": 204,
+    "subject": "network",
+    "type": "mc",
+    "body": "FLSM(고정 길이 서브넷 마스크) 방식의 서브네팅 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "필요한 만큼 서로 다른 크기로 분할한다.",
+      "서브넷 마스크를 사용하지 않는다.",
+      "여러 네트워크를 하나로 합친다.",
+      "모든 서브넷을 같은 크기로 분할한다."
+    ],
+    "answer": "3",
+    "note": "IMG_5126",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#205",
+    "no": 205,
+    "subject": "network",
+    "type": "mc",
+    "body": "공격 트래픽을 어디로도 전달하지 않고 버리는 라우터 기반 DoS/DDoS 대응 방식은?",
+    "stimulus": null,
+    "choices": [
+      "인그레스 필터",
+      "이그레스 필터",
+      "uRPF",
+      "블랙홀(Null Routing)"
+    ],
+    "answer": "3",
+    "note": "IMG_5122",
+    "source": "2026-notes-network"
+  },
+  {
+    "key": "2026-notes-network#206",
+    "no": 206,
+    "subject": "network",
+    "type": "mc",
+    "body": "무선 주파수를 방해하여 통신을 마비시키는 공격을 가리키는 용어는?",
+    "stimulus": null,
+    "choices": [
+      "하이재킹",
+      "스니핑",
+      "스푸핑",
+      "재밍(Jamming)"
+    ],
+    "answer": "3",
+    "note": "IMG_5122",
+    "source": "2026-notes-network"
+  }
+]

@@ -1,0 +1,2089 @@
+[
+  {
+    "key": "2026-notes-general#1",
+    "no": 1,
+    "subject": "general",
+    "type": "mc",
+    "body": "라이선스를 확인한 뒤 콘텐츠 사용을 통제하는 DRM 구성요소는?",
+    "stimulus": null,
+    "choices": [
+      "메타데이터",
+      "패키저",
+      "클리어링 하우스",
+      "DRM 컨트롤러"
+    ],
+    "answer": "3",
+    "note": "IMG_5127",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#2",
+    "no": 2,
+    "subject": "general",
+    "type": "short",
+    "body": "콘텐츠 데이터와 암호를 결합해 배포 단위로 묶는 DRM 구성요소를 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "패키저",
+    "note": "IMG_5127",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#3",
+    "no": 3,
+    "subject": "general",
+    "type": "short",
+    "body": "공격 대상이 자주 방문하는 웹사이트를 미리 살펴본 뒤 그곳을 겨냥해 공격하는 기법을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "워터링홀",
+    "note": "IMG_5127",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#4",
+    "no": 4,
+    "subject": "general",
+    "type": "mc",
+    "body": "SPN 구조를 사용하는 블록 암호로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "DES, SEED",
+      "DES, Rijndael",
+      "SEED, Blowfish",
+      "Rijndael, ARIA"
+    ],
+    "answer": "3",
+    "note": "IMG_5128, IMG_5131",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#5",
+    "no": 5,
+    "subject": "general",
+    "type": "mc",
+    "body": "다음 중 SPN 구조로 분류되는 블록 암호는?",
+    "stimulus": null,
+    "choices": [
+      "Blowfish",
+      "RC5",
+      "CRYPTON",
+      "MISTY"
+    ],
+    "answer": "2",
+    "note": "IMG_5135",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#6",
+    "no": 6,
+    "subject": "general",
+    "type": "short",
+    "body": "ARIA에서 키 길이가 256비트일 때 라운드 수는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "16",
+    "note": "IMG_5128",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#7",
+    "no": 7,
+    "subject": "general",
+    "type": "mc",
+    "body": "DES, 3DES, AES의 평문 블록 크기(비트)를 순서대로 바르게 나열한 것은?",
+    "stimulus": null,
+    "choices": [
+      "56, 112, 128",
+      "64, 64, 128",
+      "64, 128, 128",
+      "64, 64, 64"
+    ],
+    "answer": "1",
+    "note": "IMG_5136",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#8",
+    "no": 8,
+    "subject": "general",
+    "type": "short",
+    "body": "Triple DES의 키 크기로 제시된 두 값 중 큰 값은 몇 비트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "168",
+    "note": "IMG_5136",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#9",
+    "no": 9,
+    "subject": "general",
+    "type": "short",
+    "body": "DES에서 각 라운드에 전달되는 라운드 키의 길이는 몇 비트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "48",
+    "note": "IMG_5136",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#10",
+    "no": 10,
+    "subject": "general",
+    "type": "short",
+    "body": "DES 함수에 사용되는 S-박스의 개수는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "8",
+    "note": "IMG_5136",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#11",
+    "no": 11,
+    "subject": "general",
+    "type": "mc",
+    "body": "DES 함수를 구성하는 네 부분으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "SubBytes, ShiftRows, MixColumns, AddRoundKey",
+      "초기 치환, 믹서, 스와퍼, 최종 치환",
+      "혼돈, 확산, 치환, 전치",
+      "확장 P-박스, 키 XOR, S-박스, 단순 P-박스"
+    ],
+    "answer": "3",
+    "note": "IMG_5136",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#12",
+    "no": 12,
+    "subject": "general",
+    "type": "mc",
+    "body": "AES 암호화 과정의 각 라운드를 구성하는 연산으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "확장 P-박스, 키 XOR, S-박스, 단순 P-박스",
+      "SubBytes, ShiftRows, MixColumns, AddRoundKey",
+      "초기 치환, 최종 치환, 라운드 키 생성",
+      "혼돈, 확산, 치환, 전치"
+    ],
+    "answer": "1",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#13",
+    "no": 13,
+    "subject": "general",
+    "type": "short",
+    "body": "PGP에 채택된 유럽의 블록 암호 알고리즘을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "IDEA",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#14",
+    "no": 14,
+    "subject": "general",
+    "type": "short",
+    "body": "Fortezza 카드에 사용된 미국의 블록 암호 알고리즘을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "SKIPJACK",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#15",
+    "no": 15,
+    "subject": "general",
+    "type": "mc",
+    "body": "SKIPJACK의 키 길이는?",
+    "stimulus": null,
+    "choices": [
+      "56비트",
+      "64비트",
+      "80비트",
+      "128비트"
+    ],
+    "answer": "2",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#16",
+    "no": 16,
+    "subject": "general",
+    "type": "mc",
+    "body": "차분·선형 공격에 대한 안전성 증명 구조를 특징으로 하는 일본의 블록 암호는?",
+    "stimulus": null,
+    "choices": [
+      "FEAL",
+      "MISTY",
+      "IDEA",
+      "CRYPTON"
+    ],
+    "answer": "1",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#17",
+    "no": 17,
+    "subject": "general",
+    "type": "mc",
+    "body": "블록 크기를 32, 64, 128비트 중에서 선택할 수 있는 블록 암호 알고리즘은?",
+    "stimulus": null,
+    "choices": [
+      "RC5",
+      "FEAL",
+      "IDEA",
+      "SEED"
+    ],
+    "answer": "0",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#18",
+    "no": 18,
+    "subject": "general",
+    "type": "short",
+    "body": "DES가 NIST 표준으로 공표된 연도는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "1977",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#19",
+    "no": 19,
+    "subject": "general",
+    "type": "short",
+    "body": "Rijndael이 AES 알고리즘으로 선정된 연도는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "2000",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#20",
+    "no": 20,
+    "subject": "general",
+    "type": "mc",
+    "body": "Rijndael 알고리즘을 개발한 국가는?",
+    "stimulus": null,
+    "choices": [
+      "미국",
+      "일본",
+      "벨기에",
+      "한국"
+    ],
+    "answer": "2",
+    "note": "IMG_5137",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#21",
+    "no": 21,
+    "subject": "general",
+    "type": "mc",
+    "body": "페이스텔(Feistel) 구조의 강도를 결정짓는 요소로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "S-박스의 개수와 P-박스의 개수",
+      "평문 블록의 길이, 키의 길이, 라운드의 수",
+      "초기화 벡터의 길이와 카운터 값",
+      "블록의 개수와 패딩 방식"
+    ],
+    "answer": "1",
+    "note": "IMG_5135",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#22",
+    "no": 22,
+    "subject": "general",
+    "type": "mc",
+    "body": "페이스텔 구조의 라운드 구성에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "3라운드 이상이며 짝수 라운드로 구성된다.",
+      "2라운드 이하로 구성된다.",
+      "항상 홀수 라운드로 구성된다.",
+      "라운드 수는 16으로 고정된다."
+    ],
+    "answer": "0",
+    "note": "IMG_5135",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#23",
+    "no": 23,
+    "subject": "general",
+    "type": "mc",
+    "body": "현대 스트림 암호 분류에서 비동기식(자기동기식)에 해당하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "OFB 모드",
+      "LFSR",
+      "One time pad",
+      "CFB 모드"
+    ],
+    "answer": "3",
+    "note": "IMG_5131, IMG_5136",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#24",
+    "no": 24,
+    "subject": "general",
+    "type": "mc",
+    "body": "동기식 스트림 암호의 키스트림 생성 방식으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "평문에 종속적으로 생성된다.",
+      "암호문에 종속적으로 생성된다.",
+      "평문·암호문과 독립적으로 생성된다.",
+      "수신자의 공개키로 생성된다."
+    ],
+    "answer": "2",
+    "note": "IMG_5131, IMG_5136",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#25",
+    "no": 25,
+    "subject": "general",
+    "type": "mc",
+    "body": "링크 암호화의 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "헤더와 트레일러가 암호화되지 않는다.",
+      "각 홉(hop)에서 패킷이 해독된다.",
+      "종단에서만 복호화가 이루어진다.",
+      "전용 암호처리용 하드웨어를 반드시 설치해야 한다."
+    ],
+    "answer": "1",
+    "note": "IMG_5132",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#26",
+    "no": 26,
+    "subject": "general",
+    "type": "mc",
+    "body": "암호해독자에게 가장 불리한 방법으로 분류되는 암호분석 공격은?",
+    "stimulus": null,
+    "choices": [
+      "암호문 단독 공격",
+      "기지 평문 공격",
+      "선택 평문 공격",
+      "선택 암호문 공격"
+    ],
+    "answer": "0",
+    "note": "IMG_5133",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#27",
+    "no": 27,
+    "subject": "general",
+    "type": "short",
+    "body": "암호기에 접근할 수 있어 평문을 선택하고 그에 대응하는 암호문을 얻어 해독하는 공격을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "CPA",
+    "note": "IMG_5133",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#28",
+    "no": 28,
+    "subject": "general",
+    "type": "mc",
+    "body": "침입차단시스템처럼 암호모듈을 탑재한 제품의 안전성을 평가하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "암호 알고리즘 평가",
+      "암호모듈 평가",
+      "정보보호제품 평가",
+      "응용시스템 평가"
+    ],
+    "answer": "2",
+    "note": "IMG_5134",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#29",
+    "no": 29,
+    "subject": "general",
+    "type": "mc",
+    "body": "암호기술 평가가 이루어지는 순서로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "암호모듈 평가 → 암호 알고리즘 평가 → 응용시스템 평가 → 정보보호제품 평가",
+      "암호 알고리즘 평가 → 암호모듈 평가 → 정보보호제품 평가 → 응용시스템 평가",
+      "정보보호제품 평가 → 암호모듈 평가 → 암호 알고리즘 평가 → 응용시스템 평가",
+      "응용시스템 평가 → 정보보호제품 평가 → 암호모듈 평가 → 암호 알고리즘 평가"
+    ],
+    "answer": "1",
+    "note": "IMG_5134",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#30",
+    "no": 30,
+    "subject": "general",
+    "type": "mc",
+    "body": "스테가노그래피, 워터마크, 핑거프린트 비교에서 트래킹이 불가능한 것은?",
+    "stimulus": null,
+    "choices": [
+      "워터마크",
+      "핑거프린트",
+      "세 가지 모두 가능하다",
+      "스테가노그래피"
+    ],
+    "answer": "3",
+    "note": "IMG_5134",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#31",
+    "no": 31,
+    "subject": "general",
+    "type": "mc",
+    "body": "정보은닉 기술 비교표에서 워터마크의 은닉정보로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "메시지",
+      "판매자 정보",
+      "구매자 추적정보",
+      "인증서 일련번호"
+    ],
+    "answer": "1",
+    "note": "IMG_5134",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#32",
+    "no": 32,
+    "subject": "general",
+    "type": "mc",
+    "body": "정보은닉 기술 비교표에서 공격에 대한 강인성이 상대적으로 약한 것은?",
+    "stimulus": null,
+    "choices": [
+      "워터마크",
+      "핑거프린트",
+      "스테가노그래피",
+      "세 가지 모두 강인하다"
+    ],
+    "answer": "2",
+    "note": "IMG_5134",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#33",
+    "no": 33,
+    "subject": "general",
+    "type": "mc",
+    "body": "블록 암호 운영 모드 비교표에서 Practical Cryptography가 권장한 모드로 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "ECB와 CBC",
+      "CBC와 CTR",
+      "CFB와 OFB",
+      "OFB와 CTR"
+    ],
+    "answer": "1",
+    "note": "IMG_5140",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#34",
+    "no": 34,
+    "subject": "general",
+    "type": "mc",
+    "body": "암호화와 복호화 양쪽 모두 병렬 처리가 가능한 모드로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "ECB와 CTR",
+      "CBC와 CFB",
+      "OFB와 CTR",
+      "CBC와 OFB"
+    ],
+    "answer": "0",
+    "note": "IMG_5140",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#35",
+    "no": 35,
+    "subject": "general",
+    "type": "short",
+    "body": "블록 암호 운영 모드 중 암호화와 복호화 모두 병렬 처리가 불가능한 모드를 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "OFB",
+    "note": "IMG_5140",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#36",
+    "no": 36,
+    "subject": "general",
+    "type": "mc",
+    "body": "블록 암호 운영 모드 비교표에서 재전송 공격이 가능하다고 명시된 모드로 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "CBC와 OFB",
+      "CFB와 CTR",
+      "OFB와 CTR",
+      "ECB와 CFB"
+    ],
+    "answer": "3",
+    "note": "IMG_5140",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#37",
+    "no": 37,
+    "subject": "general",
+    "type": "mc",
+    "body": "비고란에 사용해서는 안 된다고 명시된 블록 암호 운영 모드는?",
+    "stimulus": null,
+    "choices": [
+      "CBC 모드",
+      "OFB 모드",
+      "CTR 모드",
+      "ECB 모드"
+    ],
+    "answer": "3",
+    "note": "IMG_5140",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#38",
+    "no": 38,
+    "subject": "general",
+    "type": "mc",
+    "body": "적극적 공격자가 암호문 블록의 비트를 반전시키면 대응하는 평문 블록의 비트가 반전되는 단점을 갖는 모드로 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "ECB와 CBC",
+      "CBC와 CFB",
+      "OFB와 CTR",
+      "ECB와 CFB"
+    ],
+    "answer": "2",
+    "note": "IMG_5140",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#39",
+    "no": 39,
+    "subject": "general",
+    "type": "short",
+    "body": "Diffie-Hellman의 중간자 공격을 막기 위해 전자서명과 공개키 인증서를 이용하는 프로토콜을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "STS",
+    "note": "IMG_5141",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#40",
+    "no": 40,
+    "subject": "general",
+    "type": "mc",
+    "body": "Diffie-Hellman 키 교환에서 Alice가 R1 = g^x mod p를, Bob이 R2 = g^y mod p를 공개했을 때 두 사람이 공유하는 비밀키는?",
+    "stimulus": null,
+    "choices": [
+      "g^(x+y) mod p",
+      "g^(x-y) mod p",
+      "g^xy mod p",
+      "x^y mod p"
+    ],
+    "answer": "2",
+    "note": "IMG_5141",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#41",
+    "no": 41,
+    "subject": "general",
+    "type": "short",
+    "body": "Diffie-Hellman 알고리즘이 발명된 연도는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "1976",
+    "note": "IMG_5141",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#42",
+    "no": 42,
+    "subject": "general",
+    "type": "mc",
+    "body": "키 배송 문제 해결 방법 중 신뢰받는 제3자에게 통신용 키를 의뢰하고 개인과 그 기관 사이에서만 키를 사전 공유하는 방식은?",
+    "stimulus": null,
+    "choices": [
+      "키의 사전 공유에 의한 해결",
+      "키배포 센터에 의한 해결",
+      "Diffie-Hellman 키 교환에 의한 해결",
+      "공개키 암호에 의한 해결"
+    ],
+    "answer": "1",
+    "note": "IMG_5141",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#43",
+    "no": 43,
+    "subject": "general",
+    "type": "mc",
+    "body": "공개키 사용 원리로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "암호화키와 복호화키는 서로 다른 사람의 키를 조합해야 한다.",
+      "타인의 개인키를 사용할 수 있다.",
+      "하나의 키를 암호화와 복호화에 반복해서 사용해야 한다.",
+      "암호화키와 복호화키는 같은 사람의 키쌍이어야 한다."
+    ],
+    "answer": "3",
+    "note": "IMG_5142",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#44",
+    "no": 44,
+    "subject": "general",
+    "type": "short",
+    "body": "RSA에서 두 소수 p=17, q=11을 선택했을 때 φ(N)의 값은? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "160",
+    "note": "IMG_5143",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#45",
+    "no": 45,
+    "subject": "general",
+    "type": "mc",
+    "body": "RSA에서 p=17, q=11, e=7일 때 개인키 지수 d의 값은?",
+    "stimulus": null,
+    "choices": [
+      "7",
+      "11",
+      "23",
+      "187"
+    ],
+    "answer": "2",
+    "note": "IMG_5143",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#46",
+    "no": 46,
+    "subject": "general",
+    "type": "mc",
+    "body": "암호학에 쓰이는 타원곡선 y²=x³+ax+b의 계수가 만족해야 하는 조건은?",
+    "stimulus": null,
+    "choices": [
+      "4a³+27b²≠0",
+      "a³+b²=0",
+      "a²+4b³≠0",
+      "27a³+4b²≠0"
+    ],
+    "answer": "0",
+    "note": "IMG_5144",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#47",
+    "no": 47,
+    "subject": "general",
+    "type": "short",
+    "body": "타원 곡선 암호(ECC)가 RSA 암호방식에 대한 대안으로 처음 제안된 연도는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "1985",
+    "note": "IMG_5144",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#48",
+    "no": 48,
+    "subject": "general",
+    "type": "mc",
+    "body": "대칭키 방식과 비대칭키 방식 비교표에서 제시한 안전한 키 길이로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "대칭키 64비트 이상, 공개키 1024비트 이상",
+      "대칭키 128비트 이상, 공개키 2048비트 이상",
+      "대칭키 256비트 이상, 공개키 4096비트 이상",
+      "대칭키와 공개키 모두 128비트 이상"
+    ],
+    "answer": "1",
+    "note": "IMG_5144",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#49",
+    "no": 49,
+    "subject": "general",
+    "type": "short",
+    "body": "공개키 방식에서 사용자가 N명일 때 필요한 키의 개수를 N에 대한 식으로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "2N",
+    "note": "IMG_5144",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#50",
+    "no": 50,
+    "subject": "general",
+    "type": "mc",
+    "body": "ECC 방식과 RSA 방식 비교표에서 ECC의 기반구조로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "유선 PKI",
+      "무선 PKI(WPKI)",
+      "KDC",
+      "커버로스"
+    ],
+    "answer": "1",
+    "note": "IMG_5144",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#51",
+    "no": 51,
+    "subject": "general",
+    "type": "mc",
+    "body": "하이브리드 암호시스템에서 세션 키를 생성하는 데 사용하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "일방향 해시함수",
+      "공개키 인증서",
+      "의사난수 생성기(PRNG)",
+      "메시지 인증 코드"
+    ],
+    "answer": "2",
+    "note": "IMG_5145",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#52",
+    "no": 52,
+    "subject": "general",
+    "type": "mc",
+    "body": "n-비트 해시코드에서 프리이미지 저항성을 깨는 데 필요한 공격 난이도는?",
+    "stimulus": null,
+    "choices": [
+      "2^(n/2)",
+      "2^n",
+      "n²",
+      "2n"
+    ],
+    "answer": "1",
+    "note": "IMG_5146",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#53",
+    "no": 53,
+    "subject": "general",
+    "type": "mc",
+    "body": "해시함수의 충돌 저항성을 깨는 대표적인 공격 방법은?",
+    "stimulus": null,
+    "choices": [
+      "생일 공격",
+      "무차별 공격",
+      "사전 공격",
+      "레인보우 테이블 공격"
+    ],
+    "answer": "0",
+    "note": "IMG_5146",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#54",
+    "no": 54,
+    "subject": "general",
+    "type": "short",
+    "body": "일방향 해시함수가 다대일 대응 함수이기 때문에 필연적으로 발생하는 현상을 두 글자로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "충돌",
+    "note": "IMG_5146",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#55",
+    "no": 55,
+    "subject": "general",
+    "type": "short",
+    "body": "SHA-512의 블록 크기는 몇 비트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "1024",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#56",
+    "no": 56,
+    "subject": "general",
+    "type": "short",
+    "body": "SHA-256의 단계 수는? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "64",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#57",
+    "no": 57,
+    "subject": "general",
+    "type": "mc",
+    "body": "SHA-1, SHA-256, SHA-512의 블록 크기(비트)를 순서대로 바르게 나열한 것은?",
+    "stimulus": null,
+    "choices": [
+      "512, 512, 1024",
+      "512, 1024, 1024",
+      "512, 512, 512",
+      "1024, 1024, 1024"
+    ],
+    "answer": "0",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#58",
+    "no": 58,
+    "subject": "general",
+    "type": "mc",
+    "body": "MD5, SHA-1, RIPEMD-160의 단계 수를 순서대로 바르게 나열한 것은?",
+    "stimulus": null,
+    "choices": [
+      "80, 64, 160",
+      "64, 160, 80",
+      "128, 160, 160",
+      "64, 80, 160"
+    ],
+    "answer": "3",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#59",
+    "no": 59,
+    "subject": "general",
+    "type": "short",
+    "body": "MD5의 메시지 다이제스트(MD) 길이는 몇 비트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "128",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#60",
+    "no": 60,
+    "subject": "general",
+    "type": "mc",
+    "body": "최대 메시지 길이가 2^128-1비트인 해시 알고리즘으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "SHA-1과 SHA-224",
+      "SHA-224와 SHA-256",
+      "SHA-384와 SHA-512",
+      "MD5와 SHA-1"
+    ],
+    "answer": "2",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#61",
+    "no": 61,
+    "subject": "general",
+    "type": "mc",
+    "body": "MD5, SHA-1, RIPEMD-160 비교표에서 최대 메시지 길이가 무한(∞)인 것은?",
+    "stimulus": null,
+    "choices": [
+      "MD5",
+      "SHA-1",
+      "RIPEMD-160",
+      "세 가지 모두"
+    ],
+    "answer": "0",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#62",
+    "no": 62,
+    "subject": "general",
+    "type": "short",
+    "body": "SHA-384의 워드 길이는 몇 비트인가? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "64",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#63",
+    "no": 63,
+    "subject": "general",
+    "type": "short",
+    "body": "SHA-3 해시함수로 채택된 알고리즘의 이름을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "KECCAK",
+    "note": "IMG_5147",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#64",
+    "no": 64,
+    "subject": "general",
+    "type": "mc",
+    "body": "MDC를 이용한 무결성 검증에서 다이제스트를 전달하는 채널로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "안전하지 않은 채널",
+      "변경이 불가능한 채널",
+      "공유키로 암호화한 채널",
+      "무선 채널"
+    ],
+    "answer": "1",
+    "note": "IMG_5148",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#65",
+    "no": 65,
+    "subject": "general",
+    "type": "mc",
+    "body": "키에 메시지를 이어 붙여 해시해 중간 다이제스트를 만들고, 다시 키에 그 다이제스트를 이어 붙여 최종 다이제스트를 만드는 MAC은?",
+    "stimulus": null,
+    "choices": [
+      "HMAC",
+      "CBC-MAC",
+      "MDC",
+      "축소 MAC"
+    ],
+    "answer": "3",
+    "note": "IMG_5149",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#66",
+    "no": 66,
+    "subject": "general",
+    "type": "mc",
+    "body": "HMAC이 사용되는 프로토콜로 제시된 것으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "TLS, IPSec, SET",
+      "FTP, Telnet, SMTP",
+      "DNS, DHCP, ARP",
+      "SSH, RDP, VNC"
+    ],
+    "answer": "0",
+    "note": "IMG_5149",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#67",
+    "no": 67,
+    "subject": "general",
+    "type": "mc",
+    "body": "MAC이 제3자에 대한 증명을 제공하지 못하는 이유로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "공유키를 사용하므로 송신자와 수신자 중 누가 계산했는지 증명할 수 없다.",
+      "해시함수를 사용하지 않기 때문이다.",
+      "메시지를 암호화하지 않기 때문이다.",
+      "타임스탬프를 포함하지 않기 때문이다."
+    ],
+    "answer": "0",
+    "note": "IMG_5149",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#68",
+    "no": 68,
+    "subject": "general",
+    "type": "short",
+    "body": "대칭키 암호를 N번 사용하여 N개의 평문 블록에서 하나의 MAC을 생성하는 방식을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "CBC-MAC",
+    "note": "IMG_5149",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#69",
+    "no": 69,
+    "subject": "general",
+    "type": "mc",
+    "body": "전자서명이 제공하지 않는 보안 서비스는?",
+    "stimulus": null,
+    "choices": [
+      "무결성",
+      "인증",
+      "부인방지",
+      "기밀성"
+    ],
+    "answer": "3",
+    "note": "IMG_5150",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#70",
+    "no": 70,
+    "subject": "general",
+    "type": "mc",
+    "body": "전자문서의 서명을 다른 전자문서의 서명으로 사용할 수 없어야 한다는 전자서명의 기능은?",
+    "stimulus": null,
+    "choices": [
+      "위조 불가",
+      "변경 불가",
+      "재사용 불가",
+      "서명자 인증"
+    ],
+    "answer": "2",
+    "note": "IMG_5150",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#71",
+    "no": 71,
+    "subject": "general",
+    "type": "mc",
+    "body": "서명 길이가 RSA 서명의 2배이고 속도가 느린 이산대수 기반 전자서명은?",
+    "stimulus": null,
+    "choices": [
+      "RSA",
+      "ElGamal",
+      "Schnorr",
+      "ECDSA"
+    ],
+    "answer": "1",
+    "note": "IMG_5151",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#72",
+    "no": 72,
+    "subject": "general",
+    "type": "short",
+    "body": "ElGamal에 기반하면서 서명 크기를 줄인 전자서명 알고리즘을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "Schnorr",
+    "note": "IMG_5151",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#73",
+    "no": 73,
+    "subject": "general",
+    "type": "short",
+    "body": "KCDSA 전자서명이 이용하는 해시함수를 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "HAS-160",
+    "note": "IMG_5151",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#74",
+    "no": 74,
+    "subject": "general",
+    "type": "mc",
+    "body": "KCDSA를 타원곡선 위의 알고리즘으로 변환한 국내 전자서명 알고리즘은?",
+    "stimulus": null,
+    "choices": [
+      "ECDSA",
+      "EC-KCDSA",
+      "DSS",
+      "Schnorr"
+    ],
+    "answer": "1",
+    "note": "IMG_5151",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#75",
+    "no": 75,
+    "subject": "general",
+    "type": "mc",
+    "body": "암호화·복호화, 전자서명, 키 교환에 모두 사용할 수 있는 알고리즘으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "RSA와 DSS",
+      "Diffie-Hellman과 ECC",
+      "DSS와 ECC",
+      "RSA와 ECC"
+    ],
+    "answer": "3",
+    "note": "IMG_5151",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#76",
+    "no": 76,
+    "subject": "general",
+    "type": "mc",
+    "body": "전자서명 용도로만 사용할 수 있는 알고리즘은?",
+    "stimulus": null,
+    "choices": [
+      "RSA",
+      "ECC",
+      "DSS",
+      "Diffie-Hellman"
+    ],
+    "answer": "2",
+    "note": "IMG_5151",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#77",
+    "no": 77,
+    "subject": "general",
+    "type": "mc",
+    "body": "국내에서 개발된 해시함수로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "LSH와 HAS-160",
+      "SEED와 ARIA",
+      "HIGHT와 LEA",
+      "KCDSA와 EC-KCDSA"
+    ],
+    "answer": "0",
+    "note": "IMG_5151",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#78",
+    "no": 78,
+    "subject": "general",
+    "type": "mc",
+    "body": "메시지 복원형 전자서명의 검증 절차로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "수신한 서명을 송신자의 공개키로 복호화해 얻은 메시지를 직접 수신한 메시지와 비교한다.",
+      "수신한 서명을 수신자의 개인키로 복호화해 해시값을 비교한다.",
+      "메시지의 해시값만 계산해 수신한 해시값과 비교한다.",
+      "공유 비밀키로 MAC을 계산해 비교한다."
+    ],
+    "answer": "0",
+    "note": "IMG_5152",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#79",
+    "no": 79,
+    "subject": "general",
+    "type": "mc",
+    "body": "서명을 검증할 때 반드시 서명자의 도움이 있어야 검증이 가능한 전자서명 방식은?",
+    "stimulus": null,
+    "choices": [
+      "은닉 서명",
+      "위임 서명",
+      "부인방지 전자서명",
+      "다중서명"
+    ],
+    "answer": "2",
+    "note": "IMG_5153",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#80",
+    "no": 80,
+    "subject": "general",
+    "type": "mc",
+    "body": "분쟁을 해결하는 재판관 등 특정한 자만이 부인 과정을 수행할 수 있는 서명 방식은?",
+    "stimulus": null,
+    "choices": [
+      "수신자 지정 서명",
+      "의뢰 부인방지 서명",
+      "은닉 서명",
+      "위임 서명"
+    ],
+    "answer": "1",
+    "note": "IMG_5153",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#81",
+    "no": 81,
+    "subject": "general",
+    "type": "mc",
+    "body": "위임 서명자가 원 서명자를 대신하여 서명할 수 있도록 구성한 서명 방식은?",
+    "stimulus": null,
+    "choices": [
+      "다중서명",
+      "은닉 서명",
+      "위임 서명",
+      "수신자 지정 서명"
+    ],
+    "answer": "2",
+    "note": "IMG_5153",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#82",
+    "no": 82,
+    "subject": "general",
+    "type": "short",
+    "body": "동일한 전자문서에 여러 사람이 서명하는 특수 전자서명 방식을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "다중서명",
+    "note": "IMG_5153",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#83",
+    "no": 83,
+    "subject": "general",
+    "type": "mc",
+    "body": "PKI 전반에 사용되는 정책과 절차를 생성하고 루트 CA 역할을 수행하는 기관은?",
+    "stimulus": null,
+    "choices": [
+      "PAA",
+      "PCA",
+      "CA",
+      "RA"
+    ],
+    "answer": "0",
+    "note": "IMG_5154",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#84",
+    "no": 84,
+    "subject": "general",
+    "type": "short",
+    "body": "자신의 도메인 내의 사용자와 인증기관이 따라야 할 정책을 수립하는 PKI 기관을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "PCA",
+    "note": "IMG_5154",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#85",
+    "no": 85,
+    "subject": "general",
+    "type": "short",
+    "body": "PKI 저장소에서 디렉터리 서비스를 제공하는 데 사용하는 프로토콜을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "LDAP",
+    "note": "IMG_5154",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#86",
+    "no": 86,
+    "subject": "general",
+    "type": "mc",
+    "body": "PKI의 구성요소로 볼 수 없는 것은?",
+    "stimulus": null,
+    "choices": [
+      "인증기관",
+      "등록기관",
+      "저장소",
+      "티켓발행서버(TGS)"
+    ],
+    "answer": "3",
+    "note": "IMG_5154, IMG_5165",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#87",
+    "no": 87,
+    "subject": "general",
+    "type": "mc",
+    "body": "X.509 v3 인증서 프로파일에서 선택 항목에 해당하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "일련번호",
+      "유효기간",
+      "확장(Extensions)",
+      "주체의 공개키 정보"
+    ],
+    "answer": "2",
+    "note": "IMG_5156",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#88",
+    "no": 88,
+    "subject": "general",
+    "type": "short",
+    "body": "X.509 인증서에 확장(Extensions) 필드가 추가된 버전은? (숫자만)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "3",
+    "note": "IMG_5156",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#89",
+    "no": 89,
+    "subject": "general",
+    "type": "mc",
+    "body": "X.509 인증서의 서명(Signature) 필드에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "사용자의 개인키로 암호화한 값이 들어간다.",
+      "발행자의 이름만 들어간다.",
+      "인증서 취소 목록의 위치가 들어간다.",
+      "나머지 필드 전체에 해시함수를 적용해 얻은 해시코드를 CA의 개인키로 암호화한 값이 들어간다."
+    ],
+    "answer": "3",
+    "note": "IMG_5156",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#90",
+    "no": 90,
+    "subject": "general",
+    "type": "short",
+    "body": "X.509 유효기간 필드에서 인증서 유효기간이 종료되는 날짜를 나타내는 항목명을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "notAfter",
+    "note": "IMG_5156",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#91",
+    "no": 91,
+    "subject": "general",
+    "type": "mc",
+    "body": "X.509 v3 확장 영역의 분류 중 인증 경로 제약조건에 해당하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "키 사용(key usage)",
+      "인증서 정책(certificate policies)",
+      "기본 제한(basic constraints)",
+      "사용자 대체 이름(subject alternative name)"
+    ],
+    "answer": "2",
+    "note": "IMG_5156",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#92",
+    "no": 92,
+    "subject": "general",
+    "type": "mc",
+    "body": "OCSP를 구성하는 요소로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "OCSP 클라이언트, OCSP 서버, 인증 서버",
+      "AS, TGS, 실질 서버",
+      "PAA, PCA, CA",
+      "발행자, 주체, 저장소"
+    ],
+    "answer": "0",
+    "note": "IMG_5157",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#93",
+    "no": 93,
+    "subject": "general",
+    "type": "short",
+    "body": "인증서와 인증서 취소 목록에 전자서명을 하는 주체를 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "인증기관",
+    "note": "IMG_5157",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#94",
+    "no": 94,
+    "subject": "general",
+    "type": "short",
+    "body": "통신 때마다 한 번만 사용되는 키를 무엇이라 하는가?",
+    "stimulus": null,
+    "choices": null,
+    "answer": "세션키",
+    "note": "IMG_5158",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#95",
+    "no": 95,
+    "subject": "general",
+    "type": "short",
+    "body": "사용자가 직접 이용하는 정보(콘텐츠)를 암호화 대상으로 하는 키를 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "CEK",
+    "note": "IMG_5158",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#96",
+    "no": 96,
+    "subject": "general",
+    "type": "mc",
+    "body": "PBKDF의 입력값으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "공개키, 개인키, 세션키",
+      "평문, 초기화 벡터, 카운터",
+      "비밀번호, 반복 횟수, 생성하고자 하는 비밀키의 길이",
+      "솔트, 타임스탬프, 비표"
+    ],
+    "answer": "2",
+    "note": "IMG_5158",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#97",
+    "no": 97,
+    "subject": "general",
+    "type": "mc",
+    "body": "마스터 키에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "통신 때마다 한 번만 사용되는 키",
+      "반복적으로 사용되는 키",
+      "키를 암호화하는 키",
+      "콘텐츠를 암호화하는 키"
+    ],
+    "answer": "1",
+    "note": "IMG_5158",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#98",
+    "no": 98,
+    "subject": "general",
+    "type": "mc",
+    "body": "난수의 세 가지 성질 사이의 포함 관계로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "무작위성 ⊃ 예측 불가능성 ⊃ 재현 불가능성",
+      "재현 불가능성 ⊃ 예측 불가능성 ⊃ 무작위성",
+      "예측 불가능성 ⊃ 무작위성 ⊃ 재현 불가능성",
+      "세 성질은 서로 무관하다"
+    ],
+    "answer": "0",
+    "note": "IMG_5159",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#99",
+    "no": 99,
+    "subject": "general",
+    "type": "short",
+    "body": "과거의 수열로부터 다음 수를 예측할 수 없다는 난수의 성질을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "예측 불가능성",
+    "note": "IMG_5159",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#100",
+    "no": 100,
+    "subject": "general",
+    "type": "short",
+    "body": "의사난수 생성기가 의사난수열을 생성하기 위해 외부에서 입력받는 값을 영문으로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "seed",
+    "note": "IMG_5159",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#101",
+    "no": 101,
+    "subject": "general",
+    "type": "mc",
+    "body": "난수를 생성하는 하드웨어와 소프트웨어의 명칭을 바르게 연결한 것은?",
+    "stimulus": null,
+    "choices": [
+      "RNG - 하드웨어, PRNG - 소프트웨어",
+      "PRNG - 하드웨어, RNG - 소프트웨어",
+      "둘 다 RNG라 부른다",
+      "둘 다 PRNG라 부른다"
+    ],
+    "answer": "0",
+    "note": "IMG_5159",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#102",
+    "no": 102,
+    "subject": "general",
+    "type": "short",
+    "body": "해시체인에 기반하여 일회용 패스워드를 생성하는 방식을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "S/Key",
+    "note": "IMG_5161",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#103",
+    "no": 103,
+    "subject": "general",
+    "type": "mc",
+    "body": "챌린지·응답 방식 OTP의 특징으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "시각을 입력값으로 사용한다.",
+      "카운트 값을 동일하게 증가시켜 사용한다.",
+      "해시체인에 기반한다.",
+      "비동기화 방식이며 통신 횟수가 많이 요구된다."
+    ],
+    "answer": "3",
+    "note": "IMG_5161",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#104",
+    "no": 104,
+    "subject": "general",
+    "type": "short",
+    "body": "인터넷에서 주민등록번호 대신 아이디와 패스워드를 이용하여 본인 확인을 하는 수단을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "i-PIN",
+    "note": "IMG_5161, IMG_5162",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#105",
+    "no": 105,
+    "subject": "general",
+    "type": "mc",
+    "body": "눈동자 부분의 혈관을 관찰하여 인증하는 생체인식 기술은?",
+    "stimulus": null,
+    "choices": [
+      "홍채",
+      "망막",
+      "지문",
+      "얼굴"
+    ],
+    "answer": "1",
+    "note": "IMG_5161",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#106",
+    "no": 106,
+    "subject": "general",
+    "type": "mc",
+    "body": "행동적 특징을 이용한 생체인증으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "지문과 홍채",
+      "서명과 키스트로크",
+      "망막과 얼굴",
+      "홍채와 정맥"
+    ],
+    "answer": "1",
+    "note": "IMG_5161, IMG_5163",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#107",
+    "no": 107,
+    "subject": "general",
+    "type": "mc",
+    "body": "메모리 카드와 스마트카드의 차이로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "메모리 카드는 저장만 가능하고 스마트카드는 정보를 처리할 수 있다.",
+      "메모리 카드는 정보를 처리하고 스마트카드는 저장만 한다.",
+      "둘 다 정보를 처리할 수 있다.",
+      "둘 다 저장만 가능하다."
+    ],
+    "answer": "0",
+    "note": "IMG_5162",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#108",
+    "no": 108,
+    "subject": "general",
+    "type": "mc",
+    "body": "생체인증기술의 평가항목 중 동일한 생체 특징을 가진 타인이 없는지를 평가하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "보편성",
+      "유일성",
+      "지속성",
+      "수용성"
+    ],
+    "answer": "1",
+    "note": "IMG_5163",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#109",
+    "no": 109,
+    "subject": "general",
+    "type": "short",
+    "body": "생체인증기술의 평가항목 중 고의적인 부정사용으로부터 안전한지를 평가하는 항목을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "반기만성",
+    "note": "IMG_5163",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#110",
+    "no": 110,
+    "subject": "general",
+    "type": "mc",
+    "body": "생체인증기술의 평가항목 중 시간에 따른 변화가 없는 생체 특징인지를 평가하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "획득성",
+      "성능",
+      "지속성",
+      "보편성"
+    ],
+    "answer": "2",
+    "note": "IMG_5163",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#111",
+    "no": 111,
+    "subject": "general",
+    "type": "short",
+    "body": "FRR과 FAR이 일치하는 지점으로 생체인식 장치의 성능을 측정하는 표준 평가 지점을 영문 약어로 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "CER",
+    "note": "IMG_5164",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#112",
+    "no": 112,
+    "subject": "general",
+    "type": "mc",
+    "body": "생체인증에서 Type Ⅰ error에 해당하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "FAR(오인식율)",
+      "FRR(오거부율)",
+      "CER(교차 오류율)",
+      "FRR과 FAR의 합"
+    ],
+    "answer": "1",
+    "note": "IMG_5164",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#113",
+    "no": 113,
+    "subject": "general",
+    "type": "mc",
+    "body": "인증 타입별 비용과 인증 강도의 순서로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "타입 Ⅰ < 타입 Ⅱ < 타입 Ⅲ",
+      "타입 Ⅲ < 타입 Ⅱ < 타입 Ⅰ",
+      "타입 Ⅱ < 타입 Ⅰ < 타입 Ⅲ",
+      "세 타입이 동일하다"
+    ],
+    "answer": "0",
+    "note": "IMG_5164",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#114",
+    "no": 114,
+    "subject": "general",
+    "type": "mc",
+    "body": "보안성을 강화할 경우 생체인증 오류율의 변화로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "FRR은 높아지고 FAR은 낮아진다.",
+      "FRR은 낮아지고 FAR은 높아진다.",
+      "FRR과 FAR이 모두 높아진다.",
+      "FRR과 FAR이 모두 낮아진다."
+    ],
+    "answer": "0",
+    "note": "IMG_5164",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#115",
+    "no": 115,
+    "subject": "general",
+    "type": "mc",
+    "body": "SSO의 단점으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "운영비용이 증가한다.",
+      "시스템마다 인증을 반복해야 한다.",
+      "중앙 집중 관리가 불가능하다.",
+      "SSO 서버가 단일실패지점(SPoF)이 된다."
+    ],
+    "answer": "3",
+    "note": "IMG_5165",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#116",
+    "no": 116,
+    "subject": "general",
+    "type": "mc",
+    "body": "커버로스가 시간동기화 프로토콜을 필요로 하는 이유는?",
+    "stimulus": null,
+    "choices": [
+      "공개키를 사용하기 때문",
+      "티켓을 사용하지 않기 때문",
+      "해시체인을 사용하기 때문",
+      "타임스탬프를 사용하기 때문"
+    ],
+    "answer": "3",
+    "note": "IMG_5166",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#117",
+    "no": 117,
+    "subject": "general",
+    "type": "mc",
+    "body": "커버로스에서 AS가 생성한 티켓-승인 티켓과 세션키를 암호화할 때 사용하는 키는?",
+    "stimulus": null,
+    "choices": [
+      "사용자의 패스워드로부터 유도한 키",
+      "서버의 공개키",
+      "TGS의 개인키",
+      "인증기관의 개인키"
+    ],
+    "answer": "0",
+    "note": "IMG_5166",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#118",
+    "no": 118,
+    "subject": "general",
+    "type": "short",
+    "body": "커버로스가 바탕을 두고 있는 암호 기법을 쓰시오. (대칭키 / 공개키)",
+    "stimulus": null,
+    "choices": null,
+    "answer": "대칭키",
+    "note": "IMG_5165",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#119",
+    "no": 119,
+    "subject": "general",
+    "type": "mc",
+    "body": "접근통제 모델과 권한부여 주체의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "MAC - Data Owner",
+      "DAC - Central Authority",
+      "RBAC - Central Authority",
+      "MAC - 역할(Role)"
+    ],
+    "answer": "2",
+    "note": "IMG_5167",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#120",
+    "no": 120,
+    "subject": "general",
+    "type": "mc",
+    "body": "MAC, DAC, RBAC 비교표에서 RBAC의 적용 사례로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "방화벽",
+      "ACL",
+      "HIPAA",
+      "커버로스"
+    ],
+    "answer": "2",
+    "note": "IMG_5167",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#121",
+    "no": 121,
+    "subject": "general",
+    "type": "mc",
+    "body": "트로이목마에 취약하고 ID 도용 시 통제 방법이 없다는 단점을 갖는 접근통제 정책은?",
+    "stimulus": null,
+    "choices": [
+      "MAC",
+      "DAC",
+      "RBAC",
+      "ACL"
+    ],
+    "answer": "1",
+    "note": "IMG_5167",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#122",
+    "no": 122,
+    "subject": "general",
+    "type": "mc",
+    "body": "접근통제 모델과 접근 결정 기준의 연결로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "MAC - 신분",
+      "DAC - Security Label",
+      "RBAC - 역할(Role)",
+      "RBAC - Security Label"
+    ],
+    "answer": "2",
+    "note": "IMG_5167",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#123",
+    "no": 123,
+    "subject": "general",
+    "type": "mc",
+    "body": "벨라파듈라 모델의 특수 *-속성 규칙(strong star property rule)에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "주체가 객체에 대해 읽기와 쓰기를 하려면 보안 허가와 보안 분류가 동일해야 한다.",
+      "주체는 같거나 낮은 보안 수준의 객체만 읽을 수 있다.",
+      "주체는 같거나 높은 보안 수준의 객체에만 쓸 수 있다.",
+      "주체는 더 높은 무결성을 갖는 주체에게 서비스를 요청할 수 없다."
+    ],
+    "answer": "0",
+    "note": "IMG_5168",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#124",
+    "no": 124,
+    "subject": "general",
+    "type": "mc",
+    "body": "비바 무결성 모델의 호출 속성(invocation property)에 대한 설명으로 옳은 것은?",
+    "stimulus": null,
+    "choices": [
+      "객체의 무결성 수준이 주체보다 우세할 때만 주체는 객체를 읽을 수 있다.",
+      "주체의 무결성 수준이 객체보다 우세할 때만 주체는 객체를 변경할 수 있다.",
+      "주체는 보다 높은 무결성을 갖는 주체에게 서비스를 요청할 수 없다.",
+      "주체는 같거나 낮은 보안 수준의 객체만 읽을 수 있다."
+    ],
+    "answer": "2",
+    "note": "IMG_5168",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#125",
+    "no": 125,
+    "subject": "general",
+    "type": "mc",
+    "body": "무결성의 세 가지 목표 중 비바 모델이 취급하는 것은?",
+    "stimulus": null,
+    "choices": [
+      "허가되지 않은 사용자로부터의 수정 방지",
+      "허가된 사용자의 부적절한 수정 방지",
+      "내부 및 외부 일치성 유지",
+      "세 가지 모두"
+    ],
+    "answer": "0",
+    "note": "IMG_5168",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#126",
+    "no": 126,
+    "subject": "general",
+    "type": "mc",
+    "body": "MAC과 DAC 기법을 모두 이용하는 접근통제 보안 모델은?",
+    "stimulus": null,
+    "choices": [
+      "벨라파듈라 모델",
+      "비바 모델",
+      "클락-윌슨 모델",
+      "만리장성 모델"
+    ],
+    "answer": "3",
+    "note": "IMG_5168",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#127",
+    "no": 127,
+    "subject": "general",
+    "type": "short",
+    "body": "시스템 내의 활동에 상관없이 시스템이 스스로를 보호하고 불안정한 상태가 되지 않도록 하는 관념적 모델을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "상태 기계 모델",
+    "note": "IMG_5168",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#128",
+    "no": 128,
+    "subject": "general",
+    "type": "mc",
+    "body": "다중등급 보안 정책에 대한 최초의 수학적 모델로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "벨라파듈라 모델",
+      "비바 모델",
+      "클락-윌슨 모델",
+      "만리장성 모델"
+    ],
+    "answer": "0",
+    "note": "IMG_5168",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#129",
+    "no": 129,
+    "subject": "general",
+    "type": "mc",
+    "body": "DNS를 속여 이용자를 위조된 사이트로 유도하는 공격은?",
+    "stimulus": null,
+    "choices": [
+      "피싱",
+      "파밍",
+      "스미싱",
+      "스피어 피싱"
+    ],
+    "answer": "1",
+    "note": "IMG_5169",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#130",
+    "no": 130,
+    "subject": "general",
+    "type": "short",
+    "body": "SMS와 피싱의 합성어로 문자메시지를 이용하는 공격을 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "스미싱",
+    "note": "IMG_5169",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#131",
+    "no": 131,
+    "subject": "general",
+    "type": "mc",
+    "body": "APT를 이용해 특정인이나 특정 조직을 표적으로 삼고 신뢰할 만한 발신인으로 위장하는 공격은?",
+    "stimulus": null,
+    "choices": [
+      "피싱",
+      "파밍",
+      "스미싱",
+      "스피어 피싱"
+    ],
+    "answer": "3",
+    "note": "IMG_5169",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#132",
+    "no": 132,
+    "subject": "general",
+    "type": "short",
+    "body": "비밀정보를 다른 사람이 알지 못하게 전달하는 통신 경로를 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "은닉채널",
+    "note": "IMG_5169",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#133",
+    "no": 133,
+    "subject": "general",
+    "type": "mc",
+    "body": "방사(Emanation) 공격의 대응책으로 제시된 것으로만 묶인 것은?",
+    "stimulus": null,
+    "choices": [
+      "솔트, 타임스탬프, 비표",
+      "방화벽, IDS, 백업",
+      "PAA, PCA, CA",
+      "템페스트, 컨트롤존, 백색잡음"
+    ],
+    "answer": "3",
+    "note": "IMG_5169",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#134",
+    "no": 134,
+    "subject": "general",
+    "type": "mc",
+    "body": "사회공학 공격의 사례로 볼 수 없는 것은?",
+    "stimulus": null,
+    "choices": [
+      "Shoulder surfing",
+      "Dumpster Diving",
+      "Piggybacking",
+      "레인보우 테이블"
+    ],
+    "answer": "3",
+    "note": "IMG_5169",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#135",
+    "no": 135,
+    "subject": "general",
+    "type": "short",
+    "body": "네트워크상에서 남의 정보를 염탐하여 불법으로 가로채는 행위로 스니핑과 유사어로 사용되는 용어를 쓰시오.",
+    "stimulus": null,
+    "choices": null,
+    "answer": "스누핑",
+    "note": "IMG_5130",
+    "source": "2026-notes-general"
+  },
+  {
+    "key": "2026-notes-general#136",
+    "no": 136,
+    "subject": "general",
+    "type": "mc",
+    "body": "접근통제 3단계에서 인가(Authorization) 단계에 대응하는 수단으로 제시된 것은?",
+    "stimulus": null,
+    "choices": [
+      "아이디",
+      "패스워드",
+      "스마트카드",
+      "접근제어목록"
+    ],
+    "answer": "3",
+    "note": "IMG_5160",
+    "source": "2026-notes-general"
+  }
+]

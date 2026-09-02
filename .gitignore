@@ -28,3 +28,6 @@ dist-ssr
 
 # python
 __pycache__/
+
+# 원본 노트 사진 (480MB). 필사본은 scripts/notes/
+image/

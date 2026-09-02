@@ -16,6 +16,7 @@ npm run build   # tsc + vite build
 | 풀이 기록 | Supabase `attempts` (`schema.sql`) |
 | 문제당 표시 | Supabase `flags` — 북마크(`mark`), 관심 없음(`hide`) |
 | 기출 파서 | `scripts/parse_exam.py` (PDF → JSON), `scripts/stimulus/*.json` (이미지 지문 필사) |
+| 노트 필사 | `scripts/notes/<subject>.md` — `image/` 사진의 텍스트 필사. `2026-notes-*` 문항의 근거 |
 | 화면 | `src/App.tsx`(홈) `Practice` `Setup` `Exam` `Result` `Short` `History` |
 
 집계(정답률·오답노트)는 `attempts` 전량을 클라이언트에서 계산한다. 뷰도 RPC도 없다.
