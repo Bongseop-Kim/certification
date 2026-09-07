@@ -68,18 +68,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#5",
-    "no": 5,
-    "subject": "app",
-    "type": "short",
-    "body": "서버에 프락시 기능을 요청할 때 사용하는 HTTP 메소드는? (메소드명만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "CONNECT",
-    "note": "IMG_5177",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#6",
     "no": 6,
     "subject": "app",
@@ -131,18 +119,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#9",
-    "no": 9,
-    "subject": "app",
-    "type": "short",
-    "body": "HTTP 서버가 기본적으로 사용하는 포트 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "80",
-    "note": "IMG_5177",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#10",
     "no": 10,
     "subject": "app",
@@ -173,18 +149,6 @@
       "405 — Method not allowed"
     ],
     "answer": "2",
-    "note": "IMG_5178",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#12",
-    "no": 12,
-    "subject": "app",
-    "type": "short",
-    "body": "요청 메시지에 적합한 인증이 부족할 때 반환되는 HTTP 상태 코드는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "401",
     "note": "IMG_5178",
     "source": "2026-notes-app"
   },
@@ -220,30 +184,6 @@
     ],
     "answer": "3",
     "note": "IMG_5178",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#15",
-    "no": 15,
-    "subject": "app",
-    "type": "short",
-    "body": "서버가 Upgrade 헤더에 정의된 프로토콜로 변환하기 위해 클라이언트의 요청을 수락했음을 나타내는 HTTP 상태 코드는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "101",
-    "note": "IMG_5178",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#16",
-    "no": 16,
-    "subject": "app",
-    "type": "short",
-    "body": "쿠키는 사용자가 웹 사이트에 방문할 때 생기는 몇 KB 이하의 파일인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "4",
-    "note": "IMG_5179",
     "source": "2026-notes-app"
   },
   {
@@ -298,30 +238,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#20",
-    "no": 20,
-    "subject": "app",
-    "type": "short",
-    "body": "FTP 능동 모드에서 서버가 데이터 전송에 사용하는 포트 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "20",
-    "note": "IMG_5259",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#21",
-    "no": 21,
-    "subject": "app",
-    "type": "short",
-    "body": "FTP 수동 모드에서 클라이언트가 데이터 연결을 위해 서버에 보내는 명령은? (명령어만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "PASV",
-    "note": "IMG_5259",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#22",
     "no": 22,
     "subject": "app",
@@ -339,18 +255,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#23",
-    "no": 23,
-    "subject": "app",
-    "type": "short",
-    "body": "익명 FTP에 접속할 때 사용자 이름으로 사용하는 단어는? (영문으로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "anonymous",
-    "note": "IMG_5260",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#24",
     "no": 24,
     "subject": "app",
@@ -364,18 +268,6 @@
       "도메인 이름"
     ],
     "answer": "0",
-    "note": "IMG_5260",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#25",
-    "no": 25,
-    "subject": "app",
-    "type": "short",
-    "body": "TFTP의 secure mode에서 지정한 디렉터리를 최상위 디렉터리로 만들어 상위 디렉터리 접근을 막는 데 이용하는 기능은? (명령어만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "chroot",
     "note": "IMG_5260",
     "source": "2026-notes-app"
   },
@@ -397,18 +289,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#27",
-    "no": 27,
-    "subject": "app",
-    "type": "short",
-    "body": "메일 클라이언트가 확인을 요청하는 메일을 사용자 메일함에서 사용자에게 전달해주는 프로그램을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "MRA",
-    "note": "IMG_5261",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#28",
     "no": 28,
     "subject": "app",
@@ -426,18 +306,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#29",
-    "no": 29,
-    "subject": "app",
-    "type": "short",
-    "body": "SMTP를 규정한 RFC 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "821",
-    "note": "IMG_5261",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#30",
     "no": 30,
     "subject": "app",
@@ -451,18 +319,6 @@
       "메일 서버와 수신자 사이에서만 사용된다."
     ],
     "answer": "0",
-    "note": "IMG_5262",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#31",
-    "no": 31,
-    "subject": "app",
-    "type": "short",
-    "body": "SMTP 확장 기능을 지원하는 송신자가 세션을 초기화하면서 수신자에게 지원 확장의 목록을 요청할 때 사용하는 명령은? (명령어만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "EHLO",
     "note": "IMG_5262",
     "source": "2026-notes-app"
   },
@@ -497,18 +353,6 @@
       "HELP"
     ],
     "answer": "1",
-    "note": "IMG_5262",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#34",
-    "no": 34,
-    "subject": "app",
-    "type": "short",
-    "body": "SMTP에서 실제 메시지를 송신하기 위해 사용하는 명령은? (명령어만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "DATA",
     "note": "IMG_5262",
     "source": "2026-notes-app"
   },
@@ -561,30 +405,6 @@
     ],
     "answer": "1",
     "note": "IMG_5263",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#38",
-    "no": 38,
-    "subject": "app",
-    "type": "short",
-    "body": "PGP가 메시지 압축에 사용하는 알고리즘은? (영문으로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "ZIP",
-    "note": "IMG_5263",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#39",
-    "no": 39,
-    "subject": "app",
-    "type": "short",
-    "body": "PGP와 S/MIME이 메시지를 ASCII 문자로 변환할 때 공통으로 사용하는 변환 방식은?",
-    "stimulus": null,
-    "choices": null,
-    "answer": "Radix-64",
-    "note": "IMG_5263, IMG_5264",
     "source": "2026-notes-app"
   },
   {
@@ -741,30 +561,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#49",
-    "no": 49,
-    "subject": "app",
-    "type": "short",
-    "body": "TLS 1.3을 규정한 RFC 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "8446",
-    "note": "IMG_5266",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#50",
-    "no": 50,
-    "subject": "app",
-    "type": "short",
-    "body": "TLS 1.3에서 연결 설정 시 왕복 시간을 줄이기 위해 추가된 모드는? (영문 약어로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "0-RTT",
-    "note": "IMG_5266",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#51",
     "no": 51,
     "subject": "app",
@@ -863,18 +659,6 @@
       "OpenSSL 하트비트 확장 모듈이 데이터 길이 검증을 하지 않아 시스템 메모리의 데이터가 유출되는 취약점이다."
     ],
     "answer": "3",
-    "note": "IMG_5268",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#57",
-    "no": 57,
-    "subject": "app",
-    "type": "short",
-    "body": "HeartBleed 취약점으로 외부에서 탈취할 수 있는 시스템 메모리 데이터의 크기는 몇 KB인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "64",
     "note": "IMG_5268",
     "source": "2026-notes-app"
   },
@@ -1134,18 +918,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#73",
-    "no": 73,
-    "subject": "app",
-    "type": "short",
-    "body": "DNS 변환 과정에서 캐싱 다음 순위로 참조되는, 도메인명과 IP 주소 매핑정보를 담고 있는 파일은? (경로 전체)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "/etc/hosts",
-    "note": "IMG_5274",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#74",
     "no": 74,
     "subject": "app",
@@ -1265,18 +1037,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#81",
-    "no": 81,
-    "subject": "app",
-    "type": "short",
-    "body": "SQL의 제어 명령 중 다른 사용자에게 권한을 부여할 때 사용하는 명령은? (명령어만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "GRANT",
-    "note": "IMG_5276",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#82",
     "no": 82,
     "subject": "app",
@@ -1324,18 +1084,6 @@
       "OS 의존도가 높으나 비정형 데이터도 암호화할 수 있다."
     ],
     "answer": "0",
-    "note": "IMG_5277",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#85",
-    "no": 85,
-    "subject": "app",
-    "type": "short",
-    "body": "DBMS에 내장된 암호화 기능을 이용해 커널 수준에서 처리하므로 응용프로그램 수정이나 DB 스키마 변경이 거의 필요 없는 DB 암호화 방식을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "TDE",
     "note": "IMG_5277",
     "source": "2026-notes-app"
   },
@@ -1476,18 +1224,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#94",
-    "no": 94,
-    "subject": "app",
-    "type": "short",
-    "body": "SET이 사용하는 가장 중요한 두 가지 기술 중 이중 서명과 함께 꼽히는 것은?",
-    "stimulus": null,
-    "choices": null,
-    "answer": "전자봉투",
-    "note": "IMG_5280",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#95",
     "no": 95,
     "subject": "app",
@@ -1573,18 +1309,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#100",
-    "no": 100,
-    "subject": "app",
-    "type": "short",
-    "body": "CERT가 미국국방고등연구계획국(DARPA)에서 처음 구성된 연도는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "1988",
-    "note": "IMG_5282",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#101",
     "no": 101,
     "subject": "app",
@@ -1666,18 +1390,6 @@
       "연계 보관성의 원칙"
     ],
     "answer": "2",
-    "note": "IMG_5283",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#106",
-    "no": 106,
-    "subject": "app",
-    "type": "short",
-    "body": "증거의 획득·이송·분석·보관·법정 제출 과정이 명확하고 추적 가능해야 한다는 디지털 포렌식 원칙을 영문으로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "Chain of Custody",
     "note": "IMG_5283",
     "source": "2026-notes-app"
   },
@@ -1852,18 +1564,6 @@
     "source": "2026-notes-app"
   },
   {
-    "key": "2026-notes-app#117",
-    "no": 117,
-    "subject": "app",
-    "type": "short",
-    "body": "웹의 기능을 확장하기 위해 사용자가 요구하면 자동으로 다운로드되어 실행되는 방식의 프로그램을 무엇이라 하는가? (한글로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "모바일 코드",
-    "note": "IMG_5285",
-    "source": "2026-notes-app"
-  },
-  {
     "key": "2026-notes-app#118",
     "no": 118,
     "subject": "app",
@@ -1877,18 +1577,6 @@
       "chroot를 이용한 디렉터리 접근 제한"
     ],
     "answer": "0",
-    "note": "IMG_5285",
-    "source": "2026-notes-app"
-  },
-  {
-    "key": "2026-notes-app#119",
-    "no": 119,
-    "subject": "app",
-    "type": "short",
-    "body": "Active-X가 사용하는, 전자서명과 신뢰된 인증기관에 의존하는 인증 코드 기술의 명칭은? (영문으로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "Authenticode",
     "note": "IMG_5285",
     "source": "2026-notes-app"
   }

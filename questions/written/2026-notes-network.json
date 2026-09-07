@@ -17,18 +17,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#2",
-    "no": 2,
-    "subject": "network",
-    "type": "short",
-    "body": "프로토콜의 3요소 중 데이터의 형식, 부호화, 신호 레벨 등 데이터가 어떤 구조와 순서로 표현되는지를 나타내는 것을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "구문",
-    "note": "IMG_5206",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#3",
     "no": 3,
     "subject": "network",
@@ -182,18 +170,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#12",
-    "no": 12,
-    "subject": "network",
-    "type": "short",
-    "body": "호스트가 IP 데이터그램을 보내려 하지만 자신의 근원지 주소를 모를 때 사용하는 디스-호스트(this-host) 주소를 쓰시오. (주소만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "0.0.0.0",
-    "note": "IMG_5211",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#13",
     "no": 13,
     "subject": "network",
@@ -224,18 +200,6 @@
       "/27"
     ],
     "answer": "1",
-    "note": "IMG_5211",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#15",
-    "no": 15,
-    "subject": "network",
-    "type": "short",
-    "body": "하나의 클래스 C 블록을 8개의 서브블록으로 나눌 때 서브넷 마스크의 프리픽스 길이는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "27",
     "note": "IMG_5211",
     "source": "2026-notes-network"
   },
@@ -338,30 +302,6 @@
       "페이로드의 체크섬 값"
     ],
     "answer": "1",
-    "note": "IMG_5213",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#22",
-    "no": 22,
-    "subject": "network",
-    "type": "short",
-    "body": "IPv6 기본 헤더의 고정 크기는 몇 바이트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "40",
-    "note": "IMG_5213",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#23",
-    "no": 23,
-    "subject": "network",
-    "type": "short",
-    "body": "IPv6 헤더에서 흐름 레이블(Flow Label) 필드의 크기는 몇 비트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "20",
     "note": "IMG_5213",
     "source": "2026-notes-network"
   },
@@ -553,18 +493,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#35",
-    "no": 35,
-    "subject": "network",
-    "type": "short",
-    "body": "ICMPv4를 정의한 RFC 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "792",
-    "note": "IMG_5217",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#36",
     "no": 36,
     "subject": "network",
@@ -578,30 +506,6 @@
       "20~60바이트"
     ],
     "answer": "3",
-    "note": "IMG_5218",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#37",
-    "no": 37,
-    "subject": "network",
-    "type": "short",
-    "body": "UDP 헤더의 크기는 몇 바이트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "8",
-    "note": "IMG_5218",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#38",
-    "no": 38,
-    "subject": "network",
-    "type": "short",
-    "body": "TCP 헤더에서 순서번호(Sequence number) 필드의 크기는 몇 비트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "32",
     "note": "IMG_5218",
     "source": "2026-notes-network"
   },
@@ -691,18 +595,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#44",
-    "no": 44,
-    "subject": "network",
-    "type": "short",
-    "body": "TCP 헤더에 정의된 제어 비트(플래그)는 모두 몇 개인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "6",
-    "note": "IMG_5219",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#45",
     "no": 45,
     "subject": "network",
@@ -733,42 +625,6 @@
       "둘 다 클라이언트만 사용한다."
     ],
     "answer": "1",
-    "note": "IMG_5220",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#47",
-    "no": 47,
-    "subject": "network",
-    "type": "short",
-    "body": "포트 번호를 표현하는 데 사용하는 비트 수는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "16",
-    "note": "IMG_5220",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#48",
-    "no": 48,
-    "subject": "network",
-    "type": "short",
-    "body": "TFTP가 사용하는 Well Known 포트 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "69",
-    "note": "IMG_5220",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#49",
-    "no": 49,
-    "subject": "network",
-    "type": "short",
-    "body": "POP3 over SSL(POP3S)이 사용하는 포트 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "995",
     "note": "IMG_5220",
     "source": "2026-notes-network"
   },
@@ -837,30 +693,6 @@
       "암호키를 폐기하기 위해서이다."
     ],
     "answer": "0",
-    "note": "IMG_5221",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#54",
-    "no": 54,
-    "subject": "network",
-    "type": "short",
-    "body": "TCP의 TIME-WAIT 상태에서 대기하는 시간은 최대 세그먼트 수명(MSL)의 몇 배인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "2",
-    "note": "IMG_5221",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#55",
-    "no": 55,
-    "subject": "network",
-    "type": "short",
-    "body": "다중 태스킹에서 태스크 관리를 위해 필요한 데이터베이스로, TCP Active Open 시 생성되는 제어 블록을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "TCB",
     "note": "IMG_5221",
     "source": "2026-notes-network"
   },
@@ -946,18 +778,6 @@
       "플러딩 알고리즘"
     ],
     "answer": "2",
-    "note": "IMG_5222",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#61",
-    "no": 61,
-    "subject": "network",
-    "type": "short",
-    "body": "AS(자율 시스템) 간의 라우팅 정보를 교환하는 프로토콜 부류를 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "EGP",
     "note": "IMG_5222",
     "source": "2026-notes-network"
   },
@@ -1166,18 +986,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#74",
-    "no": 74,
-    "subject": "network",
-    "type": "short",
-    "body": "스위치 전송 방식 중 Cut-through와 Store-and-Forward의 장점을 혼합한 방식은? (영문으로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "Fragment Free",
-    "note": "IMG_5225",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#75",
     "no": 75,
     "subject": "network",
@@ -1242,18 +1050,6 @@
       "재밍"
     ],
     "answer": "1",
-    "note": "IMG_5226",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#79",
-    "no": 79,
-    "subject": "network",
-    "type": "short",
-    "body": "1998년 블루투스를 공동 개발한 블루투스 스페셜 그룹을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "SIG",
     "note": "IMG_5226",
     "source": "2026-notes-network"
   },
@@ -1377,18 +1173,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#87",
-    "no": 87,
-    "subject": "network",
-    "type": "short",
-    "body": "무선랜에서 AP를 구분하는 ID로 패킷 헤더에 덧붙여지는 SSID는 몇 바이트의 고유 식별자인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "32",
-    "note": "IMG_5228",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#88",
     "no": 88,
     "subject": "network",
@@ -1419,18 +1203,6 @@
       "WDP"
     ],
     "answer": "2",
-    "note": "IMG_5229",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#90",
-    "no": 90,
-    "subject": "network",
-    "type": "short",
-    "body": "WAP 프로토콜 구조에서 전송 계층(Transport Layer)에 해당하는 프로토콜을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "WDP",
     "note": "IMG_5229",
     "source": "2026-notes-network"
   },
@@ -1482,18 +1254,6 @@
       "컨테이너화"
     ],
     "answer": "1",
-    "note": "IMG_5230",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#94",
-    "no": 94,
-    "subject": "network",
-    "type": "short",
-    "body": "안드로이드 애플리케이션의 필수 권한과 각종 정보를 기술한 명세 파일의 이름을 쓰시오. (파일명만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "AndroidManifest.xml",
     "note": "IMG_5230",
     "source": "2026-notes-network"
   },
@@ -1566,18 +1326,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#99",
-    "no": 99,
-    "subject": "network",
-    "type": "short",
-    "body": "SNMP를 규정한 RFC 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "1157",
-    "note": "IMG_5231",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#100",
     "no": 100,
     "subject": "network",
@@ -1608,18 +1356,6 @@
       "ARP, RARP, ICMP, IGMP"
     ],
     "answer": "0",
-    "note": "IMG_5232",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#102",
-    "no": 102,
-    "subject": "network",
-    "type": "short",
-    "body": "rlogin에서 클라이언트가 패스워드 입력 없이 로그인할 수 있도록 사전에 호스트를 등록하는 서버의 파일은? (경로 전체)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "/etc/hosts.equiv",
     "note": "IMG_5232",
     "source": "2026-notes-network"
   },
@@ -1722,30 +1458,6 @@
       "tcpdump"
     ],
     "answer": "2",
-    "note": "IMG_5234",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#109",
-    "no": 109,
-    "subject": "network",
-    "type": "short",
-    "body": "라우팅 테이블에 라우팅 경로를 추가하거나 삭제할 때 사용하는 UNIX 명령은? (명령어만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "route",
-    "note": "IMG_5234",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#110",
-    "no": 110,
-    "subject": "network",
-    "type": "short",
-    "body": "tcpdump의 윈도우용 도구 이름은? (영문으로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "windump",
     "note": "IMG_5234",
     "source": "2026-notes-network"
   },
@@ -2138,18 +1850,6 @@
     ],
     "answer": "0",
     "note": "IMG_5241",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#134",
-    "no": 134,
-    "subject": "network",
-    "type": "short",
-    "body": "매개변수 처리에 사용되는 해시테이블의 충돌을 유발하는 DoS 공격의 이름은? (영문으로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "HashDoS",
-    "note": "IMG_5246",
     "source": "2026-notes-network"
   },
   {
@@ -2612,18 +2312,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#162",
-    "no": 162,
-    "subject": "network",
-    "type": "short",
-    "body": "실제로 시스템이 공격당하는 것처럼 보이게 하여 침입자를 유인하고 추적·정보수집하는 침입탐지 기법을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "허니팟",
-    "note": "IMG_5249",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#163",
     "no": 163,
     "subject": "network",
@@ -2862,18 +2550,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#177",
-    "no": 177,
-    "subject": "network",
-    "type": "short",
-    "body": "VPN에서 터널링되는 데이터를 부르는 이름은? (한글로)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "페이로드",
-    "note": "IMG_5254",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#178",
     "no": 178,
     "subject": "network",
@@ -3027,18 +2703,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#187",
-    "no": 187,
-    "subject": "network",
-    "type": "short",
-    "body": "IPSec의 보안 서비스를 규정한 RFC 번호는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "2401",
-    "note": "IMG_5256",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#188",
     "no": 188,
     "subject": "network",
@@ -3052,18 +2716,6 @@
       "새로운 IP 헤더 | AH 헤더 | IP 헤더 | IP 페이로드"
     ],
     "answer": "3",
-    "note": "IMG_5257",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#189",
-    "no": 189,
-    "subject": "network",
-    "type": "short",
-    "body": "IPSec에서 보안 연계(SA)가 포함되어 저장되는 데이터베이스를 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "SAD",
     "note": "IMG_5257",
     "source": "2026-notes-network"
   },
@@ -3119,18 +2771,6 @@
     "source": "2026-notes-network"
   },
   {
-    "key": "2026-notes-network#193",
-    "no": 193,
-    "subject": "network",
-    "type": "short",
-    "body": "관리 대상 PC에 소프트웨어 업데이트 설치와 운영체제 패치 등을 중앙에서 강제하는 기업용 솔루션을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "PMS",
-    "note": "IMG_5258",
-    "source": "2026-notes-network"
-  },
-  {
     "key": "2026-notes-network#194",
     "no": 194,
     "subject": "network",
@@ -3178,18 +2818,6 @@
       "IPsec"
     ],
     "answer": "2",
-    "note": "IMG_5123",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#197",
-    "no": 197,
-    "subject": "network",
-    "type": "short",
-    "body": "PPP 연결 과정에서 인증 이후 IP 주소 등 네트워크 설정을 담당하는 단계의 프로토콜을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "NCP",
     "note": "IMG_5123",
     "source": "2026-notes-network"
   },
@@ -3275,18 +2903,6 @@
       "--dport"
     ],
     "answer": "2",
-    "note": "IMG_5125",
-    "source": "2026-notes-network"
-  },
-  {
-    "key": "2026-notes-network#203",
-    "no": 203,
-    "subject": "network",
-    "type": "short",
-    "body": "iptables에서 응답 없이 패킷을 차단하는 타겟을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "DROP",
     "note": "IMG_5125",
     "source": "2026-notes-network"
   },

@@ -17,30 +17,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#2",
-    "no": 2,
-    "subject": "general",
-    "type": "short",
-    "body": "콘텐츠 데이터와 암호를 결합해 배포 단위로 묶는 DRM 구성요소를 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "패키저",
-    "note": "IMG_5127",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#3",
-    "no": 3,
-    "subject": "general",
-    "type": "short",
-    "body": "공격 대상이 자주 방문하는 웹사이트를 미리 살펴본 뒤 그곳을 겨냥해 공격하는 기법을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "워터링홀",
-    "note": "IMG_5127",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#4",
     "no": 4,
     "subject": "general",
@@ -75,18 +51,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#6",
-    "no": 6,
-    "subject": "general",
-    "type": "short",
-    "body": "ARIA에서 키 길이가 256비트일 때 라운드 수는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "16",
-    "note": "IMG_5128",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#7",
     "no": 7,
     "subject": "general",
@@ -100,42 +64,6 @@
       "64, 64, 64"
     ],
     "answer": "1",
-    "note": "IMG_5136",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#8",
-    "no": 8,
-    "subject": "general",
-    "type": "short",
-    "body": "Triple DES의 키 크기로 제시된 두 값 중 큰 값은 몇 비트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "168",
-    "note": "IMG_5136",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#9",
-    "no": 9,
-    "subject": "general",
-    "type": "short",
-    "body": "DES에서 각 라운드에 전달되는 라운드 키의 길이는 몇 비트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "48",
-    "note": "IMG_5136",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#10",
-    "no": 10,
-    "subject": "general",
-    "type": "short",
-    "body": "DES 함수에 사용되는 S-박스의 개수는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "8",
     "note": "IMG_5136",
     "source": "2026-notes-general"
   },
@@ -170,30 +98,6 @@
       "혼돈, 확산, 치환, 전치"
     ],
     "answer": "1",
-    "note": "IMG_5137",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#13",
-    "no": 13,
-    "subject": "general",
-    "type": "short",
-    "body": "PGP에 채택된 유럽의 블록 암호 알고리즘을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "IDEA",
-    "note": "IMG_5137",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#14",
-    "no": 14,
-    "subject": "general",
-    "type": "short",
-    "body": "Fortezza 카드에 사용된 미국의 블록 암호 알고리즘을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "SKIPJACK",
     "note": "IMG_5137",
     "source": "2026-notes-general"
   },
@@ -245,30 +149,6 @@
       "SEED"
     ],
     "answer": "0",
-    "note": "IMG_5137",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#18",
-    "no": 18,
-    "subject": "general",
-    "type": "short",
-    "body": "DES가 NIST 표준으로 공표된 연도는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "1977",
-    "note": "IMG_5137",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#19",
-    "no": 19,
-    "subject": "general",
-    "type": "short",
-    "body": "Rijndael이 AES 알고리즘으로 선정된 연도는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "2000",
     "note": "IMG_5137",
     "source": "2026-notes-general"
   },
@@ -392,18 +272,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#27",
-    "no": 27,
-    "subject": "general",
-    "type": "short",
-    "body": "암호기에 접근할 수 있어 평문을 선택하고 그에 대응하는 암호문을 얻어 해독하는 공격을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "CPA",
-    "note": "IMG_5133",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#28",
     "no": 28,
     "subject": "general",
@@ -523,18 +391,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#35",
-    "no": 35,
-    "subject": "general",
-    "type": "short",
-    "body": "블록 암호 운영 모드 중 암호화와 복호화 모두 병렬 처리가 불가능한 모드를 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "OFB",
-    "note": "IMG_5140",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#36",
     "no": 36,
     "subject": "general",
@@ -586,18 +442,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#39",
-    "no": 39,
-    "subject": "general",
-    "type": "short",
-    "body": "Diffie-Hellman의 중간자 공격을 막기 위해 전자서명과 공개키 인증서를 이용하는 프로토콜을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "STS",
-    "note": "IMG_5141",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#40",
     "no": 40,
     "subject": "general",
@@ -611,18 +455,6 @@
       "x^y mod p"
     ],
     "answer": "2",
-    "note": "IMG_5141",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#41",
-    "no": 41,
-    "subject": "general",
-    "type": "short",
-    "body": "Diffie-Hellman 알고리즘이 발명된 연도는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "1976",
     "note": "IMG_5141",
     "source": "2026-notes-general"
   },
@@ -661,18 +493,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#44",
-    "no": 44,
-    "subject": "general",
-    "type": "short",
-    "body": "RSA에서 두 소수 p=17, q=11을 선택했을 때 φ(N)의 값은? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "160",
-    "note": "IMG_5143",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#45",
     "no": 45,
     "subject": "general",
@@ -707,18 +527,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#47",
-    "no": 47,
-    "subject": "general",
-    "type": "short",
-    "body": "타원 곡선 암호(ECC)가 RSA 암호방식에 대한 대안으로 처음 제안된 연도는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "1985",
-    "note": "IMG_5144",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#48",
     "no": 48,
     "subject": "general",
@@ -732,18 +540,6 @@
       "대칭키와 공개키 모두 128비트 이상"
     ],
     "answer": "1",
-    "note": "IMG_5144",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#49",
-    "no": 49,
-    "subject": "general",
-    "type": "short",
-    "body": "공개키 방식에서 사용자가 N명일 때 필요한 키의 개수를 N에 대한 식으로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "2N",
     "note": "IMG_5144",
     "source": "2026-notes-general"
   },
@@ -816,42 +612,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#54",
-    "no": 54,
-    "subject": "general",
-    "type": "short",
-    "body": "일방향 해시함수가 다대일 대응 함수이기 때문에 필연적으로 발생하는 현상을 두 글자로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "충돌",
-    "note": "IMG_5146",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#55",
-    "no": 55,
-    "subject": "general",
-    "type": "short",
-    "body": "SHA-512의 블록 크기는 몇 비트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "1024",
-    "note": "IMG_5147",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#56",
-    "no": 56,
-    "subject": "general",
-    "type": "short",
-    "body": "SHA-256의 단계 수는? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "64",
-    "note": "IMG_5147",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#57",
     "no": 57,
     "subject": "general",
@@ -886,18 +646,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#59",
-    "no": 59,
-    "subject": "general",
-    "type": "short",
-    "body": "MD5의 메시지 다이제스트(MD) 길이는 몇 비트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "128",
-    "note": "IMG_5147",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#60",
     "no": 60,
     "subject": "general",
@@ -928,30 +676,6 @@
       "세 가지 모두"
     ],
     "answer": "0",
-    "note": "IMG_5147",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#62",
-    "no": 62,
-    "subject": "general",
-    "type": "short",
-    "body": "SHA-384의 워드 길이는 몇 비트인가? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "64",
-    "note": "IMG_5147",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#63",
-    "no": 63,
-    "subject": "general",
-    "type": "short",
-    "body": "SHA-3 해시함수로 채택된 알고리즘의 이름을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "KECCAK",
     "note": "IMG_5147",
     "source": "2026-notes-general"
   },
@@ -1024,18 +748,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#68",
-    "no": 68,
-    "subject": "general",
-    "type": "short",
-    "body": "대칭키 암호를 N번 사용하여 N개의 평문 블록에서 하나의 MAC을 생성하는 방식을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "CBC-MAC",
-    "note": "IMG_5149",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#69",
     "no": 69,
     "subject": "general",
@@ -1083,30 +795,6 @@
       "ECDSA"
     ],
     "answer": "1",
-    "note": "IMG_5151",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#72",
-    "no": 72,
-    "subject": "general",
-    "type": "short",
-    "body": "ElGamal에 기반하면서 서명 크기를 줄인 전자서명 알고리즘을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "Schnorr",
-    "note": "IMG_5151",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#73",
-    "no": 73,
-    "subject": "general",
-    "type": "short",
-    "body": "KCDSA 전자서명이 이용하는 해시함수를 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "HAS-160",
     "note": "IMG_5151",
     "source": "2026-notes-general"
   },
@@ -1247,18 +935,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#82",
-    "no": 82,
-    "subject": "general",
-    "type": "short",
-    "body": "동일한 전자문서에 여러 사람이 서명하는 특수 전자서명 방식을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "다중서명",
-    "note": "IMG_5153",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#83",
     "no": 83,
     "subject": "general",
@@ -1272,30 +948,6 @@
       "RA"
     ],
     "answer": "0",
-    "note": "IMG_5154",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#84",
-    "no": 84,
-    "subject": "general",
-    "type": "short",
-    "body": "자신의 도메인 내의 사용자와 인증기관이 따라야 할 정책을 수립하는 PKI 기관을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "PCA",
-    "note": "IMG_5154",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#85",
-    "no": 85,
-    "subject": "general",
-    "type": "short",
-    "body": "PKI 저장소에서 디렉터리 서비스를 제공하는 데 사용하는 프로토콜을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "LDAP",
     "note": "IMG_5154",
     "source": "2026-notes-general"
   },
@@ -1334,18 +986,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#88",
-    "no": 88,
-    "subject": "general",
-    "type": "short",
-    "body": "X.509 인증서에 확장(Extensions) 필드가 추가된 버전은? (숫자만)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "3",
-    "note": "IMG_5156",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#89",
     "no": 89,
     "subject": "general",
@@ -1359,18 +999,6 @@
       "나머지 필드 전체에 해시함수를 적용해 얻은 해시코드를 CA의 개인키로 암호화한 값이 들어간다."
     ],
     "answer": "3",
-    "note": "IMG_5156",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#90",
-    "no": 90,
-    "subject": "general",
-    "type": "short",
-    "body": "X.509 유효기간 필드에서 인증서 유효기간이 종료되는 날짜를 나타내는 항목명을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "notAfter",
     "note": "IMG_5156",
     "source": "2026-notes-general"
   },
@@ -1406,42 +1034,6 @@
     ],
     "answer": "0",
     "note": "IMG_5157",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#93",
-    "no": 93,
-    "subject": "general",
-    "type": "short",
-    "body": "인증서와 인증서 취소 목록에 전자서명을 하는 주체를 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "인증기관",
-    "note": "IMG_5157",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#94",
-    "no": 94,
-    "subject": "general",
-    "type": "short",
-    "body": "통신 때마다 한 번만 사용되는 키를 무엇이라 하는가?",
-    "stimulus": null,
-    "choices": null,
-    "answer": "세션키",
-    "note": "IMG_5158",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#95",
-    "no": 95,
-    "subject": "general",
-    "type": "short",
-    "body": "사용자가 직접 이용하는 정보(콘텐츠)를 암호화 대상으로 하는 키를 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "CEK",
-    "note": "IMG_5158",
     "source": "2026-notes-general"
   },
   {
@@ -1496,30 +1088,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#99",
-    "no": 99,
-    "subject": "general",
-    "type": "short",
-    "body": "과거의 수열로부터 다음 수를 예측할 수 없다는 난수의 성질을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "예측 불가능성",
-    "note": "IMG_5159",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#100",
-    "no": 100,
-    "subject": "general",
-    "type": "short",
-    "body": "의사난수 생성기가 의사난수열을 생성하기 위해 외부에서 입력받는 값을 영문으로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "seed",
-    "note": "IMG_5159",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#101",
     "no": 101,
     "subject": "general",
@@ -1537,18 +1105,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#102",
-    "no": 102,
-    "subject": "general",
-    "type": "short",
-    "body": "해시체인에 기반하여 일회용 패스워드를 생성하는 방식을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "S/Key",
-    "note": "IMG_5161",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#103",
     "no": 103,
     "subject": "general",
@@ -1563,18 +1119,6 @@
     ],
     "answer": "3",
     "note": "IMG_5161",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#104",
-    "no": 104,
-    "subject": "general",
-    "type": "short",
-    "body": "인터넷에서 주민등록번호 대신 아이디와 패스워드를 이용하여 본인 확인을 하는 수단을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "i-PIN",
-    "note": "IMG_5161, IMG_5162",
     "source": "2026-notes-general"
   },
   {
@@ -1646,18 +1190,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#109",
-    "no": 109,
-    "subject": "general",
-    "type": "short",
-    "body": "생체인증기술의 평가항목 중 고의적인 부정사용으로부터 안전한지를 평가하는 항목을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "반기만성",
-    "note": "IMG_5163",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#110",
     "no": 110,
     "subject": "general",
@@ -1672,18 +1204,6 @@
     ],
     "answer": "2",
     "note": "IMG_5163",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#111",
-    "no": 111,
-    "subject": "general",
-    "type": "short",
-    "body": "FRR과 FAR이 일치하는 지점으로 생체인식 장치의 성능을 측정하는 표준 평가 지점을 영문 약어로 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "CER",
-    "note": "IMG_5164",
     "source": "2026-notes-general"
   },
   {
@@ -1786,18 +1306,6 @@
     ],
     "answer": "0",
     "note": "IMG_5166",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#118",
-    "no": 118,
-    "subject": "general",
-    "type": "short",
-    "body": "커버로스가 바탕을 두고 있는 암호 기법을 쓰시오. (대칭키 / 공개키)",
-    "stimulus": null,
-    "choices": null,
-    "answer": "대칭키",
-    "note": "IMG_5165",
     "source": "2026-notes-general"
   },
   {
@@ -1937,18 +1445,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#127",
-    "no": 127,
-    "subject": "general",
-    "type": "short",
-    "body": "시스템 내의 활동에 상관없이 시스템이 스스로를 보호하고 불안정한 상태가 되지 않도록 하는 관념적 모델을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "상태 기계 모델",
-    "note": "IMG_5168",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#128",
     "no": 128,
     "subject": "general",
@@ -1983,18 +1479,6 @@
     "source": "2026-notes-general"
   },
   {
-    "key": "2026-notes-general#130",
-    "no": 130,
-    "subject": "general",
-    "type": "short",
-    "body": "SMS와 피싱의 합성어로 문자메시지를 이용하는 공격을 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "스미싱",
-    "note": "IMG_5169",
-    "source": "2026-notes-general"
-  },
-  {
     "key": "2026-notes-general#131",
     "no": 131,
     "subject": "general",
@@ -2008,18 +1492,6 @@
       "스피어 피싱"
     ],
     "answer": "3",
-    "note": "IMG_5169",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#132",
-    "no": 132,
-    "subject": "general",
-    "type": "short",
-    "body": "비밀정보를 다른 사람이 알지 못하게 전달하는 통신 경로를 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "은닉채널",
     "note": "IMG_5169",
     "source": "2026-notes-general"
   },
@@ -2055,18 +1527,6 @@
     ],
     "answer": "3",
     "note": "IMG_5169",
-    "source": "2026-notes-general"
-  },
-  {
-    "key": "2026-notes-general#135",
-    "no": 135,
-    "subject": "general",
-    "type": "short",
-    "body": "네트워크상에서 남의 정보를 염탐하여 불법으로 가로채는 행위로 스니핑과 유사어로 사용되는 용어를 쓰시오.",
-    "stimulus": null,
-    "choices": null,
-    "answer": "스누핑",
-    "note": "IMG_5130",
     "source": "2026-notes-general"
   },
   {
