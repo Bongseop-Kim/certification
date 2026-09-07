@@ -26,6 +26,10 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
     } else if (q.type === 'short') {
       assert(q.choices === null, `${at}: short는 choices가 null`)
       assert(q.answer?.trim(), `${at}: short answer 없음`)
+      // 단답 규칙(plans/short-answer-rebuild.md §4·§9): 정답은 비교 문자열 그 자체, 근거 없는 카드는 없다
+      assert(!/[()]/.test(q.answer), `${at}: short answer에 괄호 — 부가설명은 body로`)
+      assert(q.answer.length <= 30, `${at}: short answer 30자 초과 — 답이 문장이면 단답이 아니다`)
+      assert(q.note?.trim(), `${at}: short는 note(근거)가 필수`)
     } else {
       assert.fail(`${at}: 모르는 type ${q.type}`)
     }

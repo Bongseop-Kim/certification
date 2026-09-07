@@ -628,7 +628,7 @@
     "no": 53,
     "subject": "app",
     "type": "short",
-    "body": "사용자 입력이 SSI 지시문으로 해석되어 서버에서 명령이 실행되는 취약점은? (영문 약어, '___ Injection'의 빈칸)",
+    "body": "웹 서버의 서버 측 include 지시문(<!--#exec -->)이 사용자 입력에서 해석되어 명령이 실행되는 취약점은? (영문 약어 3글자, '___ Injection'의 빈칸)",
     "stimulus": null,
     "choices": null,
     "answer": "SSI",

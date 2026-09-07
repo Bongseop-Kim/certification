@@ -12,7 +12,7 @@ npm run build   # tsc + vite build
 
 | 무엇 | 어디 |
 |---|---|
-| 문제 원본 | `questions/written/*.json` — 빌드에 번들된다. DB에 없다 |
+| 문제 원본 | `questions/written/*.json` — 빌드에 번들된다. DB에 없다. 단답(`short-*.json`)은 `scripts/short/cards_*.py`에서 생성 |
 | 풀이 기록 | Supabase `attempts` (`schema.sql`). `mode`는 세션 형태(practice/mock_short/short/review)고 문제 유형은 `question_key`로 안다 |
 | 문제당 표시 | Supabase `flags` — 북마크(`mark`), 관심 없음(`hide`) |
 | 기출 파서 | `scripts/parse_exam.py` (PDF → JSON), `scripts/stimulus/*.json` (이미지 지문 필사) |
