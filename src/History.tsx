@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { byKey, dayLabel, pct, renderBody, subjectTag, wrongKeys, type FlagKind, type Stat } from './lib.tsx'
+import { byKey, dayLabel, localDay, pct, renderBody, subjectTag, wrongKeys, type Attempt, type FlagKind, type Stat } from './lib.tsx'
 
 const TABS = [
+  { id: 'day', label: '날짜별' },
   { id: 'weak', label: '약한 문제' },
   { id: 'wrong', label: '틀린 문제' },
   { id: 'mark', label: '북마크' },
@@ -13,6 +14,7 @@ export type HistTab = (typeof TABS)[number]['id']
 
 type Props = {
   stats: Map<string, Stat>
+  attempts: Attempt[]
   marks: Set<string>
   hidden: Set<string>
   toggle: (key: string, kind: FlagKind) => void
@@ -24,9 +26,28 @@ type Props = {
 }
 
 // 네 탭 모두 같은 목록에 필터만 다르다. 오답노트·복습·즐겨찾기·제외를 화면 하나로 덮는다.
-export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, setTab }: Props) {
+export function History({ stats, attempts, marks, hidden, toggle, onSolve, onExit, tab, setTab }: Props) {
   const [open, setOpen] = useState<string>()
   const live = (k: string) => byKey.has(k) && !hidden.has(k)
+
+  // 날짜별 오답. 복습 여부는 따로 저장하지 않는다 — 그날보다 뒤 날짜에 다시 풀었으면 복습한 것이다.
+  // 맞혔는지는 안 본다. 같은 날 다시 푼 것도 안 친다(방금 본 답을 기억해 내는 건 복습이 아니다).
+  // ponytail: 달력 격자 대신 날짜 목록. 공부한 날만 나오면 되고 빈 날짜 칸은 정보가 없다.
+  const days = (() => {
+    const m = new Map<string, Set<string>>()
+    for (const a of attempts) {
+      if (a.correct || !live(a.question_key)) continue
+      const d = localDay(a.answered_at)
+      m.set(d, (m.get(d) ?? new Set()).add(a.question_key))
+    }
+    return [...m]
+      .sort(([a], [b]) => b.localeCompare(a))
+      .map(([d, set]) => {
+        const keys = [...set]
+        const remaining = keys.filter((k) => localDay(stats.get(k)!.last) <= d)
+        return { d, keys, reviewed: keys.length - remaining.length, remaining }
+      })
+  })()
 
   const keys =
     tab === 'hide'
@@ -54,7 +75,34 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
           ))}
         </div>
 
-        {keys.length === 0 ? (
+        {tab === 'day' ? (
+          days.length === 0 ? (
+            <div className="empty">아직 없습니다.</div>
+          ) : (
+            <div className="hlist">
+              {days.map(({ d, keys, reviewed, remaining }) => {
+                const done = !remaining.length
+                const cls = !reviewed ? 'rate bad' : done ? 'rate good' : 'rate mid'
+                return (
+                  <button
+                    className="hitem"
+                    key={d}
+                    disabled={!remaining.length}
+                    onClick={() => onSolve(remaining.slice(0, 20))}
+                  >
+                    <span className={cls}>{!reviewed ? '미복습' : done ? '복습함' : `${reviewed}/${keys.length}`}</span>
+                    <span className="hb">
+                      <span className="hq">{dayLabel(d + 'T00:00')} · 오답 {keys.length}개</span>
+                      <span className="hm">
+                        {remaining.length ? `아직 다시 안 푼 문제 ${remaining.length}개 · 눌러서 풀기` : '전부 다시 풀었습니다'}
+                      </span>
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
+          )
+        ) : keys.length === 0 ? (
           <div className="empty">아직 없습니다.</div>
         ) : (
           <div className="hlist">
@@ -107,7 +155,7 @@ export function History({ stats, marks, hidden, toggle, onSolve, onExit, tab, se
         )}
 
         {/* 관심 없음 탭에는 모아 풀기가 없다 — 안 볼 문제를 모아 푸는 건 모순이다 */}
-        {tab !== 'hide' && (
+        {tab !== 'hide' && tab !== 'day' && (
           <button className="btn" disabled={!keys.length} onClick={() => onSolve(keys.slice(0, 20))}>
             이 목록 {Math.min(keys.length, 20)}개 모아 풀기
           </button>

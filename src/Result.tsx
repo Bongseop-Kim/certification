@@ -128,7 +128,7 @@ export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, to
   )
 }
 
-/** 채점 후에만 열리는 패널이라 정답도 원본 정오표도 그대로 보여준다 */
+/** 채점 후에만 열리는 패널이라 정답을 그대로 보여준다 */
 function Detail({
   no,
   attempt,
@@ -171,12 +171,6 @@ function Detail({
               {!attempt.correct && String(i) === attempt.chosen && <span className="mk">내 답</span>}
             </div>
           ))}
-        </div>
-      )}
-      {q.note && (
-        <div className="callout">
-          <span className="cot">원본 정오표</span>
-          <p>{q.note}</p>
         </div>
       )}
       {flags && (

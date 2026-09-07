@@ -6,7 +6,6 @@ import {
   MC,
   subjectTag,
   byKey,
-  pct,
   renderBody,
   visible,
   dueFirst,
@@ -142,16 +141,6 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
             </svg>
           </div>
         )}
-        {(!graded || q.variantOf) && (
-          <div className="qchips">
-            {!graded && (
-              <span className="qchip">
-                {s ? `${s.tries}회 풀어 ${s.correct}회 정답 · ${pct(s.correct, s.tries)}%` : '처음 푸는 문제'}
-              </span>
-            )}
-            {q.variantOf && <span className="qchip variant">변형 문제</span>}
-          </div>
-        )}
         <p className="qbody">{renderBody(q.body)}</p>
         {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
 
@@ -196,13 +185,6 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
             {s.notes.map((n, i) => (
               <p key={i}>“{n}”</p>
             ))}
-          </div>
-        )}
-
-        {graded && q.note && (
-          <div className="callout">
-            <span className="cot">원본 정오표</span>
-            <p>{q.note}</p>
           </div>
         )}
 

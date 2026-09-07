@@ -211,13 +211,6 @@ code, .k {
 /* 과목별 진도: '푼 n · 안 푼 m'이 42px에 안 들어가서 숫자 칸만 넓힌다 */
 .bar.wide { grid-template-columns: 74px 1fr auto; }
 
-.qchips { display: flex; flex-wrap: wrap; gap: 6px; align-self: flex-start; }
-.qchip {
-  display: inline-flex; align-items: center;
-  font-family: var(--mono); font-size: 11px; color: var(--ink-muted);
-  background: var(--surface-2); border: 1px solid var(--line-soft); border-radius: 20px; padding: 3px 9px;
-}
-.qchip.variant { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .qbody { font-size: 15.5px; line-height: 1.6; font-weight: 500; margin: 0; }
 .stimulus {
   border: 1px solid var(--line-soft); background: var(--surface-2); border-radius: 8px;
@@ -404,3 +397,9 @@ code, .k {
 }
 .empty { color: var(--ink-muted); font-size: 13.5px; text-align: center; padding: 32px 0; }
 
+.hitem:disabled { cursor: default; }
+.hitem:disabled .hq { color: var(--ink-muted); }
+
+.goal { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-muted); }
+.goal b { color: var(--ink); font-size: 13px; }
+.goal .progress-track { height: 5px; }

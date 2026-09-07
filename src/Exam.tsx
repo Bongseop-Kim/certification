@@ -81,15 +81,8 @@ export function Exam({ saved, record, marks, toggleMark, onSubmit, onExit }: Pro
           </div>
         </div>
 
-        {q.variantOf && (
-          <div className="qchips">
-            <span className="qchip variant">변형 문제</span>
-          </div>
-        )}
         <p className="qbody">{renderBody(q.body)}</p>
         {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
-        {/* ponytail: 정오표(note)는 문제 푸는 중엔 안 보여준다 — "2번을 누르면 정답"이 답을 불어버린다.
-            모의고사는 채점 화면이 따로라, 여기선 아예 렌더하지 않는다. 연습형은 채점 후에 보여준다. */}
 
         {q.type === 'short' ? (
           <label className="short-answer">

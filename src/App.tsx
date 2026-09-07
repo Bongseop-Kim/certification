@@ -12,6 +12,7 @@ import {
   byKey,
   dayLabel,
   dueKeys,
+  localDay,
   QUESTIONS,
   SUBJECTS,
   pct,
@@ -28,6 +29,8 @@ import {
   type Saved,
 } from './lib.tsx'
 
+const EXAM = '2026-09-22'
+
 type View =
   | { s: 'home' }
   | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[]; fromHistory?: boolean }
@@ -42,7 +45,7 @@ export default function App() {
   const { marks, hidden, toggle, error: flagError } = useFlags()
   const toggleMark = (key: string) => void toggle(key, 'mark')
   const [view, show] = useState<View>({ s: 'home' })
-  const [histTab, setHistTab] = useState<HistTab>('weak')
+  const [histTab, setHistTab] = useState<HistTab>('day')
 
   // 화면 전환을 히스토리에 남긴다. 안 그러면 모바일에서 뒤로 스와이프할 때
   // 앱 자체를 나가버려서 풀던 문제가 날아간다. View는 전부 직렬화 가능하다.
@@ -141,6 +144,7 @@ export default function App() {
         return (
           <History
             stats={stats}
+            attempts={attempts}
             tab={histTab}
             setTab={setHistTab}
             marks={marks}
@@ -196,6 +200,23 @@ function Home({
   const dueMc = due.filter((k) => byKey.get(k)!.type === 'mc')
   const dueShort = due.filter((k) => byKey.get(k)!.type === 'short')
 
+  // 하루 목표 = 안 푼 문제(객관식+단답) ÷ 시험 전날까지 남은 일수. 오늘 처음 푼 문제 수로 진도를 잰다.
+  // ponytail: 시험 날짜는 상수. 다음 시험엔 여기만 바꾼다.
+  const goal = (() => {
+    const today = localDay(new Date().toISOString())
+    const daysLeft = Math.ceil((new Date(EXAM).getTime() - Date.now()) / 86400000)
+    if (daysLeft <= 0) return null
+    const left = visible(QUESTIONS, hidden).filter((q) => !stats.has(q.key)).length
+    const seen = new Set<string>()
+    let todayNew = 0
+    for (const a of attempts) {
+      if (seen.has(a.question_key) || !byKey.has(a.question_key)) continue
+      seen.add(a.question_key)
+      if (localDay(a.answered_at) === today) todayNew++
+    }
+    return { daysLeft, left, todayNew, target: Math.ceil((left + todayNew) / daysLeft) }
+  })()
+
   const latestMock = (() => {
     const sessions = new Map<string, Attempt[]>()
     for (const a of attempts) {
@@ -221,6 +242,20 @@ function Home({
       <Nav title="보안기사 문제집" meta={`문제 ${visible(QUESTIONS, hidden).length}개`} />
       <main className="screen">
         {error && <div className="verdict toast">기록 서버 오류 — {error}</div>}
+
+        {!loading && goal && (
+          <div className="goal">
+            <span>
+              오늘 <b>{goal.todayNew}</b> / {goal.target}문제
+            </span>
+            <span className="progress-track">
+              <span style={{ transform: `scaleX(${Math.min(1, goal.todayNew / goal.target)})` }} />
+            </span>
+            <span>
+              D-{goal.daysLeft} · 남은 {goal.left}
+            </span>
+          </div>
+        )}
 
         <div className="progress-card">
           <div className="progress-head">

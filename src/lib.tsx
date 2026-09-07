@@ -311,6 +311,9 @@ export function duration(ms: number) {
   return min >= 60 ? `${Math.floor(min / 60)}시간 ${min % 60}분` : `${min}분`
 }
 
+/** 로컬 기준 YYYY-MM-DD. ISO를 자르면 UTC 날짜라 새벽 기록이 전날로 간다 */
+export const localDay = (iso: string) => new Date(iso).toLocaleDateString('sv')
+
 export function dayLabel(iso: string) {
   const d = new Date(iso)
   return `${d.getMonth() + 1}월 ${d.getDate()}일`
