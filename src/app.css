@@ -95,7 +95,7 @@ button { font-family: inherit; cursor: pointer; }
 .navbar .back { color: var(--ink-muted); font-size: 17px; line-height: 1; background: none; border: 0; padding: 13px 12px; margin: -13px -8px; }
 .navbar .t { margin: 0; font-weight: 650; font-size: 16px; }
 .navbar .meta { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--ink-muted); }
-.screen { padding: 16px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.screen { position: relative; padding: 16px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
 
 code, .k {
   font-family: var(--mono); font-size: 0.88em; background: var(--surface-2);
@@ -235,9 +235,9 @@ code, .k {
 .ch .no { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); flex: none; width: 14px; padding-top: 1px; }
 .ch.selected, .ch[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
 .ch.selected .no, .ch[aria-pressed="true"] .no { color: var(--accent); }
-.ch.correct { border-color: var(--pass); background: var(--pass-soft); }
-.ch.wrong { border-color: var(--fail); background: var(--fail-soft); }
+/* 채점 후 보기는 색을 채우지 않는다 — 오른쪽 .mk(✓ / 내 답)만으로 표시 */
 .ch .mk { margin-left: auto; font-family: var(--mono); font-size: 11px; font-weight: 700; flex: none; }
+.ch.correct .mk { font-size: 15px; line-height: 1; }
 .ch.correct .mk { color: var(--pass); }
 .ch.wrong .mk { color: var(--fail); }
 
@@ -253,6 +253,11 @@ code, .k {
 .verdict .vt { font-weight: 700; color: var(--fail); font-size: 15px; }
 .verdict.ok .vt { color: var(--pass); }
 .verdict .vd { font-family: var(--mono); font-size: 11.5px; color: var(--ink-muted); margin-left: auto; }
+
+/* 채점 마크: 좌측 상단에 작게, 손으로 그은 ○(정답) / ／(오답) */
+.mark { position: absolute; top: 4px; left: 4px; width: 30px; height: 30px; color: var(--fail); pointer-events: none; }
+.mark.ok { color: var(--pass); }
+.mark svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 
 .callout {
   border: 1px solid var(--line-soft); background: var(--surface-2); border-radius: 10px; padding: 13px;

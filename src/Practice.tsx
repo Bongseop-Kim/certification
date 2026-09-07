@@ -130,12 +130,16 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
       />
       <main className="screen">
         {graded && (
-          <div role="status" className={ok ? 'verdict ok' : 'verdict'}>
-            <span className="vt">{ok ? '정답' : chosen === null ? '포기' : '오답'}</span>
-            <span className="vd">
-              정답 {CIRCLED[Number(q.answer)]}
-              {!ok && chosen !== null && ` · 내 답 ${CIRCLED[chosen]}`}
-            </span>
+          <div role="status" className={ok ? 'mark ok' : 'mark'}>
+            <span className="sr-only">{ok ? '정답' : chosen === null ? '포기' : '오답'}</span>
+            {/* 손으로 그은 ○ / ／ — 채점지 느낌. 정답 번호는 보기의 체크표시로 대신한다 */}
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              {ok ? (
+                <path d="M12.5 3.2C17.8 2.6 21.6 7 20.8 12.4 20 18.2 14.6 21.6 9.2 20.4 3.9 19.2 1.6 13.4 3.8 8.4 5.6 4.6 9.4 3 13.6 4" />
+              ) : (
+                <path d="M5 19.5C9 14.6 13.6 9.4 19.2 4.2" />
+              )}
+            </svg>
           </div>
         )}
         {(!graded || q.variantOf) && (
@@ -177,7 +181,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
                 />
                 <span className="no">{CIRCLED[i]}</span>
                 <span>{renderBody(c)}</span>
-                {graded && String(i) === q.answer && <span className="mk">정답</span>}
+                {graded && String(i) === q.answer && <span className="mk" aria-label="정답">✓</span>}
                 {graded && !ok && i === chosen && <span className="mk">내 답</span>}
               </label>
             )
