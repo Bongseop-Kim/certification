@@ -9,9 +9,9 @@
   --ink-faint: #8d959d;
   --line: #ccd2d7;
   --line-soft: #e2e6e9;
-  --accent: #f60;
-  --accent-soft: #fff2ec;
-  --accent-line: #ffd5c0;
+  --accent: #4a6b8a;
+  --accent-soft: #eef2f6;
+  --accent-line: #cfdae5;
   --pass: #117956;
   --pass-soft: #e6f4ee;
   --fail: #ca2319;
@@ -33,9 +33,9 @@
     --ink-faint: #6d777f;
     --line: #2c343b;
     --line-soft: #232a30;
-    --accent: #ff8a4c;
-    --accent-soft: #31241f;
-    --accent-line: #6b311c;
+    --accent: #8fb0cf;
+    --accent-soft: #1c252e;
+    --accent-line: #34495c;
     --pass: #42c593;
     --pass-soft: #10241d;
     --fail: #fe928d;

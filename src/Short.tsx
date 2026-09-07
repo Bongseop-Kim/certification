@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
 import {
+  CopyBtn,
   byKey,
   normalizeShortAnswer,
   renderBody,
@@ -69,6 +70,8 @@ export function Short({ keys, record, onDone, onExit }: Props) {
             onChange={(event) => setChosen(event.target.value)}
           />
         </label>
+
+        <CopyBtn q={q} />
 
         {graded && (
           <div role="status" className={graded.ok ? 'verdict ok' : 'verdict'}>
