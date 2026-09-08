@@ -449,7 +449,7 @@ code, .k {
 /* .k는 인라인 코드 스타일이라 못 쓴다 */
 .kvr .kk { font-weight: 600; }
 .kvr .v { min-width: 0; }
-.chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips button {
   flex: none; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line);
   background: var(--surface); color: var(--ink-muted); font-size: 12.5px; font-weight: 600;
