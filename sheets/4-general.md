@@ -57,6 +57,20 @@
 | **OFB** | Output FeedBack | 필요 | **불필요** | X | X | **해당 비트만** | 키스트림 사전 생성 가능, 오류 전파 없음 |
 | **CTR** | Counter | 필요(Nonce+카운터) | **불필요** | **O** | **O** | 해당 비트만 | 완전 병렬, 랜덤 액세스 가능 |
 
+### 수식으로 외우기
+- P 평문 · C 암호문 · E 암호화 · K 키 · S 키스트림
+
+```
+ECB: C = E(K, P)
+CBC: C = E(K, P XOR 이전 C)
+CFB: C = P XOR E(K, 이전 C)
+OFB: S = E(K, 이전 S)        C = P XOR S
+CTR: S = E(K, Counter)      C = P XOR S
+```
+- ECB·CBC는 **평문을 E에 넣는다** → 블록 단위, 패딩 필요
+- CFB·OFB·CTR은 **E의 출력을 P와 XOR** → 스트림 방식, 패딩 불필요
+- OFB·CTR의 S는 P와 무관 → 사전 생성 가능, 오류 전파 없음
+
 ### 정리 규칙
 - **패딩이 필요한 모드는 ECB·CBC 두 개뿐** (나머지는 스트림 방식)
 - **IV가 불필요한 모드는 ECB뿐**
