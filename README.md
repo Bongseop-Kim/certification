@@ -18,6 +18,7 @@ npm run build   # tsc + vite build
 | 기출 파서 | `scripts/parse_exam.py` (PDF → JSON), `scripts/stimulus/*.json` (이미지 지문 필사) |
 | 노트 필사 | `scripts/notes/<subject>.md` — `image/` 사진의 텍스트 필사. `2026-notes-*` 문항의 근거 |
 | 화면 | `src/App.tsx`(홈) `Setup`(과목·문항 수) `Practice`(객관식 연습) `Short`(단답 연습) `Exam`(모의, 두 유형 공용) `Result` `History` |
+| 핵심 암기 정리 | `sheets/*.md` — 백지 복원 시트 원본(마크다운 그대로 번들). `scripts/md.mjs`가 파싱, `src/Notes.tsx`가 표 4모드(kv·grid·stack·pick)·트리로 렌더. 설계는 `plans/summary-sheets.md` |
 
 집계(정답률·오답노트)는 `attempts` 전량을 클라이언트에서 계산한다. 뷰도 RPC도 없다.
 

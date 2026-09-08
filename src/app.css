@@ -403,3 +403,71 @@ code, .k {
 .goal { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-muted); }
 .goal b { color: var(--ink); font-size: 13px; }
 .goal .progress-track { height: 5px; }
+
+/* ---------- 핵심 암기 정리 (Notes) — plans/summary-sheets.md §4~6 ---------- */
+.toc { display: flex; flex-direction: column; gap: 8px; }
+.sheet-no { font-family: var(--mono); font-size: 11px; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 1px 6px; flex: none; }
+
+/* 한국어는 단어 중간에서 끊지 않고, 긴 영문 토큰만 강제로 꺾는다 */
+.sheet { word-break: keep-all; overflow-wrap: anywhere; }
+.sheet h2 { margin: 0; font-size: 18px; line-height: 1.35; font-weight: 700; }
+.sheet h3 { margin: 6px 0 -6px; font-size: 14.5px; font-weight: 650; }
+.sheet p { margin: 0; font-size: 14px; white-space: pre-line; } /* 소스의 의도적 줄바꿈을 살린다 */
+.sheet b { font-weight: 700; }
+.sheet pre {
+  margin: 0; padding: 12px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--line-soft);
+  font-family: var(--mono); font-size: 12px; line-height: 1.5; overflow-x: auto;
+}
+.sheet .list ul, .sheet .steps ol { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.55; display: flex; flex-direction: column; gap: 5px; }
+.sheet .list ul ul { margin-top: 4px; }
+.sheet .steps li::marker { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--accent); }
+
+/* 트리: 중첩 목록에 연결선. li 왼쪽 세로선 + ::after 가로 가지. 마지막 자식은 세로선을 가지 높이에서 끊는다 */
+.tree ul { list-style: none; margin: 0; padding: 0; font-size: 14px; line-height: 1.5; }
+.tree li { position: relative; padding: 2px 0 2px 16px; }
+.tree li::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; border-left: 1px solid var(--line); }
+.tree li:last-child::before { bottom: auto; height: 13px; }
+.tree li::after { content: ''; position: absolute; left: 0; top: 13px; width: 11px; border-top: 1px solid var(--line); }
+.tree > ul > li { padding-left: 0; }
+.tree > ul > li::before, .tree > ul > li::after { display: none; }
+.tree li > ul { margin-left: 5px; margin-top: 2px; }
+
+/* 콜아웃 톤 3가지만: 인용(기본) / 함정 / 경계 */
+.callout.trap { border-left: 3px solid var(--fail); }
+.callout.trap .cot { color: var(--fail); }
+.callout.warn { border-left: 3px solid var(--warn); }
+.callout.warn .cot { color: var(--warn); }
+.callout .list ul { font-size: 13.5px; gap: 6px; }
+.scope { font-family: var(--mono); font-size: 11px; line-height: 1.55; color: var(--ink-faint); padding-top: 8px; border-top: 1px solid var(--line-soft); }
+
+/* 표 — kv/pick 공용 몸통 */
+.pick { display: flex; flex-direction: column; gap: 8px; }
+.kv { border: 1px solid var(--line-soft); border-radius: 10px; overflow: hidden; }
+.kvh, .kvr { display: grid; grid-template-columns: 34% 1fr; gap: 10px; padding: 9px 12px; font-size: 13.5px; line-height: 1.5; }
+.kvh { background: var(--surface-2); font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); font-weight: 600; }
+.kvr + .kvr { border-top: 1px solid var(--line-soft); }
+/* .k는 인라인 코드 스타일이라 못 쓴다 */
+.kvr .kk { font-weight: 600; }
+.kvr .v { min-width: 0; }
+.chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.chips button {
+  flex: none; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink-muted); font-size: 12.5px; font-weight: 600;
+}
+.chips button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* grid: 셀이 짧은 3열 표. 혹시 넘치면 표 안에서만 스크롤한다 */
+.grid-wrap { overflow-x: auto; border: 1px solid var(--line-soft); border-radius: 10px; }
+.grid { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.45; font-variant-numeric: tabular-nums; }
+.grid th, .grid td { padding: 8px 10px; text-align: left; vertical-align: top; border-top: 1px solid var(--line-soft); }
+.grid th { border-top: 0; background: var(--surface-2); font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); font-weight: 600; }
+.grid td:first-child { font-weight: 600; }
+/* 셀이 짧은 표라 단어 중간 꺾기를 끈다. 열 폭은 표가 가장 긴 단어에 맞춘다 */
+.grid th, .grid td { overflow-wrap: normal; }
+
+/* stack: 행이 카드. 첫 셀이 제목, 나머지는 라벨: 값 */
+.stack { display: flex; flex-direction: column; gap: 8px; }
+.srow { border: 1px solid var(--line-soft); border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; line-height: 1.5; }
+.srow .st { font-weight: 650; font-size: 14px; }
+.srow .sa { display: grid; grid-template-columns: 64px 1fr; gap: 8px; }
+.srow .sl { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); padding-top: 3px; }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Exam } from './Exam.tsx'
 import { History, type HistTab } from './History.tsx'
 import { Nav } from './Nav.tsx'
+import { ALL, NotesIndex, SheetView } from './Notes.tsx'
 import { Practice } from './Practice.tsx'
 import { Result } from './Result.tsx'
 import { Setup, typeLabel, type Form } from './Setup.tsx'
@@ -39,6 +40,8 @@ type View =
   | { s: 'short'; keys: string[] }
   | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
   | { s: 'history' }
+  | { s: 'notes' }
+  | { s: 'sheet'; at: number }
 
 export default function App() {
   const { attempts, record, addNote, error, loading } = useAttempts()
@@ -154,6 +157,10 @@ export default function App() {
             onSolve={(keys) => setView({ s: 'practice', mode: 'review', keys, fromHistory: true })}
           />
         )
+      case 'notes':
+        return <NotesIndex onOpen={(at) => setView({ s: 'sheet', at })} onExit={home} />
+      case 'sheet':
+        return <SheetView at={view.at} onNav={(at) => setView({ s: 'sheet', at })} onExit={() => setView({ s: 'notes' })} />
       default:
         return (
           <Home
@@ -359,6 +366,14 @@ function Home({
             <span>{latestMockSummary.detail}</span>
           </div>
         )}
+
+        <button className="banner" onClick={() => setView({ s: 'notes' })}>
+          <div>
+            <div className="bt">핵심 암기 정리</div>
+            <div className="bd">관계 지도 · 과목별 시트 · 시험 직전 점검 — {ALL.length}장</div>
+          </div>
+          <span className="go">읽기 →</span>
+        </button>
 
         <div>
           <div className="label" style={{ marginBottom: 10 }}>

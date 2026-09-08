@@ -45,3 +45,28 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
 }
 for (const [at, original] of variants) assert(seen.has(original), `${at}: 원본 ${original} 없음`)
 console.log(`총 ${total}문항 이상 없음`)
+
+/* ---------- 정리 시트 (sheets/*.md) — plans/summary-sheets.md §7 ---------- */
+const { parseFile, plain } = await import('./md.mjs')
+const SHEETS = new URL('../sheets/', import.meta.url)
+let nSheets = 0
+for (const file of readdirSync(SHEETS).filter((f) => f.endsWith('.md')).sort()) {
+  const { title, sheets } = parseFile(readFileSync(new URL(file, SHEETS), 'utf8'))
+  assert(title, `${file}: '# ' 묶음 제목 없음`)
+  assert(sheets.length, `${file}: '## ' 시트 없음`)
+  for (const s of sheets) {
+    const at = `${file} ${s.title}`
+    for (const b of s.blocks) {
+      if (b.k === 'table') {
+        for (const r of b.rows) assert.equal(r.length, b.head.length, `${at}: 표 열 수 불일치 — ${plain(r[0])}`)
+        assert(b.head.every((c) => plain(c)), `${at}: 표 헤더에 빈 칸`)
+      }
+      if (b.k === 'code') assert(!/[├└│]/.test(b.text), `${at}: 코드 블록에 ASCII 트리가 남아 있다 — 중첩 목록으로 바꾼다`)
+      if (b.k === 'p') assert(plain(b.text) !== '함정 포인트', `${at}: 함정 포인트 뒤에 목록이 없다`)
+    }
+    if (!file.startsWith('9-')) assert(s.blocks.some((b) => b.k === 'scope'), `${at}: 📍 범위 태그 없음`)
+  }
+  nSheets += sheets.length
+  console.log(`ok ${file} — ${sheets.length}장`)
+}
+console.log(`정리 시트 ${nSheets}장 이상 없음`)
