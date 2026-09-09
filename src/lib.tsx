@@ -68,15 +68,20 @@ export function useAttempts() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // ponytail: attempts 전량 로드. 수만 행 넘어 느려지면 answered_at 기준 .range()
-    sb.from('attempts')
-      .select('*')
-      .order('answered_at')
-      .then(({ data, error }) => {
-        if (error) setError(error.message)
-        else setAttempts(data as Attempt[])
-        setLoading(false)
-      })
+    // 전량 로드. PostgREST가 요청당 1000행에서 자르므로 다 받을 때까지 이어 받는다.
+    // ponytail: 수만 행 넘어 느려지면 answered_at 기준 최근 N일만 로드.
+    ;(async () => {
+      const PAGE = 1000
+      const all: Attempt[] = []
+      for (let from = 0; ; from += PAGE) {
+        const { data, error } = await sb.from('attempts').select('*').order('answered_at').range(from, from + PAGE - 1)
+        if (error) { setError(error.message); break }
+        all.push(...(data as Attempt[]))
+        if (data.length < PAGE) break
+      }
+      setAttempts(all)
+      setLoading(false)
+    })()
   }, [])
 
   /** 낙관적으로 화면에 먼저 반영하고 insert. 반환값은 insert된 행 id들 */
