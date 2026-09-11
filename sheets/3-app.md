@@ -143,7 +143,20 @@
 | 리버스 텔넷 | 내부 → 외부 연결 차단(egress filtering) |
 
 - **웹 로그 분석**: Common/Combined Log Format — 접속 IP, 시각, 요청 라인, **상태 코드**, 전송량, Referer, User-Agent
-- 상태 코드: 200 정상 / 301·302 리다이렉트 / 401 인증 필요 / 403 접근 금지 / 404 없음 / 500 서버 오류
+
+### HTTP 상태 코드
+
+| 코드 | 의미 | 암기 포인트 |
+|---|---|---|
+| **200** | OK | 정상 |
+| **301** | Moved Permanently | 영구 이동 |
+| **302** | Found | 임시 이동 |
+| **400** | Bad Request | 잘못된 요청 |
+| **401** | Unauthorized | 인증 필요/실패 |
+| **403** | Forbidden | 권한 없음 |
+| **404** | Not Found | 자원 없음 |
+| **500** | Internal Server Error | 서버 내부 오류 |
+| **503** | Service Unavailable | 서비스 일시 불가 |
 
 ### DB 암호화 4방식
 
