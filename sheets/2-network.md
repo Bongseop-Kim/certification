@@ -27,17 +27,12 @@
 | 443 | TCP | HTTPS (HTTP over TLS) |
 | 445 | TCP | SMB / MS-DS |
 | 500 | UDP | IKE (IPSec 키 교환) |
-| 514 | UDP / TCP | syslog(UDP) / rsh(TCP) |
-| 636 | TCP | LDAPS |
-| 993 / 995 | TCP | IMAPS / POP3S |
-| 1433 / 1521 / 3306 | TCP | MSSQL / Oracle / MySQL |
-| 1812 / 1813 | UDP | RADIUS 인증 / 과금 |
 | 3389 | TCP | RDP |
 
 **Well-known / Registered / Dynamic**: 0–1023 / 1024–49151 / 49152–65535
 
 **함정 포인트**
-- **UDP 전용**: 67/68, 69, 123, 161/162, 514(syslog), 500 → TCP로 표기한 선지가 오답.
+- **UDP 전용**: 67/68, 69, 123, 161/162, 500 → TCP로 표기한 선지가 오답.
 - 53은 UDP와 TCP를 모두 쓴다 (존 전송·응답 512바이트 초과 시 TCP).
 - 139(NetBIOS)와 445(SMB)를 혼동시킨다.
 
