@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Exam } from './Exam.tsx'
 import { History, type HistTab } from './History.tsx'
 import { Nav } from './Nav.tsx'
-import { ALL, NotesIndex, SheetView } from './Notes.tsx'
+import { ALL, MustView, NotesIndex, SheetView } from './Notes.tsx'
 import { Practice } from './Practice.tsx'
 import { Result } from './Result.tsx'
 import { Setup, typeLabel, type Form } from './Setup.tsx'
@@ -42,6 +42,7 @@ type View =
   | { s: 'history' }
   | { s: 'notes' }
   | { s: 'sheet'; at: number }
+  | { s: 'must' }
 
 export default function App() {
   const { attempts, record, addNote, error, loading } = useAttempts()
@@ -159,6 +160,8 @@ export default function App() {
         )
       case 'notes':
         return <NotesIndex onOpen={(at) => setView({ s: 'sheet', at })} onExit={home} />
+      case 'must':
+        return <MustView onExit={home} />
       case 'sheet':
         return <SheetView at={view.at} onNav={(at) => setView({ s: 'sheet', at })} onExit={() => setView({ s: 'notes' })} />
       default:
@@ -371,6 +374,14 @@ function Home({
           <div>
             <div className="bt">핵심 암기 정리</div>
             <div className="bd">관계 지도 · 과목별 시트 · 시험 직전 점검 — {ALL.length}장</div>
+          </div>
+          <span className="go">읽기 →</span>
+        </button>
+
+        <button className="banner" onClick={() => setView({ s: 'must' })}>
+          <div>
+            <div className="bt">필수 암기 5표</div>
+            <div className="bd">대칭키 · 운영 모드 · 해시 · HTTP 상태 코드 · 포트</div>
           </div>
           <span className="go">읽기 →</span>
         </button>

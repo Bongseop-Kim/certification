@@ -411,6 +411,8 @@ code, .k {
 /* 한국어는 단어 중간에서 끊지 않고, 긴 영문 토큰만 강제로 꺾는다 */
 .sheet { word-break: keep-all; overflow-wrap: anywhere; }
 .sheet h2 { margin: 0; font-size: 18px; line-height: 1.35; font-weight: 700; }
+/* 필수 암기 5표: 시트 여러 장을 한 화면에 쌓는다. 장 사이는 구분선 + 여백으로 페이지 넘김 느낌을 낸다 */
+.sheet section { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; padding-top: 22px; border-top: 1px solid var(--line-soft); }
 .sheet h3 { margin: 6px 0 -6px; font-size: 14.5px; font-weight: 650; }
 .sheet p { margin: 0; font-size: 14px; white-space: pre-line; } /* 소스의 의도적 줄바꿈을 살린다 */
 .sheet b { font-weight: 700; }

@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from 'react'
 import { Nav } from './Nav.tsx'
 import { parseFile, plain, type Block, type Inline, type Item } from '../scripts/md.mjs'
+import mustRaw from './must.md?raw'
 
 // ponytail: sheets/*.md를 번들에 넣고 로드 시 파싱한다. 90KB, 수 ms. JSON 중간 산출물 없음.
 const files = import.meta.glob<string>('../sheets/*.md', { query: '?raw', eager: true, import: 'default' })
@@ -71,6 +72,29 @@ export function SheetView({ at, onNav, onExit }: { at: number; onNav: (at: numbe
           </div>
         </div>
       </SheetBody>
+    </>
+  )
+}
+
+/** 홈에서 바로 여는 필수 암기 5표 — 한 화면에 전부 펼친다 */
+const MUST = parseFile(mustRaw)
+export function MustView({ onExit }: { onExit: () => void }) {
+  return (
+    <>
+      <Nav title={MUST.title} meta={`${MUST.sheets.length}표`} onBack={onExit} />
+      <main className="screen sheet">
+        {MUST.intro.map((b, i) => (
+          <Render key={i} b={b} />
+        ))}
+        {MUST.sheets.map((s) => (
+          <section key={s.title}>
+            <h2>{s.title}</h2>
+            {s.blocks.map((b, i) => (
+              <Render key={i} b={b} />
+            ))}
+          </section>
+        ))}
+      </main>
     </>
   )
 }
