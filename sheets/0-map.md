@@ -13,9 +13,9 @@
 - **암호 기술**
   - **대칭키** — 키 1개, 빠름, 키 배송 문제 有, 부인방지 ✗
     - **블록 암호**
-      - Feistel 구조 — DES · 3DES · SEED · HIGHT · Blowfish
+      - Feistel 구조 — DES · 3DES · SEED
       - SPN 구조 — AES · ARIA
-      - ARX — LEA · HIGHT
+      - 경량(국산) — LEA · HIGHT
       - 운영 모드 — ECB · CBC (패딩 필요) / CFB · OFB · CTR (스트림형, 패딩 불필요)
     - **스트림 암호** — RC4 · A5/1 · LFSR 기반
   - **공개키** — 키 쌍, 느림, 키 배송 해결, 부인방지 ✓
