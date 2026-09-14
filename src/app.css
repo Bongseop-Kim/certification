@@ -257,7 +257,7 @@ code, .k {
   display: flex; flex-direction: column; gap: 6px;
 }
 .callout .cot { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
-.callout p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-muted); }
+.callout p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-muted); white-space: pre-wrap; }
 .field {
   border: 1px solid var(--line); border-radius: 8px; padding: 11px 12px; font-size: 13.5px;
   background: var(--surface); color: var(--ink); font-family: inherit; width: 100%;
