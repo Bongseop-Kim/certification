@@ -179,9 +179,10 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
 
         <CopyBtn q={q} />
 
-        {graded && !!s?.notes.length && (
+        {graded && !!(s?.notes.length || s?.wrong.length) && (
           <div className="callout">
-            <span className="cot">지난 메모</span>
+            <span className="cot">지난 기록</span>
+            {!!s.wrong.length && <p>전에 고른 오답 {s.wrong.map((c) => CIRCLED[Number(c)]).join(' ')}</p>}
             {s.notes.map((n, i) => (
               <p key={i}>{n}</p>
             ))}

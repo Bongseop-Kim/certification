@@ -104,13 +104,13 @@ export function useAttempts() {
 
 /* ---------- 집계 (뷰도 RPC도 만들지 않는다) ---------- */
 
-export type Stat = { tries: number; correct: number; last: string; notes: string[]; lastCorrect: boolean; streak: number }
+export type Stat = { tries: number; correct: number; last: string; notes: string[]; wrong: string[]; lastCorrect: boolean; streak: number }
 
 export function statsByKey(attempts: Attempt[]) {
   const m = new Map<string, Stat>()
   // attempts는 answered_at 오름차순으로 온다(쿼리 정렬 + 낙관적 append). streak은 그 순서에 기댄다.
   for (const a of attempts) {
-    const s = m.get(a.question_key) ?? { tries: 0, correct: 0, last: '', notes: [], lastCorrect: true, streak: 0 }
+    const s = m.get(a.question_key) ?? { tries: 0, correct: 0, last: '', notes: [], wrong: [], lastCorrect: true, streak: 0 }
     s.tries++
     if (a.correct) s.correct++
     s.streak = a.correct ? s.streak + 1 : 0
@@ -119,6 +119,7 @@ export function statsByKey(attempts: Attempt[]) {
       s.lastCorrect = a.correct
     }
     if (a.note) s.notes.push(a.note)
+    if (!a.correct && a.chosen != null) s.wrong.push(a.chosen)
     m.set(a.question_key, s)
   }
   return m
