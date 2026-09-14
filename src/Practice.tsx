@@ -183,7 +183,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
           <div className="callout">
             <span className="cot">지난 메모</span>
             {s.notes.map((n, i) => (
-              <p key={i}>“{n}”</p>
+              <p key={i}>{n}</p>
             ))}
           </div>
         )}

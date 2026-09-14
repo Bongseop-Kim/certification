@@ -142,7 +142,7 @@ export function History({ stats, attempts, marks, hidden, toggle, onSolve, onExi
                     <div className="callout" style={{ margin: '4px 0 10px' }}>
                       <span className="cot">정답 {q.type === 'mc' ? `${Number(q.answer) + 1}번` : q.answer}</span>
                       {s?.notes.length ? (
-                        s.notes.map((n, i) => <p key={i}>“{n}”</p>)
+                        s.notes.map((n, i) => <p key={i}>{n}</p>)
                       ) : (
                         <p>남긴 메모가 없습니다.</p>
                       )}
