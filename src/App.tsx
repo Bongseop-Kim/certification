@@ -373,7 +373,7 @@ function Home({
         <button className="banner" onClick={() => setView({ s: 'notes' })}>
           <div>
             <div className="bt">핵심 암기 정리</div>
-            <div className="bd">관계 지도 · 과목별 시트 · 시험 직전 점검 — {ALL.length}장</div>
+            <div className="bd">과목별 시트 · 시험 직전 점검 — {ALL.length}장</div>
           </div>
           <span className="go">읽기 →</span>
         </button>
