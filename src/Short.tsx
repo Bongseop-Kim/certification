@@ -38,6 +38,7 @@ export function Short({ keys, record, onDone, onExit }: Props) {
     if (idx + 1 >= questions.length) return onDone(session.id, Date.now() - session.startedAt)
     setIdx((i) => i + 1)
     setChosen('')
+    scrollTo(0, 0)
     setGraded(undefined)
   }
 

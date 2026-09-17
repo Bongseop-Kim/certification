@@ -77,6 +77,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
     setAttemptId(null)
     setNote('')
     setIdx((i) => i + 1)
+    scrollTo(0, 0)
   }
 
   // 되살리기는 '내 기록 · 관심 없음' 탭에서 한다. 여기선 한 방향으로만 — 숨기고 바로 넘어간다.

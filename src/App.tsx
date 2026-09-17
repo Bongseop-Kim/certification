@@ -48,7 +48,8 @@ export default function App() {
   const { attempts, record, addNote, error, loading } = useAttempts()
   const { marks, hidden, toggle, error: flagError } = useFlags()
   const toggleMark = (key: string) => void toggle(key, 'mark')
-  const [view, show] = useState<View>({ s: 'home' })
+  // 새로고침해도 보던 화면을 지킨다. history.state는 새로고침 뒤에도 남는다
+  const [view, show] = useState<View>(() => (history.state as { view?: View } | null)?.view ?? { s: 'home' })
   const [histTab, setHistTab] = useState<HistTab>('day')
 
   // 화면 전환을 히스토리에 남긴다. 안 그러면 모바일에서 뒤로 스와이프할 때
@@ -56,6 +57,7 @@ export default function App() {
   const setView = (v: View) => {
     history.pushState({ view: v }, '')
     show(v)
+    scrollTo(0, 0) // 새 화면은 위에서 시작한다. 뒤로가기(popstate)는 브라우저가 알아서 복원한다
   }
   useEffect(() => {
     const onPop = (e: PopStateEvent) => show((e.state as { view?: View } | null)?.view ?? { s: 'home' })
