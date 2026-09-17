@@ -398,7 +398,10 @@ function Home({
                 { type: 'mc', title: '객관식', meta: '4지선다', desc: '기출 4지선다. 과목을 골라 풉니다', pool: pool },
                 { type: 'short', title: '단답형', meta: '주관식', desc: '용어를 직접 입력해 핵심 개념을 회상합니다', pool: visible(SHORT, hidden) },
               ] as const
-            ).map((m) => (
+            )
+              // ponytail: 문제가 없는 유형은 카드를 아예 안 그린다. 단답을 되살리면 저절로 돌아온다
+              .filter((m) => m.pool.length)
+              .map((m) => (
               <div className="mode" key={m.type}>
                 <div className="mh">
                   <strong>{m.title}</strong>

@@ -88,7 +88,7 @@ export function History({ stats, attempts, marks, hidden, toggle, onSolve, onExi
                     className="hitem"
                     key={d}
                     disabled={!remaining.length}
-                    onClick={() => onSolve(remaining.slice(0, 20))}
+                    onClick={() => onSolve(remaining)}
                   >
                     <span className={cls}>{!reviewed ? '미복습' : done ? '복습함' : `${reviewed}/${keys.length}`}</span>
                     <span className="hb">
@@ -156,8 +156,8 @@ export function History({ stats, attempts, marks, hidden, toggle, onSolve, onExi
 
         {/* 관심 없음 탭에는 모아 풀기가 없다 — 안 볼 문제를 모아 푸는 건 모순이다 */}
         {tab !== 'hide' && tab !== 'day' && (
-          <button className="btn" disabled={!keys.length} onClick={() => onSolve(keys.slice(0, 20))}>
-            이 목록 {Math.min(keys.length, 20)}개 모아 풀기
+          <button className="btn" disabled={!keys.length} onClick={() => onSolve(keys)}>
+            이 목록 {keys.length}개 모아 풀기
           </button>
         )}
       </main>
