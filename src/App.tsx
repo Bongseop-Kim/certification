@@ -137,6 +137,7 @@ export default function App() {
             marks={marks}
             hidden={hidden}
             toggle={toggle}
+            addNote={addNote}
             onHome={home}
             onReview={(keys) =>
               // 한 세션은 한 유형이라 첫 문제로 재생기를 고른다

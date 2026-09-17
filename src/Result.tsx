@@ -4,6 +4,7 @@ import { typeLabel } from './Setup.tsx'
 import {
   CIRCLED,
   CopyBtn,
+  GradeMark,
   SUBJECTS,
   byKey,
   duration,
@@ -22,11 +23,12 @@ type Props = {
   marks: Set<string>
   hidden: Set<string>
   toggle: (key: string, kind: FlagKind) => void
+  addNote: (id: number, note: string) => Promise<void>
   onReview: (keys: string[]) => void
   onHome: () => void
 }
 
-export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, toggle, onReview, onHome }: Props) {
+export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, toggle, addNote, onReview, onHome }: Props) {
   const [open, setOpen] = useState<number | null>(null)
   const rows = attempts.filter((a) => a.session_id === sessionId)
   const correct = rows.filter((a) => a.correct).length
@@ -55,16 +57,15 @@ export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, to
         </div>
 
         {perSubject.length > 1 && (
-          <div>
-            <div className="label" style={{ marginBottom: 10 }}>
-              과목별 점수
-            </div>
+          // ponytail: 네이티브 details. 접힘이 기본이라 점수 카드 다음이 바로 '문제 다시 보기'다
+          <details className="fold">
+            <summary className="label">과목별 점수</summary>
             <div className="bars">
               {perSubject.map((s, i) => (
                 <div className="gbar" key={s.id}>
                   <span className="bn">{s.short}</span>
                   <span className="track">
-                    {/* 120ms는 점수 카드가 먼저 자리잡길 기다리는 값. 이후 50ms씩 어긋나며 찬다 */}
+                    {/* 펼친 순간부터 찬다. 120ms는 패널이 자리잡길 기다리는 값, 이후 50ms씩 어긋난다 */}
                     <span
                       className="fill"
                       style={{ transform: `scaleX(${s.rate})`, transitionDelay: `${120 + i * 50}ms` }}
@@ -76,7 +77,7 @@ export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, to
                 </div>
               ))}
             </div>
-          </div>
+          </details>
         )}
 
         <div>
@@ -107,8 +108,11 @@ export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, to
           </div>
           {open !== null && (
             <Detail
+              // 문항을 바꾸면 새로 마운트한다 — 메모 입력칸이 그 문항 것으로 갈린다
+              key={rows[open].question_key}
               no={open + 1}
               attempt={rows[open]}
+              addNote={addNote}
               flags={
                 // 간단 모의에서만 상세에 북마크/관심없음 버튼을 노출한다
                 mode === 'mock_short' ? { marks, hidden, toggle } : undefined
@@ -128,14 +132,16 @@ export function Result({ mode, sessionId, elapsedMs, attempts, marks, hidden, to
   )
 }
 
-/** 채점 후에만 열리는 패널이라 정답을 그대로 보여준다 */
+/** 채점 후에만 열리는 패널이라 정답을 그대로 보여준다. 표시 방식은 연습형과 같다 */
 function Detail({
   no,
   attempt,
+  addNote,
   flags,
 }: {
   no: number
   attempt: Attempt
+  addNote: (id: number, note: string) => Promise<void>
   flags?: { marks: Set<string>; hidden: Set<string>; toggle: (key: string, kind: FlagKind) => void }
 }) {
   const q = byKey.get(attempt.question_key)
@@ -145,18 +151,16 @@ function Detail({
 
   return (
     <div className="detail">
-      <div role="status" className={attempt.correct ? 'verdict ok' : 'verdict'}>
-        <span className="vt">
-          {no}번 · {attempt.correct ? '정답' : attempt.chosen === null ? '무응답' : '오답'}
-        </span>
-        <span className="vd">
-          정답 {label(q.answer)}
-          {!attempt.correct && attempt.chosen !== null && ` · 내 답 ${label(attempt.chosen)}`}
-        </span>
+      <GradeMark
+        ok={attempt.correct}
+        label={attempt.correct ? '정답' : attempt.chosen === null ? '무응답' : '오답'}
+      />
+      <div className="label" style={{ textAlign: 'right' }}>
+        {no}번
       </div>
       <p className="qbody">{renderBody(q.body)}</p>
       {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
-      {mc && (
+      {mc ? (
         <div className="choices">
           {(q.choices ?? []).map((c, i) => (
             <div
@@ -167,11 +171,32 @@ function Detail({
             >
               <span className="no">{CIRCLED[i]}</span>
               <span>{renderBody(c)}</span>
-              {String(i) === q.answer && <span className="mk">정답</span>}
+              {String(i) === q.answer && <span className="mk" aria-label="정답">✓</span>}
               {!attempt.correct && String(i) === attempt.chosen && <span className="mk">내 답</span>}
             </div>
           ))}
         </div>
+      ) : (
+        <div className="callout">
+          <span className="cot">채점</span>
+          <p>
+            정답 {label(q.answer)}
+            {!attempt.correct && attempt.chosen !== null && ` · 내 답 ${label(attempt.chosen)}`}
+          </p>
+        </div>
+      )}
+      {/* 메모는 틀린 문제에만. id가 없으면(기록 서버 오류) 쓸 곳이 없으니 아예 안 띄운다 */}
+      {!attempt.correct && attempt.id !== undefined && (
+        <textarea
+          className="field"
+          rows={5}
+          placeholder="왜 틀렸는지 한 줄 — 입력칸을 벗어나면 저장됩니다"
+          defaultValue={attempt.note ?? ''}
+          onBlur={(e) => {
+            const v = e.target.value.trim()
+            if (v !== (attempt.note ?? '')) void addNote(attempt.id!, v)
+          }}
+        />
       )}
       {flags && (
         <div className="row">

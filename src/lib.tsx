@@ -90,7 +90,15 @@ export function useAttempts() {
     setAttempts((prev) => [...prev, ...stamped])
     const { data, error } = await sb.from('attempts').insert(stamped).select('id')
     if (error) setError(error.message)
-    return (data ?? []).map((r) => r.id as number)
+    const ids = (data ?? []).map((r) => r.id as number)
+    // insert 순서 = select('id') 순서. 낙관적으로 넣어둔 행에 id를 되붙여야 메모를 달 수 있다
+    if (ids.length === stamped.length) {
+      setAttempts((prev) => prev.map((a) => {
+        const i = stamped.indexOf(a)
+        return i < 0 ? a : { ...a, id: ids[i] }
+      }))
+    }
+    return ids
   }, [])
 
   const addNote = useCallback(async (id: number, note: string) => {
@@ -280,6 +288,22 @@ export function renderBody(text: string): ReactNode[] {
 /** 문제 원문 그대로. 백틱은 남겨둔다 — 붙여넣는 쪽(에디터·AI)이 코드로 읽는다 */
 export function qText(q: Question) {
   return [q.body, q.stimulus, ...(q.choices ?? []).map((c, i) => `${CIRCLED[i]} ${c}`)].filter(Boolean).join('\n')
+}
+
+/** 채점지 느낌의 손그림 마크. 좌측 상단에 뜬다 — 부모가 position: relative여야 한다 */
+export function GradeMark({ ok, label }: { ok: boolean; label: string }) {
+  return (
+    <div role="status" className={ok ? 'mark ok' : 'mark'}>
+      <span className="sr-only">{label}</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        {ok ? (
+          <path d="M12.5 3.2C17.8 2.6 21.6 7 20.8 12.4 20 18.2 14.6 21.6 9.2 20.4 3.9 19.2 1.6 13.4 3.8 8.4 5.6 4.6 9.4 3 13.6 4" />
+        ) : (
+          <path d="M5 19.5C9 14.6 13.6 9.4 19.2 4.2" />
+        )}
+      </svg>
+    </div>
+  )
 }
 
 export function CopyBtn({ q }: { q: Question }) {

@@ -3,6 +3,7 @@ import { Nav } from './Nav.tsx'
 import {
   CIRCLED,
   CopyBtn,
+  GradeMark,
   MC,
   subjectTag,
   byKey,
@@ -129,19 +130,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
         onBack={onExit}
       />
       <main className="screen">
-        {graded && (
-          <div role="status" className={ok ? 'mark ok' : 'mark'}>
-            <span className="sr-only">{ok ? '정답' : chosen === null ? '포기' : '오답'}</span>
-            {/* 손으로 그은 ○ / ／ — 채점지 느낌. 정답 번호는 보기의 체크표시로 대신한다 */}
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              {ok ? (
-                <path d="M12.5 3.2C17.8 2.6 21.6 7 20.8 12.4 20 18.2 14.6 21.6 9.2 20.4 3.9 19.2 1.6 13.4 3.8 8.4 5.6 4.6 9.4 3 13.6 4" />
-              ) : (
-                <path d="M5 19.5C9 14.6 13.6 9.4 19.2 4.2" />
-              )}
-            </svg>
-          </div>
-        )}
+        {graded && <GradeMark ok={ok} label={ok ? '정답' : chosen === null ? '포기' : '오답'} />}
         <p className="qbody">{renderBody(q.body)}</p>
         {q.stimulus && <div className="stimulus">{renderBody(q.stimulus)}</div>}
 
@@ -193,7 +182,7 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
         {graded && !ok && (
           <textarea
             className="field"
-            rows={2}
+            rows={5}
             placeholder="왜 틀렸는지 한 줄"
             value={note}
             onChange={(e) => setNote(e.target.value)}
