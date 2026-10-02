@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { byKey, dayLabel, localDay, pct, renderBody, typeTag, wrongKeys, type Attempt, type FlagKind, type Stat } from './lib.tsx'
+import { AiTag, aiLabel, byKey, dayLabel, localDay, pct, renderBody, typeTag, wrongKeys, type Attempt, type FlagKind, type Stat } from './lib.tsx'
 
 const TABS = [
   { id: 'day', label: '날짜별' },
@@ -118,9 +118,10 @@ export function History({ stats, attempts, marks, hidden, toggle, onSolve, onExi
                     <button className="hitem" onClick={() => setOpen(open === k ? undefined : k)}>
                       <span className={cls}>{p === null ? '—' : `${p}%`}</span>
                       <span className="hb">
-                        <span className="hq">{renderBody(q.body)}</span>
+                        <span className="hq">{q.body.replace(/```\n?/g, '').replace(/\n/g, ' ')}</span>
                         <span className="hm">
                           {typeTag(q.type)} ·{' '}
+                          {aiLabel(q) && `${aiLabel(q)} · `}
                           {s
                             ? `${s.tries}회 시도 · 마지막 ${dayLabel(s.last)}${s.notes.length ? ` · 메모 ${s.notes.length}개` : ''}`
                             : '아직 안 푼 문제'}
@@ -137,13 +138,16 @@ export function History({ stats, attempts, marks, hidden, toggle, onSolve, onExi
                   </div>
                   {open === k && (
                     <div className="callout" style={{ margin: '4px 0 10px' }}>
-                      <span className="cot">{q.source}</span>
+                      <span className="cot">
+                        {q.source}
+                        <AiTag q={q} />
+                      </span>
                       <span className="cot">정답</span>
-                      <p className="pre">{q.answer}</p>
+                      <div className="rbw">{renderBody(q.answer)}</div>
                       {q.explanation && (
                         <>
                           <span className="cot">해설</span>
-                          <p className="pre">{q.explanation}</p>
+                          <div className="rbw">{renderBody(q.explanation)}</div>
                         </>
                       )}
                       {s?.notes.length ? (

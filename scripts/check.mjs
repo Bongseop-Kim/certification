@@ -18,6 +18,7 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
     assert(TYPES.includes(q.type), `${at}: type이 ${q.type}`)
     assert(q.body?.trim() && q.answer?.trim(), `${at}: body/answer 없음`)
     assert(q.grading === 'self', `${at}: grading은 self`)
+    assert(q.ai === undefined || ['restored', 'inferred', 'adjusted'].includes(q.ai), `${at}: ai가 ${q.ai}`)
     // 책과 대조하기 전의 자동 판정만 등록한다. broken은 export 단계에서 걸러진다.
     assert(['ok', 'minor'].includes(q.check), `${at}: check가 ${q.check} — 검수 안 된 문항은 등록하지 않는다`)
     for (const f of ['body', 'answer']) {

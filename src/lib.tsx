@@ -14,6 +14,7 @@ export type Question = {
   explanation: string | null
   pages: number[]
   check: 'ok' | 'minor' // 책과 대조하기 전의 자동 판정
+  ai?: 'restored' | 'inferred' | 'adjusted' // AI가 복구(원본 조각)·추정(문맥)·보정(사용자 확인 + AI 판단)한 문항
 }
 
 export const TYPES: { id: QType; label: string }[] = [
@@ -251,14 +252,45 @@ export function useFlags() {
 /* ---------- 표시 ---------- */
 
 /** 지문 안의 백틱을 고정폭으로. `-rwsr-xr-x`에서 l과 1을 구분하려고 있다 */
-export function renderBody(text: string): ReactNode[] {
+function renderInline(text: string, k: number): ReactNode[] {
   return text.split(/(`[^`]+`)/).map((part, i) =>
     part.startsWith('`') && part.endsWith('`') && part.length > 2 ? (
-      <code key={i}>{part.slice(1, -1)}</code>
+      <code key={`${k}-${i}`}>{part.slice(1, -1)}</code>
     ) : (
       part
     ),
   )
+}
+
+/** ``` 로 감싼 구간(터미널·설정 출력)은 고정폭 상자로, 나머지는 인라인 코드만 처리한다 */
+export function renderBody(text: string): ReactNode[] {
+  const segs = text.split(/```\n?/)
+  return segs.flatMap((seg, k) =>
+    k % 2
+      ? [
+          <pre key={`c${k}`} className="code">
+            {seg.replace(/\n$/, '')}
+          </pre>,
+        ]
+      : // 상자 앞뒤로 남는 줄바꿈은 상자 여백이 대신한다. 줄마다 종류(제목·불릿·라벨)에 따라 모양을 달리한다
+        seg
+          .replace(/\n$/, '')
+          .replace(/^\n/, '')
+          .split('\n')
+          .map((line, i) => (
+            <div key={`${k}-${i}`} className={`rb ${lineKind(line)}`}>
+              {renderInline(line, i)}
+            </div>
+          )),
+  )
+}
+
+/** ①②③ 제목 / • 불릿 / (ㄱ)·(1)·1. 라벨 */
+function lineKind(l: string) {
+  if (/^\s*[①-⑳]/.test(l)) return 'hd'
+  if (/^\s*[•·▪◦]/.test(l)) return 'bl'
+  if (/^\s*(\(\s*[ㄱ-ㅎA-Za-z0-9]\s*\)|\d{1,2}\s?[.)]\s)/.test(l)) return 'lb'
+  return ''
 }
 
 /** 문제 원문 그대로. 백틱은 남겨둔다 — 붙여넣는 쪽(에디터·AI)이 코드로 읽는다 */
@@ -299,6 +331,25 @@ export function CopyBtn({ q }: { q: Question }) {
 }
 
 export const typeTag = (id: QType) => TYPES.find((t) => t.id === id)?.label ?? id
+
+const AI_TAGS = {
+  restored: { label: 'AI 복원', hint: '원본의 깨진 텍스트 조각을 AI가 이어 붙여 복구했습니다' },
+  inferred: { label: 'AI 추정', hint: '원본에 없는 부분을 AI가 문맥으로 추정해 채웠습니다. 책과 다를 수 있습니다' },
+  adjusted: { label: 'AI 보정', hint: '직접 확인한 문항에 AI 판단이 일부 들어갔습니다' },
+} as const
+
+/** AI가 손댄 문항에만 뜨는 작은 태그 */
+export function AiTag({ q }: { q: Question }) {
+  if (!q.ai) return null
+  const t = AI_TAGS[q.ai]
+  return (
+    <span className={`ai-tag ${q.ai}`} title={t.hint}>
+      {t.label}
+    </span>
+  )
+}
+
+export const aiLabel = (q: Question) => (q.ai ? AI_TAGS[q.ai].label : null)
 
 export const pct = (correct: number, tries: number) => (tries ? Math.round((correct / tries) * 100) : 0)
 

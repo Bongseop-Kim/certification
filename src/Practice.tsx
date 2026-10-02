@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Nav } from './Nav.tsx'
 import {
+  AiTag,
   CopyBtn,
   GradeMark,
   QUESTIONS,
@@ -129,8 +130,9 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
         <div className="label">
           {q.source}
           {q.check === 'minor' && ' · 원문 확인 권장'}
+          <AiTag q={q} />
         </div>
-        <p className="qbody pre">{renderBody(q.body)}</p>
+        <div className="qbody pre">{renderBody(q.body)}</div>
 
         <CopyBtn q={q} />
 
@@ -154,12 +156,12 @@ export function Practice({ mode, keys, stats, record, addNote, marks, hidden, to
             )}
             <div className="callout">
               <span className="cot">정답</span>
-              <p className="pre">{q.answer}</p>
+              <div className="rbw">{renderBody(q.answer)}</div>
             </div>
             {q.explanation && (
               <div className="callout">
                 <span className="cot">해설</span>
-                <p className="pre">{q.explanation}</p>
+                <div className="rbw">{renderBody(q.explanation)}</div>
               </div>
             )}
           </>

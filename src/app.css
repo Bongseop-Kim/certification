@@ -190,7 +190,7 @@ code, .k {
 
 .label {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--ink-faint); font-weight: 600;
+  color: var(--ink-faint); font-weight: 600; word-break: keep-all;
 }
 
 .bars { display: flex; flex-direction: column; gap: 10px; }
@@ -212,7 +212,22 @@ code, .k {
 .bar.wide { grid-template-columns: 74px 1fr auto; }
 
 .qbody { font-size: 15.5px; line-height: 1.6; font-weight: 500; margin: 0; }
-.pre { white-space: pre-wrap; overflow-wrap: anywhere; } /* 실기 본문·정답은 줄바꿈과 코드 들여쓰기를 그대로 보여 준다 */
+.ai-tag {
+  display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; font-size: 11px;
+  line-height: 1.5; letter-spacing: 0; text-transform: none; font-weight: 600;
+  border: 1px solid var(--line-soft); color: var(--ink-muted); background: var(--surface-2);
+}
+.ai-tag.inferred { color: var(--warn); border-color: var(--warn); } /* 추정은 책과 다를 수 있어 눈에 띄게 */
+.code {
+  margin: 8px 0; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line-soft);
+  background: var(--surface-2); color: var(--ink); font-family: var(--mono); font-size: 12.5px;
+  line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; /* 긴 줄도 잘리지 않게 꺾는다 */
+}
+.rb { white-space: pre-wrap; overflow-wrap: break-word; word-break: keep-all; } /* 한글은 단어 단위로 줄을 바꾼다 */
+.rb.hd { margin-top: 10px; font-weight: 600; color: var(--ink); }
+.rb.bl, .rb.lb { padding-left: 1.2em; text-indent: -1.2em; } /* 둘째 줄부터 들여써서 항목이 구분된다 */
+.rbw { font-size: 13.5px; line-height: 1.6; color: var(--ink-muted); }
+.pre { white-space: pre-wrap; overflow-wrap: break-word; word-break: keep-all; } /* 실기 본문·정답은 줄바꿈과 코드 들여쓰기를 그대로 보여 준다 */
 .stimulus {
   border: 1px solid var(--line-soft); background: var(--surface-2); border-radius: 8px;
   padding: 12px; font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; color: var(--ink-muted);

@@ -34,6 +34,10 @@ def main(book):
         it["verdict"], it["note"] = v["verdict"], v["reason"]
         if it["id"] in over:
             it.update({k: x for k, x in over[it["id"]].items() if not k.startswith("_")})
+            ov = over[it["id"]]
+            # AI가 손댄 문항 분류: inferred(문맥 추정) / restored(원본 조각 복원) / adjusted(사용자 확인 + AI 판단 일부)
+            it["ai"] = ("inferred" if ov.get("_inferred") else "adjusted" if ov.get("_ai")
+                        else "restored" if ov.get("_note", "").startswith("자동 복원") else None)
             it["verdict"], it["note"] = over[it["id"]].get("_check", "ok"), "overrides: " + over[it["id"]].get("_note", "사용자 확인")
         if it["verdict"] == "broken":
             skipped["broken"] += 1
