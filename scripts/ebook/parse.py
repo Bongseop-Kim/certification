@@ -13,6 +13,39 @@ def norm(s):
     return re.sub(r"[\s•]", "", s)
 
 
+LABEL = re.compile(r"[ㄱ-ㅎ]|[A-Z]|\d")
+
+
+def clump_labels(v):
+    """'•\n(\n(\n(\nㄱ\nㄴ\nㄷ\n) : …' 처럼 뭉친 노드에서 라벨 순서를 꺼낸다. '(' 개수와 라벨 개수가 같을 때만."""
+    ls = [x.strip() for x in v.split("\n")]
+    opens = sum(1 for x in ls if x == "(")
+    labels = [x for x in ls if LABEL.fullmatch(x)]
+    return labels if opens >= 1 and opens == len(labels) else None
+
+
+def fix_labels(lines, clumps):
+    """')'로 시작하는 줄(앞의 '( ㄱ'이 떨어져 나간 줄)에 라벨을 순서대로 되돌린다. 개수가 안 맞으면 건드리지 않는다."""
+    found = [lb for lb in map(clump_labels, clumps) if lb]
+    if not found:
+        return lines
+    labels = list(dict.fromkeys(x for lb in found for x in lb))  # 뭉침이 라벨 한 개씩이어도 모은다
+    targets = [i for i, l in enumerate(lines) if l.startswith(")")]
+    # 이미 온전한 '( ㄱ )' 줄의 라벨은 빼고, 빠진 라벨만 순서대로 배정한다
+    have = {m for l in lines for m in re.findall(r"^[•\s]*\(\s*([ㄱ-ㅎA-Z\d])\s*\)", l)}
+    missing = [lb for lb in labels if lb not in have]
+    if len(targets) == len(missing):
+        labels = missing
+    elif len(targets) != len(labels):
+        return lines
+    out = list(lines)
+    for i, lb in zip(targets, labels):
+        out[i] = f"•( {lb} {lines[i]}"
+    # 라벨을 붙인 줄 곁에 홀로 남은 불릿은 이제 중복이다
+    drop = {j for i in targets for j in (i - 1, i + 1) if 0 <= j < len(lines) and lines[j].strip() == "•"}
+    return [l for j, l in enumerate(out) if j not in drop]
+
+
 def page_lines(path, recover=True):
     return _recover_lines(path) if recover else _legacy_lines(path)
 
@@ -23,7 +56,7 @@ def _recover_lines(path):
     좌표가 (0,0)인 여러 줄 노드는 문단 전체를 한 번 더 담은 사본이고, 때로는 유일한 사본이다.
     통째로 버리지 않고 이미 나온 줄과 겹치지 않는 줄만 살린다(잘린 앞 사본은 긴 쪽으로 교체).
     """
-    lines, issues = [], []
+    lines, issues, clumps = [], [], []
     cur, last = None, None
     pn = int(path.stem)
 
@@ -52,6 +85,10 @@ def _recover_lines(path):
     for raw in path.read_text().splitlines():
         n = json.loads(raw)
         v = n["v"]
+        if v.startswith("•\n"):
+            clumps.append(v)
+        if "\n" in v and n["w"] > 0 and (n["x"] or n["y"]) and not v.startswith("•\n"):
+            v = " ".join(x.strip() for x in v.split("\n") if x.strip())
         if "\n" in v:
             add_multi(v)
             last = None
@@ -64,19 +101,23 @@ def _recover_lines(path):
             cur = v
         last = n
     flush()
-    return [l for line in lines for l in line.split("\n")], issues
+    return fix_labels([l for line in lines for l in line.split("\n")], clumps), issues
 
 
 def _legacy_lines(path):
     """구방식(문제 파트용): 노드를 y로 묶고, 앞이 불릿이거나 이미 나온 여러 줄 노드는 손상 조각으로 제외한다."""
-    lines, issues, seen = [], [], ""
+    lines, issues, seen, clumps = [], [], "", []
     cur, last = None, None
     for raw in path.read_text().splitlines():
         n = json.loads(raw)
         v = n["v"]
+        if v.startswith("•\n"):
+            clumps.append(v)
         if "\n" in v and (v.startswith("•\n") or all(norm(l) in seen for l in v.split("\n") if len(norm(l)) >= 6)):
             issues.append(f"p{int(path.stem)} 텍스트 손상 조각 제외: {v!r}")
             continue
+        if "\n" in v and n["w"] > 0 and (n["x"] or n["y"]):
+            v = " ".join(x.strip() for x in v.split("\n") if x.strip())  # 한 줄 안에서 줄바꿈이 섞인 노드
         same = last and "\n" not in v and abs(n["y"] - last["y"]) < last["h"] / 2
         if same:
             cur += (" " if n["x"] - (last["x"] + last["w"]) > 2 else "") + v
@@ -88,7 +129,7 @@ def _legacy_lines(path):
         seen += norm(v)
     if cur is not None:
         lines.append(cur)
-    return [l for line in lines for l in line.split("\n")], issues
+    return fix_labels([l for line in lines for l in line.split("\n")], clumps), issues
 
 
 def split_answer(block):

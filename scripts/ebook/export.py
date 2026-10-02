@@ -1,4 +1,4 @@
-"""usable.json → questions/practical/igijeok-2026.json. 사용: python3 export.py <bookdir> <out.json>
+"""usable.json → questions/practical/practical-2026.json. 사용: python3 export.py <bookdir> <out.json>
 
 필기 풀(`questions/written`)과 형식이 달라(서술·복수 빈칸) 섞지 않는다. 채점은 자가 채점(grading: "self").
 본문 끝에 딸려 온 파트 제목('2 작업형')과 연속 중복 줄만 정리한다. 내용은 고치지 않는다.
@@ -27,11 +27,11 @@ def main(book, dest):
     out = []
     for it in items:
         mock = it["source"] == "mock"
-        key = f"igijeok-2026:mock:{it['no']}" if mock else f"igijeok-2026:{it['source']}:{it['no']}"
+        key = f"practical-2026:mock:{it['no']}" if mock else f"practical-2026:{it['source']}:{it['no']}"
         y, r = (None, None) if mock else it["source"].split("-")
         out.append({
             "key": key,
-            "source": "이기적 2026 정보보안기사 실기 기출 600제 · " + ("실전 모의고사 " + it["no"] if mock else f"{y}년 {r}회 {it['no']}번"),
+            "source": "2026 정보보안기사 실기 기출 600제 · " + ("실전 모의고사 " + it["no"] if mock else f"{y}년 {r}회 {it['no']}번"),
             "kind": it["kind"],
             "type": TYPE[it["kind"]],
             "grading": "self",

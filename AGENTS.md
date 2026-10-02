@@ -1,8 +1,8 @@
 # 문제 데이터 하네스
 
-`questions/practical/*.json`은 직접 고치지 않는다. 원본은 `scripts/yes24/`이다.
-`scripts/yes24/igijeok-2026-practical/`의 추출물(`raw/`, `frames/`, `questions.json`, `exams.json`, `verdicts.json`, `usable.json`)을
-`python3 scripts/yes24/export.py <bookdir> questions/practical/igijeok-2026.json`이 내보낸다. 추출물은 gitignore 대상이다.
+`questions/practical/*.json`은 직접 고치지 않는다. 원본은 `scripts/ebook/`이다.
+`scripts/ebook/practical-2026/`의 추출물(`raw/`, `frames/`, `questions.json`, `exams.json`, `verdicts.json`, `usable.json`)을
+`python3 scripts/ebook/export.py <bookdir> questions/practical/practical-2026.json`이 내보낸다. 추출물은 gitignore 대상이다.
 
 - 수량을 먼저 정하지 않는다. 각 문항을 독립적으로 검토해 문제 본문과 정답이 온전한 것만 등록한다.
 - 본문·정답에 글자 없는 불릿 줄(`•`만 있는 줄)이 있으면 원문에서 빠진 것이다. 추측해 채우지 않는다. 책에서 확인한 뒤 추출물에 반영한다.
