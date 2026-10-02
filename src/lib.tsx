@@ -3,43 +3,34 @@ import { useCallback, useEffect, useState, type ReactNode } from 'react'
 
 /* ---------- 문제 (원본은 레포의 JSON, DB에 없다) ---------- */
 
-export type Subject = 'system' | 'network' | 'app' | 'general' | 'law'
+export type QType = 'short' | 'essay' | 'task'
 
 export type Question = {
   key: string
-  no: number
-  subject: Subject
-  type: 'mc' | 'short'
+  source: string // 교재 출처 표기
+  type: QType
   body: string
-  stimulus: string | null
-  choices: string[] | null
-  answer: string // mc는 0부터 세는 보기 인덱스, short는 정답 문자열
-  note: string | null // 원본 정오표
-  source: string
-  variantOf?: string // 변형 문제일 때 원본 문제 key
+  answer: string // 모범 답안 원문. 문자열 채점은 하지 않고 자가 채점한다
+  explanation: string | null
+  pages: number[]
+  check: 'ok' | 'minor' // 책과 대조하기 전의 자동 판정
 }
 
-export const SUBJECTS: { id: Subject; label: string; short: string }[] = [
-  { id: 'system', label: '시스템 보안', short: '시스템' },
-  { id: 'network', label: '네트워크 보안', short: '네트워크' },
-  { id: 'app', label: '애플리케이션 보안', short: '애플리케이션' },
-  { id: 'general', label: '정보보안 일반', short: '보안 일반' },
-  { id: 'law', label: '정보보안 관리 및 법규', short: '관리·법규' },
+export const TYPES: { id: QType; label: string }[] = [
+  { id: 'short', label: '단답형' },
+  { id: 'essay', label: '서술형' },
+  { id: 'task', label: '작업형' },
 ]
 
-// ponytail: 회차 JSON을 빌드에 번들. 파일을 추가하면 그대로 잡힌다.
-const files = import.meta.glob<Question[]>('../questions/written/*.json', {
+// ponytail: 문제 JSON을 빌드에 번들. 파일을 추가하면 그대로 잡힌다.
+const files = import.meta.glob<Question[]>('../questions/practical/*.json', {
   eager: true,
   import: 'default',
 })
 export const QUESTIONS = Object.keys(files)
   .sort()
   .flatMap((f) => files[f])
-export const MC = QUESTIONS.filter((q) => q.type === 'mc')
-export const SHORT = QUESTIONS.filter((q) => q.type === 'short')
 export const byKey = new Map(QUESTIONS.map((q) => [q.key, q]))
-
-export const CIRCLED = ['①', '②', '③', '④', '⑤']
 
 /* ---------- 풀이 기록 (여기만 서버) ---------- */
 
@@ -133,15 +124,15 @@ export function statsByKey(attempts: Attempt[]) {
   return m
 }
 
-export function subjectRates(stats: Map<string, Stat>) {
-  const m = new Map<Subject, { tries: number; correct: number }>()
+export function typeRates(stats: Map<string, Stat>) {
+  const m = new Map<QType, { tries: number; correct: number }>()
   for (const [key, s] of stats) {
     const q = byKey.get(key)
-    if (!q) continue // JSON에서 사라진 문제의 기록은 무시
-    const acc = m.get(q.subject) ?? { tries: 0, correct: 0 }
+    if (!q) continue // JSON에서 사라진 문제(필기 기록 포함)는 무시
+    const acc = m.get(q.type) ?? { tries: 0, correct: 0 }
     acc.tries += s.tries
     acc.correct += s.correct
-    m.set(q.subject, acc)
+    m.set(q.type, acc)
   }
   return m
 }
@@ -162,10 +153,6 @@ export function shuffle<T>(xs: readonly T[]) {
   }
   return a
 }
-
-/** 단답 채점에서는 띄어쓰기·대소문자·가운뎃점 같은 표기 차이를 무시한다. */
-export const normalizeShortAnswer = (answer: string) =>
-  answer.normalize('NFKC').toLocaleLowerCase('ko').replace(/[\s·.()_\-/]/g, '')
 
 /* ---------- 간격 반복 (Leitner) ---------- */
 
@@ -261,17 +248,6 @@ export function useFlags() {
   return { marks, hidden, toggle, error }
 }
 
-/* ---------- 간단 모의 세션 ---------- */
-
-export type Saved = {
-  sessionId: string
-  keys: string[]
-  answers: Record<string, string>
-  marked: string[]
-  idx: number
-  startedAt: number
-}
-
 /* ---------- 표시 ---------- */
 
 /** 지문 안의 백틱을 고정폭으로. `-rwsr-xr-x`에서 l과 1을 구분하려고 있다 */
@@ -287,7 +263,7 @@ export function renderBody(text: string): ReactNode[] {
 
 /** 문제 원문 그대로. 백틱은 남겨둔다 — 붙여넣는 쪽(에디터·AI)이 코드로 읽는다 */
 export function qText(q: Question) {
-  return [q.body, q.stimulus, ...(q.choices ?? []).map((c, i) => `${CIRCLED[i]} ${c}`)].filter(Boolean).join('\n')
+  return q.body
 }
 
 /** 채점지 느낌의 손그림 마크. 좌측 상단에 뜬다 — 부모가 position: relative여야 한다 */
@@ -322,11 +298,7 @@ export function CopyBtn({ q }: { q: Question }) {
   )
 }
 
-/** SUBJECTS 순서가 곧 시험 과목 번호다 */
-export const subjectTag = (id: Subject) => {
-  const i = SUBJECTS.findIndex((s) => s.id === id)
-  return `${i + 1}과목 ${SUBJECTS[i].short}`
-}
+export const typeTag = (id: QType) => TYPES.find((t) => t.id === id)?.label ?? id
 
 export const pct = (correct: number, tries: number) => (tries ? Math.round((correct / tries) * 100) : 0)
 

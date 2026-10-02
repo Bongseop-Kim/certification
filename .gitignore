@@ -31,3 +31,6 @@ __pycache__/
 
 # 원본 노트 사진 (480MB). 필사본은 scripts/notes/
 image/
+
+# YES24 교재 원문 추출물(저작물) — 커밋 금지
+scripts/yes24/*/

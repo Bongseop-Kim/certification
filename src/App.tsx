@@ -1,53 +1,32 @@
 import { useEffect, useState } from 'react'
-import { Exam } from './Exam.tsx'
 import { History, type HistTab } from './History.tsx'
 import { Nav } from './Nav.tsx'
-import { ALL, MustView, NotesIndex, SheetView } from './Notes.tsx'
 import { Practice } from './Practice.tsx'
-import { Result } from './Result.tsx'
-import { Setup, typeLabel, type Form } from './Setup.tsx'
-import { Short } from './Short.tsx'
+import { Setup, type Form } from './Setup.tsx'
 import {
-  MC,
-  SHORT,
-  byKey,
-  dayLabel,
-  dueKeys,
-  localDay,
   QUESTIONS,
-  SUBJECTS,
+  TYPES,
+  byKey,
+  dueKeys,
   pct,
   shuffle,
   statsByKey,
-  subjectRates,
+  typeRates,
   useAttempts,
   useFlags,
   visible,
   wrongKeys,
-  type Attempt,
-  type Mode,
-  type Question,
-  type Saved,
 } from './lib.tsx'
-
-const EXAM = '2026-09-22'
 
 type View =
   | { s: 'home' }
   | { s: 'practice'; mode: 'practice' | 'review'; keys?: string[]; fromHistory?: boolean }
-  | { s: 'setup'; type: Question['type']; form: Form; due?: string[] }
-  | { s: 'exam'; saved: Saved }
-  | { s: 'short'; keys: string[] }
-  | { s: 'result'; mode: Mode; sessionId: string; elapsedMs: number }
+  | { s: 'setup'; form: Form; due?: string[] }
   | { s: 'history' }
-  | { s: 'notes' }
-  | { s: 'sheet'; at: number }
-  | { s: 'must' }
 
 export default function App() {
   const { attempts, record, addNote, error, loading } = useAttempts()
   const { marks, hidden, toggle, error: flagError } = useFlags()
-  const toggleMark = (key: string) => void toggle(key, 'mark')
   // 새로고침해도 보던 화면을 지킨다. history.state는 새로고침 뒤에도 남는다
   const [view, show] = useState<View>(() => (history.state as { view?: View } | null)?.view ?? { s: 'home' })
   const [histTab, setHistTab] = useState<HistTab>('day')
@@ -87,64 +66,12 @@ export default function App() {
       case 'setup':
         return (
           <Setup
-            type={view.type}
             form={view.form}
             stats={stats}
             hidden={hidden}
             due={view.due}
             onExit={home}
-            onStart={(keys) =>
-              view.form === 'mock'
-                ? setView({
-                    s: 'exam',
-                    saved: { sessionId: crypto.randomUUID(), keys, answers: {}, marked: [], idx: 0, startedAt: Date.now() },
-                  })
-                : view.type === 'short'
-                  ? setView({ s: 'short', keys })
-                  : setView({ s: 'practice', mode: view.form, keys })
-            }
-          />
-        )
-      case 'exam':
-        return (
-          <Exam
-            saved={view.saved}
-            record={record}
-            marks={marks}
-            toggleMark={toggleMark}
-            onExit={home}
-            onSubmit={(elapsedMs) =>
-              setView({ s: 'result', mode: 'mock_short', sessionId: view.saved.sessionId, elapsedMs })
-            }
-          />
-        )
-      case 'short':
-        return (
-          <Short
-            keys={view.keys}
-            record={record}
-            onExit={home}
-            onDone={(sessionId, elapsedMs) => setView({ s: 'result', mode: 'short', sessionId, elapsedMs })}
-          />
-        )
-      case 'result':
-        return (
-          <Result
-            mode={view.mode}
-            sessionId={view.sessionId}
-            elapsedMs={view.elapsedMs}
-            attempts={attempts}
-            marks={marks}
-            hidden={hidden}
-            toggle={toggle}
-            addNote={addNote}
-            onHome={home}
-            onReview={(keys) =>
-              // 한 세션은 한 유형이라 첫 문제로 재생기를 고른다
-              setView(
-                byKey.get(keys[0])?.type === 'short' ? { s: 'short', keys } : { s: 'practice', mode: 'review', keys },
-              )
-            }
+            onStart={(keys) => setView({ s: 'practice', mode: view.form, keys })}
           />
         )
       case 'history':
@@ -161,19 +88,12 @@ export default function App() {
             onSolve={(keys) => setView({ s: 'practice', mode: 'review', keys, fromHistory: true })}
           />
         )
-      case 'notes':
-        return <NotesIndex onOpen={(at) => setView({ s: 'sheet', at })} onExit={home} />
-      case 'must':
-        return <MustView onExit={home} />
-      case 'sheet':
-        return <SheetView at={view.at} onNav={(at) => setView({ s: 'sheet', at })} onExit={() => setView({ s: 'notes' })} />
       default:
         return (
           <Home
             stats={stats}
             marks={marks}
             hidden={hidden}
-            attempts={attempts}
             loading={loading}
             error={error ?? flagError}
             setView={setView}
@@ -189,7 +109,6 @@ function Home({
   stats,
   marks,
   hidden,
-  attempts,
   loading,
   error,
   setView,
@@ -197,83 +116,29 @@ function Home({
   stats: ReturnType<typeof statsByKey>
   marks: Set<string>
   hidden: Set<string>
-  attempts: Attempt[]
   loading: boolean
   error?: string
   setView: (v: View) => void
 }) {
-  const rates = subjectRates(stats)
+  const rates = typeRates(stats)
   const wrong = wrongKeys(stats, hidden)
   const marked = [...marks].filter((k) => byKey.has(k) && !hidden.has(k))
-  const pool = visible(MC, hidden)
+  const pool = visible(QUESTIONS, hidden)
   const solved = pool.filter((q) => stats.has(q.key)).length
   const unseen = pool.length - solved
-  // 간격 반복 큐. 유형별로 자르는 이유: 재생기가 둘(Practice=객관식, Short=단답)이라 세션도 나뉜다.
+  // 간격 반복 큐
   const due = dueKeys(stats, hidden)
-  const dueMc = due.filter((k) => byKey.get(k)!.type === 'mc')
-  const dueShort = due.filter((k) => byKey.get(k)!.type === 'short')
-
-  // 하루 목표 = 안 푼 문제(객관식+단답) ÷ 시험 전날까지 남은 일수. 오늘 처음 푼 문제 수로 진도를 잰다.
-  // ponytail: 시험 날짜는 상수. 다음 시험엔 여기만 바꾼다.
-  const goal = (() => {
-    const today = localDay(new Date().toISOString())
-    const daysLeft = Math.ceil((new Date(EXAM).getTime() - Date.now()) / 86400000)
-    if (daysLeft <= 0) return null
-    const left = visible(QUESTIONS, hidden).filter((q) => !stats.has(q.key)).length
-    const seen = new Set<string>()
-    let todayNew = 0
-    for (const a of attempts) {
-      if (seen.has(a.question_key) || !byKey.has(a.question_key)) continue
-      seen.add(a.question_key)
-      if (localDay(a.answered_at) === today) todayNew++
-    }
-    return { daysLeft, left, todayNew, target: Math.ceil((left + todayNew) / daysLeft) }
-  })()
-
-  const latestMock = (() => {
-    const sessions = new Map<string, Attempt[]>()
-    for (const a of attempts) {
-      if (!a.session_id || a.mode !== 'mock_short') continue
-      sessions.set(a.session_id, [...(sessions.get(a.session_id) ?? []), a])
-    }
-    return [...sessions.values()].sort((a, b) =>
-      b[b.length - 1].answered_at.localeCompare(a[a.length - 1].answered_at),
-    )[0]
-  })()
-
-  const latestMockSummary = (() => {
-    if (!latestMock) return null
-    const correct = latestMock.filter((a) => a.correct).length
-    return {
-      title: `최근 ${typeLabel(byKey.get(latestMock[0].question_key)?.type ?? 'mc')} 모의`,
-      detail: `${dayLabel(latestMock[0].answered_at)} · ${correct}/${latestMock.length} · ${pct(correct, latestMock.length)}%`,
-    }
-  })()
 
   return (
     <>
-      <Nav title="보안기사 문제집" meta={`문제 ${visible(QUESTIONS, hidden).length}개`} />
+      <Nav title="정보보안기사 실기" meta={`문제 ${pool.length}개`} />
       <main className="screen">
         {error && <div className="verdict toast">기록 서버 오류 — {error}</div>}
-
-        {!loading && goal && (
-          <div className="goal">
-            <span>
-              오늘 <b>{goal.todayNew}</b> / {goal.target}문제
-            </span>
-            <span className="progress-track">
-              <span style={{ transform: `scaleX(${Math.min(1, goal.todayNew / goal.target)})` }} />
-            </span>
-            <span>
-              D-{goal.daysLeft} · 남은 {goal.left}
-            </span>
-          </div>
-        )}
 
         <div className="progress-card">
           <div className="progress-head">
             <div>
-              <div className="label">객관식 학습 진도</div>
+              <div className="label">실기 학습 진도</div>
               {/* 로딩 중에도 자리 폭을 지켜서 숫자가 들어올 때 레이아웃이 안 튀게 한다 */}
               <strong>{loading ? `— / ${pool.length}문제` : `${solved} / ${pool.length}문제`}</strong>
             </div>
@@ -303,17 +168,17 @@ function Home({
 
         <div>
           <div className="label" style={{ marginBottom: 10 }}>
-            과목별 진도
+            유형별 진도
           </div>
           <div className="bars">
-            {SUBJECTS.map((s, i) => {
-              const qs = pool.filter((q) => q.subject === s.id)
+            {TYPES.map((t, i) => {
+              const qs = pool.filter((q) => q.type === t.id)
               const done = qs.filter((q) => stats.has(q.key)).length
               return (
                 <button
                   className="bar wide"
-                  key={s.id}
-                  title={`${s.label} 안 푼 문제 풀기`}
+                  key={t.id}
+                  title={`${t.label} 안 푼 문제 풀기`}
                   disabled={loading || done === qs.length}
                   onClick={() =>
                     setView({
@@ -323,7 +188,7 @@ function Home({
                     })
                   }
                 >
-                  <span className="bn">{s.short}</span>
+                  <span className="bn">{t.label}</span>
                   <span className="track">
                     <span
                       className="fill"
@@ -339,124 +204,59 @@ function Home({
 
         <button
           className="banner"
-          disabled={!dueMc.length || loading}
-          onClick={() => setView({ s: 'setup', type: 'mc', form: 'review', due: dueMc })}
+          disabled={!due.length || loading}
+          onClick={() => setView({ s: 'setup', form: 'review', due })}
         >
           <div>
-            <div className="bt">오늘의 복습{!loading && ` ${Math.min(20, dueMc.length)}문제`}</div>
+            <div className="bt">오늘의 복습{!loading && ` ${Math.min(20, due.length)}문제`}</div>
             <div className="bd">
               {loading
                 ? '기록을 불러오고 있습니다'
-                : dueMc.length
-                  ? '복습 기한이 지난 객관식 — 맞힐수록 주기가 길어집니다'
+                : due.length
+                  ? '복습 기한이 지난 문제 — 맞힐수록 주기가 길어집니다'
                   : '복습 기한이 된 문제가 생기면 여기에 모입니다'}
             </div>
           </div>
-          {dueMc.length > 0 && <span className="go">과목 선택 →</span>}
+          {due.length > 0 && <span className="go">유형 선택 →</span>}
         </button>
 
-        {!loading && dueShort.length > 0 && (
-          <button className="banner" onClick={() => setView({ s: 'setup', type: 'short', form: 'review', due: dueShort })}>
-            <div>
-              <div className="bt">단답 복습 {Math.min(20, dueShort.length)}문제</div>
-              <div className="bd">복습 기한이 지난 단답 문제</div>
-            </div>
-            <span className="go">과목 선택 →</span>
-          </button>
-        )}
-
-        {latestMockSummary && (
-          <div className="recent-mock">
-            <div className="label">최근 시험</div>
-            <strong>{latestMockSummary.title}</strong>
-            <span>{latestMockSummary.detail}</span>
+        <div className="mode">
+          <div className="mh">
+            <strong>실기 연습</strong>
+            <span>자가 채점 · {pool.length}개</span>
           </div>
-        )}
-
-        <button className="banner" onClick={() => setView({ s: 'notes' })}>
-          <div>
-            <div className="bt">핵심 암기 정리</div>
-            <div className="bd">과목별 시트 · 시험 직전 점검 — {ALL.length}장</div>
-          </div>
-          <span className="go">읽기 →</span>
-        </button>
-
-        <button className="banner" onClick={() => setView({ s: 'must' })}>
-          <div>
-            <div className="bt">필수 암기 5표</div>
-            <div className="bd">대칭키 · 운영 모드 · 해시 · HTTP 상태 코드 · 포트</div>
-          </div>
-          <span className="go">읽기 →</span>
-        </button>
-
-        <div>
-          <div className="label" style={{ marginBottom: 10 }}>
-            풀이 모드
-          </div>
-          <div className="modes">
-            {(
-              [
-                { type: 'mc', title: '객관식', meta: '4지선다', desc: '기출 4지선다. 과목을 골라 풉니다', pool: pool },
-                { type: 'short', title: '단답형', meta: '주관식', desc: '용어를 직접 입력해 핵심 개념을 회상합니다', pool: visible(SHORT, hidden) },
-              ] as const
-            )
-              // ponytail: 문제가 없는 유형은 카드를 아예 안 그린다. 단답을 되살리면 저절로 돌아온다
-              .filter((m) => m.pool.length)
-              .map((m) => (
-              <div className="mode" key={m.type}>
-                <div className="mh">
-                  <strong>{m.title}</strong>
-                  <span>
-                    {m.meta} · {m.pool.length}개
-                  </span>
-                </div>
-                <div className="md">{m.desc}</div>
-                <div className="row">
-                  <button
-                    className="mbtn"
-                    disabled={!m.pool.length}
-                    onClick={() => setView({ s: 'setup', type: m.type, form: 'practice' })}
-                  >
-                    <b>연습</b>
-                    <span>바로 채점 · 문항 제한 없음</span>
-                  </button>
-                  <button
-                    className="mbtn"
-                    disabled={!m.pool.length}
-                    onClick={() => setView({ s: 'setup', type: m.type, form: 'mock' })}
-                  >
-                    <b>모의</b>
-                    <span>제출 후 채점 · 10 / 20 / 30</span>
-                  </button>
-                </div>
-              </div>
-            ))}
+          <div className="md">정답과 해설을 본 뒤 맞음/틀림을 직접 고릅니다. 유형을 골라 풉니다</div>
+          <div className="row">
+            <button className="mbtn" disabled={!pool.length} onClick={() => setView({ s: 'setup', form: 'practice' })}>
+              <b>연습</b>
+              <span>문항 제한 없음</span>
+            </button>
           </div>
         </div>
 
         <div>
           <div className="label" style={{ marginBottom: 10 }}>
-            과목별 정답률
+            유형별 정답률
           </div>
           <div className="bars">
-            {SUBJECTS.map((s, i) => {
-              const r = rates.get(s.id) ?? { tries: 0, correct: 0 }
+            {TYPES.map((t, i) => {
+              const r = rates.get(t.id) ?? { tries: 0, correct: 0 }
               const p = pct(r.correct, r.tries)
               const low = r.tries > 0 && p < 40
               return (
                 <button
                   className="bar"
-                  key={s.id}
-                  title={`${s.label} 문제 풀기`}
+                  key={t.id}
+                  title={`${t.label} 문제 풀기`}
                   onClick={() =>
                     setView({
                       s: 'practice',
                       mode: 'practice',
-                      keys: pool.filter((q) => q.subject === s.id).map((q) => q.key),
+                      keys: pool.filter((q) => q.type === t.id).map((q) => q.key),
                     })
                   }
                 >
-                  <span className="bn">{s.short}</span>
+                  <span className="bn">{t.label}</span>
                   <span className="track">
                     <span
                       className={low ? 'fill low' : 'fill'}

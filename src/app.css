@@ -212,6 +212,7 @@ code, .k {
 .bar.wide { grid-template-columns: 74px 1fr auto; }
 
 .qbody { font-size: 15.5px; line-height: 1.6; font-weight: 500; margin: 0; }
+.pre { white-space: pre-wrap; overflow-wrap: anywhere; } /* 실기 본문·정답은 줄바꿈과 코드 들여쓰기를 그대로 보여 준다 */
 .stimulus {
   border: 1px solid var(--line-soft); background: var(--surface-2); border-radius: 8px;
   padding: 12px; font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; color: var(--ink-muted);

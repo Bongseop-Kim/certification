@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Nav } from './Nav.tsx'
-import { byKey, dayLabel, localDay, pct, renderBody, subjectTag, wrongKeys, type Attempt, type FlagKind, type Stat } from './lib.tsx'
+import { byKey, dayLabel, localDay, pct, renderBody, typeTag, wrongKeys, type Attempt, type FlagKind, type Stat } from './lib.tsx'
 
 const TABS = [
   { id: 'day', label: '날짜별' },
@@ -113,17 +113,14 @@ export function History({ stats, attempts, marks, hidden, toggle, onSolve, onExi
               const cls = p === null ? 'rate' : p < 40 ? 'rate bad' : p < 80 ? 'rate mid' : 'rate good'
               return (
                 <div key={k}>
-                  {/* ponytail: 단답은 연습형 상세 화면이 없어서 그 행만 기존 펼치기 유지 */}
+                  {/* 행을 누르면 정답·해설·메모가 펼쳐지고, 거기서 이 문제만 다시 풀 수 있다 */}
                   <div className="hrow">
-                    <button
-                      className="hitem"
-                      onClick={() => (q.type === 'mc' ? onSolve([k]) : setOpen(open === k ? undefined : k))}
-                    >
+                    <button className="hitem" onClick={() => setOpen(open === k ? undefined : k)}>
                       <span className={cls}>{p === null ? '—' : `${p}%`}</span>
                       <span className="hb">
                         <span className="hq">{renderBody(q.body)}</span>
                         <span className="hm">
-                          {subjectTag(q.subject)} ·{' '}
+                          {typeTag(q.type)} ·{' '}
                           {s
                             ? `${s.tries}회 시도 · 마지막 ${dayLabel(s.last)}${s.notes.length ? ` · 메모 ${s.notes.length}개` : ''}`
                             : '아직 안 푼 문제'}
@@ -140,12 +137,23 @@ export function History({ stats, attempts, marks, hidden, toggle, onSolve, onExi
                   </div>
                   {open === k && (
                     <div className="callout" style={{ margin: '4px 0 10px' }}>
-                      <span className="cot">정답 {q.type === 'mc' ? `${Number(q.answer) + 1}번` : q.answer}</span>
+                      <span className="cot">{q.source}</span>
+                      <span className="cot">정답</span>
+                      <p className="pre">{q.answer}</p>
+                      {q.explanation && (
+                        <>
+                          <span className="cot">해설</span>
+                          <p className="pre">{q.explanation}</p>
+                        </>
+                      )}
                       {s?.notes.length ? (
                         s.notes.map((n, i) => <p key={i}>{n}</p>)
                       ) : (
                         <p>남긴 메모가 없습니다.</p>
                       )}
+                      <button className="btn weak" onClick={() => onSolve([k])}>
+                        이 문제 풀기
+                      </button>
                     </div>
                   )}
                 </div>
