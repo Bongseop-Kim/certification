@@ -33,3 +33,7 @@ __pycache__/
 image/
 
 scripts/ebook/*/
+
+# 영상 렌더 결과물과 HyperFrames 작업 파일
+video/out/
+video/.hyperframes/

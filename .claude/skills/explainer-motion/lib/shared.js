@@ -71,4 +71,109 @@ window.UI = {
       xs.forEach((x, i) => { const p = cut && cut.i === i ? eo(seg(t, cut.at, cut.at + 0.35)) : 0; x.setAttribute('opacity', p > 0 ? 1 : 0); x.setAttribute('stroke-dashoffset', 130 * (1 - p)); });
     } };
   },
+
+  // Subtitles: one sentence at a time, timed by syllable share of the scene. Spoken spellings shown as written.
+  SUBS: [['셸 점 피에이치피 점 제이피지', 'shell.php.jpg'], ['셸 점 피에이치피', 'shell.php'], ['점 제이피지', '.jpg'], ['퍼센트 피디에프', '%PDF'],
+    ['물음표 씨엠디 이퀄', '?cmd='], ['씨엠디 이퀄', 'cmd='], ['씨엠디', 'cmd'], ['셸 익젝', 'shell_exec'], ['피에이치피 어드민 플래그 엔진 오프', 'php_admin_flag engine off'],
+    ['피에이치피', 'PHP'], ['피디에프', 'PDF'], ['지아이에프', 'GIF'], ['마임 타입', 'MIME 타입'],
+    ['에스에이치 하이픈 소문자 아이', 'sh -i'], ['슬래시 데브 슬래시 티씨피', '/dev/tcp'], ['하이픈 소문자 이', '-e'], ['넷캣', 'netcat'],
+    ['파인드 슬래시 하이픈 펌 하이픈 사천 하이픈 타입 에프', 'find / -perm -4000 -type f'], ['하이픈 이천', '-2000'], ['시에이치모드 하이픈 에스', 'chmod -s'],
+    ['셋 유아이디', 'SetUID'], ['셋 지아이디', 'SetGID'], ['스티키 비트', 'Sticky Bit'], ['슬래시 티엠피', '/tmp'], ['패스워드 명령', 'passwd 명령'],
+    ['더블유티엠피', 'wtmp'], ['비티엠피', 'btmp'], ['라스트비', 'lastb'], ['라스트컴', 'lastcomm'], ['라스트 명령', 'last 명령'], ['피에이씨씨티', 'pacct'], ['액셉톤', 'accton'],
+    ['점 배시 히스토리', '.bash_history'], ['유저애드', 'useradd'], ['유네임', 'uname'], ['액세스 로그', 'access_log'], ['에러 로그', 'error_log'], ['이그레스 필터링', 'Egress 필터링']],
+  subs(kit, text, dur) {
+    let w = text;
+    for (const [a, b] of UI.SUBS) w = w.split(a).join(b);
+    const ss = w.split(/(?<=[.?!])\s+/).filter(Boolean);
+    const len = x => [...x].filter(c => c >= '가' && c <= '힣').length + 4;
+    const tot = ss.reduce((a, x) => a + len(x), 0), span = Math.max(1, dur - 0.5);
+    let acc = 0.25;
+    const cues = ss.map(x => { const c = { a: acc, x }; acc += span * len(x) / tot; return c; });
+    const el = kit.h('<div class="cap"></div>');
+    let shown = -1;
+    return { el, render(t) {
+      let i = 0; while (i + 1 < cues.length && t >= cues[i + 1].a) i++;
+      if (i !== shown) { el.textContent = cues[i].x; shown = i; }
+      el.style.opacity = kit.eo(kit.seg(t, cues[0].a - 0.25, cues[0].a + 0.05));
+    } };
+  },
+  // Terminal or log panel: lines appear one by one; hl lines get a yellow bar.
+  code(kit, o) {
+    const el = kit.h('<div class="mono" style="position:absolute;left:' + o.x + 'px;top:' + o.y + 'px;width:' + o.w + 'px;background:#14201a;border:6px solid #232a26;border-radius:22px;padding:26px 34px;box-sizing:border-box;color:#d8f5e3;font-size:' + (o.size || 34) + 'px;line-height:1.55">' +
+      (o.title ? '<div style="color:color-mix(in srgb, var(--second) 60%, #14201a);font-size:26px;margin-bottom:10px">' + kit.esc(o.title) + '</div>' : '') +
+      o.lines.map(l => '<div class="cd-l" style="white-space:pre;border-radius:8px;padding:0 10px;margin:0 -10px">' + kit.esc(l) + '</div>').join('') + '</div>');
+    const ls = [...el.querySelectorAll('.cd-l')], hl = o.hl || [];
+    return { el, render(t, t0 = 0) {
+      const { seg, eo, lerp } = kit, st = o.step || 0.5;
+      el.style.opacity = eo(seg(t, t0, t0 + 0.3));
+      el.style.transform = 'translateY(' + lerp(24, 0, eo(seg(t, t0, t0 + 0.4))) + 'px)';
+      ls.forEach((l, i) => { const a = t0 + 0.3 + i * st; l.style.opacity = eo(seg(t, a, a + 0.25)); });
+      const h = eo(seg(t, t0 + 0.6 + ls.length * st, t0 + 1 + ls.length * st));
+      hl.forEach(i => { ls[i].style.background = 'color-mix(in srgb, var(--accent) ' + Math.round(h * 32) + '%, transparent)'; ls[i].style.color = h > 0.5 ? '#FFE680' : ''; });
+    } };
+  },
+  // Definition card: tag chip, big term, one-line meaning.
+  term(kit, o) {
+    const el = kit.h('<div style="position:absolute;left:' + o.x + 'px;top:' + o.y + 'px;width:' + o.w + 'px;background:var(--main);border:6px solid #232a26;border-radius:28px;padding:40px 48px;box-sizing:border-box;color:#232a26">' +
+      '<div class="tm-tag" style="display:inline-block;background:var(--accent);border:5px solid #232a26;border-radius:40px;padding:4px 22px;font-size:32px;font-weight:800">' + kit.esc(o.tag || '정의') + '</div>' +
+      '<div class="tm-term" style="font-size:' + (o.size || 76) + 'px;font-weight:800;margin:22px 0 16px;line-height:1.15">' + kit.esc(o.term) + '</div>' +
+      '<div class="tm-def" style="font-size:40px;font-weight:600;line-height:1.4;color:color-mix(in srgb, #232a26 80%, var(--main))">' + kit.esc(o.def) + '</div></div>');
+    const term = el.querySelector('.tm-term'), def = el.querySelector('.tm-def').style;
+    return { el, render(t, t0 = 0) {
+      const { seg, eo, eob, lerp } = kit;
+      el.style.opacity = seg(t, t0, t0 + 0.12);
+      el.style.transform = 'scale(' + lerp(0.85, 1, eob(seg(t, t0, t0 + 0.5), 1.5)) + ')';
+      kit.TextFx.fadeFromRight(term, t, t0 + 0.3);
+      def.opacity = eo(seg(t, t0 + 1.1, t0 + 1.6));
+    } };
+  },
+  // Two cards side by side, left then right.
+  compare(kit, o) {
+    const card = (c, cls) => '<div class="' + cls + '" style="flex:1;background:var(--main);border:6px solid #232a26;border-radius:28px;padding:36px 40px;color:#232a26">' +
+      '<div style="font-size:52px;font-weight:800;margin-bottom:18px">' + kit.esc(c.h) + '</div>' +
+      c.lines.map(l => '<div style="font-size:38px;font-weight:600;line-height:1.45">' + kit.esc(l) + '</div>').join('') + '</div>';
+    const el = kit.h('<div style="position:absolute;left:' + o.x + 'px;top:' + o.y + 'px;width:' + o.w + 'px;display:flex;gap:40px">' + card(o.left, 'cp-l') + card(o.right, 'cp-r') + '</div>');
+    const cs = [el.querySelector('.cp-l').style, el.querySelector('.cp-r').style];
+    return { el, render(t, t0 = 0) {
+      const { seg, eo, lerp } = kit;
+      cs.forEach((c, i) => { const p = eo(seg(t, t0 + i * (o.gap || 1.2), t0 + i * (o.gap || 1.2) + 0.5)); c.opacity = p; c.transform = 'translateY(' + lerp(40, 0, p) + 'px)'; });
+    } };
+  },
+  // Numbered rows, one by one.
+  list(kit, o) {
+    const row = (txt, i) => '<div class="ls-r" style="display:flex;align-items:center;gap:28px"><span style="flex:none;width:76px;height:76px;border-radius:50%;background:var(--accent);border:6px solid #232a26;display:grid;place-items:center;font-size:44px;font-weight:800;color:#232a26">' + (i + 1) + '</span>' +
+      '<span class="line" style="font-size:' + (o.size || 56) + 'px">' + kit.esc(txt) + '</span></div>';
+    const el = kit.h('<div style="position:absolute;left:' + o.x + 'px;top:' + o.y + 'px;display:flex;flex-direction:column;gap:' + (o.gap || 30) + 'px">' + o.items.map(row).join('') + '</div>');
+    const rs = [...el.querySelectorAll('.ls-r')];
+    return { el, render(t, t0 = 0) {
+      const { seg, eo, lerp } = kit, st = o.step || 0.6;
+      rs.forEach((r, i) => { const p = eo(seg(t, t0 + i * st, t0 + i * st + 0.45)); r.style.opacity = p; r.style.transform = 'translateX(' + lerp(-50, 0, p) + 'px)'; });
+    } };
+  },
+  // A whole scene from a spec: {id, dur, text, head, hl, main:{kind, t0, ...}, guide:{x,y,s,pose(t)}, bubble:{text,x,y,at}}.
+  auto(spec) {
+    return {
+      init(kit) {
+        this.k = kit;
+        const root = kit.h('<div class="ground"><div class="desk"></div></div>');
+        kit.stage.append(root);
+        this.root = root;
+        if (spec.head) { const w = kit.h('<div class="words" style="left:130px;top:' + (spec.headY || 110) + 'px;width:' + (spec.headW || 1500) + 'px"><h2 class="line' + (spec.hl ? ' hl' : '') + '"' + (spec.headSize ? ' style="font-size:' + spec.headSize + 'px"' : '') + '>' + kit.esc(spec.head) + '</h2>' + (spec.sub ? '<p class="sub">' + kit.esc(spec.sub) + '</p>' : '') + '</div>'); root.append(w); this.head = w.querySelector('.line'); this.sub = w.querySelector('.sub'); }
+        if (spec.main) { const m = spec.main; this.main = UI[m.kind](kit, m); root.append(this.main.el); }
+        if (spec.bubble) { this.bub = kit.h('<div class="bubble" style="left:' + spec.bubble.x + 'px;top:' + spec.bubble.y + 'px;font-size:' + (spec.bubble.size || 48) + 'px">' + kit.esc(spec.bubble.text) + '</div>'); root.append(this.bub); }
+        if (spec.guide) { const g = spec.guide; this.g = UI.guide(kit, g.x, g.y, g.s || 0.9); root.append(this.g.el); }
+        this.cap = UI.subs(kit, spec.text, spec.dur); root.append(this.cap.el);
+      },
+      render(t) {
+        const kit = this.k, { seg, eo, eob, lerp } = kit;
+        UI.frame(this.root, t, spec.dur);
+        if (this.head) kit.TextFx.fadeFromRight(this.head, t, spec.headT ?? 0.15);
+        if (this.sub) this.sub.style.opacity = eo(seg(t, 0.9, 1.3));
+        if (this.main) { const m = spec.main; this.main.render(t, m.t0 ?? 0.6, m.cut); }
+        if (this.bub) { const a = spec.bubble.at; this.bub.style.opacity = seg(t, a, a + 0.12); this.bub.style.transform = 'scale(' + lerp(0.5, 1, eob(seg(t, a, a + 0.5), 1.8)) + ')'; }
+        if (this.g) UI.pose(this.g, t, spec.guide.pose ? spec.guide.pose(t, kit) : { look: -10 });
+        this.cap.render(t);
+      },
+    };
+  },
 };
