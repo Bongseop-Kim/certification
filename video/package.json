@@ -1,0 +1,11 @@
+{
+  "name": "certification-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "HYPERFRAMES_NO_TELEMETRY=1 npx --yes hyperframes@0.9.7 preview",
+    "check": "HYPERFRAMES_NO_TELEMETRY=1 npx --yes hyperframes@0.9.7 check",
+    "snapshot": "HYPERFRAMES_NO_TELEMETRY=1 npx --yes hyperframes@0.9.7 snapshot",
+    "render": "HYPERFRAMES_NO_TELEMETRY=1 npx --yes hyperframes@0.9.7 render"
+  }
+}
