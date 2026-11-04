@@ -21,6 +21,10 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.json'))) {
     assert(q.ai === undefined || ['restored', 'inferred', 'adjusted'].includes(q.ai), `${at}: ai가 ${q.ai}`)
     // 책과 대조하기 전의 자동 판정만 등록한다. broken은 export 단계에서 걸러진다.
     assert(['ok', 'minor'].includes(q.check), `${at}: check가 ${q.check} — 검수 안 된 문항은 등록하지 않는다`)
+    for (const f of ['body', 'answer', 'explanation']) {
+      // eslint-disable-next-line no-control-regex
+      assert(!/[\x00-\x08\x0b-\x1f]/.test(q[f] ?? ''), `${at}: ${f}에 제어문자`)
+    }
     for (const f of ['body', 'answer']) {
       assert(!q[f].split('\n').some((l) => /^[•·-]$/.test(l.trim())), `${at}: ${f}에 글자 없는 불릿 줄`)
     }

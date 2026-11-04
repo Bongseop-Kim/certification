@@ -72,7 +72,7 @@ def fence_code(ls):
 
 
 # 줄 머리가 라벨·불릿·번호·제목이면 새 줄로 둔다
-START = re.compile(r"^\s*(?:[•·▪◦\-–]\s*|\(\s*[ㄱ-ㅎA-Za-z0-9]\s*\)|\d{1,2}\s?[.)]\s|[①-⑳]|[가-하]\.\s|<[^>]{1,12}>|[\[【][^\]】]{1,12}[\]】]|[※■▶◆▷])")
+START = re.compile(r"^\s*(?:[•·▪◦\-–]\s*|\d{1,2}-\d{1,2}\s?\)|\(\s*[ㄱ-ㅎA-Za-z0-9]\s*\)|\d{1,2}\s?[.)]\s|[①-⑳]|[가-하]\.\s|<[^>]{1,12}>|[\[【][^\]】]{1,12}[\]】]|[※■▶◆▷])")
 END = re.compile(r"[.?!:;。]$|[.?!]\)$")
 
 
@@ -168,17 +168,26 @@ def main(book, dest):
     build_vocab(t for it in items for t in (it["body"], it["answer"], it.get("explanation") or ""))
     out = []
     for it in items:
+        # 책의 강조 괄호가 제어문자(\x07 여는 쪽, \x08 닫는 쪽)로 추출된다. 닫는 쪽은 핵심 답과 해설의 경계라 줄을 바꾼다
+        for f in ("body", "answer", "explanation"):
+            if it.get(f):
+                it[f] = re.sub(r"[ \t]*\x08[ \t]*\n?", "\n", re.sub(r"\x07[ \t]*", "", it[f]))
         mock = it["source"] == "mock"
-        key = f"practical-2026:mock:{it['no']}" if mock else f"practical-2026:{it['source']}:{it['no']}"
-        y, r = (None, None) if mock else it["source"].split("-")
+        key = f"{Path(dest).stem}:{it['source']}:{it['no']}"
+        if it.get("label"):  # 회차 표기가 없는 다른 교재는 usable.json에 출처 문구를 직접 둔다
+            label = it["label"]
+        else:
+            y, r = (None, None) if mock else it["source"].split("-")
+            label = "2026 정보보안기사 실기 기출 600제 · " + ("실전 모의고사 " + it["no"] if mock else f"{y}년 {r}회 {it['no']}번")
         out.append({
             "key": key,
-            "source": "2026 정보보안기사 실기 기출 600제 · " + ("실전 모의고사 " + it["no"] if mock else f"{y}년 {r}회 {it['no']}번"),
+            "source": label,
             "kind": it["kind"],
             "type": TYPE.get(it["kind"]) or ("essay" if len(it["answer"]) > 200 else "short"),  # 원본에 유형 표시가 없는 문항은 정답 길이로
             "grading": "self",
-            "body": clean(it["body"], code=True),
-            "answer": clean(it["answer"]),
+            # verbatim: 사람이(또는 검토에서) 줄 단위로 확정한 텍스트. 줄 잇기·코드 감싸기를 다시 하지 않는다
+            "body": it["body"].strip() if it.get("verbatim") else clean(it["body"], code=True),
+            "answer": it["answer"].strip() if it.get("verbatim") else clean(it["answer"]),
             "explanation": clean(it["explanation"]) or None,
             "pages": it["pages"],
             "check": it["verdict"],  # ok | minor — 책과 대조 전 자동 판정
